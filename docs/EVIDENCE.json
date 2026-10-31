@@ -42,6 +42,33 @@
         "all-persona live acceptance",
         "OCI hosting acceptance"
       ]
+    },
+    {
+      "file": "evidence/lovable-rehearsal.jpg",
+      "sha256": "0429e00bd7568fed03685cc589781695eb399123020ff1d7d6dd47e7271bb1cc",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Fresh authenticated native AI rehearsal after required-field, create, search, filter and selection checks. Synthetic data only; no account details or run identifiers visible.",
+      "evidence_class": "native-ai-browser-verified",
+      "does_not_prove": [
+        "Langfuse ingestion or readback",
+        "APM or Log Analytics acceptance",
+        "cloud deployment",
+        "all-persona live acceptance"
+      ]
+    },
+    {
+      "file": "evidence/langfuse-eu-setup.jpg",
+      "sha256": "596ece3a53ac06fcfff820b9bc290c4b3aeb4d2c67e9512da140c42152224a19",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual EU project API key settings before any keys were created. Provider example placeholders only; account controls, browser URL and project identifiers excluded by capture region.",
+      "evidence_class": "provider-setup-browser-verified",
+      "does_not_prove": [
+        "key creation",
+        "secret runtime availability",
+        "trace ingestion or readback"
+      ]
     }
   ]
 }

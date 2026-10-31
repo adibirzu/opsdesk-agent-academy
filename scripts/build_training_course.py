@@ -27,7 +27,7 @@ def shell(title, content):
         '<link rel="stylesheet" href="agent-map.css">'
         '</head><body><header><a href="course.html"><strong>OpsDesk Academy</strong></a>'
         '<nav aria-label="Course navigation"><a href="index.html">Part 1 live guide</a> '
-        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
+        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="lovable.html">Lovable lab</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
         f'</header><main class="page-content">{content}</main>'
         "<footer>Independent practical training. Use synthetic data and your own accounts. "
         "Self-reported checks are learning aids, not execution receipts. "
@@ -362,6 +362,15 @@ def build():
     results = json.loads((COURSE / "results.json").read_text())["parts"]
     if [r["number"] for r in results] != list(range(1, 7)):
         raise ValueError("Expected six explicit result examples")
+    lovable = (COURSE / "lovable-lab-content.html").read_text()
+    workflow = ["# Complete the Lovable OpsDesk workflow", "", "Use your own project and existing entitlements. Work in the same app. Never publish credentials or accept new paid services, legal terms or expanded access without the learner's applicable authority.", "", (COURSE / "APP-REHEARSAL.md").read_text().strip(), ""]
+    for token, path in (("inbox_prompt", "prompts/01-build-app.md"), ("native_prompt", "prompts/07-lovable-native.md"), ("langfuse_prompt", "prompts/06-langfuse-simple.md")):
+        prompt = (COURSE / path).read_text().strip()
+        block = f'<details><summary>Implementation prompt · {esc(path)}</summary><pre class="code-sample" id="lovable-{token}">{esc(prompt)}</pre><button class="action" data-copy="lovable-{token}">Copy this prompt</button></details>'
+        lovable = lovable.replace("{{" + token + "}}", block)
+        workflow += ["## " + path, "", prompt, ""]
+    (COURSE / "lovable.html").write_text(shell("The complete Lovable demo", lovable))
+    (COURSE / "LOVABLE-WORKFLOW.md").write_text("\n".join(workflow).rstrip() + "\n")
     for page, title, source in (
         ("replicate.html", "Run the complete course at home", "replicate-content.html"),
         ("langfuse.html", "The Langfuse lab", "langfuse-content.html"),
@@ -414,7 +423,7 @@ def build():
             content += waterfall
         content += result_panel(results[part["number"] - 1])
         if part["number"] == 1:
-            content += '<a class="action primary" href="index.html">Open the timed live workshop →</a> <a class="action" href="preview.html">Explore the ticket preview</a>'
+            content += '<a class="action primary" href="lovable.html">Follow the complete Lovable route →</a> <a class="action" href="index.html">Open the timed live workshop</a> <a class="action" href="preview.html">Explore the ticket preview</a>'
         else:
             previous = filename(parts[part["number"] - 2])
             content += f'<p class="source-links">Builds on <a href="{previous}">Part {part["number"] - 1}</a>. Stuck? <a href="help.html">Open setup and troubleshooting</a>.</p>'

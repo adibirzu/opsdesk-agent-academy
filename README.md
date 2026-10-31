@@ -6,6 +6,7 @@ harness, measurements, observability, security checks and reviewed hosting plan.
 - [Start the course](https://adibirzu.github.io/opsdesk-agent-academy/course.html)
 - [All persona workflows](https://adibirzu.github.io/opsdesk-agent-academy/workflows.html): 18 individual Markdown briefs and three complete six-part bundles.
 - [App walkthrough and expected results](https://adibirzu.github.io/opsdesk-agent-academy/showcase.html)
+- [Complete Lovable demo](https://adibirzu.github.io/opsdesk-agent-academy/lovable.html): all build prompts, sign-in, acceptance steps, real screenshots and server-only Langfuse setup.
 - [Interactive agent map](https://adibirzu.github.io/opsdesk-agent-academy/relationships.html): follow the app, harness, LLM, tools, optional RAG and observability; inspect the observed-run timing chart.
 - [Actual rehearsal screenshots](https://adibirzu.github.io/opsdesk-agent-academy/evidence.html)
 - [Simple Langfuse setup](https://adibirzu.github.io/opsdesk-agent-academy/langfuse.html)
