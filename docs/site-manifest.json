@@ -2,15 +2,15 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "223641fa99c04c53dd69e4378db735eb98d8487522cd3a9a54766ccb476002da"
+      "sha256": "4fc3b3380ca7680b8b5fef4233f46a85edc3b056960b08f173856b74bbda0b8d"
     },
     {
       "path": "course.html",
-      "sha256": "624d2b06a3c9945c399bfdb1beb689c07ad9f87c4b158b3a3c4f5132d1585975"
+      "sha256": "81f812845f7473bbace3d134305fe2660dc13d7a25c1d2ceef9233145b01a3db"
     },
     {
       "path": "help.html",
-      "sha256": "26885599cbcf7c69ac09c599fc13a6b1d295b76ab04173614039e322f34b1789"
+      "sha256": "22aaee50573a2065c9ea46af5c28a840254af48d10a00c19d806b75fc9b73658"
     },
     {
       "path": "course.json",
@@ -21,12 +21,32 @@
       "sha256": "db5e4e0099b0850e29cdb8cc23744dfe9831e263a7cb2df2a6a56fb08965dafc"
     },
     {
+      "path": "relationships.html",
+      "sha256": "fbff8c80f38d780d19e0cfb5bdbcc48e6b441424af4d63d721693882fa230a01"
+    },
+    {
+      "path": "agent-map.css",
+      "sha256": "4c4eafd8014a4ae443b8fef7b6f9bef2fcccb2b814cea9b6e69268b4d076081a"
+    },
+    {
+      "path": "agent-map.js",
+      "sha256": "4eb667bc7f769ad3eaed797272381e8cb1e96b2786b1df46a8b3fdb6b2382e06"
+    },
+    {
+      "path": "RAG-MISSION.md",
+      "sha256": "779908c9ed857d39cab84487a5acb3bd3a59033512003502d6db1c997b1be543"
+    },
+    {
+      "path": "VISUALS.md",
+      "sha256": "9524119541caca3dfbb8234b31ca5e7375f98bf861d1124aa3d5ecaa8ddb251d"
+    },
+    {
       "path": "showcase.html",
-      "sha256": "6b510e3cac543b942d125ea7520318139c4bb2192a1541dc3ea14b7e14da029c"
+      "sha256": "6263defbfd9178ab32e27e7a541f10668d9ef7ca8a9f61b0072451d735582174"
     },
     {
       "path": "workflows.html",
-      "sha256": "5c527a21bc37fc42ee1b3f26ff15b58d2cb867e4ef0674fb27534bb944e1f583"
+      "sha256": "f746dd8f9e3278bf396ca404d39200e60f9d9b07e5cb0be20eb9ebe70449d034"
     },
     {
       "path": "WORKFLOWS.md",
@@ -98,11 +118,11 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "3c3654b224403ed7cfd452ca1120a5ef62d159314d93be85eb50d4f820414f15"
+      "sha256": "64ac0b1bcbe3217de54410fa212c8cb02f9d8d87ebda38d3c6d24879d5bcd862"
     },
     {
       "path": "langfuse.html",
-      "sha256": "df3c2e73c591bc145ad846d42990edc718ed1a6c0c155861ed1e8466b2dab3c2"
+      "sha256": "7bb136baaea38e64cb9ec5cbce3a819c7e610ec6faf9b32e9c9618ac43116b89"
     },
     {
       "path": "course-doctor.py",
@@ -110,7 +130,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "e0e1868cb4b80dd36c8cfc8e3df21ce240b1b0ec0d40c80d6f445219cc179a48"
+      "sha256": "093c87dd17013acef15c6b16e2c711ea7e4f77ee9851bcdccce36277cc62eb49"
     },
     {
       "path": "personas.json",
@@ -122,7 +142,7 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "4da94ce92a1a4b9c170e866b6b90fcea56e2401424dfa091e627d66f54106476"
+      "sha256": "2d3937772394e85081d6e8cd85e19da23e3d162fe9e4269af9427dfc521fa254"
     },
     {
       "path": "EVIDENCE.json",
@@ -154,31 +174,31 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "9573324773b2b940997c9e9e4ec8920880bd5cbffeebfdfd0f1e0c939b9674ff"
+      "sha256": "f22a461e5874a1cdf123d32ef92c97b734cd1f95b698f326dda68ee16c825728"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "e3b9a8e7f7bb8bfe3e2c1ca8a93c1500c0376844486bfd31c1271073ef3867cf"
+      "sha256": "c076ded732ab46ab0d9406605a57c602de6b55e7903bc081e7d22ca6e6361487"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "389a82c18ae6a6d904e07ef82e042e1b8680e22a9cd63483f2b247e3fefbb7ac"
+      "sha256": "04c79433b8f0a74369a9029f24f54a1279abad550353b5ba9f23a882bdf3c96d"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "5289d203b22b1af20ea2b05b19774a7a2c107490a651732657eb4b0d3c722931"
+      "sha256": "d223969bad0495a7deacec3b8e052ec3fb41682ea16e4e5d14851f367ae34755"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "878515b1711b7107e4a7126a49454c8f971067ef169c17160f1286178385aebc"
+      "sha256": "8f208b7fce441a04e86a00c3bfea059adc0cff5888104611b868d4826cb7eb1f"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "1be7f7f297cce4a9c0e7041e4ac65655ac6cd6946b19e1be55ee4f0d19898032"
+      "sha256": "a4d071ae984d08f3dfa38d5e33ddf4b07042580782c308f91ad5eebab1d25332"
     },
     {
       "path": "meet-your-agent.html",
-      "sha256": "8fec115ed0e6e9246c1a8cdde86130bc483a55d6fbc0c5f2322d7cf5ee67659d"
+      "sha256": "f63257044117545eba4d2af35099dc119da3324b6b0143e5953273ffd7efb606"
     },
     {
       "path": "inside-the-engine.html",

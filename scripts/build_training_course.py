@@ -24,14 +24,15 @@ def shell(title, content):
         f"<title>{esc(title)} · OpsDesk Academy</title>"
         '<link rel="icon" href="data:,"><link rel="stylesheet" href="public-theme.css">'
         '<link rel="stylesheet" href="guide.css"><link rel="stylesheet" href="training.css">'
+        '<link rel="stylesheet" href="agent-map.css">'
         '</head><body><header><a href="course.html"><strong>OpsDesk Academy</strong></a>'
         '<nav aria-label="Course navigation"><a href="index.html">Part 1 live guide</a> '
-        '<a href="personas.html">Choose your path</a> <a href="workflows.html">All workflows</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
+        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
         f'</header><main class="page-content">{content}</main>'
         "<footer>Independent practical training. Use synthetic data and your own accounts. "
         "Self-reported checks are learning aids, not execution receipts. "
         '<a href="PAGES.md">Student hosting</a> · <a href="REFERENCES.md">Sources</a></footer>'
-        '<script src="vendor/d3-7.9.0.min.js"></script><script src="course-visuals.js"></script><script src="guardrails.js"></script><script src="personas.js"></script><script src="training.js"></script></body></html>'
+        '<script src="vendor/d3-7.9.0.min.js"></script><script src="course-visuals.js"></script><script src="guardrails.js"></script><script src="personas.js"></script><script src="training.js"></script><script src="agent-map.js"></script></body></html>'
     )
 
 
@@ -356,6 +357,8 @@ def build():
     data = json.loads((COURSE / "course.json").read_text())
     parts = data["parts"]
     profiles = json.loads((COURSE / "personas.json").read_text())["personas"]
+    graph = (COURSE / "agent-map.html").read_text()
+    waterfall = (COURSE / "waterfall.html").read_text()
     results = json.loads((COURSE / "results.json").read_text())["parts"]
     if [r["number"] for r in results] != list(range(1, 7)):
         raise ValueError("Expected six explicit result examples")
@@ -405,6 +408,10 @@ def build():
         content = f'<span class="eyebrow">PART {part["number"]} OF 6 · ONE HOUR</span><h1>{esc(part["title"])}</h1><p class="intro">{esc(part["tagline"])}</p><div class="check"><b>YOUR DELIVERABLE</b>{esc(part["deliverable"])}</div><details data-technical-only hidden><summary>Common technical prerequisites</summary><ul>{needs}</ul><p>Use the repository checkout for commands. The static Pages site is a guide, not a terminal or model runtime. Every command below is explicit; the page runs none of them.</p></details>'
         content += f'<div class="check"><b>EXTEND THE SAME APP</b><p><strong>Start with:</strong> {esc(part["starting_state"])}</p><p><strong>Add now:</strong> {esc(part["new_capability"])}</p><a class="action" href="{brief_name}" download>Download Part {part["number"]} agent instructions (.md)</a></div>'
         content += persona_panel(profiles, part)
+        if part["number"] == 2:
+            content += graph
+        if part["number"] == 4:
+            content += waterfall
         content += result_panel(results[part["number"] - 1])
         if part["number"] == 1:
             content += '<a class="action primary" href="index.html">Open the timed live workshop →</a> <a class="action" href="preview.html">Explore the ticket preview</a>'
@@ -474,6 +481,8 @@ def build():
     )
     story = data["story"]
     story_block = f'<aside class="story-beat"><h2>{esc(story["title"])}</h2><p><b>The case:</b> {esc(story["incident"])}</p><p>{esc(story["mission"])}</p><a href="preview.html">Meet the app before you build it →</a></aside>'
+    story_block = story_block.replace('href="preview.html"', 'href="showcase.html"')
+    story_block += '<p class="visual-entry"><a class="action" href="relationships.html">Explore the agent, LLM, harness and optional RAG →</a> <a class="action" href="https://github.com/adibirzu/opsdesk-agent-academy">Get the source on GitHub ↗</a></p>'
     home = home.replace(
         '<div class="course-grid">',
         story_block
@@ -488,6 +497,13 @@ def build():
         '<div class="course-grid">', selector + '<div class="course-grid">', 1
     )
     (COURSE / "course.html").write_text(shell(data["title"], home))
+    relationship_body = '<span class="eyebrow">SEE THE SYSTEM · FOLLOW ONE REQUEST</span><h1>What connects an app to an agent?</h1><p class="intro">The app is the doorway. The LLM proposes a next step. The harness runs the controlled loop. Tools read evidence; optional RAG adds relevant knowledge. Click through the relationships before changing the code.</p>'
+    relationship_body += graph.replace('class="agent-map"', 'class="agent-map" data-map-url="true"', 1)
+    relationship_body += '<section id="rag-explained" class="story-beat"><h2>RAG is context, not permission.</h2><p>Retrieval-augmented generation looks up relevant material and includes it in the model’s context. An agent can work without RAG; a RAG question-answering app need not have an autonomous tool loop. A vector database is one retrieval option.</p><p>Keep instructions separate from retrieved material. A runbook is evidence, even if it says “ignore policy.” Filter document access before retrieval results reach the model, return source references and preserve a no-result state.</p><p>The verified Lovable baseline does not use RAG. The separate local reference has a synthetic runbook lookup. Neither is proof of a production knowledge-base ingestion or retrieval deployment.</p><a class="action" href="RAG-MISSION.md" download>Optional RAG agent mission (.md)</a></section>'
+    relationship_body += waterfall
+    relationship_body += '<div class="result-columns"><section class="check"><h2>Now point to the code</h2><p>Open <a href="https://github.com/adibirzu/opsdesk-agent-academy/tree/main/reference-app">the actual generated app source</a>. Find the authenticated server wrapper, strict tool contracts, bounded loop and metadata-only exporter. A diagram explains the design; source and tests establish the controls.</p></section><section class="check"><h2>Choose your next action</h2><p><a href="part-1-first-app.html">Build the app</a> · <a href="part-2-agent-engine.html">Open the harness</a> · <a href="langfuse.html">Connect Langfuse</a> · <a href="workflows.html">Download your persona workflow</a></p></section></div>'
+    relationship_body += '<details><summary>Sources and visual design</summary><p>This is an original schematic of the workshop design. <a href="https://d3js.org/d3-selection">D3 selections</a> drive the SVG. <a href="https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm">OCI Generative AI Agents overview</a> explains its supported tool types and RAG. <a href="https://langfuse.com/docs/observability/overview">Langfuse observability documentation</a> explains tracing. <a href="VISUALS.md">Geometry, accessibility and evidence boundaries</a>.</p></details>'
+    (COURSE / "relationships.html").write_text(shell("How agents, LLMs, harnesses and RAG connect", relationship_body))
     showcase = '<span class="eyebrow">ONE APP · SIX CAPABILITIES</span><h1>Meet the app you will build.</h1><p class="intro">OpsDesk turns a synthetic incident into a grounded, read-only investigation. Build its visible inbox first. Then add a bounded engine, measurements, observability, security tests and a reviewed hosting plan.</p><p>The real Lovable rehearsal uses its native server and available model. The optional Python engineering route is a separate implementation of the same learning goals. This static site is a guide; it never signs you into the presenter’s app or runs a model.</p><p><a class="action primary" href="part-1-first-app.html">Build your own app →</a> <a class="action" href="APP-REHEARSAL.md">Exact rehearsal recipe (.md)</a> <a class="action" href="preview.html">Try the clearly labeled UI-only preview</a></p>'
     for result in results:
         showcase += f'<div id="part-{result["number"]}">{result_panel(result)}</div>'
