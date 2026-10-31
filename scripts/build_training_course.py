@@ -549,6 +549,8 @@ def build():
     for css in ('training.css',):
         if f'href="{css}"' not in home_html:
             home_html = home_html.replace('</head>', f'<link rel="stylesheet" href="{css}"></head>', 1)
+    if 'src="training.js"' not in home_html:
+        home_html = home_html.replace("</body>", '<script src="training.js"></script></body>', 1)
     home.write_text(home_html)
     quick_tools = (COURSE / "tool-choices.html").read_text()
     home = (

@@ -47,6 +47,7 @@ class PublicSiteTests(unittest.TestCase):
         home = (course / "index.html").read_text()
         self.assertIn('class="academy-header"', home)
         self.assertIn('class="resource-menu"', home)
+        self.assertIn('src="training.js"', home)
 
     def test_export_has_only_selected_files_and_relative_links_resolve(self):
         with tempfile.TemporaryDirectory() as temp:

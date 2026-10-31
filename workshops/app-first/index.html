@@ -123,4 +123,4 @@ Project keys remain in the runtime; ticket text stays out of exports.</pre></det
   document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied';}catch(e){b.textContent='Select and copy manually';}setTimeout(()=>b.textContent='Copy prompt',2500);});
   document.querySelector('#jump-build').onclick=()=>{select(1);document.querySelector('#build').scrollIntoView({block:'start'});};render();
 })();
-</script><script src="agent-map.js"></script></body></html>
+</script><script src="agent-map.js"></script><script src="training.js"></script></body></html>
