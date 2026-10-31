@@ -6,11 +6,11 @@
     },
     {
       "path": "course.html",
-      "sha256": "888417ae6b7d6926e8da0e21f455d17f335df2e7c4a415ee68fee565fe651b61"
+      "sha256": "6196aef2b5227b9f33e0f84f97f7958b64ecf6ae2ad9cadfad89595a55088337"
     },
     {
       "path": "help.html",
-      "sha256": "d0f5334718b328e0273c87494085188d3f66434d6928ba985eab2e0acd62f7e4"
+      "sha256": "8b1fe8bb973f3f2251cd9c0fd3505aa6583ee6ae968b7526b8a92430815c7d8b"
     },
     {
       "path": "course.json",
@@ -22,11 +22,11 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "94690eaf773fdfa504265a7b9c324964188b1d4d970cd6933f568b362bc7025e"
+      "sha256": "429833e41efe2885fea35984337acea4bfca4231b7c0c199ab7d512bbd57fe32"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
-      "sha256": "9fd673ca05070055d2e4655c73ff5319c3fe0c772534b87bd4255e6e93c6c4ff"
+      "sha256": "6173a478880e4e64638938e63e2eb23d6b0335e54deb5c25d5551312c5b81471"
     },
     {
       "path": "prompts/07-lovable-native.md",
@@ -46,7 +46,7 @@
     },
     {
       "path": "relationships.html",
-      "sha256": "cd1b37d2bb3c1168411056e37fa4f0b27b939c43fc8a82ea396536cd186f7f43"
+      "sha256": "6bd5164a039c59f0ae8ac231bcc0812237d474063fe642c23c96a66c9ad7eb0e"
     },
     {
       "path": "agent-map.css",
@@ -66,11 +66,11 @@
     },
     {
       "path": "showcase.html",
-      "sha256": "a4cf45a0c8d98648aff06e361b9e4d822a6031c653e25a6e4ac9247d464a3082"
+      "sha256": "692bfd57497f4576ed0b1756aec94a4b0cbb27b35bb9d4e8ca81478f6b47aa03"
     },
     {
       "path": "workflows.html",
-      "sha256": "5a5fd902a2bf10378e59f370bbcb840884938c5aaa46fc48b21a4f254753eb2b"
+      "sha256": "48253f81add3252dcf2c484f2f199d42c468c76ab88349a8dbf752a73b7a513c"
     },
     {
       "path": "WORKFLOWS.md",
@@ -78,7 +78,7 @@
     },
     {
       "path": "APP-REHEARSAL.md",
-      "sha256": "d1fa2c59efa710643b84491fb983f6d7bf1172748a2f1ed4e276ed2f187a2cb0"
+      "sha256": "8420f9d009ebcfa003c8957cd0422865e2b59c5af3c52fc0ca3035cd4d889771"
     },
     {
       "path": "agent-briefs/workflow-business.md",
@@ -142,11 +142,31 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "9c0569ebafd3593f2db4e0a0a2be9f0e2003ff34a004aa0b4e64ba6057e75e64"
+      "sha256": "1a6751049b3b6bf211617672ef4568628d5c7ffe335b5b7833d8ace642229913"
     },
     {
       "path": "langfuse.html",
-      "sha256": "25c9c2b6d17e72eb626ff6e4853caf07a64740c544e5d241b5ba0c8526cb9cc5"
+      "sha256": "497d31bef4999925bc96ed60417f6dd0156afe3ea4b21f44716a6e8a8d4d591b"
+    },
+    {
+      "path": "langfuse-basics.html",
+      "sha256": "59be260ce42c1d49fed705ab122c9718939d4f8d06e81a271d2aeea701e75025"
+    },
+    {
+      "path": "langfuse-basics.js",
+      "sha256": "a526193bd3f18be31eed81d5d92bacc24a6c3688b33746ef3d24a3f98122d76d"
+    },
+    {
+      "path": "LANGFUSE-BASICS.md",
+      "sha256": "9e5574ee358c38dad6fb585abdea28da1ae1255ca4a98c6037942aab8113af0e"
+    },
+    {
+      "path": "evidence/langfuse-timeline.jpg",
+      "sha256": "055be3c94312b68a6350602c83f903ae19a175079abba054b3c6539a2ad7648b"
+    },
+    {
+      "path": "evidence/lovable-agent-trace-policy.jpg",
+      "sha256": "621a5d13d301de98db9a3154789e7a9dedccc83a70131d3511841e9e7c3fdbe1"
     },
     {
       "path": "course-doctor.py",
@@ -154,7 +174,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "52a3b44aa22dcd051f15f0d879ddc36993f759cff0f280e8c7dbc358d78b670e"
+      "sha256": "13aac2feac216fb9bc81e185805258b6f181e4106f4d3bc59ba424e0680afcf8"
     },
     {
       "path": "personas.json",
@@ -166,11 +186,11 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "cc10418f0d427521cbc2d80101ab3666d409a638d62bdde56493722500d4cd3b"
+      "sha256": "35486a3c10f0235c0b69204895f38cb898bfe0007162f3088c361474f49947fe"
     },
     {
       "path": "EVIDENCE.json",
-      "sha256": "0785b5ee90554bfe52ef688f0d6e1746917bd37bf73f300cb80d94b5896418c7"
+      "sha256": "3b1c0d1e2d34294729180341fdd75705525cb453ea7e76014b1fce14e5efe023"
     },
     {
       "path": "evidence/lovable-inbox.jpg",
@@ -198,27 +218,27 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "abfe799178cd92cb19d4648d6d5f1005425f92c4c47a087c0ea2f4052069adfe"
+      "sha256": "7f91ffc9f46c5de95da0160ec6a79b0defed35aac62e1245c8b0ef2f91a507de"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "a241e1ce289e16024f0142ca7b7a5a467f6f66ddd56caee65a05f5ad69b05673"
+      "sha256": "7b28d64ef73611b66f4f5b979274305d3dcd32395594c3ac7cef50b09abad3fb"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "c8ff158582c23f7da3fa9337fccf25d342b625eb9d612ddb52d8cb38b338d2a4"
+      "sha256": "e2f2eb64ce8bb013b6666acfd9dac13416c0141cef25f4c4a3764cc5e0b4a0e6"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "e27fc27b2c8597d30d59168fb33be539383d076fbea080eb493316ac02e3f13d"
+      "sha256": "f6dd03c11efe33fa948ead970d511f78f0e684590944d30940dde81d12e58c21"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "23b3263697a6e57f3267c6f035a946fb3ee29382db25b9ebd8dae526fca864a2"
+      "sha256": "b4d00fd581ee5d2ff68a211cd495c7135c194ea0c96484c020ca9accfce99a11"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "34dacc17dade21892d24f0cc3ca11cbe7c3b00decb5521d43d43dd16661390d6"
+      "sha256": "1e5e531e9394f42c1c328799fbde98c21f4cde95a5fe97974bb510ce130046b9"
     },
     {
       "path": "meet-your-agent.html",
@@ -266,7 +286,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "ffe4f4b76371ea68949152aa3755449ae6221db35da8d2114c7d2b02a37455cc"
+      "sha256": "e511a0ad878426e2e97cee6bffc67e7e8345b966afab01b7aafc1184b0b5db09"
     },
     {
       "path": "BUILDERS.md",
@@ -322,7 +342,7 @@
     },
     {
       "path": "prompts/06-langfuse-simple.md",
-      "sha256": "cba711b0bc7f6aceeb5bb10de131967175a26dd818e8522b5917ae36b2a41f73"
+      "sha256": "4287ef11bcc75cce4e1253808c708ce0ef63fc52d4b1563cb1fa23b9ab56b46c"
     },
     {
       "path": "diagrams/architecture.svg",

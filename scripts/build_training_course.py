@@ -37,12 +37,12 @@ def shell(title, content):
         '</head><body><header><a href="course.html"><strong>OpsDesk Academy</strong></a>'
         + GITHUB_LINK +
         '<nav aria-label="Course navigation"><a href="index.html">Part 1 live guide</a> '
-        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="lovable.html">Lovable lab</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
+        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="lovable.html">Lovable lab</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Connect Langfuse</a> <a href="langfuse-basics.html">Read a trace</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
         f'</header><main class="page-content">{content}</main>'
         "<footer>Independent practical training. Use synthetic data and your own accounts. "
         "Self-reported checks are learning aids, not execution receipts. "
         '<a href="PAGES.md">Student hosting</a> · <a href="REFERENCES.md">Sources</a></footer>'
-        '<script src="vendor/d3-7.9.0.min.js"></script><script src="course-visuals.js"></script><script src="guardrails.js"></script><script src="personas.js"></script><script src="training.js"></script><script src="agent-map.js"></script></body></html>'
+        '<script src="vendor/d3-7.9.0.min.js"></script><script src="course-visuals.js"></script><script src="guardrails.js"></script><script src="personas.js"></script><script src="training.js"></script><script src="agent-map.js"></script><script src="langfuse-basics.js"></script></body></html>'
     )
 
 
@@ -384,6 +384,7 @@ def build():
     for page, title, source in (
         ("replicate.html", "Run the complete course at home", "replicate-content.html"),
         ("langfuse.html", "The Langfuse lab", "langfuse-content.html"),
+        ("langfuse-basics.html", "Follow one agent run", "langfuse-basics-content.html"),
         ("evidence.html", "Real workshop rehearsal evidence", "evidence-content.html"),
     ):
         body = (COURSE / source).read_text()

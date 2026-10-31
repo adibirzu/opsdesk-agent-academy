@@ -20,7 +20,7 @@ bun install --ignore-scripts --frozen-lockfile
 bun run test
 ```
 
-All 24 tests passed on the downloaded source using isolated model/export
+All 31 tests passed on the downloaded source using isolated model/export
 transports, without real model or telemetry keys. They cover change stops,
 strict schemas, scoped tools, denied rate reservations, durable provider denial,
 bounded calls, metadata filtering, missing/rejected configuration, partial export
@@ -40,7 +40,9 @@ authenticated AI deployment.
 - Authenticated server wrappers and middleware: app session and per-account quota storage.
 - `src/lib/langfuse.server.ts`: isolated OpenTelemetry provider, metadata allowlist and bounded OTLP export.
 - `src/lib/telemetry-setup.server.ts`: authenticated presence-only setup check; no model or export.
-- `src/test/`: isolated safety, exporter, readiness and routing checks.
+- `src/components/agent-trace.tsx`: visible current-run events, safe counts and private identifier-copy controls.
+- `src/lib/agent-trace.ts`: fixed-label event mapping without raw payloads.
+- `src/test/`: isolated safety, exporter, readiness, trace-panel and routing checks.
 
 After compatible instrumentation exists, connect Langfuse with only
 `LANGFUSE_BASE_URL`, `LANGFUSE_PUBLIC_KEY` and `LANGFUSE_SECRET_KEY` in server secrets.

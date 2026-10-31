@@ -118,7 +118,7 @@ success is not independent readback. Optional telemetry failure must not replace
 the actual model result or trigger a second model call.
 
 **Current rehearsal boundary:** the optional exporter source was downloaded and
-inspected; all 24 downloaded-app tests passed locally (including eight exporter and eight server-safety tests). The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
+inspected; all 31 downloaded-app tests passed locally (including eight exporter and eight server-safety tests). The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
 OCI APM and Log Analytics additionally require their own scoped configuration,
 export and exact provider readback; Langfuse does not replace those checks.
 

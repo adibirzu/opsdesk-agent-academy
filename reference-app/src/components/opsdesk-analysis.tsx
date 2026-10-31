@@ -11,6 +11,7 @@ import { requestSchema, type AnalysisInput, type AnalysisRun } from "@/lib/opsde
 import { langfuseStatusText, presentationText } from "@/lib/langfuse-contract";
 import { checkTelemetrySetup } from "@/lib/telemetry-setup.functions";
 import type { TelemetrySetup } from "@/lib/telemetry-setup-contract";
+import { AgentTrace } from "./agent-trace";
 
 export function OpsdeskAnalysis({ ticket }: { ticket: AnalysisInput["ticket"] }) {
   const { user, ready } = useWorkshopSession();
@@ -105,6 +106,7 @@ export function OpsdeskAnalysis({ ticket }: { ticket: AnalysisInput["ticket"] })
     {error && <p role="alert" className="break-words text-sm text-primary">{error}</p>}
     {run && <>
       <div role={run.error ? "alert" : "status"} aria-live="polite" className="whitespace-pre-wrap break-words border-l-4 border-primary bg-muted p-3 text-sm">{presentationText(run.error ?? run.answer)}</div>
+      <AgentTrace run={run} />
       <details className="border-t border-border pt-3">
         <summary className="cursor-pointer text-sm font-medium">Run inspector · {run.status} · {run.modelCalls} model calls</summary>
         <dl className="mt-3 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-xs">

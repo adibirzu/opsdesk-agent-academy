@@ -91,3 +91,10 @@ Use [Run it at home](replicate.html) for the tool/install/account matrix, pinned
 [Choose a persona](personas.html): business/C-level browser-first; IT with basic AI guided implementation; IT with AI knowledge engineering depth. Each has six tailored workflows, explanatory links and a separate Markdown brief per part. The same app and real-AI finish line apply to all three. Technical reference tasks are optional for the browser route.
 
 Local proof can be reproduced with `.venv/bin/python scripts/rehearse_personas.py --output local/private/my-persona-rehearsal`. It runs a reviewed allowlist of isolated contract tests, not arbitrary deployment scripts, model calls or cloud mutations. Its receipt explicitly separates local contracts from SaaS generation, live AI and telemetry acceptance.
+
+## Read the agent trace
+
+After the app works, [connect Langfuse](langfuse.html), then complete
+[Follow one agent run](langfuse-basics.html). Download the full
+[agent instructions](LANGFUSE-BASICS.md). The recorded trace screenshots contain
+no account or private project identifiers.

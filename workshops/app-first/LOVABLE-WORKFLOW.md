@@ -122,7 +122,7 @@ success is not independent readback. Optional telemetry failure must not replace
 the actual model result or trigger a second model call.
 
 **Current rehearsal boundary:** the optional exporter source was downloaded and
-inspected; all 24 downloaded-app tests passed locally (including eight exporter and eight server-safety tests). The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
+inspected; all 31 downloaded-app tests passed locally (including eight exporter and eight server-safety tests). The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
 OCI APM and Log Analytics additionally require their own scoped configuration,
 export and exact provider readback; Langfuse does not replace those checks.
 
@@ -245,3 +245,11 @@ failure and missing/rejected telemetry config. Keep raw receipts private. Give m
 one short setup checklist and explain exactly where the three values belong in
 this platform. Do not publish, purchase, alter account-wide permissions or send
 telemetry to an unapproved destination.
+
+Add a visible Agent trace panel below the real answer, derived only from actual
+run events and export results. Show local execution, calls, usage, elapsed time
+and exporter status. Add Copy trace ID / Copy session label inside a collapsed
+presentation-safe disclosure with copy feedback. Explain how to locate that exact
+trace in the learner-owned Langfuse project. Never embed a reader key, iframe or
+claim automatic independent readback. Keep raw payloads and identifiers hidden
+from the default presentation view. Add isolated mapping/privacy tests.

@@ -83,6 +83,32 @@
         "billing reconciliation",
         "complete security audit"
       ]
+    },
+    {
+      "file": "evidence/langfuse-timeline.jpg",
+      "sha256": "055be3c94312b68a6350602c83f903ae19a175079abba054b3c6539a2ad7648b",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual independently matched Langfuse timeline for the native Lovable run; two generations inside one agent, with rounded tiny fixture spans. No account or private identifiers in pixels.",
+      "evidence_class": "provider-verified",
+      "does_not_prove": [
+        "billing reconciliation",
+        "OCI APM or Log Analytics delivery",
+        "future app trace-panel live acceptance"
+      ]
+    },
+    {
+      "file": "evidence/lovable-agent-trace-policy.jpg",
+      "sha256": "621a5d13d301de98db9a3154789e7a9dedccc83a70131d3511841e9e7c3fdbe1",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual updated Lovable app Agent trace panel: explicit-change stop, zero model calls, unknown usage and honestly failed telemetry export. Identifiers collapsed; no identity, credential or private URL visible.",
+      "evidence_class": "frontend-browser-verified",
+      "does_not_prove": [
+        "policy trace delivered to Langfuse",
+        "normal run screenshot",
+        "complete security audit"
+      ]
     }
   ]
 }
