@@ -1,13 +1,33 @@
 import { describe, expect, it, vi } from "vitest";
 import { ROOT_CONTEXT } from "@opentelemetry/api";
 import { TracerProvider, type ReadableSpan } from "@opentelemetry/sdk-trace";
-import { createWorkshopTelemetry, metadataOnlySpan } from "@/lib/langfuse.server";
+import { createWorkshopTelemetry, metadataOnlySpan, telemetryFailureHint, telemetryFailureSignals } from "@/lib/langfuse.server";
 import { analyzeOnServer } from "@/lib/opsdesk-agent.server";
 import { presentationText } from "@/lib/langfuse-contract";
 
 // Isolated placeholders only: never read project Secrets or perform live ingestion.
 const config = { baseUrl: "https://traces.example.test", publicKey: "isolated-public", secretKey: "isolated-secret" };
 describe("Optional Langfuse metadata-only export", () => {
+  it("binds the default transport to globalThis for a zero-model policy run", async () => {
+    const originalFetch = globalThis.fetch;
+    let requests = 0;
+    globalThis.fetch = async function (this: unknown) {
+      if (this !== globalThis) throw new TypeError("Illegal invocation");
+      requests += 1;
+      return new Response("{}", { status: 200 });
+    };
+    try {
+      const telemetry = createWorkshopTelemetry(config);
+      telemetry.authorization(true);
+      const receipt = await telemetry.finish("approval_required", 0);
+      expect(receipt.status).toBe("exported");
+      expect(receipt.spanCount).toBe(2);
+      expect(requests).toBe(1);
+      expect(receipt.readback).toBe("not_verified");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
   it("does not export with missing or partial config", async () => {
     const transport = vi.fn();
     for (const cfg of [{}, { baseUrl: config.baseUrl }]) {
@@ -29,8 +49,9 @@ describe("Optional Langfuse metadata-only export", () => {
   it("exports one root, explicit authorization, generation with returned model/usage, and validated tool spans", async () => {
     let captured: Record<string, unknown> = {};
     const transport = vi.fn(async (_url: unknown, init?: RequestInit) => {
+      expect(_url).toBeTypeOf("string"); // red on URL input, passes on endpoint.href
       captured = JSON.parse(String(init?.body));
-      expect(init?.redirect).toBe("error");
+      expect(init?.redirect).toBe("manual");
       expect(new Headers(init?.headers).get("x-langfuse-ingestion-version")).toBe("4");
       return new Response("{}", { status: 200 });
     });
@@ -52,6 +73,17 @@ describe("Optional Langfuse metadata-only export", () => {
     expect(spans.filter(s => !s.parentSpanId)).toHaveLength(1);
     expect((await telemetry.finish("completed", 1)).traceId).toBe(receipt.traceId);
     expect(transport).toHaveBeenCalledTimes(1);
+  });
+  it("reports a 307 to another origin's sign-in as a redirect without following or exposing Location", async () => {
+    const send = vi.fn(async (_u: unknown, init?: RequestInit) => {
+      expect(init?.redirect).toBe("manual");
+      return new Response("private redirect body", { status: 307, headers: { location: "https://evil.example.test/auth/sign-in?token=private-query" } });
+    });
+    const telemetry = createWorkshopTelemetry(config, send); telemetry.authorization(true);
+    const r = await telemetry.finish("approval_required", 0);
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(r).toMatchObject({ status: "failed", failureCode: "http_error", failureHint: "redirect", httpStatus: 307, redirectTarget: "other_origin", redirectPath: "sign_in", readback: "not_verified" });
+    expect(JSON.stringify(r)).not.toMatch(/evil|token|private|traces\.example|isolated-|sign-in/);
   });
   it("awaits the exporter acknowledgment before resolving a run", async () => {
     let release: (response: Response) => void = () => {};
@@ -99,7 +131,60 @@ describe("Optional Langfuse metadata-only export", () => {
   });
 });
 describe("Sanitized telemetry failure diagnosis", () => {
+  it("extracts only fixed signal words and marks the executing exporter revision", async () => {
+    const error = new TypeError("Redirect mode manual is not supported; private https://secret.example.test details");
+    expect(telemetryFailureSignals(error)).toEqual(["redirect_mode", "manual", "unsupported"]);
+    const send = vi.fn(async () => { throw error; });
+    const r = await createWorkshopTelemetry({ baseUrl: "https://traces.example.test", publicKey: "isolated-public", secretKey: "isolated-secret" }, send).finish("approval_required", 0);
+    expect(r.exporterRevision).toBe("otel-manual-v1");
+    expect(r.failureSignals).toEqual(["redirect_mode", "manual", "unsupported"]);
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(JSON.stringify(r)).not.toMatch(/private|secret|isolated-|not supported/);
+  });
   const config = { baseUrl: "https://traces.example.test", publicKey: "isolated-public", secretKey: "isolated-secret" };
+  it.each([
+    ["unsupported_timeout", "AbortSignal.timeout is not a function"],
+    ["request_encoding", "btoa invalid character in header"],
+    ["illegal_invocation", "Illegal invocation: invalid receiver"],
+    ["redirect", "redirect refused"],
+    ["dns", "ENOTFOUND DNS"],
+    ["tls", "TLS certificate invalid"],
+    ["connection_reset", "ECONNRESET socket connection reset"],
+    ["network_fetch", "Failed to fetch: network failure"],
+    ["runtime_policy", "Network blocked by CORS"],
+    ["other", "unrecognized fixture failure"],
+  ] as const)("emits only the fixed %s category", async (expected, message) => {
+    const error = new Error(`${message}; private fixture details`);
+    expect(telemetryFailureHint(error)).toBe(expected);
+    const send = vi.fn(async () => { throw error; });
+    const telemetry = createWorkshopTelemetry(config, send);
+    telemetry.authorization(true);
+    const result = await telemetry.finish("approval_required", 0);
+    expect(result.failureCode).toBe("transport_error");
+    expect(result.failureHint).toBe(expected);
+    expect(result.spanCount).toBe(2);
+    expect(result.httpStatus).toBeNull();
+    expect(result.readback).toBe("not_verified");
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(JSON.stringify(result)).not.toContain(error.message);
+    expect(JSON.stringify(result)).not.toMatch(/private|traces.example|isolated-/);
+  });
+  it("classifies timeout setup failure before any transport attempt", async () => {
+    const timeout = vi.spyOn(AbortSignal, "timeout").mockImplementation(() => {
+      throw new TypeError("AbortSignal.timeout is not a function; private fixture details");
+    });
+    const send = vi.fn();
+    try {
+      const result = await createWorkshopTelemetry(config, send).finish("approval_required", 0);
+      expect(result.failureCode).toBe("request_setup_error");
+      expect(result.failureHint).toBe("unsupported_timeout");
+      expect(result.httpStatus).toBeNull();
+      expect(result.readback).toBe("not_verified");
+      expect(timeout).toHaveBeenCalledExactlyOnceWith(5000);
+      expect(send).not.toHaveBeenCalled();
+      expect(JSON.stringify(result)).not.toMatch(/private|AbortSignal|traces.example|isolated-/);
+    } finally { timeout.mockRestore(); }
+  });
   it.each([
     ["timeout", async () => { throw new DOMException("private endpoint and credential details", "TimeoutError"); }],
     ["transport_error", async () => { throw new TypeError("private endpoint and credential details"); }],

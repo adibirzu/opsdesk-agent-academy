@@ -60,3 +60,16 @@ Official references:
 - https://langfuse.com/docs/observability/best-practices
 - https://langfuse.com/docs/observability/features/token-and-cost-tracking
 - https://langfuse.com/docs/observability/features/trace-ids-and-distributed-tracing
+
+## Verified zero-model policy trace
+
+The latest rehearsal also matched the exact policy trace/session independently in
+Langfuse. It contains two observations (agent root and authorization), no generation
+nodes, root status approval_required and model_calls 0. See
+[the real app and provider screenshots](lovable.html#verified-policy-trace).
+Authorization to invoke the app and permission to execute a requested change are
+different decisions. Repeat this check in the learner's own project.
+
+The reference transport uses manual no-follow redirects: inspect a 3xx as a failure,
+never forward credentials automatically. Select Preview on the newest completed
+change card before Open preview so you test the intended runtime revision.

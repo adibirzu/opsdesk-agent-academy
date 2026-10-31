@@ -70,7 +70,14 @@ class PublicSiteTests(unittest.TestCase):
                 brief = (source / f"agent-briefs/persona-{persona}-part-{number}.md").read_text()
                 self.assertIn(brief.strip(), bundle)
         parts = json.loads((source / "results.json").read_text())["parts"]
-        self.assertIn("unverified", parts[3]["status"])
+        self.assertIn("independently verified in Langfuse", parts[3]["status"])
+        self.assertIn("OCI APM and Log Analytics require separate", parts[3]["remaining"])
+        reviewed = json.loads((source / "EVIDENCE.json").read_text())["artifacts"]
+        for name in ("evidence/lovable-policy-trace-success.jpg", "evidence/langfuse-policy-tree.jpg"):
+            record = next(item for item in reviewed if item["file"] == name)
+            self.assertTrue(record["pixels_reviewed"])
+            self.assertEqual(record["evidence_class"], "provider-verified")
+            self.assertIn("OCI APM or Log Analytics delivery", record["does_not_prove"])
         self.assertIn("not live accepted", parts[5]["status"])
 
     def test_downloaded_markdown_links_resolve_in_the_public_site(self):

@@ -109,6 +109,32 @@
         "normal run screenshot",
         "complete security audit"
       ]
+    },
+    {
+      "file": "evidence/lovable-policy-trace-success.jpg",
+      "sha256": "b381d58077359589631b425e7f1121ea36bd79b2f2c8e20b945126922a824572",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual updated app policy stop: zero model calls, two-span batch and HTTP 200. Identifiers collapsed; independent exact readback completed separately.",
+      "evidence_class": "provider-verified",
+      "does_not_prove": [
+        "universal prompt injection resistance",
+        "OCI APM or Log Analytics delivery",
+        "all-persona hosted acceptance"
+      ]
+    },
+    {
+      "file": "evidence/langfuse-policy-tree.jpg",
+      "sha256": "41a24cd66124017614cba766f4dac22a197bf809489ad8a02b8facbde4c5cab6",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual independently matched policy trace: one agent root and authorization, no generations. Exact trace/session matched privately; root metadata reports approval_required and model_calls 0.",
+      "evidence_class": "provider-verified",
+      "does_not_prove": [
+        "universal prompt injection resistance",
+        "OCI APM or Log Analytics delivery",
+        "all-persona hosted acceptance"
+      ]
     }
   ]
 }

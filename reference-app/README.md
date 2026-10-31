@@ -20,13 +20,11 @@ bun install --ignore-scripts --frozen-lockfile
 bun run test
 ```
 
-The downloaded trace-panel revision passed 31 isolated tests. The reference now
-also includes locally tested, allowlisted failure diagnostics: its current suite
-passes 35 tests without real model or telemetry keys. Hosted rollout of those
-diagnostics remains pending; they do not establish the hosted failure cause. They cover change stops,
-strict schemas, scoped tools, denied rate reservations, durable provider denial,
-bounded calls, metadata filtering, missing/rejected configuration, partial export
-routing and authenticated presence-only setup checks. They do not prove live authentication, billing or trace readback.
+All 49 tests passed independently on the final downloaded source using isolated
+model/export transports. They cover server safety, tools, auth, quotas, safe
+telemetry diagnostics, no-follow redirect handling, runtime markers and trace UI.
+Live checks separately matched the normal AI trace and the zero-model policy
+trace in Langfuse; local tests alone do not prove those provider results.
 
 Running the generated app additionally needs your own supported Cloud/auth/database
 and managed native model configuration. Inspect `src/integrations`,

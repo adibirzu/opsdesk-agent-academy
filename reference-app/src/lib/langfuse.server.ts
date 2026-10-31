@@ -2,7 +2,20 @@ import { ROOT_CONTEXT, trace, SpanStatusCode, type Span, type Attributes } from 
 import { TracerProvider, type ReadableSpan, type SpanProcessor } from "@opentelemetry/sdk-trace";
 import { resourceFromAttributes } from "@opentelemetry/resources";
 import { JsonTraceSerializer } from "@opentelemetry/otlp-transformer";
-import { unconfiguredLangfuse, type LangfuseExport } from "./langfuse-contract";
+import { unconfiguredLangfuse, type LangfuseExport, type TelemetryFailureSignal, type RedirectTarget, type RedirectPath } from "./langfuse-contract";
+
+// Server-only Location classification; the raw Location value is never returned or logged.
+export function classifyRedirect(location: string | null, endpoint: URL): { redirectTarget: RedirectTarget; redirectPath: RedirectPath } {
+  if (!location) return { redirectTarget: "unavailable", redirectPath: "unavailable" };
+  let target: URL;
+  try { target = new URL(location, endpoint); } catch { return { redirectTarget: "unavailable", redirectPath: "unavailable" }; }
+  const redirectTarget: RedirectTarget = target.origin === endpoint.origin ? "same_origin"
+    : target.protocol === "https:" && !target.port && (target.hostname === "cloud.langfuse.com" || target.hostname === "us.cloud.langfuse.com") ? "langfuse_cloud" : "other_origin";
+  const path = target.pathname.toLowerCase();
+  const redirectPath: RedirectPath = path === endpoint.pathname.toLowerCase() ? "same_path" : path === "/" ? "root"
+    : /(?:^|\/)(?:sign-?in|login|auth)(?:\/|$)/.test(path) ? "sign_in" : "other";
+  return { redirectTarget, redirectPath };
+}
 
 type Config = { baseUrl?: string | undefined; publicKey?: string | undefined; secretKey?: string | undefined };
 type Usage = { inputTokens?: number | undefined; outputTokens?: number | undefined; totalTokens?: number | undefined };
@@ -37,7 +50,31 @@ function safeModel(model: string | undefined) {
 function noTelemetry(status: "not_configured" | "invalid_config"): WorkshopTelemetry {
   return { authorization() {}, generationStart() {}, generationEnd() {}, toolStart: () => () => {}, finish: async () => ({ ...unconfiguredLangfuse(), status }) };
 }
-export function createWorkshopTelemetry(config: Config, transport: typeof fetch = fetch): WorkshopTelemetry {
+// Inspect exception text only to select a fixed category; never return or log it.
+export function telemetryFailureHint(error: unknown): NonNullable<LangfuseExport["failureHint"]> {
+  const message = typeof error === "object" && error !== null && "message" in error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+  if (/abortsignal.*timeout|timeout is not a function/.test(message)) return "unsupported_timeout";
+  if (/btoa|latin1|invalid character|header/.test(message)) return "request_encoding";
+  if (/illegal invocation|invalid receiver/.test(message)) return "illegal_invocation";
+  if (/redirect/.test(message)) return "redirect";
+  if (/enotfound|eai_again|dns/.test(message)) return "dns";
+  if (/certificate|tls|ssl/.test(message)) return "tls";
+  if (/econnreset|econnrefused|connection reset|socket/.test(message)) return "connection_reset";
+  if (/not allowed|disallowed|blocked|cross.origin|cors/.test(message)) return "runtime_policy";
+  if (/failed to fetch|fetch failed|network/.test(message)) return "network_fetch";
+  return "other";
+}
+// Fixed diagnostic keywords only; the exception text itself is never returned or logged.
+export function telemetryFailureSignals(error: unknown): TelemetryFailureSignal[] {
+  const message = typeof error === "object" && error !== null && "message" in error && typeof error.message === "string" ? error.message.toLowerCase() : "";
+  const patterns: Array<[TelemetryFailureSignal, RegExp]> = [
+    ["redirect_mode", /redirect.*mode|mode.*redirect/], ["manual", /\bmanual\b/],
+    ["error_mode", /mode.*['"]?error|redirect.*['"]error['"]/], ["unsupported", /unsupported|not supported|not implemented/],
+    ["follow", /\bfollow\b/], ["limit", /too many|limit|exceeded/], ["preflight", /preflight/], ["authentication", /unauthorized|authentication|sign.?in/],
+  ];
+  return patterns.filter(([, pattern]) => pattern.test(message)).map(([name]) => name);
+}
+export function createWorkshopTelemetry(config: Config, transport: typeof fetch = (input, init) => globalThis.fetch(input, init)): WorkshopTelemetry {
   if (!config.baseUrl || !config.publicKey || !config.secretKey) return noTelemetry("not_configured");
   let endpoint: URL;
   try {
@@ -100,8 +137,8 @@ export function createWorkshopTelemetry(config: Config, transport: typeof fetch 
         generations.clear();
         root.setAttributes({ "langfuse.observation.metadata.status": ["completed", "approval_required", "rate_limited", "error", "unauthorized"].includes(status) ? status : "error", "langfuse.observation.metadata.model_calls": calls });
         root.setStatus({ code: status === "completed" || status === "approval_required" ? SpanStatusCode.OK : SpanStatusCode.ERROR }); root.end();
-        const result: LangfuseExport = { status: "failed", traceId: root.spanContext().traceId, sessionLabel, spanCount: spans.length, httpStatus: null, readback: "not_verified" };
-        let stage: "flush_error" | "serialization_error" | "transport_error" | "invalid_response" = "flush_error";
+        const result: LangfuseExport = { status: "failed", traceId: root.spanContext().traceId, sessionLabel, spanCount: spans.length, httpStatus: null, readback: "not_verified", exporterRevision: "otel-manual-v1" };
+        let stage: "flush_error" | "serialization_error" | "request_setup_error" | "transport_error" | "invalid_response" = "flush_error";
         try {
           await provider.forceFlush();
           stage = "serialization_error";
@@ -109,10 +146,20 @@ export function createWorkshopTelemetry(config: Config, transport: typeof fetch 
           if (!body) { result.failureCode = "serialization_error"; return result; }
           // Await one bounded telemetry request before returning. Never retry or log credentials/errors.
           const serializedBody = new TextDecoder().decode(body);
-          stage = "transport_error";
-          const response = await transport(endpoint, { method: "POST", redirect: "error", headers: {
+          stage = "request_setup_error";
+          const headers = {
             "Content-Type": "application/json", "Authorization": `Basic ${btoa(`${config.publicKey}:${config.secretKey}`)}`, "x-langfuse-ingestion-version": "4",
-          }, body: serializedBody, signal: AbortSignal.timeout(5000) });
+          };
+          const signal = AbortSignal.timeout(5000);
+          stage = "transport_error";
+          const response = await transport(endpoint.href, { method: "POST", redirect: "manual", headers, body: serializedBody, signal });
+          // Manual mode never follows. An opaque redirect (status 0) or any 3xx is reported, not retried.
+          if (response.type === "opaqueredirect" || (response.status >= 300 && response.status < 400)) {
+            result.httpStatus = response.status >= 300 ? response.status : null;
+            result.failureCode = "http_error"; result.failureHint = "redirect";
+            Object.assign(result, response.type === "opaqueredirect" ? { redirectTarget: "unavailable", redirectPath: "unavailable" } : classifyRedirect(response.headers.get("location"), endpoint));
+            await response.body?.cancel().catch(() => {}); return result;
+          }
           result.httpStatus = response.status;
           if (!response.ok) { result.failureCode = "http_error"; await response.body?.cancel(); return result; }
           stage = "invalid_response";
@@ -121,7 +168,11 @@ export function createWorkshopTelemetry(config: Config, transport: typeof fetch 
           result.status = Number(receipt.partialSuccess?.rejectedSpans ?? 0) > 0 || receipt.partialSuccess?.errorMessage ? "partial" : "exported";
           return result;
         } catch (error) {
-          result.failureCode ??= stage === "transport_error" && typeof error === "object" && error !== null && "name" in error && (error.name === "TimeoutError" || error.name === "AbortError") ? "timeout" : stage;
+          // Bounded name check (works for cross-realm DOMException); the error itself is never returned or logged.
+          const name = typeof error === "object" && error !== null && "name" in error ? (error as { name: unknown }).name : undefined;
+          result.failureCode ??= stage === "transport_error" && (name === "TimeoutError" || name === "AbortError") ? "timeout" : stage;
+          result.failureHint = telemetryFailureHint(error);
+          result.failureSignals = telemetryFailureSignals(error);
           return result;
         }
         finally { spans.length = 0; await provider.shutdown().catch(() => {}); }

@@ -122,7 +122,7 @@ success is not independent readback. Optional telemetry failure must not replace
 the actual model result or trigger a second model call.
 
 **Current rehearsal boundary:** the optional exporter source was downloaded and
-inspected; all 31 downloaded-app tests passed locally (including eight exporter and eight server-safety tests). The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
+inspected; all 49 final downloaded-app tests passed locally. The refreshed authenticated preview passed its presence-only readiness check. One newly authorized native run then exported successfully; independent Langfuse readback matched its exact trace and random session, all six observations and 948 tokens. Input/output content was absent from all six rows. Provider-calculated cost is not a billing receipt.
 OCI APM and Log Analytics additionally require their own scoped configuration,
 export and exact provider readback; Langfuse does not replace those checks.
 
@@ -140,6 +140,27 @@ actual answer, model/tool event counts, usage availability, policy result,
 exact trace readback, safe failure behavior and remaining gaps. A task checkbox or
 generated app is not acceptance evidence. Do not publish your notes or raw receipts
 without reviewing both text and screenshots.
+
+## Preview revision check
+
+After each completed Lovable change, select Preview on the newest change card
+before using Open preview. Current source in Code/downloads can coexist with an
+older pinned preview. Confirm the new control exists before another live test.
+This changes which revision you inspect; it does not prove provider acceptance.
+
+## Policy telemetry acceptance completed
+
+A fresh explicit-change request remained approval_required with zero model calls.
+Its two-span export returned HTTP 200. Independent Langfuse readback matched the
+exact trace and random session: root + authorization, no generation nodes, root
+metadata model_calls 0 and status approval_required. Selected screenshots are in
+[the verified policy trace section](lovable.html#verified-policy-trace).
+
+Earlier failed exports remain documented as historical evidence. The working
+transport uses a validated URL string, a receiver-preserving fetch wrapper and
+manual no-follow redirect handling. No redirect was followed and no model call
+was used for these policy checks. Unit tests separately prove a 307 response is
+not forwarded and no Location query or credential appears in the receipt.
 
 ## prompts/01-build-app.md
 

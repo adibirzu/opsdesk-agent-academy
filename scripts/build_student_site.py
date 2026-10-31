@@ -52,6 +52,8 @@ FILES = [
     "LANGFUSE-BASICS.md",
     "evidence/langfuse-timeline.jpg",
     "evidence/lovable-agent-trace-policy.jpg",
+    "evidence/lovable-policy-trace-success.jpg",
+    "evidence/langfuse-policy-tree.jpg",
     "course-doctor.py",
     "personas.html",
     "personas.json",

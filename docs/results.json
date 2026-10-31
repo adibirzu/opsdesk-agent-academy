@@ -73,11 +73,11 @@
         "Run one synthetic investigation and retain its actual trace/session identifiers privately.",
         "Find that exact trace in your own Langfuse project and check the root, authorization, actual generations and tools."
       ],
-      "expected": "Expected structure: agent root \u2192 authorization; generation 1 \u2192 tools; generation 2 \u2192 answer. Export acknowledgment and independent readback are separate results. OCI APM spans and Log Analytics events require their own configured destinations and readback.",
+      "expected": "Expected structure: agent root → authorization; generation 1 → tools; generation 2 → answer. Export acknowledgment and independent readback are separate results. OCI APM spans and Log Analytics events require their own configured destinations and readback.",
       "appearance": "Your real Langfuse project shows a trace tree and reported usage. Until configured, the app explicitly displays Langfuse not configured; no imitation dashboard is presented as evidence.",
-      "status": "Optional exporter code inspected; its eight isolated exporter tests passed locally, and missing-config UI was browser-verified. Live telemetry remains unverified.",
-      "remaining": "Needs a working learner-owned Langfuse project and exact readback. OCI APM/Log Analytics live readback is a separate acceptance gate.",
-      "image": "",
+      "status": "Native Lovable normal-run and zero-model policy traces independently verified in Langfuse by exact trace/session correlation. Final downloaded app source passes 49 isolated tests.",
+      "remaining": "Repeat configuration and exact readback in your own project. OCI APM and Log Analytics require separate export and provider acceptance; they are not proved by these Langfuse checks.",
+      "image": "evidence/langfuse-trace-tree.jpg",
       "contracts": [
         "test_trace_walkthrough.py",
         "test_langfuse_student_flow.py",
@@ -96,9 +96,9 @@
       ],
       "expected": "approval_required; model not called; model calls 0 / 3. The actual app inspector reports an explicit server block. There is no automatic approval-resume or system-changing tool.",
       "appearance": "A clear refusal beside the original ticket, with a zero-call inspector. Failures stay visible instead of being replaced with a fake answer.",
-      "status": "Explicit change-control path browser-verified; broader negative cases locally tested.",
+      "status": "Explicit change stop browser-verified with zero model calls; its exact two-observation Langfuse trace independently matched with no generations. Broader negative cases are locally tested.",
       "remaining": "This is not proof of universal prompt-injection prevention, production IAM enforcement or a complete application security audit.",
-      "image": "evidence/lovable-policy.jpg",
+      "image": "evidence/lovable-policy-trace-success.jpg",
       "contracts": [
         "test_studio_recovery.py",
         "test_learner_studio.py",
@@ -113,7 +113,7 @@
       "actions": [
         "Review OCI AI Platform options and the Private Agent Factory walkthrough; confirm the selected runtime supports your app.",
         "Prepare a deployment plan and exact resource/cost inventory before requesting deployment authority.",
-        "After an approved deployment, repeat create \u2192 select \u2192 analyze \u2192 change stop, then independently read back telemetry and test rollback."
+        "After an approved deployment, repeat create → select → analyze → change stop, then independently read back telemetry and test rollback."
       ],
       "expected": "A reviewed release packet with immutable artifact identity, permissions, secret references, health and canary results, exact telemetry readback and rollback procedure. A rendered plan alone never satisfies this gate.",
       "appearance": "A deployment checklist showing source, artifact, runtime, canary, telemetry and rollback separately. Missing cloud access remains visibly pending.",

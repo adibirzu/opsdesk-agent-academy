@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Copy, ListTree } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { AnalysisRun } from "@/lib/opsdesk-contract";
-import { langfuseStatusText, langfuseFailureText } from "@/lib/langfuse-contract";
+import { langfuseStatusText, langfuseFailureText, langfuseFailureHintText, redirectTargetText, redirectPathText, safeFailureSignals, exporterRevisionText } from "@/lib/langfuse-contract";
 import { safeCount, traceEvents, traceIdentifiers } from "@/lib/agent-trace";
 
 export function AgentTrace({ run }: { run: AnalysisRun }) {
@@ -31,7 +31,8 @@ export function AgentTrace({ run }: { run: AnalysisRun }) {
     <p className="text-xs text-muted-foreground">Successful sign-in authorization is not recorded in run.events; no authorization event is inferred.</p>
     <div className="space-y-1 border-t border-border pt-2 text-xs">
       <p className="font-medium">Langfuse exporter · {langfuseStatusText(run.langfuse.status)}</p>
-      {run.langfuse.status === "failed" && <p>Failure diagnosis: {langfuseFailureText(run.langfuse.failureCode)}. No automatic retry was made.</p>}
+      {run.langfuse.status !== "not_configured" && run.langfuse.status !== "invalid_config" && <p>Exporter revision: {exporterRevisionText(run.langfuse.exporterRevision)}</p>}
+      {run.langfuse.status === "failed" && <p>Failure diagnosis: {langfuseFailureText(run.langfuse.failureCode)}{run.langfuse.failureHint ? ` · Category: ${langfuseFailureHintText(run.langfuse.failureHint)}` : ""}{safeFailureSignals(run.langfuse.failureSignals).length ? ` · Signals: ${safeFailureSignals(run.langfuse.failureSignals).join(", ")}` : ""}{run.langfuse.failureHint === "redirect" && run.langfuse.httpStatus !== null ? ` · Redirect target: ${redirectTargetText(run.langfuse.redirectTarget)} · Redirect path: ${redirectPathText(run.langfuse.redirectPath)}` : ""}. No automatic retry was made.</p>}
       <p>Actual exported span batch: {count(run.langfuse.spanCount)} · HTTP status: {count(run.langfuse.httpStatus)}</p>
       {(run.langfuse.status === "exported" || run.langfuse.status === "partial")
         ? <p>Export acknowledged{run.langfuse.status === "partial" ? " partially" : ""}; independently open Langfuse to verify arrival.</p>
