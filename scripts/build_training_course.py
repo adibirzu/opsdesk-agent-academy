@@ -9,6 +9,15 @@ ROOT = Path(__file__).resolve().parents[1]
 COURSE = ROOT / "workshops/app-first"
 
 
+GITHUB_LINK = (
+        '<a class="github-project" href="https://github.com/adibirzu/opsdesk-agent-academy" '
+        'aria-label="GitHub project: source code, workshop instructions and downloads">'
+        '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="currentColor">'
+        '<path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.03-.7.08-.69.08-.69 1.14.08 1.73 1.17 1.73 1.17 1.01 1.73 2.64 1.23 3.29.94.1-.73.4-1.23.72-1.51-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16A10.8 10.8 0 0 1 12 6.18c.96 0 1.92.13 2.82.38 2.15-1.46 3.09-1.16 3.09-1.16.62 1.55.23 2.7.12 2.98.72.79 1.15 1.79 1.15 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.76 1.04.76 2.1v3.07c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg>'
+        '<span>Get the project <small>Code · prompts · workflows</small></span></a>'
+)
+
+
 def esc(value):
     return html.escape(str(value))
 
@@ -26,6 +35,7 @@ def shell(title, content):
         '<link rel="stylesheet" href="guide.css"><link rel="stylesheet" href="training.css">'
         '<link rel="stylesheet" href="agent-map.css">'
         '</head><body><header><a href="course.html"><strong>OpsDesk Academy</strong></a>'
+        + GITHUB_LINK +
         '<nav aria-label="Course navigation"><a href="index.html">Part 1 live guide</a> '
         '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="lovable.html">Lovable lab</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Langfuse lab</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
         f'</header><main class="page-content">{content}</main>'
@@ -482,6 +492,10 @@ def build():
         else:
             content += '<div class="check"><b>CAPSTONE REVIEW</b>Recreate the app from the definition, explain its harness, reproduce a model/tool call, verify telemetry, demonstrate a policy stop and hand over a reviewed release packet. Missing cloud access stays unverified.</div><a href="course.html">Return to the course map →</a>'
         (COURSE / name).write_text(shell(part["title"], content))
+    home = COURSE / "index.html"
+    home_html = home.read_text()
+    if 'class="github-project"' not in home_html:
+        home.write_text(home_html.replace("</header>", GITHUB_LINK + "</header>", 1))
     quick_tools = (COURSE / "tool-choices.html").read_text()
     home = (
         f'<span class="eyebrow">SIX PARTS · SIX PRACTICAL HOURS · ONE CONTINUOUS APP</span><h1>{esc(data["title"])}</h1><p class="intro">{esc(data["subtitle"])}</p><a class="action primary" href="part-1-first-app.html">Start Part 1 →</a> <a class="action" href="help.html">Check your setup</a><div class="path"><span>Visible app</span>→<span>Harness</span>→<span>Models</span>→<span>Evidence</span>→<span>Security</span>→<span>OCI</span></div><div class="course-grid">'
