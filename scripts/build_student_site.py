@@ -87,6 +87,7 @@ FILES = [
     "API-CONTRACT.md",
     "OTEL-LANGFUSE.md",
     "OCI-HOSTING.md",
+    "CLOUD-HANDOFF.md",
     "ARCHITECTURE.md",
     "REFERENCES.md",
     "PAGES.md",

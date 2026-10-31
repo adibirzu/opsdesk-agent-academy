@@ -14,7 +14,7 @@
     },
     {
       "path": "course.json",
-      "sha256": "243f5899cf1eed490a4222afa4327fa74811ef0ad6ce734420e21d495ea680ba"
+      "sha256": "88c2532e9e4152295d1e96fb2110a1c79fc8eed98567b95bb0c0d0d054a8c1cf"
     },
     {
       "path": "results.json",
@@ -86,11 +86,11 @@
     },
     {
       "path": "agent-briefs/workflow-it-starter.md",
-      "sha256": "3a666b9f1b7032dbabba82fe5bf0dcf1fd4e5049774d9f3bd3bf3351b50e4cb2"
+      "sha256": "d6cc1c51e1cbafecd40a1c50a6bf3ec2f19253bca20da0a0c8b11613d9bca987"
     },
     {
       "path": "agent-briefs/workflow-ai-engineer.md",
-      "sha256": "6474176c6f135c8c505756f348f25ff4c5c1c3307702b69a708af5b14d0d7e72"
+      "sha256": "4a51fb58b51d25b3b18e6f0594a95e2177c03d549ffb35d3596a1d25bcd58ef0"
     },
     {
       "path": "agent-briefs/part-1-first-app.md",
@@ -114,7 +114,7 @@
     },
     {
       "path": "agent-briefs/part-6-ready-for-oci.md",
-      "sha256": "aba8792fd6097671aa276a12f332f6db8addb0b7f8fb717797bbd847f42b449b"
+      "sha256": "4a43a9092cc99d76c49ed64b4d6e2975a177cd82ba4d45afea06e19e94d05d11"
     },
     {
       "path": "lesson-help.json",
@@ -122,7 +122,7 @@
     },
     {
       "path": "training.css",
-      "sha256": "5a710a644a73a50a6161973d0fb236ecdeaab4f6ab26e1e3669bc658c70cb045"
+      "sha256": "da783995d6293fcee07bdcefb2b3964e3e8d484e350d20c58457d3179a8d0b33"
     },
     {
       "path": "training.js",
@@ -150,7 +150,7 @@
     },
     {
       "path": "langfuse-basics.html",
-      "sha256": "59be260ce42c1d49fed705ab122c9718939d4f8d06e81a271d2aeea701e75025"
+      "sha256": "92e7c3be86eb5af523bfb84d261cb4334957bdcd63f86684c14871b536ebbd37"
     },
     {
       "path": "langfuse-basics.js",
@@ -238,7 +238,7 @@
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "1e5e531e9394f42c1c328799fbde98c21f4cde95a5fe97974bb510ce130046b9"
+      "sha256": "7257c79c09e3cf5cc0fefd49eb2b2123c74a486776cfcc6bd0efe748100fa85f"
     },
     {
       "path": "meet-your-agent.html",
@@ -306,7 +306,11 @@
     },
     {
       "path": "OCI-HOSTING.md",
-      "sha256": "ae0110463df57089cb049a7912f39f636a5cdf5ba205682335c71ab9e1a86c83"
+      "sha256": "cb8dbc15e12ebe11b7094d84bbf6c456a4007b7326b440a2566e0cf1bc748015"
+    },
+    {
+      "path": "CLOUD-HANDOFF.md",
+      "sha256": "6970af4305e7e77b53d8dd735ed0cfbd87505518cefd53c56900be8334a3f577"
     },
     {
       "path": "ARCHITECTURE.md",
@@ -410,7 +414,7 @@
     },
     {
       "path": "agent-briefs/persona-it-starter-part-6.md",
-      "sha256": "eea15935c461f2b66681ddce85effce0c62343823dd24fbfe75aaa583a85e6e7"
+      "sha256": "aa1356e81ee4180e64996186caabd11cbe530ae421643c484b5850273528a815"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-1.md",
@@ -434,7 +438,7 @@
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-6.md",
-      "sha256": "3bf19b5e31f1af6e5a904d719f29e48afe7e7335932175fef547cd882f8a5967"
+      "sha256": "b60ac125554b4da8da5a220232837612b8bdcbbccef4d708f726b594831d54d7"
     }
   ],
   "mode": "static-guide-no-backend",

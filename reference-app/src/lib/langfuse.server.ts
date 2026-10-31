@@ -101,21 +101,29 @@ export function createWorkshopTelemetry(config: Config, transport: typeof fetch 
         root.setAttributes({ "langfuse.observation.metadata.status": ["completed", "approval_required", "rate_limited", "error", "unauthorized"].includes(status) ? status : "error", "langfuse.observation.metadata.model_calls": calls });
         root.setStatus({ code: status === "completed" || status === "approval_required" ? SpanStatusCode.OK : SpanStatusCode.ERROR }); root.end();
         const result: LangfuseExport = { status: "failed", traceId: root.spanContext().traceId, sessionLabel, spanCount: spans.length, httpStatus: null, readback: "not_verified" };
+        let stage: "flush_error" | "serialization_error" | "transport_error" | "invalid_response" = "flush_error";
         try {
           await provider.forceFlush();
+          stage = "serialization_error";
           const body = JsonTraceSerializer.serializeRequest(spans);
-          if (!body) return result;
+          if (!body) { result.failureCode = "serialization_error"; return result; }
           // Await one bounded telemetry request before returning. Never retry or log credentials/errors.
+          const serializedBody = new TextDecoder().decode(body);
+          stage = "transport_error";
           const response = await transport(endpoint, { method: "POST", redirect: "error", headers: {
             "Content-Type": "application/json", "Authorization": `Basic ${btoa(`${config.publicKey}:${config.secretKey}`)}`, "x-langfuse-ingestion-version": "4",
-          }, body: new TextDecoder().decode(body), signal: AbortSignal.timeout(5000) });
+          }, body: serializedBody, signal: AbortSignal.timeout(5000) });
           result.httpStatus = response.status;
-          if (!response.ok) { await response.body?.cancel(); return result; }
+          if (!response.ok) { result.failureCode = "http_error"; await response.body?.cancel(); return result; }
+          stage = "invalid_response";
           const text = await response.text();
           const receipt = text ? JSON.parse(text) as { partialSuccess?: { rejectedSpans?: number | string; errorMessage?: string } } : {};
           result.status = Number(receipt.partialSuccess?.rejectedSpans ?? 0) > 0 || receipt.partialSuccess?.errorMessage ? "partial" : "exported";
           return result;
-        } catch { return result; }
+        } catch (error) {
+          result.failureCode ??= stage === "transport_error" && typeof error === "object" && error !== null && "name" in error && (error.name === "TimeoutError" || error.name === "AbortError") ? "timeout" : stage;
+          return result;
+        }
         finally { spans.length = 0; await provider.shutdown().catch(() => {}); }
       })();
       return finished;

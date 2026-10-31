@@ -63,7 +63,7 @@
             "Create a fresh synthetic ticket, find it, select it and run analysis.",
             "Check that the answer belongs to that selected ticket and repeated clicks do not create concurrent runs."
           ],
-          "check": "The real app completes ticket creation \u2192 selection \u2192 AI answer.",
+          "check": "The real app completes ticket creation → selection → AI answer.",
           "help": "If any dependency is missing, record the blocker and fix it before marking Part 1 complete.",
           "prompt": "",
           "command": ""
@@ -119,7 +119,7 @@
         },
         {
           "question": "Do I need all four builders?",
-          "answer": "No. Choose Base44, v0, Lovable or Codex. The app definition is shared; the server integration depends on the chosen platform. A coding-assistant account is separate from the app\u2019s runtime model connection.",
+          "answer": "No. Choose Base44, v0, Lovable or Codex. The app definition is shared; the server integration depends on the chosen platform. A coding-assistant account is separate from the app’s runtime model connection.",
           "link": "BUILDERS.md",
           "label": "Choose a build path"
         },
@@ -134,7 +134,7 @@
     {
       "number": 2,
       "slug": "agent-engine",
-      "title": "Upgrade your app\u2019s agent engine",
+      "title": "Upgrade your app’s agent engine",
       "tagline": "Turn the helpful assistant into a bounded program.",
       "minutes": 60,
       "needs": [
@@ -154,7 +154,7 @@
             "Run init.sh before implementation; missing agent.py is the expected starting failure."
           ],
           "check": "You can identify the model, tool and observer interfaces.",
-          "help": "The command refuses an existing folder. Choose a new path; never delete someone\u2019s work to reuse a name.",
+          "help": "The command refuses an existing folder. Choose a new path; never delete someone’s work to reuse a name.",
           "prompt": "",
           "command": "uv sync --frozen --extra studio\n.venv/bin/python scripts/create_studio_harness.py --output local/private/course-agent\nsh local/private/course-agent/init.sh"
         },
@@ -192,10 +192,10 @@
           "why": "An agent loop needs an observation before its next decision.",
           "steps": [
             "Run the fixed contracts again and preserve the real output privately.",
-            "Draw request \u2192 proposed tool \u2192 validation \u2192 result \u2192 next model call.",
+            "Draw request → proposed tool → validation → result → next model call.",
             "Explain how a step limit stops repeated tool proposals.",
             "Adapt the passing engine behind the existing app server contract; preserve session/ticket lookup and model binding.",
-            "Rerun the complete Part 1 create \u2192 select \u2192 analyze journey. Do not ship an engine that only passes isolated tests."
+            "Rerun the complete Part 1 create → select → analyze journey. Do not ship an engine that only passes isolated tests."
           ],
           "check": "The fixed contracts pass and the original app still completes a real investigation through the new engine.",
           "help": "Passing model-double tests proves the code contract, not live model compatibility.",
@@ -296,7 +296,7 @@
           "why": "Reported token usage and billing are different evidence.",
           "steps": [
             "Supply rates only when they match the returned model and have a source/date.",
-            "Calculate (input tokens \u00d7 input rate + output tokens \u00d7 output rate) / 1,000,000.",
+            "Calculate (input tokens × input rate + output tokens × output rate) / 1,000,000.",
             "If either usage or rate is unknown, label the estimate unavailable."
           ],
           "check": "A reviewer can reproduce the estimate; local GPU costs are not called zero.",
@@ -356,7 +356,7 @@
           "minutes": 15,
           "why": "Different signals answer different questions.",
           "steps": [
-            "Draw browser \u2192 app server \u2192 agent \u2192 model/tool.",
+            "Draw browser → app server → agent → model/tool.",
             "Add Langfuse for agent analysis, APM for application tracing and Log Analytics for structured log queries.",
             "Choose a trace ID field and service/run metadata; keep ticket content out by default."
           ],
@@ -479,7 +479,7 @@
             "Run the corresponding HTTP/model-double tests without contacting a provider."
           ],
           "check": "The model factory is not constructed for a change intent.",
-          "help": "A phrase in the answer saying \u201cdenied\u201d is insufficient if a prohibited handler already ran.",
+          "help": "A phrase in the answer saying “denied” is insufficient if a prohibited handler already ran.",
           "prompt": "",
           "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_desk_backend.py' -v"
         },
@@ -504,7 +504,7 @@
           "steps": [
             "Use a controlled failed tool, a model outage test and a cross-session ticket lookup test.",
             "Verify no scripted success replaces a provider failure.",
-            "Record failure \u2192 observed signal \u2192 mitigation \u2192 retest, keeping raw data private."
+            "Record failure → observed signal → mitigation → retest, keeping raw data private."
           ],
           "check": "Each case has the expected terminal outcome and no cross-session data exposure.",
           "help": "An exporter outage is a separate failure from model inference. Keep both statuses visible.",
@@ -551,7 +551,7 @@
       "tagline": "Prepare an OCI release that another operator can reproduce.",
       "minutes": 60,
       "needs": [
-        "Parts 1\u20135 artifacts and a reviewed source revision.",
+        "Parts 1–5 artifacts and a reviewed source revision.",
         "Live extension: your own scoped OCI account, supported service/region, image builder and observability destinations.",
         "For the offline hosted-SDK tests, install the pinned live extra: uv sync --frozen --extra live. This installs libraries; it does not deploy or call OCI."
       ],
@@ -568,7 +568,7 @@
           ],
           "check": "The design names the actual image entrypoint and supported request/response protocol.",
           "help": "OCI Applications configure the managed home; an active Deployment selects the image. Do not imply the local UI is already deployed.",
-          "prompt": "",
+          "prompt": "Keep our existing OpsDesk app. Read CLOUD-HANDOFF.md, OCI-HOSTING.md and API-CONTRACT.md. Fill a reviewable cloud handoff using actual evidence: what works today; what moves to OCI; the server-side adapter and authentication; separate application, policy, Langfuse, OCI APM and log acceptance; ownership, costs, retention, rollback and stop instructions. Explain each section in plain language. Use placeholders in shareable files and private references for live targets. Do not build, push, deploy, create resources, change IAM/networking, use paid inference or claim provider acceptance.",
           "command": ""
         },
         {
@@ -604,7 +604,7 @@
           "minutes": 15,
           "why": "A reproducible workshop needs more than a demo recording.",
           "steps": [
-            "Assemble source revision, dependency lock, sanitized configuration template, architecture and evidence index.",
+            "Fill CLOUD-HANDOFF.md with the actual source, adapter, identity, evidence and owner decisions.",
             "Write stop/cleanup instructions, retention owner and rollback triggers.",
             "Optionally plan a GCP Cloud Run adapter using deploy/gcp; label it an extension, not equivalent OCI acceptance."
           ],

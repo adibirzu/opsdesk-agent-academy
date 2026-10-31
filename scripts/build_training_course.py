@@ -427,6 +427,8 @@ def build():
         needs = "".join(f"<li>{esc(n)}</li>" for n in part["needs"])
         content = f'<span class="eyebrow">PART {part["number"]} OF 6 · ONE HOUR</span><h1>{esc(part["title"])}</h1><p class="intro">{esc(part["tagline"])}</p><div class="check"><b>YOUR DELIVERABLE</b>{esc(part["deliverable"])}</div><details data-technical-only hidden><summary>Common technical prerequisites</summary><ul>{needs}</ul><p>Use the repository checkout for commands. The static Pages site is a guide, not a terminal or model runtime. Every command below is explicit; the page runs none of them.</p></details>'
         content += f'<div class="check"><b>EXTEND THE SAME APP</b><p><strong>Start with:</strong> {esc(part["starting_state"])}</p><p><strong>Add now:</strong> {esc(part["new_capability"])}</p><a class="action" href="{brief_name}" download>Download Part {part["number"]} agent instructions (.md)</a></div>'
+        if part["number"] == 6:
+            content += (COURSE / "cloud-handoff-content.html").read_text()
         content += persona_panel(profiles, part)
         if part["number"] == 2:
             content += graph

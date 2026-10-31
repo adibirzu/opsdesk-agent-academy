@@ -67,3 +67,6 @@ Official references, checked 2026-10-31:
 - [Hosted deployment activation](https://docs.oracle.com/en-us/iaas/Content/generative-ai/deployments.htm)
 - [Invocation and authentication modes](https://docs.oracle.com/en-us/iaas/Content/generative-ai/use-applications.htm)
 - [Responses versus hosted approaches](https://docs.oracle.com/en-us/iaas/Content/generative-ai/agents.htm)
+
+Use [the cloud handoff template](CLOUD-HANDOFF.md) to turn this walkthrough into
+a concrete review packet. The Part 6 browser/business path needs no terminal.

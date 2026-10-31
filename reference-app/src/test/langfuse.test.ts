@@ -98,3 +98,22 @@ describe("Optional Langfuse metadata-only export", () => {
     expect(presentationText("Contact learner@example.test at https://private.example.test/path")).toBe("Contact [email hidden] at [URL hidden]");
   });
 });
+describe("Sanitized telemetry failure diagnosis", () => {
+  const config = { baseUrl: "https://traces.example.test", publicKey: "isolated-public", secretKey: "isolated-secret" };
+  it.each([
+    ["timeout", async () => { throw new DOMException("private endpoint and credential details", "TimeoutError"); }],
+    ["transport_error", async () => { throw new TypeError("private endpoint and credential details"); }],
+    ["http_error", async () => new Response("private upstream error", { status: 403 })],
+    ["invalid_response", async () => new Response("private malformed response", { status: 200 })],
+  ] as const)("classifies %s without exposing diagnostic values or retrying", async (expected, transport) => {
+    const send = vi.fn(transport);
+    const telemetry = createWorkshopTelemetry(config, send);
+    telemetry.authorization(true);
+    const result = await telemetry.finish("approval_required", 0);
+    expect(result.status).toBe("failed");
+    expect(result.failureCode).toBe(expected);
+    expect(result.readback).toBe("not_verified");
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(JSON.stringify(result)).not.toMatch(/private|traces.example|isolated-/);
+  });
+});

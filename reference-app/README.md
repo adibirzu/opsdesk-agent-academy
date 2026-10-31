@@ -20,8 +20,10 @@ bun install --ignore-scripts --frozen-lockfile
 bun run test
 ```
 
-All 31 tests passed on the downloaded source using isolated model/export
-transports, without real model or telemetry keys. They cover change stops,
+The downloaded trace-panel revision passed 31 isolated tests. The reference now
+also includes locally tested, allowlisted failure diagnostics: its current suite
+passes 35 tests without real model or telemetry keys. Hosted rollout of those
+diagnostics remains pending; they do not establish the hosted failure cause. They cover change stops,
 strict schemas, scoped tools, denied rate reservations, durable provider denial,
 bounded calls, metadata filtering, missing/rejected configuration, partial export
 routing and authenticated presence-only setup checks. They do not prove live authentication, billing or trace readback.

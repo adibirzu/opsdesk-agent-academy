@@ -38,6 +38,10 @@ A container and an API contract must agree.
 2. Compare the local native-tool/SSE API with the hosted coordinator /run contract.
 3. Define the app-server adapter, identity and network path.
 
+Implementation/review request:
+
+Keep our existing OpsDesk app. Read CLOUD-HANDOFF.md, OCI-HOSTING.md and API-CONTRACT.md. Fill a reviewable cloud handoff using actual evidence: what works today; what moves to OCI; the server-side adapter and authentication; separate application, policy, Langfuse, OCI APM and log acceptance; ownership, costs, retention, rollback and stop instructions. Explain each section in plain language. Use placeholders in shareable files and private references for live targets. Do not build, push, deploy, create resources, change IAM/networking, use paid inference or claim provider acceptance.
+
 **Expected result:** The design names the actual image entrypoint and supported request/response protocol.
 
 **If blocked:** OCI Applications configure the managed home; an active Deployment selects the image. Do not imply the local UI is already deployed.
@@ -81,7 +85,7 @@ PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_hosted_re
 
 A reproducible workshop needs more than a demo recording.
 
-1. Assemble source revision, dependency lock, sanitized configuration template, architecture and evidence index.
+1. Fill CLOUD-HANDOFF.md with the actual source, adapter, identity, evidence and owner decisions.
 2. Write stop/cleanup instructions, retention owner and rollback triggers.
 3. Optionally plan a GCP Cloud Run adapter using deploy/gcp; label it an extension, not equivalent OCI acceptance.
 
