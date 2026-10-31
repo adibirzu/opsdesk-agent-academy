@@ -1,0 +1,11 @@
+/* Static product sketch only. No network, browser storage or fake AI results. */
+(()=>{
+ const tickets=[{id:'TRAIN-101',title:'Payments are slow',description:'Synthetic checkout latency increased after a release. The cause is unknown.',service:'payments',priority:'P1'},{id:'TRAIN-102',title:'Catalog response errors',description:'Invented intermittent errors need investigation.',service:'catalog',priority:'P2'},{id:'TRAIN-103',title:'Checkout health check',description:'Review a synthetic service health report.',service:'checkout',priority:'P3'}];
+ let selected=tickets[0], counter=0;
+ const $=id=>document.getElementById(id);
+ function show(t){selected=t;$('title').textContent=t.title;$('detail').textContent=t.description;$('meta').textContent=t.id+' · '+t.service+' · '+t.priority;$('answer').textContent='AI is not connected yet. No model call or trace exists.';render();}
+ function render(){const q=$('search').value.trim().toLowerCase(),p=$('priority').value;const rows=tickets.filter(t=>(!p||t.priority===p)&&(t.title+' '+t.service).toLowerCase().includes(q));$('tickets').replaceChildren();for(const t of rows){const b=document.createElement('button');b.className='ticket-choice';b.textContent=t.id+' · '+t.title;b.setAttribute('aria-pressed',String(t===selected));b.onclick=()=>show(t);$('tickets').append(b);}if(!rows.length)$('tickets').textContent='No matching tickets. Clear the filters to see all tickets.';}
+ $('search').oninput=render;$('priority').onchange=render;
+ $('analyze').onclick=()=>{$('answer').textContent='Backend connection required: continue to Connect the investigator. This static preview cannot call your model or export a trace.';};
+ $('create').onsubmit=e=>{e.preventDefault();if(tickets.length>=50){$('created').textContent='Preview limit: 50 tickets. Reload to reset.';return;}const f=new FormData(e.target),title=String(f.get('title')).trim(),description=String(f.get('description')).trim();if(!title||!description)return;const t={id:'LOCAL-'+ ++counter,title,description,service:f.get('service'),priority:f.get('priority')};tickets.push(t);$('search').value='';$('priority').value='';show(t);e.target.reset();$('created').textContent='Created '+t.id+' in this tab only.';};show(selected);
+})();

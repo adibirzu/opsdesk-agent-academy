@@ -1,0 +1,9 @@
+# Merge this table into your own private Studio config. Replace the host first.
+[telemetry]
+enabled = true
+capture_content = false
+service_name = "opsdesk-agent"
+langfuse_endpoint = "https://YOUR_LANGFUSE_HOST"
+allowed_hosts = ["YOUR_LANGFUSE_HOST"]
+langfuse_public_key_env = "LANGFUSE_PUBLIC_KEY"
+langfuse_secret_key_env = "LANGFUSE_SECRET_KEY"

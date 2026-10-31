@@ -1,0 +1,118 @@
+{
+  "title": "One chat turn: model proposes, harness executes",
+  "evidence_label": "Design + source mapping \u00b7 provider acceptance remains a separate check",
+  "nodes": [
+    {
+      "id": "browser",
+      "label": "Browser chat\nText and selected alias",
+      "kind": "compute",
+      "x": 60,
+      "y": 150
+    },
+    {
+      "id": "harness",
+      "label": "Local harness\nSession, policy, budgets",
+      "kind": "security",
+      "x": 390,
+      "y": 150
+    },
+    {
+      "id": "llm",
+      "label": "Participant LLM\nReal streamed replies",
+      "kind": "compute",
+      "x": 720,
+      "y": 150
+    },
+    {
+      "id": "validator",
+      "label": "Tool validator\nAllowlist + JSON schema",
+      "kind": "security",
+      "x": 1050,
+      "y": 150
+    },
+    {
+      "id": "handlers",
+      "label": "Read-only handlers\nSynthetic training data",
+      "kind": "compute",
+      "x": 1050,
+      "y": 420
+    },
+    {
+      "id": "observer",
+      "label": "Metadata Observer\nNo prompts or keys",
+      "kind": "observability",
+      "x": 390,
+      "y": 420
+    },
+    {
+      "id": "files",
+      "label": "Private evidence\nEvents + receipts",
+      "kind": "storage",
+      "x": 60,
+      "y": 420
+    },
+    {
+      "id": "langfuse",
+      "label": "Optional Langfuse\nOwn project + readback",
+      "kind": "observability",
+      "x": 720,
+      "y": 420
+    }
+  ],
+  "edges": [
+    {
+      "from": "browser",
+      "to": "harness",
+      "label": "request",
+      "type": "data"
+    },
+    {
+      "from": "harness",
+      "to": "llm",
+      "label": "bounded call",
+      "type": "control"
+    },
+    {
+      "from": "llm",
+      "to": "validator",
+      "label": "tool proposal",
+      "type": "data"
+    },
+    {
+      "from": "validator",
+      "to": "handlers",
+      "label": "validated only",
+      "type": "control"
+    },
+    {
+      "from": "handlers",
+      "to": "llm",
+      "label": "tool observation",
+      "type": "response"
+    },
+    {
+      "from": "harness",
+      "to": "observer",
+      "label": "trace context",
+      "type": "telemetry"
+    },
+    {
+      "from": "validator",
+      "to": "observer",
+      "label": "tool decisions",
+      "type": "telemetry"
+    },
+    {
+      "from": "observer",
+      "to": "files",
+      "label": "local records",
+      "type": "telemetry"
+    },
+    {
+      "from": "observer",
+      "to": "langfuse",
+      "label": "explicit export",
+      "type": "telemetry"
+    }
+  ]
+}

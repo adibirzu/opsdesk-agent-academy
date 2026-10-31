@@ -1,0 +1,574 @@
+{
+  "personas": [
+    {
+      "id": "business",
+      "title": "Business leaders & first-time builders",
+      "audience": "No IT knowledge / C-level",
+      "style": "Browser-first. Describe the outcome, use a builder and validate the result in plain language.",
+      "needs": "An owned builder account, available build credits and an explicitly selected app AI/backend option. No terminal is required for this route.",
+      "flows": [
+        {
+          "part": 1,
+          "goal": "A functional incident inbox and one real AI investigation.",
+          "steps": [
+            "Describe the operator and payments incident in one sentence; choose one builder and confirm available credits.",
+            "Paste the app definition. Click create, search, filter and select; ask the builder to fix one actual usability issue.",
+            "Use an explicitly selected managed AI option or a supported private server integration. Add keys only through its server-side secret UI, never the project chat.",
+            "Click Analyze safely on the selected ticket. Require a real answer with actual evidence, then verify loading and failure messages."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 1: A functional incident inbox and one real AI investigation. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Create, search, filter and select an invented ticket in the actual app.",
+            "Analyze the selected ticket using a real configured model and at least one permitted tool; display the actual answer.",
+            "Show loading, busy and failure states without fake AI success, browser keys or automatic retries.",
+            "Restart the app using documented commands and reproduce the core journey. Persistence beyond the documented memory lifetime is not required."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/introduction/getting-started",
+              "title": "Lovable quick start",
+              "why": "Understand the prompt \u2192 preview loop and build-credit prerequisites."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 2,
+          "goal": "A learner-owned tool registry and bounded agent engine behind the existing app.",
+          "steps": [
+            "Keep the working inbox. Write the agent\u2019s allowed job: read health and release clues; do not apply changes.",
+            "Ask the builder to implement those rules in server code with a narrow tool list and limits.",
+            "Try one permitted question, one change request and one unavailable capability using synthetic data.",
+            "Compare the UI result with the actual action log. A refusal paragraph alone is insufficient."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 2: A learner-owned tool registry and bounded agent engine behind the existing app. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Existing inbox and analysis still work after the engine change.",
+            "The fixed harness contracts pass; an unknown tool and invalid arguments cannot execute handlers."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/integrations/introduction",
+              "title": "Lovable connector types",
+              "why": "Distinguish chat context from capabilities available to the running app."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 3,
+          "goal": "Model selection, capability checks and transparent token/cost reporting.",
+          "steps": [
+            "Keep the same app. Choose only explicitly supported models in your own backend/provider settings.",
+            "Ask the builder to add a model selector backed by a server-owned allowlist; never a free-text endpoint field.",
+            "Run the same synthetic investigation once per available model and compare correctness, time and reported usage.",
+            "Display estimated cost only with matching sourced rates. Leave missing values unknown."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 3: Model selection, capability checks and transparent token/cost reporting. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Switch only among explicitly configured model aliases; preserve the same ticket workflow.",
+            "Display actual reported usage and sourced estimated cost, or unknown when missing."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+              "title": "OpenTelemetry trace concepts",
+              "why": "Understand parent/child spans and causal correlation."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 4,
+          "goal": "Correlated OTel spans, Langfuse readback and an OCI app/log integration path.",
+          "steps": [
+            "Create your own hosted Langfuse project or use your own existing installation. Keep its project keys private.",
+            "Give the builder the instrumentation prompt. Store project keys in server secrets and disable content capture.",
+            "Run one synthetic ticket action and find its actual trace ID in your own Langfuse project.",
+            "Explain local recording, delivery and readback in plain language. APM/log integration is an optional separate setup."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 4: Correlated OTel spans, Langfuse readback and an OCI app/log integration path. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Show actual generation/tool spans and an exact Langfuse trace readback in the configured project.",
+            "Keep existing app features working; treat APM/log delivery as separate acceptance."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://langfuse.com/integrations/native/opentelemetry",
+              "title": "Langfuse OTel integration",
+              "why": "Check endpoint/auth conventions and ingestion-version behavior."
+            },
+            {
+              "url": "langfuse.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 5,
+          "goal": "Focused policy, ownership, injection and failure regression coverage.",
+          "steps": [
+            "Review the allowed actions in plain language and ask which are enforced by code.",
+            "Run the explicit change-request control; require zero model generations for that branch.",
+            "Use the synthetic malicious-runbook case and a controlled failed request. Check the actual outcome, not just the wording.",
+            "Ask the builder to document remaining gaps such as production identity and PII filtering; do not claim they already exist."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 5: Focused policy, ownership, injection and failure regression coverage. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Prove policy stop before model construction, cross-session isolation and explicit dependency failure.",
+            "Rerun prior app/model/trace checks after each mitigation."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+              "title": "OWASP prompt injection",
+              "why": "Understand why instruction guidance alone cannot enforce permissions."
+            },
+            {
+              "url": "GUARDRAILS.md",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 6,
+          "goal": "A reviewed hosting adapter, release packet and optional authorized OCI deployment.",
+          "steps": [
+            "Keep the app baseline and ask the coding assistant for a hosting handoff packet.",
+            "Review who can access it, which identity it uses, how costs are monitored and who owns rollback.",
+            "Use only a separately authorized prepared OCI target for a live walkthrough; otherwise label the handoff design-only.",
+            "Explain the actual app result and available trace evidence. Leave hosted acceptance pending when you cannot invoke the target."
+          ],
+          "command": "",
+          "prompt": "Extend our existing OpsDesk app for Part 6: A reviewed hosting adapter, release packet and optional authorized OCI deployment. Follow this No IT knowledge / C-level learner route. Explain the next action in plain language and use the builder UI; do not require me to run terminal commands. Implement backend checks in code, not just in a prompt. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Validate the local release and adapter contract without losing prior features.",
+            "Live deployment completion additionally requires authenticated hosted invocation and independent telemetry readback; otherwise mark deployment pending."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/applications-deployments.htm",
+              "title": "OCI applications and deployments",
+              "why": "Understand runtime configuration versus an active deployment image."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        }
+      ],
+      "glossary": {
+        "Backend": "The private part of the app that calls AI and runs approved lookups; your builder can generate it.",
+        "Tool evidence": "Information returned by an actual permitted lookup, not a model\u2019s guess.",
+        "Guardrail": "A rule enforced by the app before an action can run."
+      }
+    },
+    {
+      "id": "it-starter",
+      "title": "IT practitioners \u00b7 AI starter",
+      "audience": "IT with basic AI knowledge",
+      "style": "Guided implementation. Configure the runtime, follow annotated contracts and inspect real evidence.",
+      "needs": "Repository checkout, Python 3.12+, uv and one working tool-capable model. Follow the home setup guide.",
+      "flows": [
+        {
+          "part": 1,
+          "goal": "A functional incident inbox and one real AI investigation.",
+          "steps": [
+            "Follow Run it at home and run course_doctor.py --part 1. Confirm the exact model alias before the timed hour.",
+            "Build the inbox using your selected builder or Codex; verify all ticket interactions.",
+            "Configure the private model TOML and same-origin server action using the API contract.",
+            "Run create \u2192 select \u2192 Analyze safely in the actual app; inspect tool evidence and preserve an honest failure."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 1",
+          "prompt": "Extend our existing OpsDesk app for Part 1: A functional incident inbox and one real AI investigation. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Create, search, filter and select an invented ticket in the actual app.",
+            "Analyze the selected ticket using a real configured model and at least one permitted tool; display the actual answer.",
+            "Show loading, busy and failure states without fake AI success, browser keys or automatic retries.",
+            "Restart the app using documented commands and reproduce the core journey. Persistence beyond the documented memory lifetime is not required."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/introduction/getting-started",
+              "title": "Lovable quick start",
+              "why": "Understand the prompt \u2192 preview loop and build-credit prerequisites."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 2,
+          "goal": "A learner-owned tool registry and bounded agent engine behind the existing app.",
+          "steps": [
+            "Save the working app baseline. Scaffold a new engine folder beside it, not over it.",
+            "Read the model/tool/observer contracts and ask Codex to implement the bounded loop without changing tests.",
+            "Run the fixed contracts; inspect unknown-tool and invalid-argument cases.",
+            "Adapt the passing engine behind the existing server contract and rerun the full app journey."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 2",
+          "prompt": "Extend our existing OpsDesk app for Part 2: A learner-owned tool registry and bounded agent engine behind the existing app. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Existing inbox and analysis still work after the engine change.",
+            "The fixed harness contracts pass; an unknown tool and invalid arguments cannot execute handlers."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/integrations/introduction",
+              "title": "Lovable connector types",
+              "why": "Distinguish chat context from capabilities available to the running app."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 3,
+          "goal": "Model selection, capability checks and transparent token/cost reporting.",
+          "steps": [
+            "Add a second explicit model alias if available; keep provider keys server-side.",
+            "Use the same task, step budget and tool permissions for each configured model.",
+            "Inspect actual reported input/output usage and elapsed time.",
+            "Add UI usage/cost display with an unknown state; record the matching rate source and date."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 3",
+          "prompt": "Extend our existing OpsDesk app for Part 3: Model selection, capability checks and transparent token/cost reporting. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Switch only among explicitly configured model aliases; preserve the same ticket workflow.",
+            "Display actual reported usage and sourced estimated cost, or unknown when missing."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+              "title": "OpenTelemetry trace concepts",
+              "why": "Understand parent/child spans and causal correlation."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 4,
+          "goal": "Correlated OTel spans, Langfuse readback and an OCI app/log integration path.",
+          "steps": [
+            "Follow the Langfuse lab, select your own project and keep metadata-only capture.",
+            "Reuse the existing Observer rather than double-instrumenting the call.",
+            "Run one bounded task, then query its exact trace/session and expected observations.",
+            "Record separate local/delivery/readback results; do not rerun paid inference to fix export."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 4",
+          "prompt": "Extend our existing OpsDesk app for Part 4: Correlated OTel spans, Langfuse readback and an OCI app/log integration path. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Show actual generation/tool spans and an exact Langfuse trace readback in the configured project.",
+            "Keep existing app features working; treat APM/log delivery as separate acceptance."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://langfuse.com/integrations/native/opentelemetry",
+              "title": "Langfuse OTel integration",
+              "why": "Check endpoint/auth conventions and ingestion-version behavior."
+            },
+            {
+              "url": "langfuse.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 5,
+          "goal": "Focused policy, ownership, injection and failure regression coverage.",
+          "steps": [
+            "Use the guardrail map to connect each requirement to its enforcing code.",
+            "Run the isolated session/policy/tool regression tests.",
+            "Test recovery from a failed model/tool request and verify no cross-session ticket leakage.",
+            "Keep the app journey passing; document unimplemented production controls separately."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 5",
+          "prompt": "Extend our existing OpsDesk app for Part 5: Focused policy, ownership, injection and failure regression coverage. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Prove policy stop before model construction, cross-session isolation and explicit dependency failure.",
+            "Rerun prior app/model/trace checks after each mitigation."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+              "title": "OWASP prompt injection",
+              "why": "Understand why instruction guidance alone cannot enforce permissions."
+            },
+            {
+              "url": "GUARDRAILS.md",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 6,
+          "goal": "A reviewed hosting adapter, release packet and optional authorized OCI deployment.",
+          "steps": [
+            "Install the frozen live extra for hosted SDK tests, then run the local prerequisite checker.",
+            "Compare local and hosted protocols and prepare the adapter/authentication design.",
+            "Validate the release packet, image provenance, scan gate and rollback plan.",
+            "Only on an approved target, invoke one synthetic task and verify exact telemetry; otherwise retain pending cloud acceptance."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 6",
+          "prompt": "Extend our existing OpsDesk app for Part 6: A reviewed hosting adapter, release packet and optional authorized OCI deployment. Follow this IT with basic AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Validate the local release and adapter contract without losing prior features.",
+            "Live deployment completion additionally requires authenticated hosted invocation and independent telemetry readback; otherwise mark deployment pending."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/applications-deployments.htm",
+              "title": "OCI applications and deployments",
+              "why": "Understand runtime configuration versus an active deployment image."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        }
+      ],
+      "glossary": {
+        "Tool schema": "A contract for the exact arguments a model may send to a registered function.",
+        "Session vs trace": "A conversation context versus the record of one action. Neither is automatically enterprise login.",
+        "Server secret": "A value used by the backend, never embedded in browser code or a chat prompt."
+      }
+    },
+    {
+      "id": "ai-engineer",
+      "title": "AI engineers & architects",
+      "audience": "IT with AI knowledge",
+      "style": "Implementation-first. Own the contracts, evaluate boundaries and verify the release.",
+      "needs": "The starter toolchain plus confidence reading Python/HTTP/OTel. Cloud resources still require separate scoped authority.",
+      "flows": [
+        {
+          "part": 1,
+          "goal": "A functional incident inbox and one real AI investigation.",
+          "steps": [
+            "Freeze the API and session/ticket ownership contracts before UI integration.",
+            "Implement the product shell and strict same-origin JSON action against an injected model boundary.",
+            "Verify native tool streaming with an explicit model alias and bounded steps/output.",
+            "Run the whole UI journey, inspect sanitized receipts and establish a reproducible baseline."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 1",
+          "prompt": "Extend our existing OpsDesk app for Part 1: A functional incident inbox and one real AI investigation. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Create, search, filter and select an invented ticket in the actual app.",
+            "Analyze the selected ticket using a real configured model and at least one permitted tool; display the actual answer.",
+            "Show loading, busy and failure states without fake AI success, browser keys or automatic retries.",
+            "Restart the app using documented commands and reproduce the core journey. Persistence beyond the documented memory lifetime is not required."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/introduction/getting-started",
+              "title": "Lovable quick start",
+              "why": "Understand the prompt \u2192 preview loop and build-credit prerequisites."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 2,
+          "goal": "A learner-owned tool registry and bounded agent engine behind the existing app.",
+          "steps": [
+            "Factor the engine behind an injected model/tools/observer interface while preserving the app contract.",
+            "Implement deterministic authorization, schema validation, bounded observation history and terminal outcomes.",
+            "Exercise unknown/duplicate arguments, handler failure, usage exhaustion and disconnect cleanup with model doubles.",
+            "Swap the reviewed engine into the app and rerun real model and UI acceptance separately from unit contracts."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 2",
+          "prompt": "Extend our existing OpsDesk app for Part 2: A learner-owned tool registry and bounded agent engine behind the existing app. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Existing inbox and analysis still work after the engine change.",
+            "The fixed harness contracts pass; an unknown tool and invalid arguments cannot execute handlers."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.lovable.dev/integrations/introduction",
+              "title": "Lovable connector types",
+              "why": "Distinguish chat context from capabilities available to the running app."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 3,
+          "goal": "Model selection, capability checks and transparent token/cost reporting.",
+          "steps": [
+            "Define a model capability matrix and server-selected alias allowlist; no implicit fallback.",
+            "Compare the same dataset/task across configured models with repeatable budgets.",
+            "Validate partial/missing usage and returned-model/rate binding; keep estimates distinct from invoices.",
+            "Instrument latency/error/usage and evaluate groundedness with an explicit rubric rather than a single success sample."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 3",
+          "prompt": "Extend our existing OpsDesk app for Part 3: Model selection, capability checks and transparent token/cost reporting. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Switch only among explicitly configured model aliases; preserve the same ticket workflow.",
+            "Display actual reported usage and sourced estimated cost, or unknown when missing."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+              "title": "OpenTelemetry trace concepts",
+              "why": "Understand parent/child spans and causal correlation."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 4,
+          "goal": "Correlated OTel spans, Langfuse readback and an OCI app/log integration path.",
+          "steps": [
+            "Map causal context from app action through agent, generation and tool spans; avoid duplicate exporters.",
+            "Bind explicit destination/key references, metadata-only attributes and privacy boundaries.",
+            "Verify exact Langfuse trace/session/observations independently of flush success.",
+            "For OCI integration, discover actual log fields and verify APM/log destinations separately with correlated identifiers."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 4",
+          "prompt": "Extend our existing OpsDesk app for Part 4: Correlated OTel spans, Langfuse readback and an OCI app/log integration path. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Show actual generation/tool spans and an exact Langfuse trace readback in the configured project.",
+            "Keep existing app features working; treat APM/log delivery as separate acceptance."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://langfuse.com/integrations/native/opentelemetry",
+              "title": "Langfuse OTel integration",
+              "why": "Check endpoint/auth conventions and ingestion-version behavior."
+            },
+            {
+              "url": "langfuse.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 5,
+          "goal": "Focused policy, ownership, injection and failure regression coverage.",
+          "steps": [
+            "Write a narrow threat model covering untrusted input, tool proposals, session scope, retrieval and output.",
+            "Add code-enforced negative tests and inspect trace-grounded outcomes for each boundary.",
+            "Design missing streaming-aware output/DLP and user-bound approval controls before privileged capability expansion.",
+            "Preserve failures, regressions and rollback evidence; do not generalize one injection case into immunity."
+          ],
+          "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_studio_recovery.py' -v",
+          "prompt": "Extend our existing OpsDesk app for Part 5: Focused policy, ownership, injection and failure regression coverage. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Prove policy stop before model construction, cross-session isolation and explicit dependency failure.",
+            "Rerun prior app/model/trace checks after each mitigation."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+              "title": "OWASP prompt injection",
+              "why": "Understand why instruction guidance alone cannot enforce permissions."
+            },
+            {
+              "url": "GUARDRAILS.md",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        },
+        {
+          "part": 6,
+          "goal": "A reviewed hosting adapter, release packet and optional authorized OCI deployment.",
+          "steps": [
+            "Reconcile image entrypoint, API adapter, identity and network contracts for the hosted runtime.",
+            "Prepare the exact IAM/resource/secret-reference plan, scan gates, native build binding and rollback artifact.",
+            "On an approved scope, perform authenticated invocation and separate app/model/telemetry acceptance.",
+            "Hand over source/config provenance, cost/retention ownership and exact cleanup inventory; do not mutate shared targets from a generic exercise."
+          ],
+          "command": ".venv/bin/python scripts/course_doctor.py --part 6",
+          "prompt": "Extend our existing OpsDesk app for Part 6: A reviewed hosting adapter, release packet and optional authorized OCI deployment. Follow this IT with AI knowledge learner route. Preserve the working app and inspect existing contracts before changes. Use synthetic data and my explicitly selected backend. Never invent a successful answer, usage or trace. Keep keys in server secrets. Do not publish, buy credits, activate cloud services or change permissions without specific authority. Complete the route actions, verify actual results and report blockers honestly.",
+          "finish": [
+            "Validate the local release and adapter contract without losing prior features.",
+            "Live deployment completion additionally requires authenticated hosted invocation and independent telemetry readback; otherwise mark deployment pending."
+          ],
+          "help": "If access, credentials or native model support are missing, preserve the working app and mark that acceptance checkpoint blocked. A local model-double test or static preview is not a real app/model/provider result.",
+          "deeper": [
+            {
+              "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/applications-deployments.htm",
+              "title": "OCI applications and deployments",
+              "why": "Understand runtime configuration versus an active deployment image."
+            },
+            {
+              "url": "replicate.html",
+              "title": "Course implementation reference",
+              "why": "Use the detailed setup, contracts and troubleshooting when you need the technical layer."
+            }
+          ]
+        }
+      ],
+      "glossary": {
+        "Capability boundary": "Code-owned tool registration plus argument/identity checks at execution.",
+        "Evidence lineage": "The actual request, model/tool observations and independently read-back identifiers.",
+        "Approval boundary": "A user-bound, reauthorized action; a terminal refusal is not an implemented resume protocol."
+      }
+    }
+  ]
+}

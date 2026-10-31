@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'">
+  <title>Inside AI Agents · Workshop console</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/workshop.css">
+  <script src="/assets/workshop.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workbench">Skip to workbench</a>
+  <header class="site-header">
+    <div class="brand-lockup"><span class="brand-mark" aria-hidden="true"></span><span>Inside AI Agents</span></div>
+    <p class="context-line">See how an AI agent works, what it can access, and where its activity is recorded.</p>
+    <span class="env-badge"><span class="status-dot"></span> workshop / synthetic</span>
+  </header>
+
+  <main id="workbench" class="workbench">
+    <section class="brief" aria-labelledby="page-title">
+
+      <h1 id="page-title">Follow an AI agent at work.</h1>
+      <p class="lede">Start with the sample incident. Watch the agent investigate, see its answer, then use the trace ID to find the same run in your monitoring tools.</p>
+      <ol class="quick-start" aria-label="How to use this demo"><li>Add your access code</li><li>Run the sample investigation</li><li>Review the answer and trace</li></ol>
+      <div class="principles" aria-label="Console principles">
+        <span>synthetic tools</span><span>no automatic remediation</span><span>evidence stays explicit</span>
+      </div>
+    </section>
+
+    <section class="panel request-panel" aria-labelledby="request-title">
+      <div class="panel-heading"><div><h2 id="request-title">Start the demo</h2></div></div>
+      <form id="run-form" novalidate>
+        <div class="access-setup">
+          <div class="field-group token-field">
+            <label for="token">Workshop access code <span class="required">required to run</span></label>
+            <p id="access-help" class="field-help">Use the code from your presenter. Running your own installation? Use the service token you created during setup. This is not a Langfuse or OCI key.</p>
+            <div class="token-wrap"><input id="token" data-testid="token" type="password" autocomplete="off" spellcheck="false" aria-describedby="access-help access-state form-message" placeholder="Paste your workshop access code"><button id="forget-token" class="text-button" type="button" hidden>Clear access code</button></div>
+            <p id="access-state" class="field-help access-state" role="status">Waiting for your access code. It stays in this tab and is cleared when you reload.</p>
+          </div>
+        <div id="form-message" class="form-message" role="alert" hidden></div>
+        </div>
+        <div class="field-group">
+          <label for="session-id">Session label <span class="required">required</span></label>
+          <input id="session-id" data-testid="session-id" name="session_id" autocomplete="off" value="workshop-session-01" maxlength="128" pattern="[A-Za-z0-9_.:\-]{1,128}" required>
+          <p class="field-help">Groups your runs in the monitoring tools. Keep this label to compare investigations. Use letters, numbers, dots, underscores, colons or hyphens.</p>
+        </div>
+        <div class="field-group role-field">
+          <label for="agent-role">Agent role <span class="required">optional</span></label>
+          <select id="agent-role" data-testid="agent-role" name="agent_role">
+            <option value="coordinator" selected>Coordinator · routes the investigation</option>
+            <option value="log_analyst">Log analyst · reads synthetic log evidence</option>
+            <option value="trace_analyst">Trace analyst · follows synthetic spans</option>
+            <option value="security_analyst">Security analyst · checks control boundaries</option>
+          </select>
+          <p class="field-help">Leave Coordinator selected to let it choose a specialist. Each specialist can use only its allowed, read-only demo tools.</p>
+        </div>
+        <div class="field-group prompt-field">
+          <label for="prompt">Incident to investigate <span class="required">required</span></label>
+          <textarea id="prompt" data-testid="prompt" name="prompt" rows="6" maxlength="16000" required>Investigate elevated latency in the worker service. Check service health and search for timeout evidence. Summarize what is known and what remains unverified.</textarea>
+          <div class="field-footer"><p class="field-help">The sample uses simulated service data. You can edit it or run it as it is.</p><span id="prompt-count" class="char-count">0 / 16,000</span></div>
+        </div>
+        <div class="action-row">
+          <button class="button button-primary" data-testid="investigate" type="submit" data-operation="investigate"><span>Run investigation</span><span aria-hidden="true">↗</span></button>
+          <button class="button button-secondary" data-testid="remediate" type="button" data-operation="remediate">Try a blocked action</button>
+          <button class="button button-quiet" data-testid="fail-tool" type="button" data-fail-tool="true">Try a tool failure</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel evidence-panel" aria-labelledby="evidence-title" aria-live="polite">
+      <div class="panel-heading evidence-heading"><div><h2 id="evidence-title">What happened</h2></div><span id="run-status" class="state-pill state-idle">Ready</span></div>
+      <div id="announcement" class="sr-only" role="status" aria-live="assertive"></div>
+      <div id="empty-state" class="empty-state"><span class="empty-glyph" aria-hidden="true">↘</span><div><h3 id="waiting-title">Ready for your first investigation</h3><p id="waiting-description">Add your access code, then select Run investigation. The answer, policy decision and trace ID will appear here.</p></div></div>
+      <div id="result-state" hidden>
+        <div id="result-banner" class="result-banner"><span id="result-symbol" aria-hidden="true">●</span><div><strong id="result-title">Run accepted</strong><p id="result-summary"></p></div></div>
+        <div class="answer-block"><p class="data-label">Actual answer</p><div id="answer" class="answer-text"></div></div>
+        <div class="meta-grid">
+          <div class="meta-item"><span>Outcome</span><strong id="outcome">—</strong></div>
+          <div class="meta-item"><span>Decision</span><strong id="decision">—</strong></div>
+          <div class="meta-item"><span>Inference mode</span><strong id="inference-mode">—</strong></div>
+          <div class="meta-item"><span>Tool data</span><strong id="tool-data">—</strong></div>
+          <div class="meta-item"><span>Agent role</span><strong id="agent-role-result">—</strong></div>
+          <div class="meta-item"><span>Estimated LLM cost · USD</span><strong id="estimated-cost">Unknown</strong><small>Configured token rates; not a provider invoice.</small></div>
+        </div>
+        <div class="trace-grid"><div><span>Session</span><code id="trace-session">—</code></div><div><span>Run</span><code id="trace-run">—</code></div><div><span>Trace</span><code id="trace-id">—</code></div></div>
+        <div class="steps-block"><p class="data-label">Model steps</p><ol id="model-steps" class="steps-list"></ol></div>
+        <div class="telemetry-block"><div class="telemetry-heading"><p class="data-label">Where the activity was sent</p><span class="pending-tag">Check in monitoring tools</span></div><div class="telemetry-grid"><div><span>Traces · APM / Langfuse</span><strong id="exporter-state">Not reported</strong></div><div><span>Logs · Log Analytics</span><strong id="log-state">Not verified</strong></div><div><span>Metrics · Monitoring</span><strong id="metric-state">Not verified</strong></div></div><p id="telemetry-help" class="telemetry-note">These statuses describe sending data. This page does not check whether it is searchable yet. Copy the trace ID into your configured APM, Langfuse or Log Analytics installation to verify this run.</p></div>
+      </div>
+    </section>
+    <aside class="panel boundary-panel" aria-labelledby="boundary-title">
+      <div class="panel-heading"><div><p class="kicker">Guardrails</p><h2 id="boundary-title">Know the boundary</h2></div></div>
+      <ul class="boundary-list">
+        <li><span class="bullet teal"></span><div><strong>Tools are synthetic</strong><p>The agent reads simulated service status, logs and traces. It does not inspect your own systems.</p></div></li>
+        <li><span class="bullet red"></span><div><strong>Remediation stops for approval</strong><p>Try a blocked action to see the policy stop the request before the model runs. Nothing is restarted.</p></div></li>
+        <li><span class="bullet amber"></span><div><strong>Check the monitoring tools</strong><p>Sent does not mean visible yet. Find the trace ID in APM and Langfuse, and its events in Log Analytics.</p></div></li>
+      </ul>
+
+    </aside>
+
+  </main>
+  <footer class="site-footer"><span>Inside AI Agents / operator console</span><span>Local evidence boundary · no live customer data</span></footer>
+</body>
+</html>

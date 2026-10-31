@@ -1,0 +1,29 @@
+%% OCI diagram: node aliases and oci-service metadata are recorded in comments
+flowchart LR
+  subgraph G1["OCI workload"]
+    %% oci-node: n1 = intent (oci-service: custom)
+    n1["Define the job Input, output, boundaries"]
+    %% oci-node: n2 = contract (oci-service: custom)
+    n2["Freeze contracts Expected behavior first"]
+    %% oci-node: n3 = code (oci-service: custom)
+    n3["Create with Codex Fresh learner workspace"]
+    %% oci-node: n4 = review (oci-service: custom)
+    n4["Inspect the diff No credentials or egress"]
+    %% oci-node: n5 = test (oci-service: custom)
+    n5["Run fixed contracts RED to GREEN"]
+    %% oci-node: n6 = run (oci-service: custom)
+    n6["Run a real model Explicit config + tool"]
+    %% oci-node: n7 = observe (oci-service: custom)
+    n7["Inspect the turn Trace, usage, failures"]
+    %% oci-node: n8 = verify (oci-service: custom)
+    n8["Verify evidence Exact session and trace"]
+  end
+  n1 -.->|"specify"| n2
+  n2 -->|"implement"| n3
+  n3 -.->|"review"| n4
+  n4 -->|"execute tests"| n5
+  n5 -.->|"local gate passes"| n6
+  n6 -.->|"collect metadata"| n7
+  n7 -.->|"read back"| n8
+  classDef oci fill:#FFF3E0,stroke:#C74634,color:#312D2A,stroke-width:2px;
+  class n1,n2,n3,n4,n5,n6,n7,n8 oci;

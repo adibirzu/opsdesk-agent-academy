@@ -1,0 +1,112 @@
+{
+  "title": "From a visible app to a hosted agent",
+  "evidence_label": "Target design \u00b7 local and hosted adapters differ \u00b7 no new cloud deployment is asserted",
+  "nodes": [
+    {
+      "id": "ui",
+      "label": "OpsDesk browser\nBuilder-generated UI",
+      "kind": "compute",
+      "x": 60,
+      "y": 150
+    },
+    {
+      "id": "server",
+      "label": "App server\nIdentity + private keys",
+      "kind": "security",
+      "x": 390,
+      "y": 150
+    },
+    {
+      "id": "oci",
+      "label": "OCI application\nActive image deployment",
+      "kind": "compute",
+      "x": 720,
+      "y": 150
+    },
+    {
+      "id": "agent",
+      "label": "Agent runtime\nPolicy + read-only tools",
+      "kind": "security",
+      "x": 1050,
+      "y": 150
+    },
+    {
+      "id": "llm",
+      "label": "Selected model\nActual inference",
+      "kind": "compute",
+      "x": 1050,
+      "y": 430
+    },
+    {
+      "id": "otel",
+      "label": "OpenTelemetry\nBounded metadata",
+      "kind": "observability",
+      "x": 720,
+      "y": 430
+    },
+    {
+      "id": "lf",
+      "label": "Langfuse project\nIndependent readback",
+      "kind": "observability",
+      "x": 390,
+      "y": 430
+    },
+    {
+      "id": "ociobs",
+      "label": "OCI APM + logs\nSeparately configured",
+      "kind": "observability",
+      "x": 720,
+      "y": 680
+    }
+  ],
+  "edges": [
+    {
+      "from": "ui",
+      "to": "server",
+      "label": "same-origin action",
+      "type": "data"
+    },
+    {
+      "from": "server",
+      "to": "oci",
+      "label": "authenticated call",
+      "type": "control"
+    },
+    {
+      "from": "oci",
+      "to": "agent",
+      "label": "runtime configuration",
+      "type": "data"
+    },
+    {
+      "from": "agent",
+      "to": "llm",
+      "label": "model request",
+      "type": "data"
+    },
+    {
+      "from": "agent",
+      "to": "otel",
+      "label": "agent + tool spans",
+      "type": "telemetry"
+    },
+    {
+      "from": "llm",
+      "to": "otel",
+      "label": "reported usage",
+      "type": "telemetry"
+    },
+    {
+      "from": "otel",
+      "to": "lf",
+      "label": "OTLP / HTTP",
+      "type": "telemetry"
+    },
+    {
+      "from": "otel",
+      "to": "ociobs",
+      "label": "optional integration",
+      "type": "telemetry"
+    }
+  ]
+}

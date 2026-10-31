@@ -1,0 +1,30 @@
+%% OCI diagram: node aliases and oci-service metadata are recorded in comments
+flowchart LR
+  subgraph G1["OCI workload"]
+    %% oci-node: n1 = root (oci-service: custom)
+    n1["Agent run Shared session, new trace"]
+    %% oci-node: n2 = gen (oci-service: custom)
+    n2["Generation span Actual returned model"]
+    %% oci-node: n3 = usage (oci-service: custom)
+    n3["Usage and cost Unknown remains unknown"]
+    %% oci-node: n4 = tool (oci-service: custom)
+    n4["Tool and policy spans Failures stay failures"]
+    %% oci-node: n5 = local (oci-service: custom)
+    n5["Private local files Not backend acceptance"]
+    %% oci-node: n6 = export (oci-service: custom)
+    n6["Configured exporter Flush is delivery only"]
+    %% oci-node: n7 = backend (oci-service: custom)
+    n7["Langfuse project External ingestion"]
+    %% oci-node: n8 = readback (oci-service: custom)
+    n8["Exact trace query Owner session required"]
+  end
+  n1 -.->|"child span"| n2
+  n2 -.->|"reported values"| n3
+  n1 -.->|"child spans"| n4
+  n4 -.->|"bounded metadata"| n5
+  n1 -.->|"correlation"| n5
+  n3 -.->|"safe metadata"| n6
+  n6 -.->|"OTLP"| n7
+  n7 -.->|"verify exact join"| n8
+  classDef oci fill:#FFF3E0,stroke:#C74634,color:#312D2A,stroke-width:2px;
+  class n1,n2,n3,n4,n5,n6,n7,n8 oci;

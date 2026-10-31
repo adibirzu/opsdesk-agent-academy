@@ -1,0 +1,47 @@
+{
+  "captured": "2026-10-31",
+  "artifacts": [
+    {
+      "file": "evidence/lovable-inbox.jpg",
+      "sha256": "3a5d1c19fd6a88990f37a5a7e65d8b435ebecd30957e7e1e11bc60fd6ce9c57e",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Synthetic ticket inbox in the actual Lovable-generated app; no account details, keys or private URLs visible.",
+      "evidence_class": "frontend-browser-verified",
+      "does_not_prove": [
+        "real AI execution",
+        "server-side guard enforcement",
+        "Langfuse ingestion",
+        "all-persona end-to-end acceptance"
+      ]
+    },
+    {
+      "file": "evidence/lovable-ai.jpg",
+      "sha256": "4c020f8c068ed54154a69e9bb4134f634e3da63df92f0dab7a889fc8b147ebba",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Authenticated native AI returned a grounded answer using synthetic evidence; two actual model calls.",
+      "evidence_class": "native-ai-browser-verified",
+      "does_not_prove": [
+        "Langfuse ingestion or independent readback",
+        "complete security audit",
+        "all-persona live acceptance",
+        "OCI hosting acceptance"
+      ]
+    },
+    {
+      "file": "evidence/lovable-policy.jpg",
+      "sha256": "17ab31bb82f8a14c6dc9ea4d7f2a96b4091c4aed77dbb7ce694a2233c9f5d63c",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual app returned approval_required with zero model calls and a server-block event.",
+      "evidence_class": "policy-response-browser-verified",
+      "does_not_prove": [
+        "Langfuse ingestion or independent readback",
+        "complete security audit",
+        "all-persona live acceptance",
+        "OCI hosting acceptance"
+      ]
+    }
+  ]
+}

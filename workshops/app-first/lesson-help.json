@@ -1,0 +1,38 @@
+{
+  "define": {
+    "question": "What should I build first?",
+    "answer": "One operator, one ticket inbox and one read-only investigation. You do not need a database or cloud account to explore the product sketch.",
+    "try": "Try asking: \u201cWhich information would let an operator decide their next safe check?\u201d Write that down before choosing a model.",
+    "remember": "The coding assistant creates the source; the runtime agent is the program the finished app calls."
+  },
+  "build": {
+    "question": "My preview looks good. Am I done?",
+    "answer": "Create a new synthetic ticket, search for its title, filter it out, clear the filter and select it again. A screenshot alone cannot prove these controls work.",
+    "try": "If a control is decorative, ask the builder to implement only that interaction and retest it. Keep the AI panel disconnected until the controls work.",
+    "remember": "A hosted builder preview cannot reach a server bound to your laptop\u2019s 127.0.0.1 address."
+  },
+  "agent": {
+    "question": "Why does Analyze safely fail?",
+    "answer": "Check whether the request reaches your own server, then inspect its sanitized error. Confirm the exact configured model alias, authentication binding and native tool support.",
+    "try": "Start with one ordinary greeting, then one health question. Change one setting at a time; never substitute a canned answer for a failed model call.",
+    "remember": "The server chooses the model and looks up the session-owned ticket. Never accept an endpoint or a key from the browser."
+  },
+  "trace": {
+    "question": "How do I know the answer belongs to this ticket?",
+    "answer": "Create a fresh synthetic ticket, select it and run analysis. Inspect the submitted ticket ID, actual server lookup and tool evidence. Clear stale results when selecting a different ticket.",
+    "try": "Repeat the journey once in the actual app. An answer shown only in a terminal or a static preview does not pass the app check.",
+    "remember": "The app must work by the end of Part 1. Full export/readback is added in Part 4."
+  },
+  "secure": {
+    "question": "The app stays busy after an error. What should I check?",
+    "answer": "Inspect the request lifecycle and cleanup path. Both successful and failed responses must clear the busy state and display the actual outcome.",
+    "try": "Use an isolated model double or controlled failed request, not a service shutdown. Ensure a later permitted request can run.",
+    "remember": "A canned answer is not recovery. Keep real failures visible; add broader security regression tests in Part 5."
+  },
+  "host": {
+    "question": "Do I need OCI to complete the first hour?",
+    "answer": "No. You can finish the local app and explain its target architecture. A live hosted invocation needs your own scoped tenancy, identity, image and network path.",
+    "try": "Save the source baseline, exact start/stop command and private config requirements. Restart the app locally before proceeding to Part 2. OCI hosting is added in Part 6.",
+    "remember": "The local Studio and hosted coordinator have different request protocols. An adapter and authentication are required; replacing a URL is not a migration."
+  }
+}

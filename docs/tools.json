@@ -1,0 +1,152 @@
+[
+  {
+    "category": "Build",
+    "name": "Base44",
+    "url": "https://base44.com/",
+    "purpose": "Describe the app and inspect its preview."
+  },
+  {
+    "category": "Build",
+    "name": "v0",
+    "url": "https://v0.app/",
+    "purpose": "Generate and iterate on the visible interface."
+  },
+  {
+    "category": "Build",
+    "name": "Lovable",
+    "url": "https://lovable.dev/",
+    "purpose": "Build an app from the same product definition."
+  },
+  {
+    "category": "Build",
+    "name": "Codex",
+    "url": "https://openai.com/codex/",
+    "purpose": "Build locally and inspect the actual agent code."
+  },
+  {
+    "category": "Assistant",
+    "name": "Grok",
+    "url": "https://grok.com/",
+    "purpose": "Optional help to refine the app definition and explain the code; configure runtime models separately."
+  },
+  {
+    "category": "Assistant",
+    "name": "Perplexity",
+    "url": "https://www.perplexity.ai/",
+    "purpose": "Optional help to refine the app definition and explain the code; configure runtime models separately."
+  },
+  {
+    "category": "Assistant",
+    "name": "Claude",
+    "url": "https://claude.ai/",
+    "purpose": "Optional help to refine the app definition and explain the code; configure runtime models separately."
+  },
+  {
+    "category": "Assistant",
+    "name": "Gemini",
+    "url": "https://gemini.google.com/",
+    "purpose": "Optional help to refine the app definition and explain the code; configure runtime models separately."
+  },
+  {
+    "category": "Model",
+    "name": "Ollama",
+    "url": "https://ollama.com/",
+    "purpose": "Optional local model runtime; choose a tool-capable model."
+  },
+  {
+    "category": "Model",
+    "name": "LiteLLM",
+    "url": "https://docs.litellm.ai/",
+    "purpose": "Optional gateway to your own approved models."
+  },
+  {
+    "category": "Observe",
+    "name": "OpenTelemetry",
+    "url": "https://opentelemetry.io/docs/",
+    "purpose": "Record spans around real agent actions."
+  },
+  {
+    "category": "Observe",
+    "name": "Langfuse",
+    "url": "https://langfuse.com/docs",
+    "purpose": "Inspect your own project traces, usage and costs."
+  },
+  {
+    "category": "Observe",
+    "name": "OCI APM",
+    "url": "https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html",
+    "purpose": "Follow application traces in a configured APM domain."
+  },
+  {
+    "category": "Observe",
+    "name": "OCI Log Analytics",
+    "url": "https://docs.oracle.com/en-us/iaas/log-analytics/home.htm",
+    "purpose": "Query collected logs; correlate by trace ID."
+  },
+  {
+    "category": "Host",
+    "name": "OCI AI Applications",
+    "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/applications-deployments.htm",
+    "purpose": "Review the custom agent hosting path."
+  },
+  {
+    "category": "Host",
+    "name": "OCI CLI",
+    "url": "https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm",
+    "purpose": "Run scoped cloud commands from your own account."
+  },
+  {
+    "category": "Run",
+    "name": "Docker",
+    "url": "https://docs.docker.com/get-started/",
+    "purpose": "Optional container runtime."
+  },
+  {
+    "category": "Run",
+    "name": "Colima",
+    "url": "https://github.com/abiosoft/colima",
+    "purpose": "Optional Mac container runtime."
+  },
+  {
+    "category": "Run",
+    "name": "Podman",
+    "url": "https://podman.io/docs",
+    "purpose": "Alternative container runtime."
+  },
+  {
+    "category": "Visualize",
+    "name": "D3",
+    "url": "https://d3js.org/",
+    "purpose": "Interactive teaching diagrams in this guide."
+  },
+  {
+    "category": "Visualize",
+    "name": "Excalidraw",
+    "url": "https://excalidraw.com/",
+    "purpose": "Edit workflow drawings."
+  },
+  {
+    "category": "Visualize",
+    "name": "Draw.io",
+    "url": "https://www.diagrams.net/",
+    "purpose": "Edit the architecture."
+  },
+  {
+    "category": "Share",
+    "name": "GitHub Pages",
+    "url": "https://docs.github.com/en/pages",
+    "purpose": "Serve the static student guide from your repository."
+  },
+  {
+    "category": "Reference",
+    "name": "Oracle AI Agent Studio",
+    "url": "https://docs.oracle.com/en/cloud/saas/fusion-ai/26b/aiaas/get-started.html",
+    "purpose": "Visual agent building for Fusion Applications; a separate product from Private Agent Factory."
+  },
+  {
+    "category": "Reference",
+    "name": "Oracle LiveLabs \u00b7 Private Agent Factory",
+    "url": "https://livelabs.oracle.com/ords/r/dbpm/livelabs/view-workshop?wid=4336",
+    "purpose": "Related hands-on visual agent walkthrough on OCI."
+  }
+]

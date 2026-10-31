@@ -1,0 +1,130 @@
+{
+  "reviewed": "2026-10-31",
+  "parts": [
+    {
+      "number": 1,
+      "title": "A useful inbox, then a real answer",
+      "intent": "Help an operator investigate a synthetic incident without giving the AI permission to change a system.",
+      "input": "Select TRAIN-101, Payments slow after a release. Request: Analyze this synthetic incident using read-only evidence.",
+      "actions": [
+        "Create a synthetic ticket; search and filter it.",
+        "Select TRAIN-101 and sign in to the app, separately from the builder workspace.",
+        "Choose Analyze safely once and inspect the returned answer."
+      ],
+      "expected": "An actual model answer separates observations, uncertainties and safe next checks. Payments p95 is 1,800 ms and errors are 1.2% in the synthetic fixture. Release r42 is a correlation, not a confirmed cause.",
+      "appearance": "A ticket inbox on the left; selected ticket, analysis request and readable answer on the right. Loading, sign-in and failure states are visible.",
+      "status": "Native Lovable app journey browser-verified; other builders require their own rehearsal.",
+      "remaining": "Learners must run their own app; static GitHub Pages never calls a model.",
+      "image": "evidence/lovable-ai.jpg",
+      "contracts": [
+        "test_desk_backend.py",
+        "test_app_first_workshop.py"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Open the engine, keep the app",
+      "intent": "Make the harness visible: authorization, bounded model loop, validated tools, final answer and trace events.",
+      "input": "Repeat the selected synthetic incident, then test an unknown tool and an argument outside the selected service scope in isolated tests.",
+      "actions": [
+        "Keep the same inbox and Analyze safely action.",
+        "Inspect the server tool registry and strict argument validation.",
+        "Open the actual run inspector after one successful investigation."
+      ],
+      "expected": "Only service_health and release_diff can execute in the Lovable example. The observed successful run used both tools and two model calls, below its three-call limit. Rejected tool cases must be checked in code tests.",
+      "appearance": "An expandable inspector below the answer shows actual model/tool events. A teaching animation explains these events but is not a live trace.",
+      "status": "Actual native model/tool events browser-verified; local harness contracts tested separately.",
+      "remaining": "A screenshot cannot prove all tool-validation or injection-resistance properties.",
+      "image": "evidence/lovable-ai.jpg",
+      "contracts": [
+        "test_demo_harness.py",
+        "test_studio_harness.py",
+        "test_learner_studio.py"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Measure the answer, then compare models",
+      "intent": "Make latency, usage and estimated cost understandable without inventing a price or a winning model.",
+      "input": "Use the same synthetic task for each explicitly selected, available model. Keep tool inputs and limits fixed.",
+      "actions": [
+        "Read provider-reported input and output usage from the real run.",
+        "Add matching sourced token rates only when available; otherwise show unknown.",
+        "If a second model is available, compare answer quality, tool behavior, latency and usage on the same task."
+      ],
+      "expected": "The reviewed Lovable run reported 761 input + 191 output = 952 total tokens and 5,218 ms. Estimated cost remained unknown. These are one run's observations, not a benchmark or a bill.",
+      "appearance": "A compact measurement panel beside the answer. Comparison rows distinguish reported tokens, illustrative arithmetic, estimated model cost and actual provider charges.",
+      "status": "Single-model usage browser-verified; cost arithmetic and missing-usage contracts locally tested.",
+      "remaining": "No live two-model comparison or provider billing readback is accepted for this Lovable rehearsal.",
+      "image": "",
+      "contracts": [
+        "test_costs.py",
+        "test_model_comparison.py",
+        "test_studio.py"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Find the same action in Langfuse",
+      "intent": "See what the agent actually did, while excluding personal data, secrets and prompt content from workshop telemetry.",
+      "input": "Provide LANGFUSE_BASE_URL, LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY only through the app's server-side settings.",
+      "actions": [
+        "Use the three-value instrumentation prompt with your current builder and existing LLM.",
+        "Run one synthetic investigation and retain its actual trace/session identifiers privately.",
+        "Find that exact trace in your own Langfuse project and check the root, authorization, actual generations and tools."
+      ],
+      "expected": "Expected structure: agent root \u2192 authorization; generation 1 \u2192 tools; generation 2 \u2192 answer. Export acknowledgment and independent readback are separate results. OCI APM spans and Log Analytics events require their own configured destinations and readback.",
+      "appearance": "Your real Langfuse project shows a trace tree and reported usage. Until configured, the app explicitly displays Langfuse not configured; no imitation dashboard is presented as evidence.",
+      "status": "Optional exporter code inspected; its eight isolated exporter tests passed locally, and missing-config UI was browser-verified. Live telemetry remains unverified.",
+      "remaining": "Needs a working learner-owned Langfuse project and exact readback. OCI APM/Log Analytics live readback is a separate acceptance gate.",
+      "image": "",
+      "contracts": [
+        "test_trace_walkthrough.py",
+        "test_langfuse_student_flow.py",
+        "test_cloud_release.py"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Ask for a change and watch it stop",
+      "intent": "Demonstrate that permission decisions belong in server code and every tool boundary, not only in a system prompt.",
+      "input": "Choose Test a change request in the authenticated app. Exercise malformed tools and controlled dependency failures in isolated tests.",
+      "actions": [
+        "Keep the working investigation path.",
+        "Trigger the explicit change-request control and inspect its response.",
+        "Verify zero model calls, then examine local tests for unknown tools, malformed arguments and safe failures."
+      ],
+      "expected": "approval_required; model not called; model calls 0 / 3. The actual app inspector reports an explicit server block. There is no automatic approval-resume or system-changing tool.",
+      "appearance": "A clear refusal beside the original ticket, with a zero-call inspector. Failures stay visible instead of being replaced with a fake answer.",
+      "status": "Explicit change-control path browser-verified; broader negative cases locally tested.",
+      "remaining": "This is not proof of universal prompt-injection prevention, production IAM enforcement or a complete application security audit.",
+      "image": "evidence/lovable-policy.jpg",
+      "contracts": [
+        "test_studio_recovery.py",
+        "test_learner_studio.py",
+        "test_studio.py"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Prepare a hosted release you can verify",
+      "intent": "Move the working agent to an approved runtime with a defined identity, secrets, limits, health checks, rollback and observability.",
+      "input": "Use your own reviewed OCI scope and supported agent-hosting option; preserve the existing app and runtime compatibility.",
+      "actions": [
+        "Review OCI AI Platform options and the Private Agent Factory walkthrough; confirm the selected runtime supports your app.",
+        "Prepare a deployment plan and exact resource/cost inventory before requesting deployment authority.",
+        "After an approved deployment, repeat create \u2192 select \u2192 analyze \u2192 change stop, then independently read back telemetry and test rollback."
+      ],
+      "expected": "A reviewed release packet with immutable artifact identity, permissions, secret references, health and canary results, exact telemetry readback and rollback procedure. A rendered plan alone never satisfies this gate.",
+      "appearance": "A deployment checklist showing source, artifact, runtime, canary, telemetry and rollback separately. Missing cloud access remains visibly pending.",
+      "status": "Local deployment/readiness contracts tested; this course's new hosted capstone is not live accepted.",
+      "remaining": "Requires current cloud access, named resources, deployment authority and a fresh signed-in canary/readback. Existing older deployments do not prove this app release.",
+      "image": "",
+      "contracts": [
+        "test_hosted_readiness.py",
+        "test_cloud_release.py",
+        "test_gcp_deployment.py"
+      ]
+    }
+  ]
+}

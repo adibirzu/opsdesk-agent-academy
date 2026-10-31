@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oci-agent-operations-workshop"
+version = "0.1.0"
+description = "A portable console-first agent and observability workshop"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+studio = [
+  "opentelemetry-api==1.45.1",
+  "opentelemetry-sdk==1.45.1",
+  "opentelemetry-exporter-otlp-proto-http==1.45.1",
+]
+live = [
+  "opentelemetry-api==1.45.1",
+  "opentelemetry-sdk==1.45.1",
+  "opentelemetry-exporter-otlp-proto-http==1.45.1",
+  "oci==2.187.2",
+  "langchain-oci==0.2.7",
+  "langgraph==1.2.14",
+]
+
+[project.scripts]
+agent-workshop = "agent_workshop.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agent_workshop = ["web/*.html", "web/*.css", "web/*.js", "web/*.svg"]

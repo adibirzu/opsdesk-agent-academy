@@ -1,0 +1,106 @@
+{
+  "title": "From an idea to an observable agent",
+  "evidence_label": "Design + source mapping \u00b7 provider acceptance remains a separate check",
+  "nodes": [
+    {
+      "id": "intent",
+      "label": "Define the job\nInput, output, boundaries",
+      "kind": "compute",
+      "x": 60,
+      "y": 150
+    },
+    {
+      "id": "contract",
+      "label": "Freeze contracts\nExpected behavior first",
+      "kind": "security",
+      "x": 390,
+      "y": 150
+    },
+    {
+      "id": "code",
+      "label": "Create with Codex\nFresh learner workspace",
+      "kind": "compute",
+      "x": 720,
+      "y": 150
+    },
+    {
+      "id": "review",
+      "label": "Inspect the diff\nNo credentials or egress",
+      "kind": "security",
+      "x": 1050,
+      "y": 150
+    },
+    {
+      "id": "test",
+      "label": "Run fixed contracts\nRED to GREEN",
+      "kind": "security",
+      "x": 1050,
+      "y": 400
+    },
+    {
+      "id": "run",
+      "label": "Run a real model\nExplicit config + tool",
+      "kind": "compute",
+      "x": 720,
+      "y": 400
+    },
+    {
+      "id": "observe",
+      "label": "Inspect the turn\nTrace, usage, failures",
+      "kind": "observability",
+      "x": 390,
+      "y": 400
+    },
+    {
+      "id": "verify",
+      "label": "Verify evidence\nExact session and trace",
+      "kind": "observability",
+      "x": 60,
+      "y": 400
+    }
+  ],
+  "edges": [
+    {
+      "from": "intent",
+      "to": "contract",
+      "label": "specify",
+      "type": "control"
+    },
+    {
+      "from": "contract",
+      "to": "code",
+      "label": "implement",
+      "type": "data"
+    },
+    {
+      "from": "code",
+      "to": "review",
+      "label": "review",
+      "type": "control"
+    },
+    {
+      "from": "review",
+      "to": "test",
+      "label": "execute tests",
+      "type": "data"
+    },
+    {
+      "from": "test",
+      "to": "run",
+      "label": "local gate passes",
+      "type": "control"
+    },
+    {
+      "from": "run",
+      "to": "observe",
+      "label": "collect metadata",
+      "type": "telemetry"
+    },
+    {
+      "from": "observe",
+      "to": "verify",
+      "label": "read back",
+      "type": "telemetry"
+    }
+  ]
+}

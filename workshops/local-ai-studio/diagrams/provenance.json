@@ -1,0 +1,29 @@
+{
+  "evidence_class": "design_and_code_mapping",
+  "network_contacted": false,
+  "helper_sha256": "04690b2df5805744fac8c91489dea2af9da92889f4106f14d48f23ac79bf6a57",
+  "assets": "generic primitives; no provider stencil fidelity claimed",
+  "svg": "derived from same spec; not a native Draw.io or Excalidraw export",
+  "files": {
+    "01-creation.json": "e150c48f7ad53953343e96b6e27df02e3abbc950672f2ec776ffa2bc0f396fc4",
+    "01-creation.drawio": "d50e9bb8f3d7665dbc15942f8db35ab288a2a18b1afb42eccab9e2b1edb31fd0",
+    "01-creation.excalidraw": "c89e0bcc3b5d01814554813295593603504d927576823e1f3dcdb859c0ac6e5e",
+    "01-creation.mmd": "b7b365c2c47ce5a3bde8ef8abe17dbac611eae9b99a0c39be0f3737e1be44dcd",
+    "01-creation.svg": "47a8e5d38c2554c4da07dcbe36f229b64ecb91334d781ab55fd0afd25a20cf54",
+    "02-runtime.json": "cb791f57bc48db701540060ea33136f3303f2ad691cf6222e849c73bd3d5b081",
+    "02-runtime.drawio": "a8c0dc35e51122e61968c000384ce05849490288e7382cb58d4ec6bad3634297",
+    "02-runtime.excalidraw": "515b9ddcac6d468ffd6f6e02972f5e1d257e7fbbfabfc7305c7d07c0314db7f6",
+    "02-runtime.mmd": "adce88cf52f72dee612a1f05a275e8090345993a334349fa2f5ad62d3c77d6c9",
+    "02-runtime.svg": "fce5aa8ff3952006e24ed5e1cd234fda10b4e09a3229f939c567135aede7d459",
+    "03-security.json": "de92cb005babe41afed62b491c9f10a926d29e6d608120c7de7b4cd20ab5d1ad",
+    "03-security.drawio": "af81adc69136edd6105688f9e26a796981f41c67973b11a000cfb0e3867df7a0",
+    "03-security.excalidraw": "386d815426ab357a4a18b10ac4d856e5213e96ede77983c9da92badba3d027e7",
+    "03-security.mmd": "70513e6508098a226b776b4e29748cb40a7815b4d120eb7330f5458313b8409e",
+    "03-security.svg": "86800ef4a993303f1242568bc08cec52d8ea00cccfadf4d7643e5c2446e33350",
+    "04-telemetry.json": "e16ef42fb1883bf7cb2e90590f10a02d2d22d2e3a448f34d9a6dcde568fb1678",
+    "04-telemetry.drawio": "87ed1e9820af9c8059326bb568aae28041fc00b4b983faaaf6ca59814d7b1467",
+    "04-telemetry.excalidraw": "eca8e154f13de9a37d6e3d3f64405bd0281ef87c04a7d567b7845e23164f3bb1",
+    "04-telemetry.mmd": "d175279a91665e928bf9db75f2749f07491758f00594be2ea90ed646e606ab73",
+    "04-telemetry.svg": "bb819d2396c7312e7528816341f998e10ae564b7e33e03714022c97672b2ec3f"
+  }
+}

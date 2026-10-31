@@ -1,0 +1,30 @@
+%% OCI diagram: node aliases and oci-service metadata are recorded in comments
+flowchart LR
+  subgraph G1["OCI workload"]
+    %% oci-node: n1 = ui (oci-service: custom)
+    n1["OpsDesk browser Builder-generated UI"]
+    %% oci-node: n2 = server (oci-service: custom)
+    n2["App server Identity + private keys"]
+    %% oci-node: n3 = oci (oci-service: custom)
+    n3["OCI application Active image deployment"]
+    %% oci-node: n4 = agent (oci-service: custom)
+    n4["Agent runtime Policy + read-only tools"]
+    %% oci-node: n5 = llm (oci-service: custom)
+    n5["Selected model Actual inference"]
+    %% oci-node: n6 = otel (oci-service: custom)
+    n6["OpenTelemetry Bounded metadata"]
+    %% oci-node: n7 = lf (oci-service: custom)
+    n7["Langfuse project Independent readback"]
+    %% oci-node: n8 = ociobs (oci-service: custom)
+    n8["OCI APM + logs Separately configured"]
+  end
+  n1 -->|"same-origin action"| n2
+  n2 -.->|"authenticated call"| n3
+  n3 -->|"runtime configuration"| n4
+  n4 -->|"model request"| n5
+  n4 -.->|"agent + tool spans"| n6
+  n5 -.->|"reported usage"| n6
+  n6 -.->|"OTLP / HTTP"| n7
+  n6 -.->|"optional integration"| n8
+  classDef oci fill:#FFF3E0,stroke:#C74634,color:#312D2A,stroke-width:2px;
+  class n1,n2,n3,n4,n5,n6,n7,n8 oci;

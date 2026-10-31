@@ -1,0 +1,112 @@
+{
+  "title": "Evidence: local record, delivery, independent readback",
+  "evidence_label": "Design + source mapping \u00b7 provider acceptance remains a separate check",
+  "nodes": [
+    {
+      "id": "root",
+      "label": "Agent run\nShared session, new trace",
+      "kind": "observability",
+      "x": 60,
+      "y": 150
+    },
+    {
+      "id": "gen",
+      "label": "Generation span\nActual returned model",
+      "kind": "observability",
+      "x": 390,
+      "y": 150
+    },
+    {
+      "id": "usage",
+      "label": "Usage and cost\nUnknown remains unknown",
+      "kind": "observability",
+      "x": 720,
+      "y": 150
+    },
+    {
+      "id": "tool",
+      "label": "Tool and policy spans\nFailures stay failures",
+      "kind": "security",
+      "x": 60,
+      "y": 420
+    },
+    {
+      "id": "local",
+      "label": "Private local files\nNot backend acceptance",
+      "kind": "storage",
+      "x": 390,
+      "y": 420
+    },
+    {
+      "id": "export",
+      "label": "Configured exporter\nFlush is delivery only",
+      "kind": "observability",
+      "x": 720,
+      "y": 420
+    },
+    {
+      "id": "backend",
+      "label": "Langfuse project\nExternal ingestion",
+      "kind": "observability",
+      "x": 1050,
+      "y": 420
+    },
+    {
+      "id": "readback",
+      "label": "Exact trace query\nOwner session required",
+      "kind": "security",
+      "x": 1050,
+      "y": 650
+    }
+  ],
+  "edges": [
+    {
+      "from": "root",
+      "to": "gen",
+      "label": "child span",
+      "type": "telemetry"
+    },
+    {
+      "from": "gen",
+      "to": "usage",
+      "label": "reported values",
+      "type": "telemetry"
+    },
+    {
+      "from": "root",
+      "to": "tool",
+      "label": "child spans",
+      "type": "telemetry"
+    },
+    {
+      "from": "tool",
+      "to": "local",
+      "label": "bounded metadata",
+      "type": "telemetry"
+    },
+    {
+      "from": "root",
+      "to": "local",
+      "label": "correlation",
+      "type": "telemetry"
+    },
+    {
+      "from": "usage",
+      "to": "export",
+      "label": "safe metadata",
+      "type": "telemetry"
+    },
+    {
+      "from": "export",
+      "to": "backend",
+      "label": "OTLP",
+      "type": "telemetry"
+    },
+    {
+      "from": "backend",
+      "to": "readback",
+      "label": "verify exact join",
+      "type": "response"
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "223641fa99c04c53dd69e4378db735eb98d8487522cd3a9a54766ccb476002da"
+    },
+    {
+      "path": "course.html",
+      "sha256": "6e0409744c9bec85971ef7481c9cadc3fe84459de30e943282627a69b3707a32"
+    },
+    {
+      "path": "help.html",
+      "sha256": "26885599cbcf7c69ac09c599fc13a6b1d295b76ab04173614039e322f34b1789"
+    },
+    {
+      "path": "course.json",
+      "sha256": "243f5899cf1eed490a4222afa4327fa74811ef0ad6ce734420e21d495ea680ba"
+    },
+    {
+      "path": "results.json",
+      "sha256": "db5e4e0099b0850e29cdb8cc23744dfe9831e263a7cb2df2a6a56fb08965dafc"
+    },
+    {
+      "path": "showcase.html",
+      "sha256": "978048a8dec889793449e52ad633163345c5818ea42cbe1f9d72846d6c9d516c"
+    },
+    {
+      "path": "workflows.html",
+      "sha256": "5c527a21bc37fc42ee1b3f26ff15b58d2cb867e4ef0674fb27534bb944e1f583"
+    },
+    {
+      "path": "WORKFLOWS.md",
+      "sha256": "1d54e9d66122d63f603fef833dffcd23d9cf790129b55dadb27d3e0a41f23b98"
+    },
+    {
+      "path": "APP-REHEARSAL.md",
+      "sha256": "ed9821619c6fd72d3ba1000f390a982bcb9b07b0142ca95933fd232089c804e4"
+    },
+    {
+      "path": "agent-briefs/workflow-business.md",
+      "sha256": "63b56bc74324a2c7553126e01d5b5f752d520b4c3b959bded69113158868c811"
+    },
+    {
+      "path": "agent-briefs/workflow-it-starter.md",
+      "sha256": "b22590e51707ee85670bea7e42c83fa45e127e4ad6515f446c9a92f02bbf6e74"
+    },
+    {
+      "path": "agent-briefs/workflow-ai-engineer.md",
+      "sha256": "b071e148bd23dafe6fc1b27e0d6586bbaca8fa74943ad5dccaa2d0fae66434c8"
+    },
+    {
+      "path": "agent-briefs/part-1-first-app.md",
+      "sha256": "b469192115c929bbd0bc6bd291591bc1a04ad3ddce80024d1bee388a21ca18fc"
+    },
+    {
+      "path": "agent-briefs/part-2-agent-engine.md",
+      "sha256": "8eaed39e1bac45d9c2d837f84ed2db3f7b24a19924f53c151cf81abd1f1b6cbf"
+    },
+    {
+      "path": "agent-briefs/part-3-models-and-cost.md",
+      "sha256": "d4f45c773309c8d2e3098bd326eb3e080a5956041bf46e5e2c8830d25820e0e2"
+    },
+    {
+      "path": "agent-briefs/part-4-follow-the-evidence.md",
+      "sha256": "4404fe1550d4f040410aa82249feb913b06bed1ef9747436adb924cb4725ad56"
+    },
+    {
+      "path": "agent-briefs/part-5-secure-by-construction.md",
+      "sha256": "af4e8611880295d232fc3c96fda88fbef43d4622f36501ab55c9d767dabce3f8"
+    },
+    {
+      "path": "agent-briefs/part-6-ready-for-oci.md",
+      "sha256": "1ce50cfe3d12ec596e67fbce1e603d6b2591d5bdd35134e353850ef4eb132fc9"
+    },
+    {
+      "path": "lesson-help.json",
+      "sha256": "75e630090e8a04919057bb4586ed179263ddbd40c2f84dda19ea5f62a181b307"
+    },
+    {
+      "path": "training.css",
+      "sha256": "e23ac6e2d1661a5e78b919605c085dadb940efe85a7557e240ae19fc2b6044d0"
+    },
+    {
+      "path": "training.js",
+      "sha256": "7435b8bd21c93059cf6b32782159fa58df2ef887d05fd3d7b62c69bf53f58a30"
+    },
+    {
+      "path": "course-visuals.js",
+      "sha256": "2428723f056357576ca7188938e0b33f507d1cd5f99a63439a32bf396942befc"
+    },
+    {
+      "path": "guardrails.js",
+      "sha256": "92a0df1d6d85d8a2c7bfd7a600ce80369c9dd43fed1316aef6ba592e8ab9a2d8"
+    },
+    {
+      "path": "GUARDRAILS.md",
+      "sha256": "e5bf70ca38114d6b87a56cf5fea57c319303c8e795f2530bbbb8d9bd0b86635d"
+    },
+    {
+      "path": "replicate.html",
+      "sha256": "3c3654b224403ed7cfd452ca1120a5ef62d159314d93be85eb50d4f820414f15"
+    },
+    {
+      "path": "langfuse.html",
+      "sha256": "df3c2e73c591bc145ad846d42990edc718ed1a6c0c155861ed1e8466b2dab3c2"
+    },
+    {
+      "path": "course-doctor.py",
+      "sha256": "f6d5c37c5f1fe656d60c73a482d30d34a9c0024b9db565cbadc0b587e1354e7b"
+    },
+    {
+      "path": "personas.html",
+      "sha256": "696eaeaed2c9b8aa7496354fb809be426667f98467945ed940cfcf6677be5937"
+    },
+    {
+      "path": "personas.json",
+      "sha256": "284cf6981d56cc7db5a97d33ce7fcdc8dd5138d6cc0d3dd8c2db323d0121d64f"
+    },
+    {
+      "path": "personas.js",
+      "sha256": "b4d17afd80e33a19d83f69ce155b67c30f6d7da12214c479c21ce217c3e7c74b"
+    },
+    {
+      "path": "evidence.html",
+      "sha256": "4da94ce92a1a4b9c170e866b6b90fcea56e2401424dfa091e627d66f54106476"
+    },
+    {
+      "path": "EVIDENCE.json",
+      "sha256": "3656f66aed50313907ff4373ad55ca59d657a23546731dc500a1e4a6e11271ab"
+    },
+    {
+      "path": "evidence/lovable-inbox.jpg",
+      "sha256": "3a5d1c19fd6a88990f37a5a7e65d8b435ebecd30957e7e1e11bc60fd6ce9c57e"
+    },
+    {
+      "path": "evidence/lovable-ai.jpg",
+      "sha256": "4c020f8c068ed54154a69e9bb4134f634e3da63df92f0dab7a889fc8b147ebba"
+    },
+    {
+      "path": "evidence/lovable-policy.jpg",
+      "sha256": "17ab31bb82f8a14c6dc9ea4d7f2a96b4091c4aed77dbb7ce694a2233c9f5d63c"
+    },
+    {
+      "path": "telemetry.example.toml",
+      "sha256": "23987bcabb13795efa69fb79b4a728afdb64c3c6f923a896570e2be58cee61e1"
+    },
+    {
+      "path": "WORKBOOK.md",
+      "sha256": "434e029d9f247f85b8eb0ebc1ed1d8502ba242d141d8954ae5346db614596a73"
+    },
+    {
+      "path": "DELIVERY-CHECKLIST.md",
+      "sha256": "dd688301a82d42ff11b3b5ef9cfae5ae1ea24fad3b9e97b909c686d67a17ab23"
+    },
+    {
+      "path": "part-1-first-app.html",
+      "sha256": "12d015fc1a57ee14f2e2bc913a85196f7ca4ec785573c31f937238416df02988"
+    },
+    {
+      "path": "part-2-agent-engine.html",
+      "sha256": "df2cc37dd1cb8b49ee1cd3fc1aa5435dce1381047b73db3969875c110baf5d59"
+    },
+    {
+      "path": "part-3-models-and-cost.html",
+      "sha256": "93cc50c6805a1acc39bc730e7dd4c1a481ca9e4601709d9c0893cf4fa4a44194"
+    },
+    {
+      "path": "part-4-follow-the-evidence.html",
+      "sha256": "0bc5628b5cb95d6558e2520238c80a1fa0a8230a440e95ff9a710da9effaa867"
+    },
+    {
+      "path": "part-5-secure-by-construction.html",
+      "sha256": "1eded1c57eec5daa7dc2e44afa577daf06132263bd3a27f8c7497c8471adcb62"
+    },
+    {
+      "path": "part-6-ready-for-oci.html",
+      "sha256": "55acc42c3d8c193bac0d4ed5c3b90a3294928ca44c900a26c9351b0c67529793"
+    },
+    {
+      "path": "meet-your-agent.html",
+      "sha256": "8fec115ed0e6e9246c1a8cdde86130bc483a55d6fbc0c5f2322d7cf5ee67659d"
+    },
+    {
+      "path": "inside-the-engine.html",
+      "sha256": "f160561432035c077a5279ffc699724bc923d571d6f45c36471826cc3ba7bc31"
+    },
+    {
+      "path": "guide.css",
+      "sha256": "0b932af3c9201c5cc18c8f6b1696b85623305f2e3bbab1a5f0883c31008c987e"
+    },
+    {
+      "path": "guide.js",
+      "sha256": "f17f2145a878f796e9c3a16bd4931ff7ed9487afafc993678fcc0213311998cf"
+    },
+    {
+      "path": "explorers.js",
+      "sha256": "e06f23ff99476a5ee23ec195314a02c2e6e49e75d03e7648ffce8b43c6753338"
+    },
+    {
+      "path": "preview.html",
+      "sha256": "b6b667d1449e2270b732d8e5fa935d9a841b694f59ac768098f7001677311ea1"
+    },
+    {
+      "path": "preview.js",
+      "sha256": "d2e7070f2afa93c73d02852d78f089b880a431915d2bfc4cd67c0ab1a6b28562"
+    },
+    {
+      "path": "public-theme.css",
+      "sha256": "c94cea1810e4163fb09f32acd63612e79117cb7815ca9d70207e4ce75b588653"
+    },
+    {
+      "path": "tools.json",
+      "sha256": "419112a8e5309f0dbf4dbe018e01047146afc3de1f0d189ae5e674cb443951cf"
+    },
+    {
+      "path": "vendor/d3-7.9.0.min.js",
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+    },
+    {
+      "path": "vendor/D3-LICENSE",
+      "sha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9dcc6fbcd78e0530f24d1fc9d052dabb24159243701198cc73e08f79933748b6"
+    },
+    {
+      "path": "BUILDERS.md",
+      "sha256": "4d75983927b9b3cffbd96ae3178501e4cbb8845d0060b91751472b74e505bb71"
+    },
+    {
+      "path": "APP-CAPABILITIES.md",
+      "sha256": "c986d20de03791ce0aabf7b8eae9b8652e9c1f8026c13d84ad7fe810c9387749"
+    },
+    {
+      "path": "API-CONTRACT.md",
+      "sha256": "0e1b7362053db28f1134cac7b436c349d0e7edc4630ca9e50dab148d66a90110"
+    },
+    {
+      "path": "OTEL-LANGFUSE.md",
+      "sha256": "8a7070384c51b209a0f762832280dc22b096917a0e3547554f4fb3557267c4f4"
+    },
+    {
+      "path": "OCI-HOSTING.md",
+      "sha256": "ae0110463df57089cb049a7912f39f636a5cdf5ba205682335c71ab9e1a86c83"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "ff9335b77f4e21cbb9fb15981f59b0d69722cc2636f62a7d9e0ad832fc1d2cc1"
+    },
+    {
+      "path": "REFERENCES.md",
+      "sha256": "56ee0a940502e2e3713869751dce7e64ad530db10a38d5661945dc6e75151ab2"
+    },
+    {
+      "path": "PAGES.md",
+      "sha256": "aa285f37724139a4b817382821adeed939b2a205463cc45da0912156127f431c"
+    },
+    {
+      "path": "prompts/01-build-app.md",
+      "sha256": "68961266c6b2e5473aceb8aca81fa78098a874c8aff8512805f35f27a95214f5"
+    },
+    {
+      "path": "prompts/02-connect-agent.md",
+      "sha256": "60445d14bfeb3332b3b418a7573e0e84df7510f3c7ea45cc7bef235c001b6c2d"
+    },
+    {
+      "path": "prompts/03-add-observability.md",
+      "sha256": "c8cafa519a63c7679ec5b6a05629eaf06ad7038e3207dea360f6d7266f1ae861"
+    },
+    {
+      "path": "prompts/04-codex-build.md",
+      "sha256": "29974d91d8ff35c743f16832d2addb8341a98d0f8652342d496de31b20dc5884"
+    },
+    {
+      "path": "prompts/05-codex-oci.md",
+      "sha256": "4dcf13780ebac34b986e627316065169ef929efb57340a6cbeff6517ab38f78f"
+    },
+    {
+      "path": "prompts/06-langfuse-simple.md",
+      "sha256": "cba711b0bc7f6aceeb5bb10de131967175a26dd818e8522b5917ae36b2a41f73"
+    },
+    {
+      "path": "diagrams/architecture.svg",
+      "sha256": "f6a8bd2851daa1599f6e028ccf9e252635fd8879c3cea8f1b62e41da758c3c7c"
+    },
+    {
+      "path": "diagrams/architecture.drawio",
+      "sha256": "ca4081e63c2f2ac9f3d86fd80e5ce39a5673e0f7ba7469fc99fae9940e2f207d"
+    },
+    {
+      "path": "diagrams/architecture.excalidraw",
+      "sha256": "12f29244cf8ed486a2c9b8918180fb62eecbb503260c8f1989c62baddbd06e2b"
+    },
+    {
+      "path": "diagrams/architecture.mmd",
+      "sha256": "873ac39fea01cc641fba85195378f3927dc7a41b94ba23cc7b76f8d4cea2e348"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-1.md",
+      "sha256": "717c96a545bedc983408363d5b87bae3b4ddc16318fef046e4707d74ce60a41d"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-2.md",
+      "sha256": "da06fd1bc20da3b9eeeb5a2129d12b8672eed7815f97f8e18f9d61a0209b7694"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-3.md",
+      "sha256": "caa1d8714d5341feac3f011c7fe9fb3ee32de7fb09602646f769ad180bb0ae33"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-4.md",
+      "sha256": "6699caef26182877fae3ca16c45042d7ad577628de909ab400771efc9c87cfc4"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-5.md",
+      "sha256": "43c68b3b98ca82a22b09308eb0ae479a63ba94bcee9173b62711f6b776760dcc"
+    },
+    {
+      "path": "agent-briefs/persona-business-part-6.md",
+      "sha256": "c754049a9a3a2b8361b18a5ec5efe589fc5690892cab6fb41d583477bee3d85b"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-1.md",
+      "sha256": "4bdbadc996e3cd9fa4be6a2797ac931f1417b458b0ce7175597c8c0df3b03def"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-2.md",
+      "sha256": "1114d2b156c20aa03e3028382fa63635a15b11023513253d95652835e885ff0e"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-3.md",
+      "sha256": "058207916f9c86c513c3bdd71ed6b248a8a3b103b2a5017fa51378af48bbc134"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-4.md",
+      "sha256": "435f81dc4312255a941fff0497758f141a4568cae129f86aa1b9b55dabacc208"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-5.md",
+      "sha256": "1eca768c71fe249c87e5992dcedcff61401af641bd085bf955d4f30daa79bef5"
+    },
+    {
+      "path": "agent-briefs/persona-it-starter-part-6.md",
+      "sha256": "6af064a3c1e72eeaeb84ca2ad4cac5aeb79b1cd7f8b47c26568905fa66a40480"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-1.md",
+      "sha256": "4c93699e7a4e3af6fe7b6fe994738479156b7a59d1bfdfa67578fee568d73e02"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-2.md",
+      "sha256": "60dfd97ea456c65a8e85f1a8fb7209a465e18cb743ef78fb0ee5626c6a50e10a"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-3.md",
+      "sha256": "b208c976b9065fd889a43ba00cf14ec5e39b68a5a2e5fc44168c860ba4416727"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-4.md",
+      "sha256": "6229b9602bbec5ad431decfb941baef0f1bf528dfea05f20c3adb9523ed4889d"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-5.md",
+      "sha256": "92071b3637d67180c5309411809aa9fe47765ce619f8cd88a600f8f9f8447f46"
+    },
+    {
+      "path": "agent-briefs/persona-ai-engineer-part-6.md",
+      "sha256": "eaca08581480c5c1cd2d28db0e5d776e81c937d628a0ac2897608bea260f0aaa"
+    }
+  ],
+  "mode": "static-guide-no-backend",
+  "schema_version": 2
+}

@@ -1,0 +1,33 @@
+# Copy to an ignored private path and chmod0600. No keys belong in this file.
+# Select the exact model returned by your own Ollama server (`ollama list`).
+[models.local]
+label = "My local model"
+endpoint = "http://127.0.0.1:11434/v1"
+allowed_hosts = ["127.0.0.1"]
+model_id = "YOUR_INSTALLED_TOOL_CAPABLE_MODEL"
+max_output_tokens = 1024
+
+# Optional additional model: uncomment and configure your own HTTPS gateway.
+# [models.gateway]
+# label = "My gateway model"
+# endpoint = "https://YOUR_GATEWAY/v1"
+# allowed_hosts = ["YOUR_GATEWAY"]
+# model_id = "YOUR_MODEL_ALIAS"
+# api_key_env = "MODEL_API_KEY"
+# max_output_tokens = 1024
+# input_usd_per_million = 0.0  # Only set known, sourced rates; do not assume free.
+# output_usd_per_million = 0.0
+
+[telemetry]
+enabled = false
+capture_content = false
+service_name = "local-ai-studio"
+# Enable only with your own project keys and exact destination.
+# langfuse_endpoint = "https://YOUR_LANGFUSE"
+# allowed_hosts = ["YOUR_LANGFUSE"]
+# langfuse_public_key_env = "LANGFUSE_PUBLIC_KEY"
+# langfuse_secret_key_env = "LANGFUSE_SECRET_KEY"
+
+[limits]
+max_steps = 4
+max_total_tokens = 12000

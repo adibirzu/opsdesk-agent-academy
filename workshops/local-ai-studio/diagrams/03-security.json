@@ -1,0 +1,106 @@
+{
+  "title": "Three boundaries a prompt cannot grant itself",
+  "evidence_label": "Design + source mapping \u00b7 provider acceptance remains a separate check",
+  "nodes": [
+    {
+      "id": "request",
+      "label": "Explicit request\nQuery or change intent",
+      "kind": "compute",
+      "x": 60,
+      "y": 150
+    },
+    {
+      "id": "auth",
+      "label": "Authorize intent\nBefore model creation",
+      "kind": "security",
+      "x": 390,
+      "y": 150
+    },
+    {
+      "id": "llm",
+      "label": "Selected model\nUntrusted proposals",
+      "kind": "compute",
+      "x": 720,
+      "y": 150
+    },
+    {
+      "id": "validate",
+      "label": "Validate every call\nName, arguments, budgets",
+      "kind": "security",
+      "x": 1050,
+      "y": 150
+    },
+    {
+      "id": "stop",
+      "label": "Policy stop\nZero model invocations",
+      "kind": "security",
+      "x": 390,
+      "y": 420
+    },
+    {
+      "id": "denied",
+      "label": "Reject unsafe calls\nNo handler execution",
+      "kind": "security",
+      "x": 720,
+      "y": 420
+    },
+    {
+      "id": "tools",
+      "label": "Execute safe tools\nUntrusted evidence",
+      "kind": "compute",
+      "x": 1050,
+      "y": 420
+    },
+    {
+      "id": "answer",
+      "label": "Return bounded result\nKeep tool errors visible",
+      "kind": "compute",
+      "x": 720,
+      "y": 650
+    }
+  ],
+  "edges": [
+    {
+      "from": "request",
+      "to": "auth",
+      "label": "intent",
+      "type": "control"
+    },
+    {
+      "from": "auth",
+      "to": "stop",
+      "label": "change",
+      "type": "control"
+    },
+    {
+      "from": "auth",
+      "to": "llm",
+      "label": "query",
+      "type": "control"
+    },
+    {
+      "from": "llm",
+      "to": "validate",
+      "label": "tool call",
+      "type": "data"
+    },
+    {
+      "from": "validate",
+      "to": "denied",
+      "label": "unknown or invalid",
+      "type": "control"
+    },
+    {
+      "from": "validate",
+      "to": "tools",
+      "label": "allowlisted",
+      "type": "control"
+    },
+    {
+      "from": "tools",
+      "to": "answer",
+      "label": "observed result",
+      "type": "response"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+%% OCI diagram: node aliases and oci-service metadata are recorded in comments
+flowchart LR
+  subgraph G1["OCI workload"]
+    %% oci-node: n1 = request (oci-service: custom)
+    n1["Explicit request Query or change intent"]
+    %% oci-node: n2 = auth (oci-service: custom)
+    n2["Authorize intent Before model creation"]
+    %% oci-node: n3 = llm (oci-service: custom)
+    n3["Selected model Untrusted proposals"]
+    %% oci-node: n4 = validate (oci-service: custom)
+    n4["Validate every call Name, arguments, budgets"]
+    %% oci-node: n5 = stop (oci-service: custom)
+    n5["Policy stop Zero model invocations"]
+    %% oci-node: n6 = denied (oci-service: custom)
+    n6["Reject unsafe calls No handler execution"]
+    %% oci-node: n7 = tools (oci-service: custom)
+    n7["Execute safe tools Untrusted evidence"]
+    %% oci-node: n8 = answer (oci-service: custom)
+    n8["Return bounded result Keep tool errors visible"]
+  end
+  n1 -.->|"intent"| n2
+  n2 -.->|"change"| n5
+  n2 -.->|"query"| n3
+  n3 -->|"tool call"| n4
+  n4 -.->|"unknown or invalid"| n6
+  n4 -.->|"allowlisted"| n7
+  n7 -.->|"observed result"| n8
+  classDef oci fill:#FFF3E0,stroke:#C74634,color:#312D2A,stroke-width:2px;
+  class n1,n2,n3,n4,n5,n6,n7,n8 oci;

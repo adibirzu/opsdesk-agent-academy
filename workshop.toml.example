@@ -1,0 +1,36 @@
+# Copy OUTSIDE the checkout, chmod 600, then fill the selected tenancy's values.
+# Secret values belong in environment variables or protected service config.
+[model]
+kind = "oci"
+model_id = "REPLACE_WITH_DISCOVERED_ACTIVE_CHAT_MODEL"
+endpoint = "https://REPLACE_WITH_REGIONAL_INFERENCE_ENDPOINT.example.invalid"
+allowed_hosts = ["REPLACE_WITH_REGIONAL_INFERENCE_ENDPOINT.example.invalid"]
+
+[oci]
+auth_type = "API_KEY"
+profile = "DEFAULT"
+region = "REPLACE_WITH_REGION"
+compartment_id = "REPLACE_WITH_WORKSHOP_COMPARTMENT"
+# Optional explicitly configured publishing and readback destinations:
+# apm_domain_id = "REPLACE_WITH_DOMAIN"
+# log_namespace = "REPLACE_WITH_NAMESPACE"
+# log_group_id = "REPLACE_WITH_LOG_GROUP"
+# Logs use native OTLP upload; no custom source/parser is required.
+
+[telemetry]
+enabled = true
+# Only approved synthetic workshop prompts may use content capture.
+capture_content = false
+allowed_hosts = ["REPLACE_WITH_APM_UPLOAD_ENDPOINT.example.invalid", "REPLACE_WITH_LANGFUSE_ENDPOINT.example.invalid"]
+service_name = "agent-workshop"
+apm_endpoint = "https://REPLACE_WITH_APM_UPLOAD_ENDPOINT.example.invalid"
+apm_key_env = "WORKSHOP_APM_KEY"
+langfuse_endpoint = "https://REPLACE_WITH_LANGFUSE_ENDPOINT.example.invalid"
+langfuse_public_key_env = "WORKSHOP_LANGFUSE_PUBLIC_KEY"
+langfuse_secret_key_env = "WORKSHOP_LANGFUSE_SECRET_KEY"
+service_token_env = "WORKSHOP_SERVICE_TOKEN"
+
+[limits]
+max_steps = 6
+max_total_tokens = 8000
+max_output_chars = 8000
