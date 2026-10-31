@@ -27,6 +27,20 @@ def brief_ref(value):
     return value if "://" in value or value.startswith("#") else "../" + value
 
 
+def course_navigation():
+    return (
+        '<div class="academy-brand"><a href="course.html"><strong>OpsDesk Academy</strong></a>' + GITHUB_LINK + '</div>'
+        '<nav class="academy-nav" aria-label="Course navigation">'
+        '<a href="course.html">Course overview</a><a href="personas.html">Choose your path</a>'
+        '<a href="lovable.html">Build OpsDesk</a><a href="relationships.html">Agent map</a>'
+        '<details class="resource-menu"><summary>Labs &amp; help</summary><div class="resource-panel">'
+        '<div><b>Build &amp; explore</b><a href="index.html">Part 1 live guide</a><a href="showcase.html">App walkthrough</a><a href="replicate.html">Run it at home</a></div>'
+        '<div><b>Observe &amp; verify</b><a href="langfuse.html">Connect Langfuse</a><a href="langfuse-basics.html">Read a trace</a><a href="evidence.html">Real screenshots</a></div>'
+        '<div><b>Keep learning</b><a href="workflows.html">All workflows</a><a href="help.html">Help &amp; troubleshooting</a><a href="WORKBOOK.md" download>Download workbook ↓</a></div>'
+        '</div></details></nav>'
+    )
+
+
 def shell(title, content):
     return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -35,10 +49,8 @@ def shell(title, content):
         '<link rel="icon" href="data:,"><link rel="stylesheet" href="public-theme.css">'
         '<link rel="stylesheet" href="guide.css"><link rel="stylesheet" href="training.css">'
         '<link rel="stylesheet" href="agent-map.css">'
-        '</head><body><header><a href="course.html"><strong>OpsDesk Academy</strong></a>'
-        + GITHUB_LINK +
-        '<nav aria-label="Course navigation"><a href="index.html">Part 1 live guide</a> '
-        '<a href="personas.html">Choose your path</a> <a href="relationships.html">Agent map</a> <a href="workflows.html">All workflows</a> <a href="lovable.html">Lovable lab</a> <a href="showcase.html">App walkthrough</a> <a href="evidence.html">Real screenshots</a> <a href="replicate.html">Run it at home</a> <a href="langfuse.html">Connect Langfuse</a> <a href="langfuse-basics.html">Read a trace</a> <a href="help.html">Help</a> <a href="WORKBOOK.md" download>Workbook ↓</a></nav>'
+        '</head><body><header class="academy-header">'
+        + course_navigation() +
         f'</header><main class="page-content">{content}</main>'
         "<footer>Independent practical training. Use synthetic data and your own accounts. "
         "Self-reported checks are learning aids, not execution receipts. "
@@ -62,6 +74,36 @@ def result_panel(result):
         f'<section class="result-example" id="finished-result-{result["number"]}"><span class="eyebrow">SEE THE RESULT · PART {result["number"]}</span><h2>{esc(result["title"])}</h2><p>{esc(result["intent"])}</p>{image}'
         f'<div class="result-columns"><div><h3>Try this</h3><p>{esc(result["input"])}</p><ol>{steps}</ol></div><div><h3>What it should look like</h3><p>{esc(result["appearance"])}</p><h3>What a good result says</h3><p>{esc(result["expected"])}</p></div></div>'
         f'<div class="evidence-status"><b>Observed checkpoint</b><p>{esc(result["status"])}</p><b>Still required</b><p>{esc(result["remaining"])}</p></div><p><a href="showcase.html#part-{result["number"]}">App walkthrough and all expected results →</a> · <a href="evidence.html">Reviewed evidence →</a></p></section>'
+    )
+
+
+def continuity_notes(part):
+    return [
+        "## App continuity checkpoint", "",
+        "Keep one learner-owned OpsDesk project throughout all six parts. Reopen the same builder project or source folder; changing persona changes the explanation, not the app. Switching builders is optional: export/import and verify the baseline first, never start a disconnected replacement.", "",
+        "Before editing, privately record the app location, source revision or dated source copy, launch/preview instructions, selected model and the last passing checks. Do not put private URLs, account details or keys in the public workbook.", "",
+        "After editing, repeat: create a synthetic ticket → search/filter → select it → investigate with the real model and allowed tools → test the change-request stop. Preserve previously added usage, trace and security checks. Separate local tests, exporter acknowledgement and independent provider readback. Missing evidence stays unverified.", "",
+        "Keep a private handoff note: part completed; capability added; baseline reference; checks with observed results; known gaps; next part. Save a source copy using your tool’s supported versioning/export; do not commit, publish or deploy without applicable authority. Tickets in the current reference app are in memory and reset on reload; re-create synthetic fixtures when needed. Durable ticket storage is not implemented by this course checkpoint.", "",
+    ]
+
+
+def continuity_panel(part, parts):
+    labels = ['Working app', 'Agent engine', 'Models & cost', 'Traces', 'Security', 'Cloud handoff']
+    rail = ''.join(f'<a href="{filename(p)}"' + (' aria-current="step"' if p['number'] == part['number'] else '') + f'><span>{p["number"]}</span>{labels[p["number"]-1]}</a>' for p in parts)
+    following = ('Continue with ' + parts[part['number']]['new_capability'][0].lower() + parts[part['number']]['new_capability'][1:]) if part['number'] < 6 else 'Hand over the same app with its release packet. Cloud deployment stays optional and needs scoped authority.'
+    return (
+        '<nav class="part-rail" aria-label="Six-part app journey">' + rail + '</nav>'
+        '<section class="app-continuity" aria-label="App continuity checkpoint"><span class="eyebrow">ONE APP · KEEP BUILDING</span>'
+        '<h2>Your OpsDesk, one step further.</h2><div class="continuity-grid">'
+        f'<div><b>Bring forward</b><p>{esc(part["starting_state"])}</p></div>'
+        f'<div><b>Add in this part</b><p>{esc(part["new_capability"])}</p></div>'
+        f'<div><b>{"Take to the next part" if part["number"] < 6 else "Finish with"}</b><p>{esc(following)}</p></div></div>'
+        '<details><summary>Before you move on · keep the app working</summary><ol>'
+        '<li>Reopen the same builder project or source folder. Keep your selected persona; do not create another app for each lesson.</li>'
+        '<li>Save a private baseline reference and launch/preview instructions using your tool’s versioning or source export.</li>'
+        '<li>Repeat create → search/filter → select → investigate → block a change request. Add this part’s checks and repeat earlier checks.</li>'
+        '<li>Write what actually passed, what is missing and what to add next in your private handoff note. A checked box is not execution proof.</li>'
+        '</ol><p>Current reference tickets are in memory: reload resets them. Re-create synthetic inputs for a repeatable run. Switching persona does not migrate or rebuild the app.</p></details></section>'
     )
 
 
@@ -99,6 +141,7 @@ def agent_brief(part):
         "If an app baseline already exists, record its source, launch command and passing create → select → analyze journey before editing. In Part 1, record the empty starting state and establish that working baseline by the end. After the change, repeat that journey and the checks from previous parts. Keep the same inbox, ticket IDs/session ownership contract and visible AI action unless this part explicitly changes one. Do not reset or rebuild the learner workspace to get a green result.",
         "",
     ]
+    lines += continuity_notes(part)
     if part["number"] == 1:
         lines += [
             "## Prepare the local model runtime before the hour",
@@ -249,6 +292,7 @@ def persona_brief(profile, flow, part):
         "## Follow this workflow",
         "",
     ]
+    lines += continuity_notes(part)
     lines += (
         ["## Words used in this route", ""]
         + [
@@ -427,7 +471,8 @@ def build():
         )
         needs = "".join(f"<li>{esc(n)}</li>" for n in part["needs"])
         content = f'<span class="eyebrow">PART {part["number"]} OF 6 · ONE HOUR</span><h1>{esc(part["title"])}</h1><p class="intro">{esc(part["tagline"])}</p><div class="check"><b>YOUR DELIVERABLE</b>{esc(part["deliverable"])}</div><details data-technical-only hidden><summary>Common technical prerequisites</summary><ul>{needs}</ul><p>Use the repository checkout for commands. The static Pages site is a guide, not a terminal or model runtime. Every command below is explicit; the page runs none of them.</p></details>'
-        content += f'<div class="check"><b>EXTEND THE SAME APP</b><p><strong>Start with:</strong> {esc(part["starting_state"])}</p><p><strong>Add now:</strong> {esc(part["new_capability"])}</p><a class="action" href="{brief_name}" download>Download Part {part["number"]} agent instructions (.md)</a></div>'
+        content += continuity_panel(part, parts)
+        content += f'<p><a class="action" href="{brief_name}" download>Download Part {part["number"]} agent instructions (.md)</a></p>'
         if part["number"] == 6:
             content += (COURSE / "cloud-handoff-content.html").read_text()
         content += persona_panel(profiles, part)
@@ -498,10 +543,12 @@ def build():
         (COURSE / name).write_text(shell(part["title"], content))
     home = COURSE / "index.html"
     home_html = home.read_text()
-    if 'class="github-project"' in home_html:
-        home_html = re.sub(r'<a class="github-project"[^>]*>.*?</a>', lambda _: GITHUB_LINK, home_html, count=1, flags=re.DOTALL)
-    else:
-        home_html = home_html.replace("</header>", GITHUB_LINK + "</header>", 1)
+    home_html = re.sub(r'<header\b[^>]*>.*?</header>',
+                       lambda _: '<header class="academy-header">' + course_navigation() + '</header>',
+                       home_html, count=1, flags=re.DOTALL)
+    for css in ('training.css',):
+        if f'href="{css}"' not in home_html:
+            home_html = home_html.replace('</head>', f'<link rel="stylesheet" href="{css}"></head>', 1)
     home.write_text(home_html)
     quick_tools = (COURSE / "tool-choices.html").read_text()
     home = (

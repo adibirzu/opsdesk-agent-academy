@@ -32,3 +32,14 @@
   const a=document.createElement('a');a.href=url;a.download=(persona?persona+'-':'')+download.dataset.filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  };
 })();
+/* Navigation is progressive enhancement: links and native details work without JS. */
+(()=>{
+ const menu=document.querySelector('.resource-menu');
+ document.querySelectorAll('.academy-nav a[href]').forEach(a=>{
+  const u=new URL(a.href,location.href);
+  if(u.pathname===location.pathname)a.setAttribute('aria-current','page');
+ });
+ if(!menu)return;
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary').focus();}});
+ document.addEventListener('click',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false;});
+})();

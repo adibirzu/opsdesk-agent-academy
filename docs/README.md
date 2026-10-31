@@ -98,3 +98,18 @@ After the app works, [connect Langfuse](langfuse.html), then complete
 [Follow one agent run](langfuse-basics.html). Download the full
 [agent instructions](LANGFUSE-BASICS.md). The recorded trace screenshots contain
 no account or private project identifiers.
+
+## Keep the same app across all six parts
+
+Use the six-part strip on each lesson to follow **working app → agent engine →
+models and cost → traces → security → cloud handoff**. The header keeps the main
+route visible; **Labs & help** groups supporting exercises and references.
+
+Each lesson and every persona’s Markdown agent brief includes an app continuity
+checkpoint. Reopen the same learner-owned project, preserve a private baseline
+reference, add the new capability, and repeat previous acceptance checks. Keep a
+private handoff note with observed results, missing evidence and the next action.
+Changing persona changes the learning route; it does not create another app.
+Current reference ticket state resets on reload. Re-create synthetic fixtures;
+persistent storage is not an accepted capability. OCI deployment and provider
+telemetry readback remain separate, explicit acceptance gates.

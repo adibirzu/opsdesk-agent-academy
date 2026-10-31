@@ -2,19 +2,19 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "3bc2dc08b48c21d5cbb70ec6eadebcc2fbfbcee1255081bb7dbf2b4382cca3b1"
+      "sha256": "718d0ebc115245d5a47699aa8f6d88f58733eb0d193aa05d2bdaf09b40646aeb"
     },
     {
       "path": "course.html",
-      "sha256": "9f6f7c5309c665f8ef2b06dd4500924fd2352f8bfd646acaa0f67e58c9557a48"
+      "sha256": "7a3b5b47f4e0c60d9ef6778b412c3ce2f5332f6d8ecda5e4bb0b1f6a267bac19"
     },
     {
       "path": "help.html",
-      "sha256": "f786580393fd35e787fca0fa8df0bbfec6bc466e207570551d1ebcbe5b0ef6cd"
+      "sha256": "d32a8e206b96883bb849fecdac2208bb327d97d95fec589db179eab0fca10be0"
     },
     {
       "path": "course.json",
-      "sha256": "88c2532e9e4152295d1e96fb2110a1c79fc8eed98567b95bb0c0d0d054a8c1cf"
+      "sha256": "f1cb012e26a90fe370184d01394a6aaf336727de1facb942b8fb5ee18a301c42"
     },
     {
       "path": "results.json",
@@ -22,7 +22,7 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "f7b4c178220653c885fbb99947902573a96e3207cf00ff1a673293fa2451df72"
+      "sha256": "d827dc6501bba27b1a18dfa42867543da5bf41a8b2738780a77429c072dc84bc"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
@@ -46,7 +46,7 @@
     },
     {
       "path": "relationships.html",
-      "sha256": "69f9700761edce934aab9802e763fbcc89cb24311fca686565c3501040cd8183"
+      "sha256": "5d4c6703e91139a26ebbda55219fce551f9baad8175d2ee6b17b11e435e3cd65"
     },
     {
       "path": "agent-map.css",
@@ -66,11 +66,11 @@
     },
     {
       "path": "showcase.html",
-      "sha256": "91b9c8c5e40e5731160a4159727340314f5ce6744edb3eb50b1bb8176796688a"
+      "sha256": "5cc9521187f2b7ddee6e8500fb4d87e38ffab023633832055579d8a0d08caa79"
     },
     {
       "path": "workflows.html",
-      "sha256": "df63038fe583af61b67c3430d8421e592e69958bff88d92b57cdbd0b150206a8"
+      "sha256": "1150aee9637cd3611763d9cd9672bbb35663027982d9c24bb036197401a5d22a"
     },
     {
       "path": "WORKFLOWS.md",
@@ -82,39 +82,39 @@
     },
     {
       "path": "agent-briefs/workflow-business.md",
-      "sha256": "bfe8a81bb87fae40d1f675ead668626bf5abf19f4c62fdc23bb6075df816874f"
+      "sha256": "3f6a7f3524b70a3903164a656eaa66cc144ab3ffa34942a7390e05e007b8fb08"
     },
     {
       "path": "agent-briefs/workflow-it-starter.md",
-      "sha256": "d6cc1c51e1cbafecd40a1c50a6bf3ec2f19253bca20da0a0c8b11613d9bca987"
+      "sha256": "f20309ea4f24538e48c6057a9210b75328a66400627f412e5854ace7a4dc5183"
     },
     {
       "path": "agent-briefs/workflow-ai-engineer.md",
-      "sha256": "4a51fb58b51d25b3b18e6f0594a95e2177c03d549ffb35d3596a1d25bcd58ef0"
+      "sha256": "f33d3301134752489fd8f4d8afa15a0d80b13082a30439e35df7417d53b6e75c"
     },
     {
       "path": "agent-briefs/part-1-first-app.md",
-      "sha256": "4131d50173791c177c5acf06cad9f2998f360a672579d49ce9e7fc59c98072d9"
+      "sha256": "0d3d29ff447e4b6c7e20126ecb2d9953f78538cbea7faadf0cd923e1b8a216fb"
     },
     {
       "path": "agent-briefs/part-2-agent-engine.md",
-      "sha256": "ee32031ee325c41a1aa922853e4ddbf0e1ec16af1b3a85df416e46546d051462"
+      "sha256": "177ee63c5249831ae65ecb64ed39325b91e65754025fb3f0d7050e3bb02d3e87"
     },
     {
       "path": "agent-briefs/part-3-models-and-cost.md",
-      "sha256": "031214fe9aa84e320e46c9d43c8b9c3396a91d5e5c070d41c15a030fb1eeb0ca"
+      "sha256": "07f79b73a478509ba48bf5580b42193257c3475296527300b0a439331b928ff8"
     },
     {
       "path": "agent-briefs/part-4-follow-the-evidence.md",
-      "sha256": "77090b3191b43e5dd448755888293597834b5a7d3376d093adfa6773f0caee4f"
+      "sha256": "5fa3fed1f9268a3c9f6c520a9fe8e5995942b4f3fb2b142ae74480d1f299ba86"
     },
     {
       "path": "agent-briefs/part-5-secure-by-construction.md",
-      "sha256": "152e15d8214929643c7ccbf70eb5fe97a7848ec150146defab916ffe5585f94d"
+      "sha256": "7dedec2ced99c968ce094425e40dfbf6f9d4e3f4a57a53e9b9556804e371a913"
     },
     {
       "path": "agent-briefs/part-6-ready-for-oci.md",
-      "sha256": "4a43a9092cc99d76c49ed64b4d6e2975a177cd82ba4d45afea06e19e94d05d11"
+      "sha256": "01e2bbd02636112ec0e4b871465a8d672fd40f62c48611d9783b2e489cda635e"
     },
     {
       "path": "lesson-help.json",
@@ -122,11 +122,11 @@
     },
     {
       "path": "training.css",
-      "sha256": "da783995d6293fcee07bdcefb2b3964e3e8d484e350d20c58457d3179a8d0b33"
+      "sha256": "e0bef981c07c57b31c749f6227f22b0a9caec432cb851797b6f8607752d803ce"
     },
     {
       "path": "training.js",
-      "sha256": "e5487fbc7b0ed770e04fdb9eb831ecfc8433e00ed23088de80cc0becaed860ec"
+      "sha256": "753e9241527c77584e68b05f9476b89b95ecd8a6c5fd0f903e8fd1ef9431b8a5"
     },
     {
       "path": "course-visuals.js",
@@ -142,15 +142,15 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "768f493dfd7b0994f0796fffd33ed9d3cb5e342c059f6a2206de2b3877128b2e"
+      "sha256": "4f0a9fd475b3ab7f0bd4ccc109460d7ace6d6ea158db8bd62c20d99f254370e7"
     },
     {
       "path": "langfuse.html",
-      "sha256": "8b8e830490cc64f41d2baa6e4eb2a6085969a807597425c0372eb079dd4ad2e2"
+      "sha256": "fe848b6f4ff6fae9a49588b8341c3c4c6e8cd73c669361f6bea80492386ee51b"
     },
     {
       "path": "langfuse-basics.html",
-      "sha256": "00777c3d0170c606452f4d883a3b5fa9b8a31fd3aec5e174e0ec0e9e3442f527"
+      "sha256": "bf95e6ef9f1430db81377568c2e7751197bafb892d792527e764084e13bff522"
     },
     {
       "path": "langfuse-basics.js",
@@ -182,7 +182,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "8898363e15fbc6893c47e1b33166e7411620636e25d68bd019d56cba73d178fc"
+      "sha256": "2517a646033e3f266ad16b921c21f7ecb87b870c5b63412ec03ca8f50219844d"
     },
     {
       "path": "personas.json",
@@ -194,7 +194,7 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "1545d3310090fa058a28171cff12b179e408b9991b0f39dcb4bd10adde326a19"
+      "sha256": "9243e450b4823cd965306b5357c925bcc7b459c2db13e6e297aa3611c81a779c"
     },
     {
       "path": "EVIDENCE.json",
@@ -226,27 +226,27 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "1ce9618bef40454d8cf89b992968101ed0a8fdfe63ef5a7dabd0856c57222f23"
+      "sha256": "b8d734ed2885642ec22d39b07fb4649ebf16c7d701dafd63b733b09354e7c428"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "d938e51361225bc5d0c2fd0c0730b7a1ef17478645e67dd08ffff937031d1d06"
+      "sha256": "4dff32b0776cf556e9c4219d2bf7630805259d01addc2f1a137cc1bf32bce87a"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "77b332b5fe5268448ab2182e35aaa6df9c67b8c9d2373b64c9e0acbad5dcbcf7"
+      "sha256": "6f69f8988380c33482552b23d2389b872c34e3854104ecedabcdf158533bfeda"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "668ecdc57456a3da8727670bb06c016fb3aecee2d7e2eecb993d6c99d32dd2d7"
+      "sha256": "ae1b79f1b1cbca1bc438d398cf8ddf66ca9ce058589f01e2e24d3c280fd48c1f"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "c67e8f6833740aa7257771d6d28b183a05e36a9ddf3a2700d097f59dc3dc66e8"
+      "sha256": "a4c7999392212462dc8efbbf53a1ee301ec91bfc3aef8db5312835f24dd970ad"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "f05c5c7cb3cfd06dc4bded249be24b4859ffbc8e503c43ef762c3be3eb527056"
+      "sha256": "77a1445028315deac3b9c7faf325535b19096c35c31db95175b579625cd2ff41"
     },
     {
       "path": "meet-your-agent.html",
@@ -258,7 +258,7 @@
     },
     {
       "path": "guide.css",
-      "sha256": "cc360dbe70251725ad34cf5c5b9b89f39a50428e219b47ae33c9dde4069c9995"
+      "sha256": "c6eb11d09cfd1e8965186e78bb5fc59f885e4384c817492459ca0de97a699471"
     },
     {
       "path": "guide.js",
@@ -294,7 +294,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e511a0ad878426e2e97cee6bffc67e7e8345b966afab01b7aafc1184b0b5db09"
+      "sha256": "37782c9bae37d41f03d31b37d264527a0ac0e1ca8be7c8ed342869228088b6af"
     },
     {
       "path": "BUILDERS.md",
@@ -378,75 +378,75 @@
     },
     {
       "path": "agent-briefs/persona-business-part-1.md",
-      "sha256": "b0f9466ad23c43db0d145e58a75019cd40b4e2e7233aeea9d790c0beda62cec4"
+      "sha256": "e9db5f08df2433c0984d96c84b7f40b95d4c1967253cb7b99a0a9571ce1aa8d3"
     },
     {
       "path": "agent-briefs/persona-business-part-2.md",
-      "sha256": "d0e02f0a8597186fedbbf4f66a9dad37926a13ef62d13d29bdcc5bd04c6f21c0"
+      "sha256": "0d7a9ab26562832c89491b1e34c97fe3ce5e87083c0767ff7872ea4f735f226a"
     },
     {
       "path": "agent-briefs/persona-business-part-3.md",
-      "sha256": "ea9aa8474318e12a1a91c045fa53f0aeb1b3b7b68889d976eae2b30da09d2780"
+      "sha256": "ae96e198a085f3319e9a860dff5b0a8b0c8535a4aa423c272507153afcd0781a"
     },
     {
       "path": "agent-briefs/persona-business-part-4.md",
-      "sha256": "2be53099e3847e87a2ba70da1f210b4e4f30cdf50b18986fd524e41a7d2ea8da"
+      "sha256": "cb095498a486fe2e255b6038b7738ed4e84364e9fe6e36ff0d57a8413d2f1d5d"
     },
     {
       "path": "agent-briefs/persona-business-part-5.md",
-      "sha256": "032577e1eedfc54c32e71f116edf30772d240174d19bbe8e80d5945d851c7bee"
+      "sha256": "2002860b09d2dc00eff5111260b02e06d72b4c97761370191649b6cd4937e6cb"
     },
     {
       "path": "agent-briefs/persona-business-part-6.md",
-      "sha256": "e7612425047758894ca2d13dd7572c8d174d646cbc330a32c200d18ea0a39564"
+      "sha256": "fb088c1421e8fc3de52b37590a62e2ef0e4e8dfa34b00592e26d03e4facbb933"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-1.md",
-      "sha256": "bd5c1fce4df82adae3ba3ba478b98da2f6c2047fe4ebf39e0e1e936df6caca55"
+      "sha256": "ae6f6644b627ae4ca9aad935510fb88acbc0f62b7042dd2ec647af36b99038f0"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-2.md",
-      "sha256": "34e4c69588800839e5e82cd59613000e96bbf0804ab77399e290faacfdff88f4"
+      "sha256": "0a2308e382438fc3c70b579e2225c5394607f30a37ec40151493c8400925b6f6"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-3.md",
-      "sha256": "9ddd19c7cea46eb77409650576722ca61766bb7e842c61c0f7e952f426813450"
+      "sha256": "163982af733e890e8f6068289c18bcf7db2de9cd766f54ad2beb70f5e3f057ee"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-4.md",
-      "sha256": "0da7be9676d1d669fdfd54a123cdabf1dd4bb0f22119a4dc736f4403aadf3ea2"
+      "sha256": "62452e42e67b15b9b7f9b641def57bf3e6e756dff64c6f5c248560dae0af8673"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-5.md",
-      "sha256": "bf531ce5e2a4b148f02b43d4277810603dff200c064477df179bbecce96de285"
+      "sha256": "e7233dfece5658677a02337e8cb9281cfd16c9d0766032ea083e8c9b9615deb2"
     },
     {
       "path": "agent-briefs/persona-it-starter-part-6.md",
-      "sha256": "aa1356e81ee4180e64996186caabd11cbe530ae421643c484b5850273528a815"
+      "sha256": "47f13d1ee19d1c2d3b773d3e978516658bbb91b2466aed57abe29459ec93bf21"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-1.md",
-      "sha256": "d081e27e12762c7588aa8b2018fa13550deac97c7fec6168a50d5fc343793e9c"
+      "sha256": "d117efdd32a359403bc03112ae33593b3146f91706e24a537d8b3fa441938208"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-2.md",
-      "sha256": "6514196ff635734f0c4ecf2b23ab41132a062fb6dbbc7f4dd8a2568984671db9"
+      "sha256": "308c591cae08e87587ea4d3b30bf223866e1b4c286f90a80dd9cac3a9990ce2b"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-3.md",
-      "sha256": "638413fc790fa7f0cb86e8ff826c6d8e8b059ccfefee51488c5877e2c03b017a"
+      "sha256": "d4fa172a6b99dfb8c7981e09189a456ef909f9a73ccb21470bf6d850e5e3bbb0"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-4.md",
-      "sha256": "3134120df6e26589a78e35f84852a079dd70a4318ca0b970377e8d671bae9431"
+      "sha256": "d22f4855545f7b409b58d3c68e782c1f532a4cfc8f0f644650df1e423f6ce125"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-5.md",
-      "sha256": "1a51fa4c9a4ae8c83125668bd430d23f01713ed3556a834c6800ec0b4e2ebb31"
+      "sha256": "49a50ada5537831b52f80f54c1b32509324fff9d984c21fc9e0f4748930d5b28"
     },
     {
       "path": "agent-briefs/persona-ai-engineer-part-6.md",
-      "sha256": "b60ac125554b4da8da5a220232837612b8bdcbbccef4d708f726b594831d54d7"
+      "sha256": "8ec6d6c33a8861ed307a2449c2faa96c4a078e8a953309fa38fd206c74cf3596"
     }
   ],
   "mode": "static-guide-no-backend",

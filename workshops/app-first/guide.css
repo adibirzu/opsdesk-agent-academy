@@ -10,3 +10,14 @@
 .github-project svg{display:block;flex-shrink:0}
 .github-project:hover{background:var(--surface-sunken);border-color:var(--border-default);color:var(--text-brand)}
 .github-project:focus-visible{outline:2px solid var(--red-redwood);outline-offset:3px;color:var(--text-brand)}
+/* Shared course navigation: the main route stays visible; supporting labs expand. */
+header.academy-header{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;padding-block:16px;background:var(--surface-card)}
+.academy-brand{display:flex;align-items:center;gap:16px;flex-shrink:0}.academy-brand>a:first-child{text-decoration:none;color:var(--text-strong);font-size:17px}
+header .academy-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-width:0;font-size:14px}
+.academy-nav>a,.resource-menu>summary{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:6px;text-decoration:none;color:var(--text-body);font:inherit}
+.academy-nav>a:hover,.resource-menu>summary:hover{background:var(--surface-sunken);color:var(--text-brand)}.academy-nav>a[aria-current=page]{background:var(--red-tint);color:var(--text-brand);font-weight:600}
+.academy-nav a:focus-visible,.resource-menu>summary:focus-visible{outline:2px solid var(--red-redwood);outline-offset:3px}
+header .resource-menu{position:relative;border:0;padding:0;margin:0;background:transparent}.resource-menu>summary{cursor:pointer;list-style:none;gap:8px}.resource-menu>summary::-webkit-details-marker{display:none}.resource-menu>summary::after{content:'⌄';font-size:16px}.resource-menu[open]>summary{background:var(--surface-sunken)}
+.resource-panel{position:absolute;z-index:10;right:0;top:calc(100% + 8px);width:min(700px,85vw);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:24px;border:1px solid var(--border-default);border-radius:8px;background:var(--surface-card);box-shadow:0 12px 30px #2a2f2f18}
+.resource-panel>div{min-width:0}.resource-panel b{display:block;font-size:12px;color:var(--text-muted);margin-bottom:10px}.resource-panel a{display:block;padding:10px 0;color:var(--text-body);text-decoration:none;overflow-wrap:anywhere}.resource-panel a:hover{color:var(--text-brand);text-decoration:underline}
+@media(max-width:750px){header.academy-header{gap:10px}.academy-brand{width:100%;justify-content:space-between}.academy-nav{width:100%}.academy-nav>a,.resource-menu>summary{padding:8px 10px;font-size:13px}header .resource-menu{position:static}.resource-panel{position:static;width:100%;grid-template-columns:minmax(0,1fr);box-shadow:none;margin-top:8px;gap:16px;padding:16px}.resource-menu[open]{width:100%}}

@@ -28,6 +28,26 @@ class Links(HTMLParser):
 
 
 class PublicSiteTests(unittest.TestCase):
+    def test_menu_and_continuous_app_handoffs_are_available(self):
+        course = ROOT / "workshops/app-first"
+        for page in course.glob("part-*.html"):
+            text = page.read_text()
+            self.assertIn('class="resource-menu"', text)
+            self.assertIn('aria-label="Six-part app journey"', text)
+            self.assertEqual(text.count('aria-current="step"'), 1)
+            self.assertIn('App continuity checkpoint', text)
+            self.assertIn('repeat earlier checks', text)
+        briefs = list((course / "agent-briefs").glob("*.md"))
+        self.assertEqual(len(briefs), 27)
+        for brief in briefs:
+            text = brief.read_text()
+            self.assertIn("## App continuity checkpoint", text)
+            self.assertIn("private handoff note", text)
+            self.assertIn("independent provider readback", text)
+        home = (course / "index.html").read_text()
+        self.assertIn('class="academy-header"', home)
+        self.assertIn('class="resource-menu"', home)
+
     def test_export_has_only_selected_files_and_relative_links_resolve(self):
         with tempfile.TemporaryDirectory() as temp:
             out = Path(temp) / "site"

@@ -102,7 +102,7 @@
         "https://openai.com/codex/",
         "https://docs.oracle.com/en-us/iaas/Content/generative-ai/applications-deployments.htm"
       ],
-      "starting_state": "A fresh learner workspace and a working, student-owned tool-capable model endpoint.",
+      "starting_state": "A fresh learner workspace, a selected builder and its supported native AI backend, or a working student-owned tool-capable model endpoint.",
       "new_capability": "A functional incident inbox and one real AI investigation.",
       "acceptance": [
         "Create, search, filter and select an invented ticket in the actual app.",

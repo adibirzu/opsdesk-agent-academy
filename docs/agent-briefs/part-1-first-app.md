@@ -10,7 +10,7 @@ Keep secrets, private endpoints, raw prompts/answers, recordings and receipts pr
 
 ## Starting state
 
-A fresh learner workspace and a working, student-owned tool-capable model endpoint.
+A fresh learner workspace, a selected builder and its supported native AI backend, or a working student-owned tool-capable model endpoint.
 
 ## New capability to add
 
@@ -27,6 +27,16 @@ If a required binding or dependency is missing, identify it explicitly and conti
 ## Carry the app forward
 
 If an app baseline already exists, record its source, launch command and passing create → select → analyze journey before editing. In Part 1, record the empty starting state and establish that working baseline by the end. After the change, repeat that journey and the checks from previous parts. Keep the same inbox, ticket IDs/session ownership contract and visible AI action unless this part explicitly changes one. Do not reset or rebuild the learner workspace to get a green result.
+
+## App continuity checkpoint
+
+Keep one learner-owned OpsDesk project throughout all six parts. Reopen the same builder project or source folder; changing persona changes the explanation, not the app. Switching builders is optional: export/import and verify the baseline first, never start a disconnected replacement.
+
+Before editing, privately record the app location, source revision or dated source copy, launch/preview instructions, selected model and the last passing checks. Do not put private URLs, account details or keys in the public workbook.
+
+After editing, repeat: create a synthetic ticket → search/filter → select it → investigate with the real model and allowed tools → test the change-request stop. Preserve previously added usage, trace and security checks. Separate local tests, exporter acknowledgement and independent provider readback. Missing evidence stays unverified.
+
+Keep a private handoff note: part completed; capability added; baseline reference; checks with observed results; known gaps; next part. Save a source copy using your tool’s supported versioning/export; do not commit, publish or deploy without applicable authority. Tickets in the current reference app are in memory and reset on reload; re-create synthetic fixtures when needed. Durable ticket storage is not implemented by this course checkpoint.
 
 ## Prepare the local model runtime before the hour
 
