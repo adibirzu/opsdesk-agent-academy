@@ -374,9 +374,9 @@ def build():
         raise ValueError("Expected six explicit result examples")
     lovable = (COURSE / "lovable-lab-content.html").read_text()
     workflow = ["# Complete the Lovable OpsDesk workflow", "", "Use your own project and existing entitlements. Work in the same app. Never publish credentials or accept new paid services, legal terms or expanded access without the learner's applicable authority.", "", (COURSE / "APP-REHEARSAL.md").read_text().strip(), ""]
-    for token, path in (("inbox_prompt", "prompts/01-build-app.md"), ("native_prompt", "prompts/07-lovable-native.md"), ("langfuse_prompt", "prompts/06-langfuse-simple.md")):
+    for prompt_number, (token, path) in enumerate((("inbox_prompt", "prompts/01-build-app.md"), ("native_prompt", "prompts/07-lovable-native.md"), ("langfuse_prompt", "prompts/06-langfuse-simple.md")), start=1):
         prompt = (COURSE / path).read_text().strip()
-        block = f'<details><summary>Implementation prompt · {esc(path)}</summary><pre class="code-sample" id="lovable-{token}">{esc(prompt)}</pre><button class="action" data-copy="lovable-{token}">Copy this prompt</button></details>'
+        block = f'<details open><summary>Prompt {prompt_number} · copy into the same builder chat</summary><pre class="code-sample" id="lovable-{token}">{esc(prompt)}</pre><button class="action" data-copy="lovable-{token}">Copy this prompt</button> <a href="{esc(path)}" download>Download prompt (.md)</a></details>'
         lovable = lovable.replace("{{" + token + "}}", block)
         workflow += ["## " + path, "", prompt, ""]
     (COURSE / "lovable.html").write_text(shell("The complete Lovable demo", lovable))

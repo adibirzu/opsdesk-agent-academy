@@ -69,6 +69,20 @@
         "secret runtime availability",
         "trace ingestion or readback"
       ]
+    },
+    {
+      "file": "evidence/langfuse-trace-tree.jpg",
+      "sha256": "1bd36a4b34b3432474963bfcc853a4ffa103380a8ae382b5f3a8881c5b76fc69",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Exact native Lovable run independently matched in EU Langfuse: agent root, authorization, two generations and two synthetic tools; 948 reported tokens. No identity or private identifiers visible. Displayed model costs are provider calculations, not billing receipts.",
+      "evidence_class": "provider-verified",
+      "does_not_prove": [
+        "OCI APM or Log Analytics delivery",
+        "all-persona hosted acceptance",
+        "billing reconciliation",
+        "complete security audit"
+      ]
     }
   ]
 }

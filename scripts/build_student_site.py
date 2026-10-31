@@ -20,6 +20,7 @@ FILES = [
     "prompts/07-lovable-native.md",
     "evidence/lovable-rehearsal.jpg",
     "evidence/langfuse-eu-setup.jpg",
+    "evidence/langfuse-trace-tree.jpg",
     "relationships.html",
     "agent-map.css",
     "agent-map.js",

@@ -22,11 +22,11 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "fa53afa0a0bc703d36b0c783c88f110bb43fd1c6be3890f61c73c234d154ccfc"
+      "sha256": "94690eaf773fdfa504265a7b9c324964188b1d4d970cd6933f568b362bc7025e"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
-      "sha256": "0f17161653d55462cde87e5738dce765d209fd1473346e6223568cba5d5aab80"
+      "sha256": "9fd673ca05070055d2e4655c73ff5319c3fe0c772534b87bd4255e6e93c6c4ff"
     },
     {
       "path": "prompts/07-lovable-native.md",
@@ -39,6 +39,10 @@
     {
       "path": "evidence/langfuse-eu-setup.jpg",
       "sha256": "596ece3a53ac06fcfff820b9bc290c4b3aeb4d2c67e9512da140c42152224a19"
+    },
+    {
+      "path": "evidence/langfuse-trace-tree.jpg",
+      "sha256": "1bd36a4b34b3432474963bfcc853a4ffa103380a8ae382b5f3a8881c5b76fc69"
     },
     {
       "path": "relationships.html",
@@ -74,7 +78,7 @@
     },
     {
       "path": "APP-REHEARSAL.md",
-      "sha256": "ed9821619c6fd72d3ba1000f390a982bcb9b07b0142ca95933fd232089c804e4"
+      "sha256": "d1fa2c59efa710643b84491fb983f6d7bf1172748a2f1ed4e276ed2f187a2cb0"
     },
     {
       "path": "agent-briefs/workflow-business.md",
@@ -118,11 +122,11 @@
     },
     {
       "path": "training.css",
-      "sha256": "e23ac6e2d1661a5e78b919605c085dadb940efe85a7557e240ae19fc2b6044d0"
+      "sha256": "5a710a644a73a50a6161973d0fb236ecdeaab4f6ab26e1e3669bc658c70cb045"
     },
     {
       "path": "training.js",
-      "sha256": "7435b8bd21c93059cf6b32782159fa58df2ef887d05fd3d7b62c69bf53f58a30"
+      "sha256": "e5487fbc7b0ed770e04fdb9eb831ecfc8433e00ed23088de80cc0becaed860ec"
     },
     {
       "path": "course-visuals.js",
@@ -142,7 +146,7 @@
     },
     {
       "path": "langfuse.html",
-      "sha256": "45a2e9c6e0bf2eeaac8e6bc531ce29635295558d51803a214151e8d04b23b542"
+      "sha256": "25c9c2b6d17e72eb626ff6e4853caf07a64740c544e5d241b5ba0c8526cb9cc5"
     },
     {
       "path": "course-doctor.py",
@@ -162,11 +166,11 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "dbfc0cdbce25faebc8e344a80d057617ccfee124321fc4dd221825cb46dc0a7f"
+      "sha256": "cc10418f0d427521cbc2d80101ab3666d409a638d62bdde56493722500d4cd3b"
     },
     {
       "path": "EVIDENCE.json",
-      "sha256": "830eed932a1e58ff18faa6aabebfc6e3e313cd41e003aca90bf1abb36a2c6698"
+      "sha256": "0785b5ee90554bfe52ef688f0d6e1746917bd37bf73f300cb80d94b5896418c7"
     },
     {
       "path": "evidence/lovable-inbox.jpg",

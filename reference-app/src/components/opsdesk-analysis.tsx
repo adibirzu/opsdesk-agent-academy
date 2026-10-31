@@ -9,16 +9,33 @@ import { useWorkshopSession } from "./opsdesk-session";
 import { analyzeTicket } from "@/lib/opsdesk.functions";
 import { requestSchema, type AnalysisInput, type AnalysisRun } from "@/lib/opsdesk-contract";
 import { langfuseStatusText, presentationText } from "@/lib/langfuse-contract";
+import { checkTelemetrySetup } from "@/lib/telemetry-setup.functions";
+import type { TelemetrySetup } from "@/lib/telemetry-setup-contract";
 
 export function OpsdeskAnalysis({ ticket }: { ticket: AnalysisInput["ticket"] }) {
   const { user, ready } = useWorkshopSession();
   const analyze = useServerFn(analyzeTicket);
+  const checkSetup = useServerFn(checkTelemetrySetup);
+  const [checkingSetup, setCheckingSetup] = useState(false);
+  const [setup, setSetup] = useState<TelemetrySetup | null>(null);
+  const [setupError, setSetupError] = useState("");
+  const setupBusy = useRef(false);
   const [loading, setLoading] = useState(false);
   const busy = useRef(false);
   const [run, setRun] = useState<AnalysisRun | null>(null);
   const [error, setError] = useState("");
   const [request, setRequest] = useState("Analyze this synthetic incident using read-only evidence.");
   const [runbook, setRunbook] = useState("");
+  async function checkConfiguration() {
+    if (setupBusy.current) return;
+    setupBusy.current = true;
+    setCheckingSetup(true);
+    setSetup(null);
+    setSetupError("");
+    try { setSetup(await checkSetup({ data: {} })); }
+    catch { setSetupError("Setup check could not complete. Verify your sign-in and try again."); }
+    finally { setupBusy.current = false; setCheckingSetup(false); }
+  }
   async function signIn(provider: "lovable" | "google") {
     setError("");
     try {
@@ -63,6 +80,21 @@ export function OpsdeskAnalysis({ ticket }: { ticket: AnalysisInput["ticket"] })
         <p>In this project's Settings → Secrets, save these three server fields:</p>
         <ul className="list-inside list-disc font-mono"><li>LANGFUSE_BASE_URL</li><li>LANGFUSE_PUBLIC_KEY</li><li>LANGFUSE_SECRET_KEY</li></ul>
         <p>Use your instance's HTTPS origin and project keys. Never paste values into the chat or this page. Saving Secrets does not run AI.</p>
+        <Button variant="outline" size="sm" disabled={!ready || !user || checkingSetup} onClick={() => void checkConfiguration()}>
+          {checkingSetup ? <LoaderCircle className="motion-safe:animate-spin" /> : <ShieldCheck />}Check telemetry setup
+        </Button>
+        <p>Sign in to check this preview's server configuration. Saving or checking configuration makes zero model calls and sends no traces. Presence does not verify credentials, connectivity or trace delivery.</p>
+        {checkingSetup && <p role="status">Checking server configuration…</p>}
+        {setupError && <p role="alert">{setupError}</p>}
+        {setup && user && <div role="status" aria-live="polite">
+          <p className="font-medium">{setup.status === "configured" ? "Langfuse setup present · origin valid" : setup.status === "invalid_config" ? "Langfuse setup present · origin invalid" : "Langfuse not configured"}</p>
+          <ul className="list-inside list-disc">
+            <li>LANGFUSE_BASE_URL: {setup.LANGFUSE_BASE_URL ? "present" : "missing"}</li>
+            <li>LANGFUSE_PUBLIC_KEY: {setup.LANGFUSE_PUBLIC_KEY ? "present" : "missing"}</li>
+            <li>LANGFUSE_SECRET_KEY: {setup.LANGFUSE_SECRET_KEY ? "present" : "missing"}</li>
+            <li>HTTPS origin: {setup.validHttpsOrigin ? "valid" : "invalid or missing"}</li>
+          </ul>
+        </div>}
         <p>This integration uses OpenTelemetry HTTP/JSON, not legacy ingestion or the Langfuse JS v6 API. JS v6 requires self-hosted v4.59.0+; older instances need OTLP support (introduced in v3.22.0). Live compatibility is unverified until a real export.</p>
         <p>Only timings, status, random session labels, returned model names, reported token counts and validated synthetic tool names are exported. No identity, ticket text, prompts, answers or reasoning.</p>
         <p>After a signed-in run, copy its Langfuse trace ID from the inspector. Open your Langfuse project → Traces and find that ID or random session label. The instance address stays private. Export acknowledgment is not independent trace readback.</p>

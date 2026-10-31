@@ -2,7 +2,23 @@
 (()=>{
  const boxes=[...document.querySelectorAll('[data-task]')];
  boxes.forEach(box=>box.onchange=()=>{document.querySelector('#task-progress').textContent=boxes.filter(b=>b.checked).length+' of '+boxes.length+' tasks checked · self-reported, reset on reload';});
- document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied';}catch{b.textContent='Select the text and copy manually';}});
+ document.querySelectorAll('pre.code-sample').forEach((pre,i)=>{
+  if(pre.hidden||pre.closest('[hidden]'))return;
+  if(pre.id&&[...document.querySelectorAll('[data-copy]')].some(b=>b.dataset.copy===pre.id))return;
+  if(!pre.id)pre.id='copy-sample-'+i;
+  const button=document.createElement('button');button.className='action copy-command';
+  button.dataset.copy=pre.id;button.textContent=pre.dataset.copyLabel||'Copy this text';
+  button.setAttribute('aria-label',button.textContent+' (block '+(i+1)+')');pre.after(button);
+ });
+ async function copyText(text){
+  if(window.isSecureContext&&navigator.clipboard){try{await navigator.clipboard.writeText(text);return;}catch{/* Use a user-initiated selection fallback. */}}
+  const field=document.createElement('textarea');field.value=text;field.readOnly=true;
+  field.style.cssText='position:fixed;left:-9999px;top:0';document.body.append(field);
+  const previous=document.activeElement;field.select();
+  try{if(!document.execCommand('copy'))throw new Error('Copy unavailable');}
+  finally{field.remove();if(previous instanceof HTMLElement)previous.focus();}
+ }
+ document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{try{await copyText(document.getElementById(b.dataset.copy).textContent);b.textContent='Copied · paste into the indicated tool';b.setAttribute('aria-live','polite');}catch{b.textContent='Select the text and copy manually';}});
  const download=document.querySelector('#download-progress');
  if(download)download.onclick=()=>{
   const progress=boxes.map(b=>'- ['+(b.checked?'x':' ')+'] Task '+b.dataset.task).join('\n');
