@@ -37,7 +37,7 @@ def course_navigation():
         '<details class="resource-menu"><summary>Labs &amp; help</summary><div class="resource-panel">'
         '<div><b>Build &amp; explore</b><a href="index.html">Part 1 live guide</a><a href="showcase.html">App walkthrough</a><a href="replicate.html">Run it at home</a></div>'
         '<div><b>Observe &amp; verify</b><a href="langfuse.html">Connect Langfuse</a><a href="langfuse-basics.html">Read a trace</a><a href="evidence.html">Real screenshots</a></div>'
-        '<div><b>Keep learning</b><a href="workflows.html">All workflows</a><a href="help.html">Help &amp; troubleshooting</a><a href="WORKBOOK.md" download>Download workbook ↓</a></div>'
+        '<div><b>Keep learning</b><a href="present.html">Present the workshop</a><a href="qa.html">Q&amp;A and next steps</a><a href="watchalong.html">Watch &amp; follow along</a><a href="poll.html">Opening poll</a><a href="workflows.html">All workflows</a><a href="help.html">Help &amp; troubleshooting</a><a href="WORKBOOK.md" download>Download workbook ↓</a></div>'
         '</div></details></nav>'
         '</div>'
         '<div class="milestone-progress-bar" id="milestone-progress-bar" role="region" aria-label="Milestone completion progress">'
@@ -429,7 +429,161 @@ def persona_panel(profiles, part):
     return body + "</section>"
 
 
+def reviewed_form_config(filename):
+    """Validate explicitly selected public responder links; owner links stay local."""
+    from urllib.parse import urlsplit
+    config = json.loads((COURSE / filename).read_text())
+    respond = config.get("respond_url")
+    results = config.get("public_results_url")
+    def public_form_url(value, results=False):
+        if not isinstance(value, str):
+            raise ValueError("Expected a selected public poll URL")
+        url = urlsplit(value)
+        if url.scheme != "https" or url.username or url.password or url.fragment:
+            raise ValueError("Poll links must be HTTPS public links without account fragments")
+        if results:
+            valid = url.hostname == "docs.google.com" and url.path.startswith("/forms/") and url.path.endswith("/viewanalytics")
+        else:
+            valid = url.hostname == "forms.gle" or (url.hostname == "docs.google.com" and url.path.startswith("/forms/") and url.path.endswith("/viewform"))
+        if not valid:
+            raise ValueError("Use an actual public Google Forms responder/aggregate link, not an editor or guessed URL")
+    if respond or results:
+        if not config.get("reviewed") or not config.get("service_name") or not respond:
+            raise ValueError("Live form links require an explicit service and reviewed responder configuration")
+        public_form_url(respond)
+        if results:
+            public_form_url(results, results=True)
+        if config.get("qr_target_url") != respond:
+            raise ValueError("The QR must point to the selected responder link")
+    qr = config.get("qr_file")
+    expected = filename.replace('-config.json', '-qr.svg')
+    if qr != expected or not (COURSE / qr).is_file():
+        raise ValueError("Expected the selected local form QR asset")
+    return config
+
+
+def render_opening_poll():
+    config = reviewed_form_config("poll-config.json")
+    respond, results, qr = config.get("respond_url"), config.get("public_results_url"), config["qr_file"]
+    if respond:
+        collection = 'The live poll opens ' + esc(config['service_name']) + ', which receives the answers you submit there. Do not enter names, emails or customer data.'
+        live = f'<section class="live-poll-card" aria-label="Live audience poll"><img src="{qr}" alt="Scan to open the live anonymous audience poll" width="240" height="240"><div><span class="eyebrow">ANSWER TOGETHER · LIVE RESPONSES</span><h2>Scan. Answer. Shape today’s demo.</h2><p>Open the anonymous poll in {esc(config["service_name"])}. The presenter will show the real response summary and choose the pace with you.</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">Answer the live poll ↗</a>'
+        if results:
+            live += f' <a class="action" href="{esc(results)}" target="_blank" rel="noopener noreferrer">View the public aggregate results ↗</a>'
+        live += '<p class="watch-status">The course page does not invent counts or copy responses into its private practice form.</p></div></section>'
+    else:
+        collection = 'Shared online collection is not configured.'
+        live = f'<section class="live-poll-card" aria-label="Opening poll QR"><img src="{qr}" alt="Scan to open this course’s opening poll page" width="220" height="220"><div><span class="eyebrow">OPEN THE QUESTIONS</span><h2>Bring the opening questions to your phone.</h2><p>This QR opens the course poll page. It is not a shared-response collector. Use the questions for a show of hands, or complete the private practice form below.</p></div></section>'
+    body = (COURSE / "poll-content.html").read_text().replace("{{poll_collection_status}}", collection).replace("{{live_poll}}", live)
+    if respond:
+        body = body.replace('<form id="opening-poll"', '<details class="private-practice"><summary>Optional: practice privately instead · not submitted to the live poll</summary><form id="opening-poll"', 1).replace('</form>', '</form></details>', 1)
+    return shell("Where are you starting today?", body)
+
+
+def render_qa():
+    config = reviewed_form_config("qa-config.json")
+    respond, qr = config.get("respond_url"), config["qr_file"]
+    if respond:
+        collection = 'Questions are submitted to ' + esc(config['service_name']) + ' only when you open and submit its form.'
+        shared = config.get("shared_workshop_form") is True
+        description = 'Use the optional final Q&amp;A field in the workshop form. The same form also contains the opening poll; earlier answers are not automatically reused.' if shared else 'Open the anonymous Q&amp;A form. The presenter can review actual submissions in the form dashboard.'
+        button = 'Open workshop form · final Q&amp;A field ↗' if shared else 'Ask a question ↗'
+        card = f'<section class="live-poll-card" aria-label="Audience questions QR"><img src="{qr}" alt="Scan to open the workshop question form" width="240" height="240"><div><span class="eyebrow">SCAN TO ASK</span><h2>Your question. The next conversation.</h2><p>{description}</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">{button}</a><p class="watch-status">No synthetic response count is displayed here.</p></div></section>'
+    else:
+        collection = 'Online question collection is not connected yet. Ask the presenter directly; this page does not send or store questions.'
+        card = f'<section class="live-poll-card" aria-label="Q and A page QR"><img src="{qr}" alt="Scan to open the workshop question and next-steps page" width="240" height="240"><div><span class="eyebrow">KEEP THE LINKS</span><h2>Scan for Q&amp;A and next steps.</h2><p>This QR opens this course page. It is not a connected question collector yet. Ask your question aloud or use the course links below.</p></div></section>'
+    body = (COURSE / "qa-content.html").read_text().replace("{{qa_collection_status}}", collection).replace("{{live_qa}}", card)
+    return shell("Questions and next steps", body)
+
+
+def build_watchalong():
+    """Build a useful written route without inventing an unreleased recording."""
+    data = json.loads((COURSE / "watchalong.json").read_text())
+    chapters = data["chapters"]
+    if data["duration_seconds"] != 2700 or chapters[0]["start"] != 0 or chapters[-1]["end"] != 2700:
+        raise ValueError("Expected a complete 45-minute chapter plan")
+    for i, chapter in enumerate(chapters):
+        if chapter["end"] <= chapter["start"] or (i and chapters[i - 1]["end"] != chapter["start"]):
+            raise ValueError("Chapter timing must be ordered and continuous")
+    def clock(seconds):
+        return f"{seconds // 60:02}:{seconds % 60:02}"
+    def reviewed_asset(path):
+        if not isinstance(path, str) or "://" in path or path.startswith("/") or ".." in Path(path).parts or not (COURSE / path).is_file():
+            raise ValueError("Reviewed media must be an existing relative course asset")
+        return path
+    media = data["media"]
+    if media["src"] or media["captions"]:
+        if not media["reviewed"]:
+            raise ValueError("Do not expose unreviewed media")
+        for path in (media["src"], media["captions"]):
+            if path:
+                reviewed_asset(path)
+    playlist = []
+    for chapter in chapters:
+        cm = chapter.get("media", {})
+        assets = [cm.get(key) for key in ("src", "captions", "transcript_file")]
+        if any(assets):
+            if not cm.get("reviewed") or not all(assets):
+                raise ValueError("Released chapters require reviewed video, captions and exact transcript")
+            for path in assets:
+                reviewed_asset(path)
+        playlist.append({"id": chapter["id"], "start": chapter["start"], "end": chapter["end"], "title": chapter["title"], "media": {"src": cm.get("src"), "captions": cm.get("captions"), "reviewed": bool(cm.get("reviewed"))}})
+    first_ready = next((c for c in playlist if c["media"]["src"]), None)
+    selected_media = first_ready["media"] if first_ready else media
+    source = f'<source src="{esc(selected_media["src"])}" type="video/mp4">' if selected_media["src"] else ""
+    track = f'<track src="{esc(selected_media["captions"])}" kind="captions" srclang="en" label="English" default>' if selected_media["captions"] else ""
+    ready_count = sum(bool(c["media"]["src"]) for c in playlist)
+    recording_ready = bool(selected_media["src"])
+    hidden = "" if recording_ready else " hidden"
+    placeholder_hidden = " hidden" if recording_ready else ""
+    body = (
+        '<link rel="stylesheet" href="watchalong.css"><section class="watch-hero"><span class="eyebrow">WATCH · PAUSE · BUILD THE SAME APP</span>'
+        f'<h1>{esc(data["title"])}</h1><p class="intro">A 45-minute chapter plan, the matching manual tasks, and links to each lesson. Start with the audience poll, then follow the same OpsDesk app from idea to evidence.</p>'
+        '<a class="action primary" href="poll.html">Start the opening poll →</a> <a class="action" href="WATCHALONG-GUIDE.md" download>Download the watch-along guide (.md)</a></section>'
+        '<div class="watch-layout"><section class="watch-stage" aria-label="Workshop recording">'
+        f'<p class="watch-status"><strong>Recording availability:</strong> {ready_count} of {len(chapters)} task chapters released. Each runtime retains its separate evidence status below.</p>'
+        '<p class="watch-guidance">Format: edited, narrated task videos using reviewed app checkpoints and labelled learner-practice intervals. This is not a continuous screen recording, and no introductory artwork is provider-execution evidence.</p>'
+        f'<video id="watch-video" class="watch-player" controls preload="metadata" playsinline{hidden}>{source}{track}Your browser does not support embedded video.</video>'
+        f'<div id="watch-placeholder" class="watch-placeholder"{placeholder_hidden}><span class="eyebrow">RECORDING IN PRODUCTION</span><h2>The written walkthrough is ready to follow.</h2><p>The final 45-minute recording is not released yet. We will add selected footage and its exact transcript after media and privacy QA. Each builder retains its own acceptance gates. The chapter times below are the recording plan, not proof that all builders are complete.</p><a href="lovable.html#verified-policy-trace">See the existing verified Lovable and Langfuse evidence →</a></div>'
+        '<div class="watch-controls"><label for="watch-local-file">Have the matching recording locally?</label><input id="watch-local-file" type="file" accept="video/mp4,video/webm,video/quicktime"></div>'
+        '<p class="watch-status" id="watch-media-status" role="status">Published chapters play in order after you press Play. If a browser blocks the next chapter, use its Play button. Local files stay on your device and are never uploaded. Nothing starts automatically on page load.</p><p id="watch-position" class="watch-status" aria-live="off"></p><button class="action" id="watch-next" type="button" hidden>Play next chapter</button><button class="action" id="watch-published" type="button" hidden>Return to published chapters</button>'
+        '<p class="watch-guidance">Below the player, released chapters show the exact recorded narration; unreleased chapters show a clearly labelled prepared summary. Each has manual tasks and the corresponding lab. Prepared summaries are not the final recording transcript. Provider status labels remain visible so a working example is not mistaken for a verified deployment.</p></section>'
+        '<nav class="watch-chapters" aria-label="Recording chapters"><h2>Jump to a chapter</h2>'
+    )
+    body += "".join(f'<a href="#chapter-{esc(c["id"])}"><span>{clock(c["start"])}</span>{esc(c["title"])}</a>' for c in chapters)
+    body += '</nav></div><section aria-label="Chapter guide and manual tasks">'
+    poll_is_live = bool(reviewed_form_config("poll-config.json").get("respond_url"))
+    poll_guide = "Start with poll.html. Its live card opens the explicitly selected anonymous Google Forms poll; the presenter uses the provider’s real response summary. The course does not invent or compute a shared tally. Optional private practice answers stay in the current browser tab and are not submitted to the live form." if poll_is_live else "Start with poll.html. Private practice answers stay in the current browser tab and are not sent to a server. No shared online collector is configured; use the questions for a show of hands."
+    markdown = ["# OpsDesk watch-along guide", "", f"Target route: 45 minutes. Available reviewed task videos: {ready_count} of {len(chapters)}. Format: edited narrated app checkpoints plus labelled learner-practice intervals, not a continuous screen recording. Released chapters contain their exact narration transcripts; remaining chapters contain prepared summaries. Video availability does not imply new multi-builder end-to-end acceptance.", "", poll_guide, "", "Use your own accounts and synthetic data. Keep names, emails, account and tenant labels, private URLs, credentials and infrastructure identifiers out of captures. Existing screenshots and provider receipts have their own evidence boundaries.", ""]
+    for c in chapters:
+        time = clock(c["start"])
+        exact_transcript = (COURSE / c['media']['transcript_file']).read_text().strip() if c.get('media', {}).get('src') else None
+        spoken_text = exact_transcript if exact_transcript is not None else c['transcript']
+        transcript_heading = 'Recorded transcript' if exact_transcript is not None else 'Prepared narration summary'
+        body += f'<article class="watch-chapter" id="chapter-{esc(c["id"])}"><span class="chapter-time">{time}–{clock(c["end"])}</span><h2>{esc(c["title"])}</h2><p class="chapter-status"><strong>Evidence status:</strong> {esc(c["status"])}</p><button class="action" data-seek="{c["start"]}" data-chapter="{esc(c["id"])}" data-time="{time}" disabled>Open video at {time}</button> <a class="action" href="{esc(c["part"])}">Open the matching lab →</a><div class="chapter-columns"><div><h3>{transcript_heading}</h3><div class="transcript-note">{''.join('<p>' + esc(paragraph) + '</p>' for paragraph in spoken_text.split(chr(10) + chr(10)))}</div></div><div><h3>Try these manual tasks</h3><ol>'
+        body += "".join(f'<li>{esc(task)}</li>' for task in c["tasks"])
+        body += '</ol><h3>Go deeper</h3><ul>' + "".join(f'<li><a href="{esc(link["href"])}">{esc(link["label"])}</a> — {esc(link["why"])}</li>' for link in c["links"]) + '</ul></div></div>'
+        markdown += [f"## {time}–{clock(c['end'])} · {c['title']}", "", f"Evidence status: {c['status']}", "", f"### {transcript_heading}", "", spoken_text, "", "### Manual tasks", ""] + [f"{i}. {t}" for i, t in enumerate(c["tasks"], 1)] + ["", f"Matching lab: [{c['part']}]({c['part']})", ""]
+        if c.get("command"):
+            body += f'<h3>Commands · run in your own workspace</h3><pre class="code-sample" data-copy-label="Copy these commands">{esc(c["command"])}</pre>'
+            markdown += ["```sh", c["command"], "```", ""]
+        if c.get("prompt_file"):
+            prompt = (COURSE / c["prompt_file"]).read_text().strip()
+            body += f'<details><summary>Copy the prompt for this step</summary><pre class="code-sample" data-copy-label="Copy this prompt">{esc(prompt)}</pre><a href="{esc(c["prompt_file"])}" download>Download prompt (.md)</a></details>'
+            markdown += [f"### Prompt · {c['prompt_file']}", "", prompt, ""]
+        body += '</article>'
+    playlist_json = json.dumps(playlist, ensure_ascii=False).replace('<', '\\u003c')
+    body += '</section><script id="watch-playlist" type="application/json">' + playlist_json + '</script><script src="watchalong.js" defer></script>'
+    (COURSE / "watchalong.html").write_text(shell(data["title"], body))
+    (COURSE / "poll.html").write_text(render_opening_poll())
+    (COURSE / "WATCHALONG-GUIDE.md").write_text("\n".join(markdown).rstrip() + "\n")
+
+
 def build():
+    build_watchalong()
+    (COURSE / "qa.html").write_text(render_qa())
+    if (COURSE / "present-content.html").is_file():
+        (COURSE / "present.html").write_text(shell("Present the live workshop", '<link rel="stylesheet" href="present.css">' + (COURSE / "present-content.html").read_text()))
     data = json.loads((COURSE / "course.json").read_text())
     parts = data["parts"]
     profiles = json.loads((COURSE / "personas.json").read_text())["personas"]
@@ -572,6 +726,11 @@ def build():
             home_html = home_html.replace('</head>', f'<link rel="stylesheet" href="{css}"></head>', 1)
     if 'src="training.js"' not in home_html:
         home_html = home_html.replace("</body>", '<script src="training.js"></script></body>', 1)
+    opening = '<aside class="session-start" id="session-start" aria-label="Start the live session"><div><strong>Ready for the live demo?</strong><span>Open the presentation, start the audience poll, then build together.</span></div><a class="action primary" href="present.html">Open the presentation →</a><a class="action" href="poll.html">Open the audience poll</a><a class="action" href="watchalong.html">Watch &amp; follow along</a></aside>'
+    if 'id="session-start"' in home_html:
+        home_html = re.sub(r'<aside class="session-start"[^>]*>.*?</aside>', lambda _: opening, home_html, count=1, flags=re.DOTALL)
+    else:
+        home_html = home_html.replace('</header>', '</header>' + opening, 1)
     home.write_text(home_html)
     quick_tools = (COURSE / "tool-choices.html").read_text()
     home = (

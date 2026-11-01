@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpsDesk · Training inbox</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header class="topbar"><a href="/" class="wordmark">OpsDesk<span>ACADEMY</span></a><span class="training">Synthetic workshop workspace</span></header>
+<main>
+  <div class="page-heading"><div><p class="eyebrow">OPERATIONS / SYNTHETIC DATA</p><h1>Incident inbox</h1><p class="muted">A small desk for practicing careful operations.</p></div><button id="new-ticket" class="primary">+ New ticket</button></div>
+  <div class="notice">Synthetic training tickets are held in process memory. Server restarts or a different serverless instance reset them. No durable incident database is claimed.</div>
+  <div class="workspace">
+    <section class="inbox" aria-labelledby="inbox-heading"><div class="section-heading"><h2 id="inbox-heading">Inbox</h2><span id="count" class="muted"></span></div>
+      <div class="filters"><label>Search tickets<input id="search" type="search" placeholder="Title, service, or ticket ID"></label><label>Priority<select id="priority"><option value="">All priorities</option><option>high</option><option>medium</option><option>low</option></select></label></div>
+      <p id="list-status" role="status">Loading synthetic tickets…</p><button id="retry" hidden>Retry loading</button><div id="ticket-list" aria-label="Tickets"></div>
+    </section>
+    <section class="detail" aria-labelledby="detail-title"><p id="ticket-id" class="eyebrow">TICKET DETAIL</p><h2 id="detail-title">Select a ticket</h2><div id="detail-meta" class="muted"></div><p id="detail-description">Choose an incident from the inbox.</p><p class="synthetic">Synthetic training ticket · No live service data</p>
+      <section class="ai-panel" aria-labelledby="ai-heading"><div class="section-heading"><h3 id="ai-heading">Agent investigation</h3><span id="connection" class="disconnected">Checking configuration</span></div>
+        <form id="login-form"><label>Workshop access secret<input id="password" type="password" autocomplete="off" maxlength="256" required></label><p class="muted">Use the secret supplied privately by your own workshop operator. Keep it out of recordings.</p><button type="submit">Sign in to this app</button></form>
+        <p id="auth-status" role="status"></p><button id="logout" hidden>Sign out</button>
+        <label class="review-choice"><input id="review" type="checkbox"> Add an independent reviewer (shared three-call budget)</label>
+        <button id="analyze" disabled>Analyze safely</button> <button id="policy" disabled>Test a change request</button>
+        <div id="ai-result" role="status" aria-live="polite">Select a ticket and sign in. No model has run.</div>
+        <div id="agent-events" aria-label="Actual agent events"></div>
+        <details id="private-identifiers" hidden><summary>Private trace identifiers — close before recording</summary><pre id="trace-identifiers"></pre></details>
+      </section>
+    </section>
+  </div>
+  <section class="contract" aria-labelledby="capabilities"><h2 id="capabilities">One app, two bounded roles</h2><div class="capability-grid"><div><h3>Investigator</h3><p>Uses only service_health and release_diff synthetic read-only fixtures. No shell, arbitrary URL or write tools exist.</p></div><div><h3>Independent reviewer</h3><p>Receives a separate context containing the draft and synthetic evidence. It has no tools and shares the same maximum of three model calls.</p></div><div><h3>Evidence and cost</h3><p>Reported usage and an uncached catalog estimate are shown only when valid. An estimate is not your bill. Export acknowledgment is separate from exact provider readback.</p></div></div><p class="muted">This is a single-presenter teaching login, not enterprise SSO. Deployed inference requires a shared atomic quota store. Local single-process quotas are labelled explicitly. Observations do not establish causation; no remediation executor is implemented.</p></section>
+</main>
+<dialog id="ticket-dialog" aria-labelledby="form-title"><form id="ticket-form"><div class="section-heading"><h2 id="form-title">New synthetic ticket</h2><button type="button" id="close-dialog" aria-label="Close form">Close</button></div><p class="muted">Use invented training details only.</p><label>Title<input name="title" required maxlength="120" placeholder="Briefly describe the incident"></label><div class="form-columns"><label>Service<select name="service"><option>payments</option><option>checkout</option><option>catalog</option></select></label><label>Priority<select name="priority"><option>high</option><option selected>medium</option><option>low</option></select></label></div><label>Description<textarea name="description" required maxlength="2000" rows="5"></textarea></label><p id="form-error" role="alert"></p><button id="submit-ticket" class="primary">Create ticket</button></form></dialog>
+</body></html>

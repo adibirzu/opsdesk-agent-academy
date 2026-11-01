@@ -12,6 +12,26 @@ SOURCE = ROOT / "workshops/app-first"
 FILES = [
     "index.html",
     "course.html",
+    "watchalong.html",
+    "watchalong.json",
+    "watchalong.css",
+    "watchalong.js",
+    "WATCHALONG-GUIDE.md",
+    "poll.html",
+    "poll.js",
+    "poll-config.json",
+    "poll-qr.svg",
+    "qa.html",
+    "qa-config.json",
+    "qa-qr.svg",
+    "present.html",
+    "present.css",
+    "screenshots/lovable-sol-trace.png",
+    "screenshots/langfuse-sol-tree.png",
+    "screenshots/codex-local-inbox.png",
+    "CODEX-CLI-DEMO.md",
+    "CODEX-PLANNING-WORKSHEET.md",
+    "prompts/08-codex-plan.md",
     "help.html",
     "course.json",
     "results.json",
@@ -106,6 +126,13 @@ FILES = [
     "diagrams/architecture.json",
 ]
 
+# Exact selected, reviewed task-video set; no directory walk or private manifest export.
+FILES += [
+    f"media/{stem}.{extension}"
+    for stem in ("01-intro", "02-poll-definition", "03-lovable", "04-security-langfuse", "05-v0", "06-base44", "07-codex-cli", "08-handoff")
+    for extension in ("mp4", "vtt", "txt")
+]
+
 FILES += [
     f"agent-briefs/persona-{profile}-part-{part}.md"
     for profile in ("business", "it-starter", "ai-engineer")
@@ -113,15 +140,36 @@ FILES += [
 ]
 
 
+def validate_public_video(source, name, records):
+    """Bind selected public video bytes to documented pixel and scoped audio QA."""
+    record = records.get(name, {})
+    if not name.startswith("media/") or record.get("kind") != "narrated-task-video":
+        raise ValueError(f"Video is not a selected narrated task artifact: {name}")
+    if record.get("pixels_reviewed") is not True:
+        raise ValueError(f"Video needs explicit pixel review: {name}")
+    audio_qa = record.get("audio_qa", {})
+    if not isinstance(audio_qa, dict) or any(audio_qa.get(key) is not True for key in ("full_stream_decode", "narration_vtt_match", "caption_timing_verified")):
+        raise ValueError(f"Video needs documented decode and narration/caption QA: {name}")
+    if not isinstance(audio_qa.get("human_listening_review"), bool) or not audio_qa.get("scope"):
+        raise ValueError(f"Video audio QA must state its actual listening scope: {name}")
+    if source.stat().st_size > 95 * 1024 * 1024:
+        raise ValueError(f"Task video exceeds the bounded GitHub file limit: {name}")
+    if hashlib.sha256(source.read_bytes()).hexdigest() != record.get("sha256"):
+        raise ValueError(f"Reviewed video bytes changed: {name}")
+
+
 def build(destination):
     destination = Path(destination).resolve()
     # Fresh output only: never delete, overwrite or merge a directory.
     destination.mkdir(parents=True, exist_ok=False)
     hashes = {}
+    video_records = {item["file"]: item for item in json.loads((SOURCE / "EVIDENCE.json").read_text())["artifacts"]}
     for name in FILES:
         source = SOURCE / name
         if source.is_symlink() or not source.is_file():
             raise ValueError(f"Not a regular allowlisted source: {name}")
+        if source.suffix == ".mp4":
+            validate_public_video(source, name, video_records)
         target = destination / name
         target.parent.mkdir(parents=True, exist_ok=True)
         if source.suffix == ".html":

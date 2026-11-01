@@ -1,0 +1,387 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.049
+Start with your own Lovable project and the first build prompt from the course.
+
+00:00:06.049 --> 00:00:11.666
+The prompt asks for a small incident board, not a company-wide operations platform.
+
+00:00:11.666 --> 00:00:20.308
+It names the three synthetic incidents: payments is slow, checkout needs a health
+check, and catalog availability needs a check.
+
+00:00:20.308 --> 00:00:24.629
+Each record has an identifier, title, description, service and priority.
+
+00:00:24.629 --> 00:00:31.542
+It asks for an inbox, search, a priority filter, selected-ticket detail, and a New
+ticket form.
+
+00:00:31.542 --> 00:00:41.913
+It also asks for loading, validation, empty and failure states, text rendered as
+text rather than raw HTML, and an honest disconnected AI panel.
+
+00:00:41.913 --> 00:00:44.937
+Those instructions make the expected behavior testable.
+
+00:00:44.937 --> 00:00:54.443
+They also prevent the builder from turning a visual prototype into an unsupported
+claim about a database, account integration or model connection.
+
+00:00:54.750 --> 00:00:57.748
+The actual Lovable rehearsal app is on screen.
+
+00:00:57.748 --> 00:01:01.495
+This is a real browser capture, not a design mockup.
+
+00:01:01.495 --> 00:01:04.118
+It says synthetic data and in memory.
+
+00:01:04.118 --> 00:01:05.617
+Those labels set expectations.
+
+00:01:05.617 --> 00:01:10.488
+The app is useful for this exercise, but its tickets reset on reload.
+
+00:01:10.488 --> 00:01:12.737
+We do not imply durable storage.
+
+00:01:12.737 --> 00:01:15.734
+The three seed tickets appear in the inbox.
+
+00:01:15.734 --> 00:01:17.983
+Selecting one changes the detail view.
+
+00:01:17.983 --> 00:01:20.980
+The AI controls belong to that selected ticket.
+
+00:01:20.980 --> 00:01:24.728
+Before adding another prompt, inspect the output as a user.
+
+00:01:24.728 --> 00:01:26.601
+Is the main action clear?
+
+00:01:26.601 --> 00:01:28.475
+Are the priority labels readable?
+
+00:01:28.475 --> 00:01:31.098
+Can a person identify the selected ticket?
+
+00:01:31.098 --> 00:01:34.470
+Does the page explain a disconnected or failed state?
+
+00:01:34.470 --> 00:01:37.843
+A builder can generate a lot of source quickly.
+
+00:01:37.843 --> 00:01:43.838
+Your responsibility is to keep the product small enough that you can understand and
+verify it.
+
+00:01:44.167 --> 00:01:47.967
+For the creation check, enter the title Workshop checkout check.
+
+00:01:47.967 --> 00:01:53.668
+Enter an invented description that explicitly says training data and contains no
+real customer information.
+
+00:01:53.668 --> 00:01:57.468
+Set the service to checkout and the priority to medium.
+
+00:01:57.468 --> 00:01:59.368
+Then click Add synthetic ticket.
+
+00:01:59.368 --> 00:02:05.069
+In the recorded Lovable run, the new record appears as TRAIN one hundred and four.
+
+00:02:05.069 --> 00:02:09.249
+That identifier is a synthetic app record, not an infrastructure identifier.
+
+00:02:09.249 --> 00:02:14.569
+Notice that we show both the input before submission and the resulting inbox state.
+
+00:02:14.569 --> 00:02:17.990
+A click is not sufficient evidence that creation worked.
+
+00:02:17.990 --> 00:02:19.890
+We inspect the changed state.
+
+00:02:19.890 --> 00:02:24.830
+If the form is invalid, the app should explain which field needs attention.
+
+00:02:24.830 --> 00:02:30.911
+It should not silently create a partial record or ask a language model to invent
+one.
+
+00:02:31.250 --> 00:02:55.125
+Your turn: follow the manual task. Pause for more time.
+
+00:02:55.125 --> 00:02:56.663
+Search for Workshop checkout.
+
+00:02:56.663 --> 00:03:00.122
+The recorded result contains the one ticket we created.
+
+00:03:00.122 --> 00:03:02.813
+The selected detail agrees with that ticket.
+
+00:03:02.813 --> 00:03:05.888
+Now combine the title search with high priority.
+
+00:03:05.888 --> 00:03:10.501
+Because our new record is medium priority, the expected result is empty.
+
+00:03:10.501 --> 00:03:15.498
+An empty state is a normal product outcome, not a failure to hide.
+
+00:03:15.498 --> 00:03:19.342
+Clear the search and return the priority filter to all.
+
+00:03:19.342 --> 00:03:23.955
+The seed tickets and the new synthetic ticket should be visible again.
+
+00:03:23.955 --> 00:03:25.492
+Select the payments incident.
+
+00:03:25.492 --> 00:03:30.105
+This sequence is short enough to repeat after every significant code change.
+
+00:03:30.105 --> 00:03:34.333
+Keep it as a regression journey: create, search, filter, clear, select.
+
+00:03:34.333 --> 00:03:41.253
+A new model selector or trace panel should not break the ordinary controls that make
+the app usable.
+
+00:03:41.583 --> 00:03:45.670
+Signing into Lovable lets you build and edit a project.
+
+00:03:45.670 --> 00:03:50.983
+Signing into the generated application establishes the app session used by its
+server.
+
+00:03:50.983 --> 00:03:52.618
+These are different boundaries.
+
+00:03:52.618 --> 00:03:55.070
+Complete sign-in outside your presentation recording.
+
+00:03:55.070 --> 00:03:57.931
+Review any consent before granting new access.
+
+00:03:57.931 --> 00:04:04.061
+The presentation should show the app's workshop-session state without account names,
+email addresses or avatars.
+
+00:04:04.061 --> 00:04:08.556
+Do not solve an authentication problem by removing the server check.
+
+00:04:08.556 --> 00:04:15.913
+If a preview opens an older history version, choose the intended preview version and
+verify its actual controls.
+
+00:04:15.913 --> 00:04:23.269
+A source download or successful build does not by itself prove which version the
+open browser is executing.
+
+00:04:23.269 --> 00:04:28.582
+Preserve the preview's state while collecting a run; reloading can reset in-memory
+evidence.
+
+00:04:28.917 --> 00:04:31.629
+The next prompt continues the same app.
+
+00:04:31.629 --> 00:04:36.666
+It asks for the supported server-side native AI integration available in the
+builder.
+
+00:04:36.666 --> 00:04:41.703
+It does not ask for a browser API key or a fake answer.
+
+00:04:41.703 --> 00:04:44.803
+Keep the existing inbox, forms and synthetic-data label.
+
+00:04:44.803 --> 00:04:48.290
+Require an authenticated app session before a billable call.
+
+00:04:48.290 --> 00:04:57.202
+Validate the request, reserve quota atomically, cap model calls and tool events, and
+return an honest failure when configuration or access is missing.
+
+00:04:57.202 --> 00:05:03.789
+The coding assistant that generates the app is not the same thing as the app's
+runtime model.
+
+00:05:03.789 --> 00:05:08.051
+A successful builder response does not prove a successful native inference.
+
+00:05:08.051 --> 00:05:14.638
+We will test the runtime separately, using a small bounded canary with available
+credits and explicit authority.
+
+00:05:14.958 --> 00:05:18.163
+Look at the server function and its dependencies.
+
+00:05:18.163 --> 00:05:22.170
+The request schema validates the input before the investigation runs.
+
+00:05:22.170 --> 00:05:29.381
+The early change-intent guard can return approval required before provider
+construction, access checks, key reads or quota reservation.
+
+00:05:29.381 --> 00:05:36.192
+After that guard, the server checks access, obtains its managed key privately and
+reserves the account's quota.
+
+00:05:36.192 --> 00:05:39.397
+The model is called through a bounded transport.
+
+00:05:39.397 --> 00:05:44.605
+The current reference allows at most three model calls and disables automatic
+retries.
+
+00:05:44.605 --> 00:05:49.012
+A small fixed tool registry exposes service health and release diff.
+
+00:05:49.012 --> 00:05:54.621
+Each tool uses a schema and checks that its service matches the selected ticket.
+
+00:05:54.621 --> 00:06:01.832
+This combination is the harness: code that surrounds the model and makes the
+application behavior bounded and observable.
+
+00:06:02.167 --> 00:06:26.000
+Your turn: follow the manual task. Pause for more time.
+
+00:06:26.000 --> 00:06:28.371
+The two tools return synthetic fixtures.
+
+00:06:28.371 --> 00:06:31.136
+They do not contact real production services.
+
+00:06:31.136 --> 00:06:35.482
+Service health provides invented operational measurements for the selected training
+service.
+
+00:06:35.482 --> 00:06:38.248
+Release diff provides an invented release change.
+
+00:06:38.248 --> 00:06:46.150
+The model can use those observations to answer, but the tool output is still
+untrusted data, not an instruction source.
+
+00:06:46.150 --> 00:06:54.052
+A tool result cannot authorize a new tool, change the selected service, reveal a
+secret, or write to a system.
+
+00:06:54.052 --> 00:06:58.002
+The server validates arguments even if the model generated them.
+
+00:06:58.002 --> 00:07:01.953
+The app has no arbitrary shell, URL or write tool.
+
+00:07:01.953 --> 00:07:10.645
+Restricting the registry is easier to explain and audit than exposing a powerful
+tool and hoping that a prompt will stop misuse.
+
+00:07:10.645 --> 00:07:17.362
+Later course parts can extend the registry, but each new capability needs a
+corresponding control and test.
+
+00:07:17.667 --> 00:07:23.791
+The recorded fresh Lovable canary used its actual native model and both permitted
+synthetic tools.
+
+00:07:23.791 --> 00:07:30.324
+The observed operation completed in two model calls and reported nine hundred sixty
+eight total tokens.
+
+00:07:30.324 --> 00:07:32.774
+Its answer separates observations from uncertainty.
+
+00:07:32.774 --> 00:07:37.265
+The synthetic payments data reports elevated latency and an error rate.
+
+00:07:37.265 --> 00:07:40.532
+The release fixture reports a connection-pool setting change.
+
+00:07:40.532 --> 00:07:44.615
+The answer does not claim that timing alone proves causation.
+
+00:07:44.615 --> 00:07:49.515
+It recommends safe read-only checks, and it says no changes were executed.
+
+00:07:49.515 --> 00:07:54.006
+The visible answer is actual runtime output, not an authored imitation.
+
+00:07:54.006 --> 00:08:00.539
+The model used for this historical canary is not a default recommendation for every
+new recording.
+
+00:08:00.539 --> 00:08:08.297
+Discover the models actually available in your runtime and choose a suitable lower-
+cost option deliberately before another approved run.
+
+00:08:08.625 --> 00:08:10.543
+Open the real run inspector.
+
+00:08:10.543 --> 00:08:18.213
+Check the returned model, the number of calls, the permitted tool names, elapsed
+time, and usage reported by the provider.
+
+00:08:18.213 --> 00:08:19.747
+Missing usage remains unknown.
+
+00:08:19.747 --> 00:08:27.418
+An estimate is shown only when matching sourced rates exist; an observability tool's
+calculated price is not a billing receipt.
+
+00:08:27.418 --> 00:08:32.020
+The app's event list and the provider's span tree are different views.
+
+00:08:32.020 --> 00:08:38.540
+Do not invent an authorization event in the app if its event contract does not
+record one.
+
+00:08:38.540 --> 00:08:43.142
+Likewise, do not infer a hidden reasoning chain from a plausible answer.
+
+00:08:43.142 --> 00:08:47.361
+We show observable actions and safe metadata, not private internal reasoning.
+
+00:08:47.361 --> 00:08:53.114
+Save the exact trace and random session privately before reloading or moving to
+another preview.
+
+00:08:53.417 --> 00:08:57.510
+Pause the video if you want to reproduce the visible journey.
+
+00:08:57.510 --> 00:09:00.860
+Use your own builder project and the course prompt.
+
+00:09:00.860 --> 00:09:07.187
+Create the invented checkout ticket, find it, filter it out, clear the filter, and
+select payments again.
+
+00:09:07.187 --> 00:09:09.048
+Then inspect the backend status.
+
+00:09:09.048 --> 00:09:16.119
+Do not run a real model if your runtime is not ready or if you lack credits or
+authority.
+
+00:09:16.119 --> 00:09:20.957
+You can still verify the frontend and record the missing backend gate honestly.
+
+00:09:20.957 --> 00:09:23.562
+When you continue, keep the same app.
+
+00:09:23.562 --> 00:09:29.144
+Save a private baseline reference, launch or preview instructions, and the checks
+that actually passed.
+
+00:09:29.144 --> 00:09:35.843
+The next section adds security and visibility to that working baseline; it does not
+start a disconnected replacement.
+
+00:09:36.167 --> 00:10:00.000
+Your turn: follow the manual task. Pause for more time.

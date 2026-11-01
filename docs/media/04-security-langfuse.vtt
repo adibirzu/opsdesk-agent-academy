@@ -1,0 +1,331 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.803
+An authenticated request is not automatically permitted to change a system.
+
+00:00:03.803 --> 00:00:06.914
+The app session answers who may invoke the application.
+
+00:00:06.914 --> 00:00:11.408
+The change-intent control answers whether this read-only workshop may perform the
+requested action.
+
+00:00:11.408 --> 00:00:15.210
+The recorded change test returns approval required with zero model calls.
+
+00:00:15.210 --> 00:00:17.284
+That is the expected safety outcome.
+
+00:00:17.284 --> 00:00:23.161
+The server stops before inference rather than asking the model to decide whether the
+user has permission.
+
+00:00:23.161 --> 00:00:27.309
+It also avoids spending quota on a request that cannot be executed.
+
+00:00:27.309 --> 00:00:31.803
+A useful demonstration pairs the app outcome with the actual guard in code.
+
+00:00:31.803 --> 00:00:34.569
+A badge that says secure is not evidence.
+
+00:00:34.569 --> 00:00:39.408
+The meaningful question is which condition runs, in what order, and what it
+prevents.
+
+00:00:39.708 --> 00:00:42.302
+The early change stop is one guardrail.
+
+00:00:42.302 --> 00:00:49.342
+Others validate the request shape, the selected service, each tool argument, maximum
+calls, output size, quota, and error handling.
+
+00:00:49.342 --> 00:00:54.529
+A prompt-injection attempt can arrive in a ticket description, a runbook or tool
+output.
+
+00:00:54.529 --> 00:00:57.864
+Those fields are data, not a new instruction hierarchy.
+
+00:00:57.864 --> 00:01:02.681
+Explain that boundary in the prompt, but enforce what you can in code.
+
+00:01:02.681 --> 00:01:08.239
+A ticket cannot add a shell tool if the registry contains only two read-only
+fixtures.
+
+00:01:08.239 --> 00:01:12.685
+A model cannot query another service if argument validation rejects the mismatch.
+
+00:01:12.685 --> 00:01:18.984
+A tool exception should end or fail the bounded operation honestly, not cause a
+silent unrestricted retry.
+
+00:01:18.984 --> 00:01:21.578
+No single test proves universal injection resistance.
+
+00:01:21.578 --> 00:01:25.283
+We demonstrate specific controls and keep their practical limits visible.
+
+00:01:25.583 --> 00:01:28.551
+The ordinary user sees an answer or failure.
+
+00:01:28.551 --> 00:01:31.891
+The operator needs to understand the operation behind it.
+
+00:01:31.891 --> 00:01:33.746
+How many model calls occurred?
+
+00:01:33.746 --> 00:01:34.859
+Which tools ran?
+
+00:01:34.859 --> 00:01:37.827
+Did the policy stop the request before inference?
+
+00:01:37.827 --> 00:01:40.053
+How long did the calls take?
+
+00:01:40.053 --> 00:01:43.392
+Did export fail, and at which safe diagnostic stage?
+
+00:01:43.392 --> 00:01:48.215
+OpenTelemetry gives us a structured way to represent operations as traces and spans.
+
+00:01:48.215 --> 00:01:50.070
+A trace groups one run.
+
+00:01:50.070 --> 00:01:52.667
+A span describes one part of it.
+
+00:01:52.667 --> 00:02:01.200
+Parent and child relationships help us connect the application request,
+authorization, generations and tools without pretending that every event is an
+independent application.
+
+00:02:01.200 --> 00:02:02.684
+This is observable execution.
+
+00:02:02.684 --> 00:02:08.992
+It is not a request to expose hidden chain-of-thought, full account identity, or
+every prompt and answer.
+
+00:02:09.292 --> 00:02:17.695
+For the simple Langfuse connection, the user supplies a base URL, a project public
+key and a project secret key through protected server secrets.
+
+00:02:17.695 --> 00:02:22.597
+The variable names are LANGFUSE BASE URL, LANGFUSE PUBLIC KEY and LANGFUSE SECRET
+KEY.
+
+00:02:22.597 --> 00:02:27.498
+Never paste their values into builder chat, a public repository or a browser
+variable.
+
+00:02:27.498 --> 00:02:30.649
+The three values alone do not instrument an app.
+
+00:02:30.649 --> 00:02:37.652
+The server must create and finish the right spans, serialize a valid payload and
+export it to the validated destination.
+
+00:02:37.652 --> 00:02:42.904
+The app also needs a safe missing-configuration state and a way to show export
+status.
+
+00:02:42.904 --> 00:02:47.105
+The course provides an implementation prompt and source reference for this work.
+
+00:02:47.105 --> 00:02:55.158
+Each builder should use its own clearly named Langfuse project and corresponding
+server binding, so the evidence remains attributable to the intended app.
+
+00:02:55.458 --> 00:03:01.238
+The reference exporter uses an isolated telemetry provider rather than registering a
+global auto-instrumentation pipeline.
+
+00:03:01.238 --> 00:03:03.550
+It records a bounded span batch.
+
+00:03:03.550 --> 00:03:13.569
+It allowlists metadata attributes, projects names to fixed known values, removes
+span events and links, and drops default resource information that is unnecessary
+for the lesson.
+
+00:03:13.569 --> 00:03:15.881
+The exported service name is generic.
+
+00:03:15.881 --> 00:03:20.505
+Prompt text, answer text, account identity and raw tool payloads are absent.
+
+00:03:20.505 --> 00:03:27.827
+Even metadata can be sensitive, so allowlisting is a design choice, not a guarantee
+that every deployment is safe.
+
+00:03:27.827 --> 00:03:30.910
+Review the attributes, their purpose and their destination.
+
+00:03:30.910 --> 00:03:37.075
+Do not forward a private run to a different service merely because an exporter
+supports it.
+
+00:03:37.375 --> 00:03:59.750
+Your turn: follow the manual task. Pause for more time.
+
+00:03:59.750 --> 00:04:04.962
+The app can say not configured, invalid configuration, export failed, or export
+acknowledged.
+
+00:04:04.962 --> 00:04:06.566
+These states are different.
+
+00:04:06.566 --> 00:04:10.575
+A connection problem should not become a fake successful trace.
+
+00:04:10.575 --> 00:04:14.985
+The exporter uses a bounded single attempt and safe diagnostic categories.
+
+00:04:14.985 --> 00:04:22.603
+It must not return raw exception messages, response headers, secret values or a
+redirect location that may contain credentials.
+
+00:04:22.603 --> 00:04:30.220
+The current reference uses a no-follow redirect policy, rejects redirect responses
+and never sends a second credential-bearing request automatically.
+
+00:04:30.220 --> 00:04:34.230
+A transport acknowledgement proves that the exporter received a response.
+
+00:04:34.230 --> 00:04:39.442
+It does not independently prove that the correct project contains the correct run.
+
+00:04:39.442 --> 00:04:46.658
+That distinction is deliberately visible in the application, even when a human has
+verified the corresponding trace elsewhere.
+
+00:04:46.958 --> 00:04:50.169
+The owner view provides the second half of acceptance.
+
+00:04:50.169 --> 00:04:55.164
+Find the exact trace and random session that were copied privately from the app.
+
+00:04:55.164 --> 00:04:58.732
+Match them before comparing the model, usage and tool structure.
+
+00:04:58.732 --> 00:05:03.726
+The fresh recorded Lovable canary was independently correlated with six observations
+and two generations.
+
+00:05:03.726 --> 00:05:08.721
+The reviewed screenshot omits account controls, project identifiers, private
+addresses and exact trace identifiers.
+
+00:05:08.721 --> 00:05:18.711
+The provider view can group or order rows differently from an app event list; use
+actual timestamps and relationships rather than a screenshot's visual order to infer
+sequence.
+
+00:05:18.711 --> 00:05:26.203
+Do not pair a screenshot from one app run with a provider trace from another and
+call it an exact match.
+
+00:05:26.203 --> 00:05:28.700
+Record both sides of the same operation.
+
+00:05:29.000 --> 00:05:32.915
+The selected historical policy example is labelled with its recording date.
+
+00:05:32.915 --> 00:05:36.830
+In the app, the change was blocked with zero model calls.
+
+00:05:36.830 --> 00:05:38.610
+Its two-span batch was acknowledged.
+
+00:05:38.610 --> 00:05:44.661
+In the independently matched provider view, the tree contains the root run and
+authorization, with no generation.
+
+00:05:44.661 --> 00:05:49.643
+That absence supports the specific claim that this path did not invoke the model.
+
+00:05:49.643 --> 00:05:53.559
+Successful sign-in authorization is not permission to execute the requested change.
+
+00:05:53.559 --> 00:05:57.830
+The root status and the no-generation tree explain the safe result together.
+
+00:05:57.830 --> 00:06:02.101
+Keep the date, app result and provider correlation attached to this evidence.
+
+00:06:02.101 --> 00:06:09.575
+It is a reproducible policy-path demonstration, not a complete production IAM audit
+or proof that every malicious input will be detected.
+
+00:06:09.875 --> 00:06:12.557
+Now choose a lower cost native model.
+
+00:06:12.557 --> 00:06:16.005
+This recorded canary returned G P T six sol.
+
+00:06:16.005 --> 00:06:23.284
+Two calls reported seven hundred sixty one input tokens and one hundred forty two
+output, nine hundred three total.
+
+00:06:23.284 --> 00:06:29.414
+The app measured three point two one nine seconds; the trace root, three point five
+seven.
+
+00:06:29.414 --> 00:06:31.329
+Different boundaries explain different clocks.
+
+00:06:31.329 --> 00:06:35.926
+Exact trace and random session were matched independently: six observations, two
+generations.
+
+00:06:35.926 --> 00:06:40.524
+The provider estimated zero point zero zero two nine four two dollars.
+
+00:06:40.524 --> 00:06:45.887
+The dated catalogue listed two dollars per million input tokens, ten per million
+output.
+
+00:06:45.887 --> 00:06:48.952
+This is an estimate, not a Lovable invoice.
+
+00:06:48.952 --> 00:06:52.783
+Do not invent missing usage, cache details or billing fees.
+
+00:06:53.083 --> 00:06:57.545
+Pause and open a trace that already exists in your own project.
+
+00:06:57.545 --> 00:07:02.378
+You do not need to spend more inference credits to learn the basics.
+
+00:07:02.378 --> 00:07:05.352
+Identify the root, authorization, generations and tool spans.
+
+00:07:05.352 --> 00:07:06.839
+Read the reported usage.
+
+00:07:06.839 --> 00:07:09.813
+Check whether prompts and answers are intentionally absent.
+
+00:07:09.813 --> 00:07:12.044
+Compare export acknowledgement with independent readback.
+
+00:07:12.044 --> 00:07:18.364
+If a trace is missing, begin with configuration presence, destination validation,
+export result and the exact identifier.
+
+00:07:18.364 --> 00:07:23.197
+Do not run repeated paid canaries just to make the dashboard look busy.
+
+00:07:23.197 --> 00:07:29.146
+Preserve the failed attempt, identify the missing receipt, and fix one bounded cause
+at a time.
+
+00:07:29.146 --> 00:07:37.325
+When you return, we will apply the same product and evidence contract to the
+alternative builders, while keeping their current limits explicit.
+
+00:07:37.625 --> 00:08:00.000
+Your turn: follow the manual task. Pause for more time.

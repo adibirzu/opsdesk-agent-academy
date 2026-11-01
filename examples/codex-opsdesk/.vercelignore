@@ -1,0 +1,13 @@
+# Default deny: only these reviewed runtime files may leave this folder.
+*
+!app.py
+!engine.py
+!security.py
+!telemetry.py
+!requirements.txt
+!pyproject.toml
+!vercel.json
+!static/
+!static/index.html
+!static/style.css
+!static/app.js

@@ -1,0 +1,241 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.467
+The Base forty four rehearsal also starts from the same definition.
+
+00:00:04.467 --> 00:00:08.529
+The generated app on screen is a real browser capture.
+
+00:00:08.529 --> 00:00:16.245
+It has three synthetic tickets, a searchable inbox, priority controls, an editable
+detail view and a New ticket dialog.
+
+00:00:16.245 --> 00:00:19.494
+Its Ask AI panel explicitly says not connected.
+
+00:00:19.494 --> 00:00:23.961
+The capability panel says no database, no model and no connectors.
+
+00:00:23.961 --> 00:00:27.616
+Those are useful product statements, not defects to conceal.
+
+00:00:27.616 --> 00:00:32.490
+We have a visible baseline we can test before adding a backend.
+
+00:00:32.490 --> 00:00:36.957
+The layout differs from Lovable, but the user journey is recognizable.
+
+00:00:36.957 --> 00:00:44.674
+That is what a portable app definition should produce: the same small useful outcome
+without requiring identical component markup.
+
+00:00:45.000 --> 00:00:46.236
+Open New ticket.
+
+00:00:46.236 --> 00:00:54.884
+Enter Workshop checkout check, choose the checkout training service and medium
+priority, and use the invented description shown in the guide.
+
+00:00:54.884 --> 00:01:03.121
+The dialog explains that the record is added to this session only and that nothing
+is saved to a server.
+
+00:01:03.121 --> 00:01:08.475
+After submission, the inbox count increases to four and the new ticket appears.
+
+00:01:08.475 --> 00:01:11.770
+The generated identifier differs from the Lovable identifier.
+
+00:01:11.770 --> 00:01:15.064
+That is expected because these are separate implementations.
+
+00:01:15.064 --> 00:01:19.183
+We compare the product behavior, not an accidental identifier format.
+
+00:01:19.183 --> 00:01:24.537
+Search for the title, filter by priority, clear the controls and inspect selection.
+
+00:01:24.537 --> 00:01:31.950
+Keep the synthetic-data and session-memory labels visible so nobody mistakes the
+screen for a connected customer operations system.
+
+00:01:32.292 --> 00:01:38.512
+An editable field can change the current browser state without proving that anything
+was stored durably.
+
+00:01:38.512 --> 00:01:42.789
+The Base forty four frontend supports in-memory edits in this rehearsal.
+
+00:01:42.789 --> 00:01:44.344
+A reload clears them.
+
+00:01:44.344 --> 00:01:50.953
+A database, record ownership, migration, backup and retention would be new
+capabilities, each with its own consequences.
+
+00:01:50.953 --> 00:01:55.619
+Do not activate them just because the interface offers a persistence suggestion.
+
+00:01:55.619 --> 00:02:03.783
+Decide whether they are needed for the lesson, review the supported backend and
+access rules, and preserve the simple baseline first.
+
+00:02:03.783 --> 00:02:11.170
+The first hour succeeds with a visible working app and one honest AI journey on the
+selected supported route.
+
+00:02:11.170 --> 00:02:17.390
+The later course parts can add functionality to that same app without pretending it
+already existed.
+
+00:02:17.708 --> 00:02:21.818
+The Ask AI panel states that there is no model connection.
+
+00:02:21.818 --> 00:02:27.796
+Clicking Analyze safely on this frontend must not invent a summary or imply a
+provider call.
+
+00:02:27.796 --> 00:02:31.532
+An honest not-connected result is better than a polished fake.
+
+00:02:31.532 --> 00:02:36.762
+We can still test loading and failure states and explain the intended backend
+contract.
+
+00:02:36.762 --> 00:02:41.619
+The model should receive only the validated synthetic task through a server-side
+path.
+
+00:02:41.619 --> 00:02:47.223
+The browser must not hold a provider key, a Langfuse secret or a service credential.
+
+00:02:47.223 --> 00:02:58.805
+The fact that the platform includes some AI features does not prove that the current
+plan exposes the server functions, secret storage and tool-capable model integration
+needed by this specific harness.
+
+00:02:58.805 --> 00:03:03.289
+Discover the actual capability instead of inferring it from a product name.
+
+00:03:03.625 --> 00:03:29.458
+Your turn: follow the manual task. Pause for more time.
+
+00:03:29.458 --> 00:03:38.919
+In the account and plan used for this comparison, the required server-function,
+protected-secret and native tool-model route is not available as an accepted
+implementation.
+
+00:03:38.919 --> 00:03:43.649
+This recording therefore shows a real frontend workflow and a porting explanation.
+
+00:03:43.649 --> 00:03:49.956
+It does not claim a fully authenticated Base forty four agent or a matching Langfuse
+trace.
+
+00:03:49.956 --> 00:03:57.840
+We do not upgrade the plan, buy credits, invent a server, or weaken security to make
+the comparison appear complete.
+
+00:03:57.840 --> 00:04:00.599
+A concrete limit helps the learner decide.
+
+00:04:00.599 --> 00:04:12.425
+They can use a supported plan and backend after review, export the frontend and
+implement an authorized adapter, or continue with the accepted Lovable route while
+studying the same concepts.
+
+00:04:12.750 --> 00:04:16.418
+A backend adapter is more than a fetch call.
+
+00:04:16.418 --> 00:04:26.201
+It must establish app identity, validate input, enforce the selected service and
+small tool registry, reserve quota safely, cap execution and return structured
+states.
+
+00:04:26.201 --> 00:04:29.869
+The explicit change stop should run before model construction.
+
+00:04:29.869 --> 00:04:35.168
+Model and tool failures should be observable without leaking secrets or user
+payloads.
+
+00:04:35.168 --> 00:04:40.059
+The app should show actual returned model and usage only when reported.
+
+00:04:40.059 --> 00:04:46.173
+If the platform's native integration cannot provide those controls, do not describe
+it as equivalent.
+
+00:04:46.173 --> 00:04:53.103
+Document what it can do, what wrapper is required, and which tests will demonstrate
+the missing boundary.
+
+00:04:53.103 --> 00:05:00.032
+The same reasoning applies to any visual agent platform or hosted workflow service,
+not just this builder.
+
+00:05:00.333 --> 00:05:11.916
+When the Base forty four backend is properly implemented and its telemetry
+destination is approved, give it a separate named Langfuse project, such as OpsDesk
+Base forty four.
+
+00:05:11.916 --> 00:05:15.640
+Keep the ingestion key in that backend's protected configuration.
+
+00:05:15.640 --> 00:05:20.604
+Do not reuse a key from another app simply because it works.
+
+00:05:20.604 --> 00:05:27.636
+Separate project bindings make it easier to attribute runs, apply retention and
+access decisions, and compare implementations.
+
+00:05:27.636 --> 00:05:33.428
+Then test one bounded synthetic operation and independently match its trace and
+random session.
+
+00:05:33.428 --> 00:05:40.461
+Until that happens, a code snippet, successful settings form or visible trace panel
+is not provider acceptance.
+
+00:05:40.461 --> 00:05:49.148
+Keep the current status explicit in the video, transcript and course rather than
+letting one green example stand for all builders.
+
+00:05:49.458 --> 00:05:55.481
+Pause and recreate the visible Base forty four journey if you want to compare it
+yourself.
+
+00:05:55.481 --> 00:05:56.987
+Use invented tickets only.
+
+00:05:56.987 --> 00:06:06.775
+Check that the created ticket can be found and selected, that the priority controls
+behave correctly, and that the AI panel is honest about its connection.
+
+00:06:06.775 --> 00:06:09.034
+Then make a small capability list.
+
+00:06:09.034 --> 00:06:11.669
+Can the supported backend keep secrets server-side?
+
+00:06:11.669 --> 00:06:13.551
+Can it require app authentication?
+
+00:06:13.551 --> 00:06:17.692
+Can it execute a schema-validated tool and enforce a bounded loop?
+
+00:06:17.692 --> 00:06:19.574
+Can it export safe telemetry?
+
+00:06:19.574 --> 00:06:23.715
+Do not answer those questions from a marketing feature list alone.
+
+00:06:23.715 --> 00:06:25.974
+Inspect the actual source and runtime.
+
+00:06:25.974 --> 00:06:33.879
+Choose the route whose limits you can explain and whose essential behavior you can
+verify with the resources you already own.
+
+00:06:34.208 --> 00:07:00.000
+Your turn: follow the manual task. Pause for more time.

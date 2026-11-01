@@ -2,15 +2,95 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "0c99510eb1463cd18d362dcd73f55628903a94b168f51ee67ad51499a6fa60c0"
+      "sha256": "358bbec29bd3fc0be37a6c1bf295cf825808eeb7d72b74047a66d250e36761ef"
     },
     {
       "path": "course.html",
-      "sha256": "6b523e176ae0caad7cdd19bbd2c0e45c88a120d914c323437f95021da318b821"
+      "sha256": "5032c6aa3d2bfafe3faebe8ae9eb56e55cd0343c66a6b925c8805861f218e94c"
+    },
+    {
+      "path": "watchalong.html",
+      "sha256": "bd5e8c03b400386fb744428cd999e14825268c5eceece03ec69e92bb56ffea64"
+    },
+    {
+      "path": "watchalong.json",
+      "sha256": "3725e9a1d57fa112362698d52f31f027e2486d2b4e57f9680b6169dceecd242d"
+    },
+    {
+      "path": "watchalong.css",
+      "sha256": "b6f965ccf6ac1683dbcf413d7731bf5d94be96f80faa2440519b71397ac9919b"
+    },
+    {
+      "path": "watchalong.js",
+      "sha256": "75c0bfb5bc7ea37572f16a4e917bcb9a67994a880017c9c7d179b0d0d33778ca"
+    },
+    {
+      "path": "WATCHALONG-GUIDE.md",
+      "sha256": "c292f5690dea85ad4e9f2cd1e2f4c9b288d1234ab7de5adb87c6195be68e6ff4"
+    },
+    {
+      "path": "poll.html",
+      "sha256": "f1bf12a4b70ba702bea68ac24b92c394fd25b679c53b2b51d21b5728736e1b3b"
+    },
+    {
+      "path": "poll.js",
+      "sha256": "eb2f3f344c59bfaf46d5fcc5652fc9292689176c67daf28aba0be5c89e0aeab2"
+    },
+    {
+      "path": "poll-config.json",
+      "sha256": "45582845a9ba46c35b5339e0d11226e8da800600e396e653daf6579d78d4624c"
+    },
+    {
+      "path": "poll-qr.svg",
+      "sha256": "a68f35b2382ada56888b32a6d995190abddf5076002109c19ed453f54a688b7a"
+    },
+    {
+      "path": "qa.html",
+      "sha256": "6d39e23950b4fcddd8f7f375ef4f694a71e5b20b7bebf5397f1592e0d106c747"
+    },
+    {
+      "path": "qa-config.json",
+      "sha256": "92726110c8795c1fc3b6ca6c6dbedf94fca7edfb5b3f7da073e64526a02ed93d"
+    },
+    {
+      "path": "qa-qr.svg",
+      "sha256": "a68f35b2382ada56888b32a6d995190abddf5076002109c19ed453f54a688b7a"
+    },
+    {
+      "path": "present.html",
+      "sha256": "490248ed654fe406fb7633598c8db6a8d34d5a837cc157dbd644a8f8bdcdca41"
+    },
+    {
+      "path": "present.css",
+      "sha256": "163b1451628aedb65ba99134ea273b727d388c4716926f860f68b8842bd757c6"
+    },
+    {
+      "path": "screenshots/lovable-sol-trace.png",
+      "sha256": "db558511bfdf4f6973d94a06b7bae70aabf91ad795bd1f4551391e59dc693d12"
+    },
+    {
+      "path": "screenshots/langfuse-sol-tree.png",
+      "sha256": "0d445f8528916c39382ea6551fa2573bc60dc5cb5f0122d164174ffd1f12f047"
+    },
+    {
+      "path": "screenshots/codex-local-inbox.png",
+      "sha256": "f982d39844ebe8e6db0e576c7622c5bf0001a1ade86f581bcfa33606184f7ffb"
+    },
+    {
+      "path": "CODEX-CLI-DEMO.md",
+      "sha256": "28cff2ee224370dd76aa31298140e8e5c97f436f20519b29d5cdeb663d808e13"
+    },
+    {
+      "path": "CODEX-PLANNING-WORKSHEET.md",
+      "sha256": "638b440128e1284c17f1b4b769ae63b8b3551553c14a6e77fbaf8e0d081e3542"
+    },
+    {
+      "path": "prompts/08-codex-plan.md",
+      "sha256": "f4a62226b86815fea3d23a19aa6207ea6192fe5a157681e00e7c9f319052c2be"
     },
     {
       "path": "help.html",
-      "sha256": "4631ea06bc52859d85fda28c287852921857b526cc8223249ef7ddfbb9235542"
+      "sha256": "d35b98f166d755d840a1040e8129df62840b7f8a856b64c46552b56e67eba989"
     },
     {
       "path": "course.json",
@@ -22,7 +102,7 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "20c531dc69ae2f65280a8582b16b74b00aca29577506753fcc47129f58a56b31"
+      "sha256": "c595653461c707d5dd577f82f2e026122ee38874f632c491c2ca93649fabd492"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
@@ -46,7 +126,7 @@
     },
     {
       "path": "relationships.html",
-      "sha256": "4c1d7cd67fd22f563c758a5a964adb683414195a25011d9708e39123e75b0f8a"
+      "sha256": "ad6493d5ce22cd8833c99f3214686b0582b8fc6792be6e2819c8eb339a38372d"
     },
     {
       "path": "agent-map.css",
@@ -66,11 +146,11 @@
     },
     {
       "path": "showcase.html",
-      "sha256": "fa391615b7cab3e5a7faa82f8ffa136d8cf23661d6d5c701b6a6bfb493689eac"
+      "sha256": "8305fcb0f8d6e123ca3c365ee08e84b9600496906fd3f76718511aec639d206b"
     },
     {
       "path": "workflows.html",
-      "sha256": "d396149ee19b6648a16588072133dd27e8c234b583101e87536ccdc0885c0e0e"
+      "sha256": "2bec39a2a4c03de77ee6a4ba149e8faf94f3a68d6a7ba1847e64d70f699cf4c4"
     },
     {
       "path": "WORKFLOWS.md",
@@ -122,7 +202,7 @@
     },
     {
       "path": "training.css",
-      "sha256": "542c242b607ffca4da45ef04e4e13c8cb5693cc2ef2539332a33321fc264a239"
+      "sha256": "09cf34d586024a4701f80fe52b5fa9a7db8e0917c79b0cefd1e45ca3de0e9fbf"
     },
     {
       "path": "training.js",
@@ -142,15 +222,15 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "37f54e44740514a85629b9c75ff87d8c4b2aae895cdfa80adf33efea9b7b5fdc"
+      "sha256": "a173f1b0641005a55b2fbce171dbee9028d664e0d7d74d1baedb007223abb61f"
     },
     {
       "path": "langfuse.html",
-      "sha256": "cc47f9865f2a3dd6266faa60a0cdaed662e28a92441847d1d4fe90c2649aeb0f"
+      "sha256": "5d6524d276d2a946c0cd39adf01c6c4cebed0473b4cbd9b8a7d2d6e35301d4fb"
     },
     {
       "path": "langfuse-basics.html",
-      "sha256": "850508bac99ba4c0496ce630d78b7df303b82ea7468c581e53d84f5dec8b4c66"
+      "sha256": "d520e88ebc1464b58d25c6435992f4f3a5ae37cb00bc8a78b86e2f35c7df44ca"
     },
     {
       "path": "langfuse-basics.js",
@@ -182,7 +262,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "c9da54d58618dc534b5699db7510545d2a16d36185636a1fa6b6457d151fba8f"
+      "sha256": "cd2f4965df03aa4c2035bc3af26ae3b3db46c202171ea9500520684e85fe3d8d"
     },
     {
       "path": "personas.json",
@@ -194,11 +274,11 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "d51f1622e8b5dcabae1975e56937449a456812f023e44bb47e43aa11ca7e11b2"
+      "sha256": "11558dc2ac79d972fbcf4a1f673b49d49040b978c3709664ad9409a77797f156"
     },
     {
       "path": "EVIDENCE.json",
-      "sha256": "ea01890df05ed47533e66e34045e6c53176cbabf93b8082f040bad43adc5e471"
+      "sha256": "a6cb8f339451adb3cb2c45068005c916b6aa57d2e78be91b4c4edc0625ca63e3"
     },
     {
       "path": "evidence/lovable-inbox.jpg",
@@ -226,27 +306,27 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "3f14dc03c90b4f42787e0ce88e857ee53af8fb4fd6841b49a38f89b40d4bb17a"
+      "sha256": "a2220736291a80f252b5a3533943926fbf94a224a9e4dd6e9430e789439e3abc"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "a19ac26e53fd195c39fe2667c61a478fe3aeb0e2c918f356612a2b6e957751af"
+      "sha256": "c30a862689a8dcfcfc3860e46dece365753e7f51b8fc2a5d3d6ee8a8ec626387"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "7ad36b6d10f38fa670d1c1665b98c821b7838eb0ba8f037ba0be718a7e0a5a53"
+      "sha256": "5c33bcc7ee9ea4867653a9ae565dc810d6e3d4850d46cba4685f45051b81fab3"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "24b19b28b07985fe9bb6fdad53634da23ca2d1935e7993d4cc6d8b96d021571c"
+      "sha256": "58114ce96988d616d6673f69aa5820f15a740494c9c0dfa85fb62ad5c089772b"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "82f81381c3eeaac8a234c2ffc21ffb0ea0590f23553062cac2df51515ca64745"
+      "sha256": "ea1aaff083a5f27f37d25508cf1b2b2285da7187f733500af17c9f4d8d19daf0"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "1eb89f08624d5c16b30f6a222b5ad6a93c0fed6a441e16e018d2f90fb128c747"
+      "sha256": "5ecf24c2602e953d21a9ef9c6db0dfb9837c97f55ddd83a53f911784453dc702"
     },
     {
       "path": "meet-your-agent.html",
@@ -294,7 +374,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "37782c9bae37d41f03d31b37d264527a0ac0e1ca8be7c8ed342869228088b6af"
+      "sha256": "75ddd7923b5f0c2e18ddec4a601247f86be6af2d99c94eb423f4a5e5abc82bb4"
     },
     {
       "path": "BUILDERS.md",
@@ -375,6 +455,102 @@
     {
       "path": "diagrams/architecture.json",
       "sha256": "2d7371904a3b358cda678a5425575a2bb66354d1d2f9dd3602b352fc9948aaf4"
+    },
+    {
+      "path": "media/01-intro.mp4",
+      "sha256": "7af8d86e6687900abe89d1b1f901e4d1f0c4055e56481dfedae1a13055d0467e"
+    },
+    {
+      "path": "media/01-intro.vtt",
+      "sha256": "1b9e694a50d9abb8489979292f3acb7bc447671026899ca52f627294d6ca2562"
+    },
+    {
+      "path": "media/01-intro.txt",
+      "sha256": "8cd0febcaf1923d7ba38e97eb7315f153994a7a02ced5bf2bbde79a33b81d2ec"
+    },
+    {
+      "path": "media/02-poll-definition.mp4",
+      "sha256": "b582a06d2d2a7fb1c9646eee0edcac6e6e39530e127e94e914fb26b1da2a34c8"
+    },
+    {
+      "path": "media/02-poll-definition.vtt",
+      "sha256": "7176a4dd7707752a509c2d0c4c1ccf722e8597ad88acd3a521394ea2ddda4d1c"
+    },
+    {
+      "path": "media/02-poll-definition.txt",
+      "sha256": "e96f42986db2ec75a498003d40f425a35f48adbc41b9b8215101c80fc49517dd"
+    },
+    {
+      "path": "media/03-lovable.mp4",
+      "sha256": "9d892b204b26b3e2e5f290cbb72557942e5fc66f2e0ceeb25fc939b7c18a4fca"
+    },
+    {
+      "path": "media/03-lovable.vtt",
+      "sha256": "dd107a7bf4f50541a14fd752ae531f9ea4ea792c15a5bd112d244740e1950f87"
+    },
+    {
+      "path": "media/03-lovable.txt",
+      "sha256": "553189da5fbb7d7af78e958401770ce1747e539e349b1a84fd8bddcd49e1f9d9"
+    },
+    {
+      "path": "media/04-security-langfuse.mp4",
+      "sha256": "eb4dbf95cb05aef2a483bc7aca4b6879420b3ea61c925cb9e61251cd5157a969"
+    },
+    {
+      "path": "media/04-security-langfuse.vtt",
+      "sha256": "195892b90b0d8d0d9e36540be77992c5268a2ba8c567544745e62df90d96af2c"
+    },
+    {
+      "path": "media/04-security-langfuse.txt",
+      "sha256": "2508b32bdad538c49cd359b1403b342c24fe733ac83cbe48eb4f78aeafe73921"
+    },
+    {
+      "path": "media/05-v0.mp4",
+      "sha256": "d1449b493364ad55f82a386daa1d5ab03e3582b458c9bacbf07312f43be15ff0"
+    },
+    {
+      "path": "media/05-v0.vtt",
+      "sha256": "9b5fb6911e6e454545982b48a59e9021c849fe3568988c9dd97e70cb39e8d94a"
+    },
+    {
+      "path": "media/05-v0.txt",
+      "sha256": "7cc0c6f3e92c3708859ee051a2abc8535c9a5740b73c2a5a31e46a421da6a771"
+    },
+    {
+      "path": "media/06-base44.mp4",
+      "sha256": "3dce2ec0cb5e15a2b5d6289a0c82e1108b7775ed044b95442a58224e6ba2ebbe"
+    },
+    {
+      "path": "media/06-base44.vtt",
+      "sha256": "e80568b428574be4541c7944050910585b5ce69235ebf8d178e117c80f4933ef"
+    },
+    {
+      "path": "media/06-base44.txt",
+      "sha256": "7897c77fb3d69b6d2dbbebba6a9b8483a9b7d2509de725b0de1147610b0d2d53"
+    },
+    {
+      "path": "media/07-codex-cli.mp4",
+      "sha256": "c3b3b85bed8627f21f1ef54d19524e972c18c54831cfdd90f404d059a109f293"
+    },
+    {
+      "path": "media/07-codex-cli.vtt",
+      "sha256": "c6cf4a13a786da885bc41cd70f76820c94723bebc3aebdd894ec609cf5b67702"
+    },
+    {
+      "path": "media/07-codex-cli.txt",
+      "sha256": "8ecc07a7d1dda73f4b0736c40136e559c1b8362c25cdaaa65fead9cc6294b390"
+    },
+    {
+      "path": "media/08-handoff.mp4",
+      "sha256": "8aee853d65d05099ccd2c444b04d5db571a09d703cd8204b61f4a181d488f908"
+    },
+    {
+      "path": "media/08-handoff.vtt",
+      "sha256": "96781e8eb7896f901e7a94276fcc20c2c014ec170a11bf7eb7485eea32bd314a"
+    },
+    {
+      "path": "media/08-handoff.txt",
+      "sha256": "207c0f1c301ee09fc51381668f01f0e5f7100c0d1018f70f9f9cc6cb2e140fc7"
     },
     {
       "path": "agent-briefs/persona-business-part-1.md",

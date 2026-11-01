@@ -113,3 +113,65 @@ Changing persona changes the learning route; it does not create another app.
 Current reference ticket state resets on reload. Re-create synthetic fixtures;
 persistent storage is not an accepted capability. OCI deployment and provider
 telemetry readback remain separate, explicit acceptance gates.
+
+
+## Open the session, then watch and build along
+
+Use [the opening poll](poll.html) for a two-minute conversation about AI
+experience, frequency, desired outcome and preferred demonstration style. Its live
+card and QR open the selected anonymous Google Forms workshop poll. The configured
+form does not collect email or require sign-in. Answers submitted there are handled
+by Google Forms; the presenter opens its actual response summary. The course does
+not invent or compute shared response counts. Optional private practice remains in
+the current tab and is not submitted to the live form; learners may download only
+those private practice choices as JSON. The [Q&A page](qa.html) currently uses the
+optional final question in the same workshop form. No private owner/editor URL is
+stored in public configuration.
+
+[Watch and follow along](watchalong.html) provides a continuous 45-minute chapter
+plan, prepared narration summaries, matching lesson links, copyable prompts and
+manual tasks beneath the video area. Eight selected task videos and their exact
+narration transcripts are available. They are edited narrated checkpoints with
+labelled practice intervals, not a continuous screen recording. Current evidence labels keep
+historical Lovable/Langfuse acceptance separate from new v0/Base44 rehearsal gates.
+A learner can open the matching local MP4/WebM/MOV in the page without uploading
+it. Seeking is enabled only after playable video metadata loads.
+
+The canonical schedule and release status are in `watchalong.json`. To release a
+video, first review all frames/audio for private data, provide exact captions and
+transcript, add only the selected reviewed media to the explicit export allowlist,
+and update the manifest. Do not point the site at private recordings or unreviewed
+remote URLs. The downloadable [watch-along guide](WATCHALONG-GUIDE.md) works before
+the recording is released. The [Codex/CLI demo](CODEX-CLI-DEMO.md) has its own
+execution and provider-acceptance boundaries.
+
+
+### Task-sized video playback
+
+The published route uses one player and an ordered playlist of small task videos.
+The first chapter never autoplays on page load. After the learner presses Play,
+its `ended` event opens the next released chapter and attempts playback once.
+If browser autoplay policy rejects that transition, the page shows **Play this
+chapter** and waits for the learner. It never retries automatically or skips an
+unreleased chapter. Chapter buttons load the relevant clip paused, while the page
+maps its local playback time onto the global 45-minute schedule. A selected local
+full-length file is a separate mode; it is neither uploaded nor mixed into the
+published playlist.
+
+Each chapter has optional `media` metadata in `watchalong.json`: `src`, `captions`,
+`transcript_file` and `reviewed`. Keep paths null and `reviewed: false` until the
+specific video, audio, captions and transcript have passed review. Release requires
+all three existing relative asset paths plus the reviewed flag; add those exact
+files to the public export allowlist separately. Captions use **chapter-local**
+timestamps. The generator displays the literal transcript file under **Recorded
+transcript** only for released media; all remaining text stays labelled **Prepared
+narration summary**. The availability count prevents a partial playlist from
+appearing to be the full finished recording.
+
+
+Selected task-video entries in `EVIDENCE.json` bind the reviewed MP4 hash and
+pixel review to an explicit `audio_qa` object. The object records full-stream
+decode, narration/VTT correspondence, caption-timing verification, whether a
+human listened, and the actual review scope. Passing technical audio QA must not
+be described as a full human listening review. Unperformed listening stays false;
+export does not silently upgrade that evidence class.

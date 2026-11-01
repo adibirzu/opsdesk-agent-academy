@@ -135,6 +135,240 @@
         "OCI APM or Log Analytics delivery",
         "all-persona hosted acceptance"
       ]
+    },
+    {
+      "file": "media/01-intro.mp4",
+      "sha256": "7af8d86e6687900abe89d1b1f901e4d1f0c4055e56481dfedae1a13055d0467e",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 30.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/02-poll-definition.mp4",
+      "sha256": "b582a06d2d2a7fb1c9646eee0edcac6e6e39530e127e94e914fb26b1da2a34c8",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 210.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/03-lovable.mp4",
+      "sha256": "9d892b204b26b3e2e5f290cbb72557942e5fc66f2e0ceeb25fc939b7c18a4fca",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 600.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/04-security-langfuse.mp4",
+      "sha256": "eb4dbf95cb05aef2a483bc7aca4b6879420b3ea61c925cb9e61251cd5157a969",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 480.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/05-v0.mp4",
+      "sha256": "d1449b493364ad55f82a386daa1d5ab03e3582b458c9bacbf07312f43be15ff0",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 420.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/06-base44.mp4",
+      "sha256": "3dce2ec0cb5e15a2b5d6289a0c82e1108b7775ed044b95442a58224e6ba2ebbe",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 420.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/07-codex-cli.mp4",
+      "sha256": "c3b3b85bed8627f21f1ef54d19524e972c18c54831cfdd90f404d059a109f293",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 450.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "media/08-handoff.mp4",
+      "sha256": "8aee853d65d05099ccd2c444b04d5db571a09d703cd8204b61f4a181d488f908",
+      "kind": "narrated-task-video",
+      "pixels_reviewed": true,
+      "audio_qa": {
+        "full_stream_decode": true,
+        "narration_vtt_match": true,
+        "caption_timing_verified": true,
+        "human_listening_review": false,
+        "scope": "Full-stream decode and narration/VTT correspondence verified. Scene boundaries and caption duration bounds checked; sentence timing is proportionally estimated. No full human listening review or word-level alignment acceptance."
+      },
+      "duration_seconds": 90.0,
+      "content": "Edited narrated workshop checkpoints with labelled learner-practice intervals. Parent reviewed selected source frames and new CLI/settings/trace crops. Account, tenant, credential and private infrastructure details excluded.",
+      "evidence_class": "edited-walkthrough-media-qa",
+      "does_not_prove": [
+        "continuous real-time screen recording",
+        "provider-generated intro footage",
+        "v0 or Base44 native-AI/telemetry acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery",
+        "full human listening review"
+      ]
+    },
+    {
+      "file": "screenshots/lovable-sol-trace.png",
+      "sha256": "db558511bfdf4f6973d94a06b7bae70aabf91ad795bd1f4551391e59dc693d12",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual Lovable Sol-model run inspector and safe telemetry checkpoint; identity and private identifiers excluded.",
+      "evidence_class": "reviewed-runtime-checkpoint",
+      "does_not_prove": [
+        "continuous screen recording",
+        "v0 or Base44 backend acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery"
+      ]
+    },
+    {
+      "file": "screenshots/langfuse-sol-tree.png",
+      "sha256": "0d445f8528916c39382ea6551fa2573bc60dc5cb5f0122d164174ffd1f12f047",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual Langfuse trace tree for the selected Sol rehearsal; cropped to remove account and private trace identifiers.",
+      "evidence_class": "reviewed-runtime-checkpoint",
+      "does_not_prove": [
+        "continuous screen recording",
+        "v0 or Base44 backend acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery"
+      ]
+    },
+    {
+      "file": "screenshots/codex-local-inbox.png",
+      "sha256": "f982d39844ebe8e6db0e576c7622c5bf0001a1ade86f581bcfa33606184f7ffb",
+      "kind": "real-browser-screenshot",
+      "pixels_reviewed": true,
+      "content": "Actual Codex-generated local incident inbox with synthetic inputs; this screenshot does not prove a runtime model call.",
+      "evidence_class": "reviewed-runtime-checkpoint",
+      "does_not_prove": [
+        "continuous screen recording",
+        "v0 or Base44 backend acceptance",
+        "Codex runtime AI or hosted deployment acceptance",
+        "OCI APM or Log Analytics delivery"
+      ]
     }
   ]
 }

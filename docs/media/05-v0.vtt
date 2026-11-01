@@ -1,0 +1,243 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.774
+The v zero comparison begins with exactly the same visible-app brief.
+
+00:00:04.774 --> 00:00:14.322
+It asks for three synthetic incidents, an inbox, priority filter, search, selection,
+a validated New ticket form and a disconnected AI panel.
+
+00:00:14.322 --> 00:00:22.568
+The request keeps the project unpublished, uses only existing included credits, and
+prohibits purchases, automatic integrations and real data.
+
+00:00:22.568 --> 00:00:27.776
+We do not copy private project credentials or account information from Lovable.
+
+00:00:27.776 --> 00:00:32.550
+A new builder project has its own runtime, libraries and permissions.
+
+00:00:32.550 --> 00:00:36.890
+Similar component styling does not make it the same implementation.
+
+00:00:36.890 --> 00:00:47.740
+The first useful comparison is whether a user can complete the same visible journey
+and whether the source and capability status explain what actually works.
+
+00:00:48.042 --> 00:00:53.678
+A builder may read files, choose dependencies, write components and run its own
+checks.
+
+00:00:53.678 --> 00:00:55.691
+Those are useful development actions.
+
+00:00:55.691 --> 00:00:59.314
+They do not prove that the live preview works.
+
+00:00:59.314 --> 00:01:03.743
+Preserve the exact prompt and generation result, then inspect the app.
+
+00:01:03.743 --> 00:01:08.172
+If the preview is blank, loading or failed, show that honestly.
+
+00:01:08.172 --> 00:01:15.016
+Do not replace it with a mockup of the intended result or a screen from another
+builder.
+
+00:01:15.016 --> 00:01:24.275
+A repair should be concrete: identify the failed route, dependency or runtime
+condition, change the smallest relevant piece, and retest the same journey.
+
+00:01:24.275 --> 00:01:31.120
+This recording distinguishes the v zero frontend comparison and porting route from a
+fully accepted authenticated agent.
+
+00:01:31.120 --> 00:01:34.743
+The latter requires additional runtime capabilities and separate evidence.
+
+00:01:35.083 --> 00:01:41.033
+The model used to generate code and the model called by the finished app remain
+separate.
+
+00:01:41.033 --> 00:01:47.354
+Before a new runtime canary, discover the actual available models and select a
+suitable lower-cost native option.
+
+00:01:47.354 --> 00:01:52.560
+An alias from an old recording is not proof of current availability or cost.
+
+00:01:52.560 --> 00:02:00.369
+Do not silently switch to an external gateway, a paid API or a different account
+when the intended route is unavailable.
+
+00:02:00.369 --> 00:02:05.203
+Keep purchases, subscriptions and credit top-ups outside the build flow unless
+explicitly approved.
+
+00:02:05.203 --> 00:02:11.525
+If the builder offers a connection to another model account, inspect its data,
+permissions and billing boundary.
+
+00:02:11.525 --> 00:02:18.962
+The goal of the workshop is to understand these choices, not to make an attractive
+answer appear at any cost.
+
+00:02:19.292 --> 00:02:25.104
+To reach parity with the accepted Lovable path, the app needs an authenticated
+server action.
+
+00:02:25.104 --> 00:02:30.916
+The server must know which app user owns the request before making a billable call.
+
+00:02:30.916 --> 00:02:37.116
+A quota should use an atomic reservation, so simultaneous requests cannot both pass
+a stale check.
+
+00:02:37.116 --> 00:02:40.991
+That often needs a supported backend store or transaction mechanism.
+
+00:02:40.991 --> 00:02:46.416
+A frontend counter, browser local storage or hidden button is not an equivalent
+control.
+
+00:02:46.416 --> 00:02:53.779
+In the current v zero comparison, an authenticated and atomic quota backend has not
+been established as accepted evidence.
+
+00:02:53.779 --> 00:02:55.716
+We keep that gate visible.
+
+00:02:55.716 --> 00:03:05.403
+Do not remove authentication, replace it with a hard-coded user, or claim that a
+local counter solves the server boundary merely to complete a demo.
+
+00:03:05.708 --> 00:03:29.208
+Your turn: follow the manual task. Pause for more time.
+
+00:03:29.208 --> 00:03:33.402
+The portable part is the capability contract and harness design.
+
+00:03:33.402 --> 00:03:41.369
+Preserve the request schema, the early change stop, the small tool registry,
+argument validation, execution limits and honest states.
+
+00:03:41.369 --> 00:03:44.723
+Adapt the server wrapper to the supported runtime.
+
+00:03:44.723 --> 00:03:48.497
+Keep environment values in that runtime's protected server settings.
+
+00:03:48.497 --> 00:03:55.626
+The browser should not choose arbitrary model URLs, supply a server key or name a
+privileged tool.
+
+00:03:55.626 --> 00:04:04.851
+If you export source to work locally, inspect its package manifest and lockfile
+first, use the supported toolchain, and preserve a baseline.
+
+00:04:04.851 --> 00:04:14.496
+The fact that source can be exported does not mean its managed authentication,
+database or model gateway can run unchanged on your laptop.
+
+00:04:14.496 --> 00:04:17.012
+Document the adapter work that remains.
+
+00:04:17.333 --> 00:04:24.774
+Create or select a distinct Langfuse project for this builder when that destination
+and key binding are approved.
+
+00:04:24.774 --> 00:04:28.081
+A useful generic name is OpsDesk v zero.
+
+00:04:28.081 --> 00:04:32.214
+Use its ingestion key only in this app's server configuration.
+
+00:04:32.214 --> 00:04:40.481
+The implementation must produce compatible OpenTelemetry spans and the same safe
+export states before the three secret names become meaningful.
+
+00:04:40.481 --> 00:04:45.028
+A valid base URL and keypair do not create spans automatically.
+
+00:04:45.028 --> 00:04:49.988
+Run at most the specifically approved canary after the backend controls pass.
+
+00:04:49.988 --> 00:04:55.362
+Copy its trace and random session privately and independently match the intended
+project.
+
+00:04:55.362 --> 00:04:59.909
+Until then, label the integration configured, source-backed or unverified as
+appropriate.
+
+00:04:59.909 --> 00:05:04.869
+Do not call it end-to-end because a settings form accepted the values.
+
+00:05:05.208 --> 00:05:08.138
+For each builder, record a small matrix.
+
+00:05:08.138 --> 00:05:11.905
+Visible create, search, filter and selection are one row.
+
+00:05:11.905 --> 00:05:13.998
+Authenticated native inference is another.
+
+00:05:13.998 --> 00:05:19.439
+Bounded tools, atomic quota, early change stop and metadata-only export are separate
+rows.
+
+00:05:19.439 --> 00:05:22.787
+Independent provider readback is the final telemetry row.
+
+00:05:22.787 --> 00:05:26.136
+Give each row its actual status and receipt.
+
+00:05:26.136 --> 00:05:29.065
+This makes limitations useful rather than embarrassing.
+
+00:05:29.065 --> 00:05:37.855
+A team can decide whether to remain in a managed builder, add a supported backend,
+or export and implement an adapter.
+
+00:05:37.855 --> 00:05:43.296
+The matrix also prevents the workshop from becoming a contest based on screenshots.
+
+00:05:43.296 --> 00:05:45.807
+We care about behavior and evidence.
+
+00:05:45.807 --> 00:05:53.341
+The same product can reach that standard through several stacks, but each stack must
+earn its acceptance separately.
+
+00:05:53.667 --> 00:05:58.278
+Pause if you want to open v zero and inspect your own project.
+
+00:05:58.278 --> 00:06:03.244
+Use the visible-app prompt, then test the ordinary controls before asking for an
+agent.
+
+00:06:03.244 --> 00:06:06.436
+Save the generated source and note the runtime framework.
+
+00:06:06.436 --> 00:06:11.402
+List what is frontend only, what is managed, and what needs a server binding.
+
+00:06:11.402 --> 00:06:15.304
+You can complete this comparison without making a runtime model call.
+
+00:06:15.304 --> 00:06:21.689
+If you have a supported authenticated backend, implement the reviewed harness
+controls there and run the bounded tests.
+
+00:06:21.689 --> 00:06:25.946
+If you do not, write the missing dependency and continue independent work.
+
+00:06:25.946 --> 00:06:29.847
+The lesson is not that a missing feature should be hidden.
+
+00:06:29.847 --> 00:06:36.232
+It is that a clear contract lets you choose the next engineering step without losing
+the working app.
+
+00:06:36.542 --> 00:07:00.000
+Your turn: follow the manual task. Pause for more time.

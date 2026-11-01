@@ -1,0 +1,3 @@
+[00:00] Build a small app you can click. Then understand the agent behind its AI button. We will inspect real tools, a server side safety stop, and independently matched traces. The introduction is illustrative, never telemetry proof. All incidents are synthetic. Keep account names, tenant details, private addresses and credentials out of every shared frame.
+
+[00:23] Learner practice pause — not speech: Watch the outcome. The next chapter contains the opening questions.

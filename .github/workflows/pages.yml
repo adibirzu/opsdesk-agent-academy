@@ -26,6 +26,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_lovable_workflow.py -v
       - name: Validate the trace-reading lab
         run: python -m unittest discover -s tests -p test_langfuse_basics.py -v
+      - name: Validate watch-along timing, media and anonymous poll boundaries
+        run: python -m unittest discover -s tests -p test_watchalong.py -v
       - name: Export only the reviewed student file list
         run: python scripts/build_student_site.py --output _student_site
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

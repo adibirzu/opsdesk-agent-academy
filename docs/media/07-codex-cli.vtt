@@ -1,0 +1,281 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.464
+For the local coding demonstration, we begin with a new isolated folder.
+
+00:00:04.464 --> 00:00:11.160
+The task tells Codex exactly which public behavior references it may read and which
+directory it may edit.
+
+00:00:11.160 --> 00:00:16.740
+It prohibits private folders, credentials, cloud configuration, browser data, global
+installation, provider calls and publication.
+
+00:00:16.740 --> 00:00:20.460
+The build uses the installed local toolchain and synthetic data.
+
+00:00:20.460 --> 00:00:24.552
+This is a real coding invocation, not a decorative terminal animation.
+
+00:00:24.552 --> 00:00:29.016
+The resulting app, tests and run instructions are files we can inspect.
+
+00:00:29.016 --> 00:00:32.736
+Isolation also preserves the main course checkout and unrelated work.
+
+00:00:32.736 --> 00:00:42.408
+A coding agent's access should fit the task; a broad account login or powerful shell
+does not automatically authorize it to inspect everything on the machine.
+
+00:00:42.708 --> 00:00:53.472
+The task packet describes a small foreground HTTP server bound to loopback, a
+responsive incident inbox, the three seed records, search, priority filtering,
+selection and a validated New ticket form.
+
+00:00:53.472 --> 00:00:56.342
+It asks for an honest disconnected AI state.
+
+00:00:56.342 --> 00:01:04.235
+It also asks for a small server-side harness demonstration with strict input, an
+early change stop, a body-size limit and exact-origin handling.
+
+00:01:04.235 --> 00:01:08.900
+The normal path must return model not configured rather than a fake success.
+
+00:01:08.900 --> 00:01:12.129
+The browser cannot supply a model endpoint or credential.
+
+00:01:12.129 --> 00:01:16.075
+This packet makes the requested output and the stopping point clear.
+
+00:01:16.075 --> 00:01:22.533
+It does not ask the coding agent to provision a cloud service or silently acquire a
+model key.
+
+00:01:22.833 --> 00:01:27.070
+This is the actual successful Codex invocation, with private paths replaced.
+
+00:01:27.070 --> 00:01:33.233
+The first attempt failed before the build because the outer sandbox could not start
+the client.
+
+00:01:33.233 --> 00:01:36.699
+The approved retry kept Codex’s inner workspace write sandbox.
+
+00:01:36.699 --> 00:01:49.409
+It ran version zero point one six six point zero with coding model G P T six point
+one sol, read the reviewed task from standard input, and saved its final result
+privately.
+
+00:01:49.409 --> 00:01:51.720
+The operator observed exit code zero.
+
+00:01:51.720 --> 00:01:55.187
+Codex produced the app, static files, tests and README.
+
+00:01:55.187 --> 00:01:59.809
+Its final report is an agent self report, not acceptance by itself.
+
+00:01:59.809 --> 00:02:04.046
+The next test and HTTP receipts independently check what was built.
+
+00:02:04.046 --> 00:02:06.742
+No runtime model call or deployment occurred.
+
+00:02:07.042 --> 00:02:11.449
+Here is the independent test output, not just the agent’s final message.
+
+00:02:11.449 --> 00:02:17.326
+The actual run reported twelve tests in zero point zero eight three seconds and O K.
+
+00:02:17.326 --> 00:02:22.836
+The selected cases check policy before model construction, unknown fields, Origin
+rejection and body limits.
+
+00:02:22.836 --> 00:02:28.713
+A factory that would fail if invoked helps verify the blocked path never builds a
+model.
+
+00:02:28.713 --> 00:02:30.917
+This is specific local code evidence.
+
+00:02:30.917 --> 00:02:35.692
+It does not prove a real language model ran or a trace arrived.
+
+00:02:35.692 --> 00:02:39.365
+Keep it separate from interactive browser checks and hosted acceptance.
+
+00:02:39.365 --> 00:02:45.242
+Next, actual HTTP responses check the server boundary, still without requesting a
+provider or telemetry export.
+
+00:02:45.542 --> 00:02:51.277
+Use the generated README command to start the server in the foreground on an
+available loopback port.
+
+00:02:51.277 --> 00:02:55.326
+A foreground process has a clear owner and a clear stop action.
+
+00:02:55.326 --> 00:02:59.375
+Open the actual local page and repeat the same synthetic ticket journey.
+
+00:02:59.375 --> 00:03:03.761
+Create the checkout check, search its title, filter and clear, then select payments.
+
+00:03:03.761 --> 00:03:05.785
+Inspect the visible disconnected AI state.
+
+00:03:05.785 --> 00:03:12.533
+The app is local, not publicly hosted, and its ticket state is in memory unless the
+source explicitly implements otherwise.
+
+00:03:12.533 --> 00:03:19.618
+Do not open a public tunnel, add wildcard CORS, or bind to every network interface
+simply to make a demo convenient.
+
+00:03:19.618 --> 00:03:22.992
+Those would change the access boundary and need separate review.
+
+00:03:23.292 --> 00:03:44.167
+Your turn: follow the manual task. Pause for more time.
+
+00:03:44.167 --> 00:03:47.920
+Nine loopback HTTP cases passed in the independent runner.
+
+00:03:47.920 --> 00:03:55.426
+The page was available; the normal request was honestly disconnected and the restart
+was blocked before model construction.
+
+00:03:55.426 --> 00:03:57.928
+Malformed and unexpected inputs were rejected.
+
+00:03:57.928 --> 00:04:03.349
+Foreign or missing Origin returned forbidden; an oversized body was rejected as
+well.
+
+00:04:03.349 --> 00:04:07.518
+The table contains actual status codes from the saved receipt.
+
+00:04:07.518 --> 00:04:12.522
+The source was unchanged and the owned runner process was cleaned up.
+
+00:04:12.522 --> 00:04:15.858
+No provider call or telemetry export was requested.
+
+00:04:15.858 --> 00:04:21.696
+This is real HTTP evidence, not an AI answer and not a simulated terminal.
+
+00:04:21.696 --> 00:04:26.283
+Reproduce the request from your README and record your own output.
+
+00:04:26.583 --> 00:04:32.418
+The coding model that creates this local app does not automatically become the app's
+runtime model.
+
+00:04:32.418 --> 00:04:42.630
+To investigate with a real provider, the server needs the learner's supported
+endpoint or native runtime binding, the exact available model alias, authentication
+and a reviewed harness adapter.
+
+00:04:42.630 --> 00:04:44.818
+Keep values in private server configuration.
+
+00:04:44.818 --> 00:04:50.288
+Discover model capabilities rather than assuming that a model supports tool calls or
+structured output.
+
+00:04:50.288 --> 00:04:54.664
+Use a small synthetic canary, bounded calls and no automatic inference retry.
+
+00:04:54.664 --> 00:04:59.041
+The current disconnected local teaching server intentionally stops short of that
+gate.
+
+00:04:59.041 --> 00:05:05.605
+The course also contains a more complete local runtime reference; inspect its
+configuration and tests before choosing it.
+
+00:05:05.605 --> 00:05:09.617
+Never silently replace a missing real provider with a scripted answer.
+
+00:05:09.917 --> 00:05:15.788
+The CLI can write a structured local event record for a run and show why it stopped.
+
+00:05:15.788 --> 00:05:19.587
+Local events are useful, but they are not remote telemetry readback.
+
+00:05:19.587 --> 00:05:28.912
+When a real exporter is configured, keep event names and attributes allowlisted and
+do not dump prompts, answers, account details or key material into a terminal
+recording.
+
+00:05:28.912 --> 00:05:37.201
+A trace identifier may be useful for private correlation, but the presentation can
+show a reviewed crop instead of exposing the private project URL.
+
+00:05:37.201 --> 00:05:42.727
+Keep a safe receipt with the command, source revision, input class, observed output
+and acceptance status.
+
+00:05:42.727 --> 00:05:50.325
+Do not commit raw logs or browser profiles just because the repository is private
+today; the course is designed for public distribution.
+
+00:05:50.625 --> 00:05:54.968
+After a change, run the focused tests and the browser journey again.
+
+00:05:54.968 --> 00:05:59.673
+Verify the form, search, filter and selection before the AI or policy action.
+
+00:05:59.673 --> 00:06:06.912
+Check that the app stays responsive, failure states remain honest, and previously
+added usage or trace controls have not disappeared.
+
+00:06:06.912 --> 00:06:11.617
+Keep the same project rather than rebuilding a disconnected example for each lesson.
+
+00:06:11.617 --> 00:06:14.874
+The user-facing result and server-side controls form one workflow.
+
+00:06:14.874 --> 00:06:22.475
+A useful handoff records how to launch it, which checks passed, which providers were
+actually contacted and which gates remain unavailable.
+
+00:06:22.475 --> 00:06:30.075
+That is enough for another learner or agent to continue safely without treating an
+optimistic status message as an execution receipt.
+
+00:06:30.375 --> 00:06:33.441
+Pause and open the command block beneath this chapter.
+
+00:06:33.441 --> 00:06:34.803
+Read it before executing.
+
+00:06:34.803 --> 00:06:39.572
+Use your own isolated folder, the installed supported toolchain and a free local
+port.
+
+00:06:39.572 --> 00:06:45.704
+Run the task, inspect the files, execute the tests, launch the server and make the
+synthetic API requests.
+
+00:06:45.704 --> 00:06:48.088
+Stop the foreground server when you finish.
+
+00:06:48.088 --> 00:06:52.176
+Do not paste secrets into the terminal recording or a public issue.
+
+00:06:52.176 --> 00:06:58.307
+If you lack a runtime model, keep the honest disconnected state and complete the
+policy and frontend checks.
+
+00:06:58.307 --> 00:07:00.010
+Those are still useful capabilities.
+
+00:07:00.010 --> 00:07:08.867
+When you are ready to add the real backend, use the same app and a reviewed
+configuration rather than starting again with a different, unexplained
+implementation.
+
+00:07:09.167 --> 00:07:30.000
+Your turn: follow the manual task. Pause for more time.

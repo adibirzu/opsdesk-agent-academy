@@ -75,13 +75,31 @@ class PublicSiteTests(unittest.TestCase):
                 name = str(path.relative_to(out))
                 self.assertFalse(any(part.startswith(".env") or part in {"secrets", "credentials", "local", "node_modules", "redwood", "assets"} for part in path.relative_to(out).parts))
                 payload = path.read_bytes()
-                if path.suffix == ".jpg":
+                if path.suffix in {".jpg", ".png", ".mp4"}:
                     record = reviewed[name]
                     self.assertTrue(record["pixels_reviewed"])
                     self.assertEqual(hashlib.sha256(payload).hexdigest(), record["sha256"])
+                    if path.suffix == ".mp4":
+                        self.assertTrue(record["audio_qa"]["full_stream_decode"])
+                        self.assertTrue(record["audio_qa"]["narration_vtt_match"])
+                        self.assertTrue(record["audio_qa"]["caption_timing_verified"])
+                        self.assertIsInstance(record["audio_qa"]["human_listening_review"], bool)
+                        self.assertTrue(record["audio_qa"]["scope"])
+                        self.assertEqual(record["kind"], "narrated-task-video")
                 else:
                     text = payload.decode("utf-8")
                     self.assertIsNone(re.search(r"(?:sk|pk)-lf-[a-zA-Z0-9-]{20,}|__lovable_(?:token|receipt)=|/Users/[^/]+/", text), name)
+
+    def test_video_export_requires_matching_bytes_and_scoped_audio_qa(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source = Path(temp) / "task.mp4"
+            source.write_bytes(b"isolated-video-export-fixture")
+            name = "media/task.mp4"
+            record = {"kind": "narrated-task-video", "pixels_reviewed": True, "audio_qa": {"full_stream_decode": True, "narration_vtt_match": True, "caption_timing_verified": True, "human_listening_review": False, "scope": "Full decode and narration/caption verification; no full human listening review."}, "sha256": hashlib.sha256(source.read_bytes()).hexdigest()}
+            exporter.validate_public_video(source, name, {name: record})
+            for change in ({"audio_qa": {}}, {"audio_qa": {**record["audio_qa"], "full_stream_decode": False}}, {"pixels_reviewed": False}, {"sha256": "0" * 64}, {"kind": "continuous-screen-recording"}):
+                with self.assertRaises(ValueError):
+                    exporter.validate_public_video(source, name, {name: {**record, **change}})
 
     def test_all_persona_downloads_exist_and_no_live_acceptance_is_invented(self):
         source = ROOT / "workshops/app-first"

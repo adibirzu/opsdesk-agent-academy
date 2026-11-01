@@ -637,3 +637,5 @@ html {
     max-height: none !important;
   }
 }
+
+.session-start{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;max-width:1240px;margin:20px auto 0;padding:20px 32px;background:var(--sage-tint);border-left:3px solid var(--pine);font-size:14px}.session-start>div{flex:1;min-width:220px}.session-start strong,.session-start span{display:block}.session-start span{margin-top:6px;color:var(--text-muted);line-height:1.5}.session-start .action{font-size:13px;white-space:normal}@media(max-width:650px){.session-start{margin:16px 20px 0;padding:16px}.session-start>div{min-width:0;width:100%;flex-basis:100%}}

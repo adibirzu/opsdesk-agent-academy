@@ -1,0 +1,298 @@
+{
+  "title": "Build along. Pause. Try it yourself.",
+  "duration_seconds": 2700,
+  "recording_status": "reviewed_edited_walkthrough",
+  "media": {
+    "src": null,
+    "captions": null,
+    "reviewed": false
+  },
+  "transcript_status": "recorded_narration_available",
+  "chapters": [
+    {
+      "id": "outcome",
+      "start": 0,
+      "end": 30,
+      "title": "See the outcome",
+      "part": "course.html",
+      "status": "Illustrative introduction and edited narration; not provider-execution evidence",
+      "transcript": "We will build one small operations app, connect a bounded AI agent, and inspect what actually ran. A polished screen is useful, but a working model call, an enforced policy stop and an independently verified trace are separate checkpoints. Keep the same app throughout the workshop.",
+      "tasks": [
+        "Open the course overview and choose your learning path.",
+        "Use synthetic incidents only; keep accounts, keys and private endpoints out of screenshots."
+      ],
+      "links": [
+        {
+          "href": "personas.html",
+          "label": "Choose your path",
+          "why": "Find the browser-first, guided IT or engineering workflow."
+        }
+      ],
+      "media": {
+        "src": "media/01-intro.mp4",
+        "captions": "media/01-intro.vtt",
+        "transcript_file": "media/01-intro.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "define",
+      "start": 30,
+      "end": 240,
+      "title": "Define OpsDesk",
+      "part": "part-1-first-app.html",
+      "status": "Written app definition available",
+      "transcript": "Start with the visible outcome: an incident inbox, search, a priority filter, ticket detail and a New ticket form. The AI panel must say it is disconnected until a real backend is connected. Agree on what a good answer can and cannot do before asking a builder to create it.",
+      "tasks": [
+        "Open your chosen builder in your own account.",
+        "Copy the visible-app prompt. Keep the project unpublished while testing.",
+        "Create, search, filter and select a synthetic ticket. Do not accept a canned answer as AI evidence."
+      ],
+      "prompt_file": "prompts/01-build-app.md",
+      "links": [
+        {
+          "href": "APP-CAPABILITIES.md",
+          "label": "App capability checklist",
+          "why": "Compare the expected controls with the app you actually built."
+        },
+        {
+          "href": "meet-your-agent.html",
+          "label": "Meet your agent",
+          "why": "Understand the model, tools and instructions in plain language."
+        }
+      ],
+      "media": {
+        "src": "media/02-poll-definition.mp4",
+        "captions": "media/02-poll-definition.vtt",
+        "transcript_file": "media/02-poll-definition.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "lovable",
+      "start": 240,
+      "end": 840,
+      "title": "Build and connect in Lovable",
+      "part": "lovable.html",
+      "status": "Recorded Lovable walkthrough uses actual reviewed app and trace checkpoints; every new live run still needs its own acceptance",
+      "transcript": "Use the same Lovable project for both passes. First verify the inbox. Then add an authenticated server-side AI action, a small read-only tool registry and a bounded agent loop. Builder sign-in and app sign-in are different. The coding assistant creates the program; the app model investigates an incident when an authorized user clicks Analyze safely.",
+      "tasks": [
+        "Follow the complete Lovable lab, including its backend and app sign-in checkpoints.",
+        "Keep model credentials in supported server configuration.",
+        "Run one authorized synthetic investigation and inspect actual model calls, tools, timing and reported usage.",
+        "Leave missing cost or usage unknown. Keep source tests distinct from the hosted run."
+      ],
+      "prompt_file": "prompts/07-lovable-native.md",
+      "links": [
+        {
+          "href": "lovable.html",
+          "label": "Complete Lovable route",
+          "why": "Destination, action and expected result for every step."
+        },
+        {
+          "href": "relationships.html",
+          "label": "Agent relationships",
+          "why": "See how the app, harness, model and tools fit together."
+        }
+      ],
+      "media": {
+        "src": "media/03-lovable.mp4",
+        "captions": "media/03-lovable.vtt",
+        "transcript_file": "media/03-lovable.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "security-traces",
+      "start": 840,
+      "end": 1320,
+      "title": "Block the change. Follow the trace.",
+      "part": "part-4-follow-the-evidence.html",
+      "status": "Historical exact normal and zero-model policy traces verified in Langfuse; other destinations remain separate",
+      "transcript": "The harness enforces rules before a tool or model can act. Ask for an explicit system change and verify the server stops it before inference. Connect compatible OpenTelemetry instrumentation using a Langfuse origin and project keys stored only on the server. Export acknowledgment is not provider readback. Match the exact trace and random session in the owner UI. Do not expose hidden reasoning, prompts, answers, identity or credentials in training telemetry.",
+      "tasks": [
+        "Use the explicit change-request control. Confirm approval_required and zero model calls.",
+        "Create your own Langfuse project and store its three configuration values in server Secrets, never builder chat or browser code.",
+        "Follow one authorized run from the app to its exact trace and session in Langfuse.",
+        "Read parent/child spans, model usage and safe tool events. Keep OCI APM and Log Analytics acceptance separate."
+      ],
+      "prompt_file": "prompts/06-langfuse-simple.md",
+      "links": [
+        {
+          "href": "langfuse.html",
+          "label": "Connect Langfuse",
+          "why": "Set up compatible instrumentation and private server configuration."
+        },
+        {
+          "href": "langfuse-basics.html",
+          "label": "Read a trace",
+          "why": "Practice finding the exact run and reading its tree, timing and usage."
+        },
+        {
+          "href": "part-5-secure-by-construction.html",
+          "label": "Agent security lab",
+          "why": "Extend the same app with policy and failure regression checks."
+        }
+      ],
+      "media": {
+        "src": "media/04-security-langfuse.mp4",
+        "captions": "media/04-security-langfuse.vtt",
+        "transcript_file": "media/04-security-langfuse.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "v0",
+      "start": 1320,
+      "end": 1740,
+      "title": "Repeat the contract in v0",
+      "part": "part-1-first-app.html",
+      "status": "Frontend and porting rehearsal in progress; authentication/database, native AI and telemetry acceptance pending",
+      "transcript": "A different builder can produce the same app contract with a different implementation. Reuse the synthetic inputs and acceptance checks, rather than assuming identical code or runtime APIs. Review the current v0 project, available credits and supported server integration. A rendered preview is a frontend checkpoint, not proof of authentication, native AI or telemetry.",
+      "tasks": [
+        "Open v0 and start a separate owned rehearsal project using the same visible-app prompt.",
+        "Verify create, search, filter and select before connecting AI.",
+        "Use the builder's supported authenticated server integration; do not copy Lovable-specific APIs unchanged.",
+        "Repeat the bounded tool, policy and telemetry checks. Record unsupported features honestly."
+      ],
+      "prompt_file": "prompts/01-build-app.md",
+      "links": [
+        {
+          "href": "https://v0.app/",
+          "label": "Open v0",
+          "why": "Use your own account and current entitlements."
+        },
+        {
+          "href": "API-CONTRACT.md",
+          "label": "Portable app contract",
+          "why": "Keep the browser/server behavior consistent across builders."
+        }
+      ],
+      "media": {
+        "src": "media/05-v0.mp4",
+        "captions": "media/05-v0.vtt",
+        "transcript_file": "media/05-v0.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "base44",
+      "start": 1740,
+      "end": 2160,
+      "title": "Repeat the contract in Base44",
+      "part": "part-1-first-app.html",
+      "status": "Frontend rehearsal in progress; Builder plan/backend capability and native-AI/telemetry acceptance pending",
+      "transcript": "Apply the same product definition and acceptance journey in Base44. Native backend features and plan limits may differ. Do not add persistence, authentication or an AI integration merely because a preview looks complete. Inspect the implementation, use supported server features, and separate local tests from a real provider result.",
+      "tasks": [
+        "Open Base44 and create your own unpublished OpsDesk rehearsal with the same prompt.",
+        "Verify the actual inbox and form controls using synthetic inputs.",
+        "Inspect the supported native AI, authentication and backend function options before activation.",
+        "Repeat a normal investigation, the zero-model change stop and exact telemetry readback only when their required bindings and authority exist."
+      ],
+      "prompt_file": "prompts/01-build-app.md",
+      "links": [
+        {
+          "href": "https://base44.com/",
+          "label": "Open Base44",
+          "why": "Check current account access and supported features."
+        },
+        {
+          "href": "replicate.html",
+          "label": "Run at home",
+          "why": "Review prerequisites, implementation paths and honest completion gates."
+        }
+      ],
+      "media": {
+        "src": "media/06-base44.mp4",
+        "captions": "media/06-base44.vtt",
+        "transcript_file": "media/06-base44.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "codex-cli",
+      "start": 2160,
+      "end": 2610,
+      "title": "Build with Codex. Inspect from the CLI.",
+      "part": "part-2-agent-engine.html",
+      "status": "Actual local build: 12 generated-app unit checks and 9 HTTP checks passed; runtime AI and telemetry acceptance remain separate",
+      "transcript": "A coding agent needs a concrete app definition, boundaries and acceptance checks. Open a fresh learner workspace, give Codex the build prompt, and review its generated files before running them. Run the generated app's documented tests and foreground launch command. The coding model is not automatically the app's runtime model. Never bypass authentication, Origin checks or provider setup to make a demonstration appear successful.",
+      "tasks": [
+        "Clone the public project into a fresh learner-owned directory and inspect its instructions.",
+        "Open Codex in the learner workspace and use the portable build prompt.",
+        "Review the generated README and source. Run the documented tests before starting its foreground server.",
+        "Use the same synthetic create → select → investigate → policy-stop journey. Mark disconnected models and missing cloud evidence explicitly."
+      ],
+      "prompt_file": "prompts/04-codex-build.md",
+      "command": "git clone https://github.com/adibirzu/opsdesk-agent-academy.git\ncd opsdesk-agent-academy\n# Read AGENTS.md and the build prompt before invoking your coding assistant.\ncodex",
+      "links": [
+        {
+          "href": "prompts/04-codex-build.md",
+          "label": "Codex build instructions",
+          "why": "Define a visible app, private backend and bounded harness."
+        },
+        {
+          "href": "replicate.html",
+          "label": "Local setup and commands",
+          "why": "Choose the correct runtime and dependency path."
+        },
+        {
+          "href": "CODEX-CLI-DEMO.md",
+          "label": "Reproducible Codex and CLI demo",
+          "why": "Run the reviewed commands and separate local controls from real model and telemetry acceptance."
+        },
+        {
+          "href": "CODEX-PLANNING-WORKSHEET.md",
+          "label": "Plan the app before coding",
+          "why": "Define the workflow, capabilities, boundaries, backend and acceptance checks before implementation."
+        },
+        {
+          "href": "prompts/08-codex-plan.md",
+          "label": "Codex planning prompt",
+          "why": "Give the coding agent the app plan and review questions before the build."
+        }
+      ],
+      "media": {
+        "src": "media/07-codex-cli.mp4",
+        "captions": "media/07-codex-cli.vtt",
+        "transcript_file": "media/07-codex-cli.txt",
+        "reviewed": true
+      }
+    },
+    {
+      "id": "continue",
+      "start": 2610,
+      "end": 2700,
+      "title": "Carry the same app forward",
+      "part": "part-6-ready-for-oci.html",
+      "status": "Cloud handoff is documented; deployment is not implied by video playback",
+      "transcript": "Save the same app, a private baseline reference and the observed checks. State what passed and what remains missing. Add agent engine improvements, model comparisons, observability, security and hosting as increments to the existing app. A published guide is not a hosted AI backend, and a video is not proof that your own configuration works.",
+      "tasks": [
+        "Download the agent instructions for your persona and next part.",
+        "Keep a private handoff note with observed results and missing evidence.",
+        "Re-run earlier checks after every change. Review hosting scope, cost and rollback before deploying."
+      ],
+      "links": [
+        {
+          "href": "workflows.html",
+          "label": "All persona workflows",
+          "why": "Continue the same app through all six parts."
+        },
+        {
+          "href": "CLOUD-HANDOFF.md",
+          "label": "Cloud handoff packet",
+          "why": "Prepare a reviewed hosting plan and independent acceptance gates."
+        }
+      ],
+      "media": {
+        "src": "media/08-handoff.mp4",
+        "captions": "media/08-handoff.vtt",
+        "transcript_file": "media/08-handoff.txt",
+        "reviewed": true
+      }
+    }
+  ],
+  "status_as_of": "2026-11-01",
+  "playback": "sequential_task_chapters",
+  "video_format": "edited_narrated_checkpoints_and_labelled_practice"
+}
