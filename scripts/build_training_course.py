@@ -27,10 +27,25 @@ def brief_ref(value):
     return value if "://" in value or value.startswith("#") else "../" + value
 
 
+OPSDESK_LOGO_MARK = (
+        '<svg class="opsdesk-logo-mark" viewBox="0 0 36 36" width="26" height="26" aria-hidden="true" focusable="false">'
+        '<polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>'
+        '<polygon points="18,6.5 28,12.2 28,23.8 18,29.5 8,23.8 8,12.2" fill="none" stroke="#b91c1c" stroke-width="1.75"/>'
+        '<line x1="18" y1="18" x2="18" y2="10.5" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>'
+        '<line x1="18" y1="18" x2="24.5" y2="21.8" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>'
+        '<line x1="18" y1="18" x2="11.5" y2="21.8" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>'
+        '<circle cx="18" cy="18" r="3.2" fill="#b91c1c" stroke="#fafaf9" stroke-width="1.4"/>'
+        '<circle cx="18" cy="10.5" r="2" fill="#fafaf9"/>'
+        '<circle cx="24.5" cy="21.8" r="2" fill="#fafaf9"/>'
+        '<circle cx="11.5" cy="21.8" r="2" fill="#22c55e"/>'
+        '</svg>'
+)
+
+
 def course_navigation():
     return (
         '<div class="academy-header-top">'
-        '<div class="academy-brand"><a href="course.html"><strong>OpsDesk Academy</strong></a>' + GITHUB_LINK + '</div>'
+        '<div class="academy-brand"><a class="opsdesk-brand-link" href="course.html">' + OPSDESK_LOGO_MARK + '<strong>OpsDesk Academy</strong></a>' + GITHUB_LINK + '</div>'
         '<nav class="academy-nav" aria-label="Course navigation">'
         '<a href="course.html">Course overview</a><a href="personas.html">Choose your path</a>'
         '<a href="lovable.html">Build OpsDesk</a><a href="relationships.html">Agent map</a>'
