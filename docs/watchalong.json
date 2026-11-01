@@ -166,6 +166,11 @@
           "href": "API-CONTRACT.md",
           "label": "Portable app contract",
           "why": "Keep the browser/server behavior consistent across builders."
+        },
+        {
+          "href": "BUILDER-TRACE-CHECKLIST.md",
+          "label": "Builder trace checklist (.md)",
+          "why": "See the actual backend blockers and the instrumentation, server secrets and exact readback required for your own runtime."
         }
       ],
       "media": {
@@ -200,6 +205,11 @@
           "href": "replicate.html",
           "label": "Run at home",
           "why": "Review prerequisites, implementation paths and honest completion gates."
+        },
+        {
+          "href": "BUILDER-TRACE-CHECKLIST.md",
+          "label": "Builder trace checklist (.md)",
+          "why": "See the actual backend blockers and the instrumentation, server secrets and exact readback required for your own runtime."
         }
       ],
       "media": {
@@ -250,6 +260,11 @@
           "href": "prompts/08-codex-plan.md",
           "label": "Codex planning prompt",
           "why": "Give the coding agent the app plan and review questions before the build."
+        },
+        {
+          "href": "BUILDER-TRACE-CHECKLIST.md",
+          "label": "Builder trace checklist (.md)",
+          "why": "See the actual backend blockers and the instrumentation, server secrets and exact readback required for your own runtime."
         }
       ],
       "media": {

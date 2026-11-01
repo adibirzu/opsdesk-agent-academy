@@ -369,6 +369,19 @@
         "Codex runtime AI or hosted deployment acceptance",
         "OCI APM or Log Analytics delivery"
       ]
+    },
+    {
+      "file": "screenshots/presenter-linkedin.jpg",
+      "sha256": "1141ea6bcfeb851ef3404a23a249047a782d77b6fbb31f3bd4bbbeadc3692ed9",
+      "kind": "user-requested-public-professional-portrait",
+      "pixels_reviewed": true,
+      "content": "Presenter explicitly requested their own public LinkedIn profile portrait on the presentation. Parent selected and reviewed only the headshot, excluding account UI and other personal data. This is a scoped exception to the course default against personal-data publication.",
+      "evidence_class": "user-authorized-public-professional-photo",
+      "does_not_prove": [
+        "official Oracle endorsement",
+        "identity verification for other services",
+        "runtime or telemetry acceptance"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ import { createLovableAiGatewayRunIdFetch } from "./ai/run-id.server.ts";
 import type { WorkshopTelemetry } from "./langfuse.server";
 import { emptyRun, requiresApproval, requestSchema, syntheticTool, toolSchema, validatedToolSchema, MAX_MODEL_CALLS, MAX_OUTPUT_TOKENS, MAX_ANSWER_CHARS, MAX_TOOL_EVENTS, type AnalysisRun, type AnalysisInput } from "./opsdesk-contract";
 
-export const MODEL = "openai/gpt-6-astra";
+export const MODEL = "openai/gpt-6-sol";
 type Dependencies = {
   apiKey: () => string | undefined;
   reserve: () => Promise<boolean>;
@@ -95,6 +95,7 @@ export async function analyzeOnServer(raw: AnalysisInput, deps: Dependencies): P
       prepareStep: ({ stepNumber }) => stepNumber >= MAX_MODEL_CALLS - 1 || toolCount >= MAX_TOOL_EVENTS ? { activeTools: [], toolChoice: "none" } : { toolChoice: "auto" },
       providerOptions: { openai: { forceReasoning: true, reasoningEffort: "low", reasoningSummary: "auto", store: false, include: ["reasoning.encrypted_content"] } },
       onStepEnd: ({ usage, finishReason, response }) => {
+        if (response.modelId) run.model = response.modelId;
         deps.telemetry?.generationEnd(response.modelId, usage);
         event("model_end", `Model step finished: ${finishReason}`, { inputTokens: usage.inputTokens ?? null, outputTokens: usage.outputTokens ?? null, totalTokens: usage.totalTokens ?? null });
       },

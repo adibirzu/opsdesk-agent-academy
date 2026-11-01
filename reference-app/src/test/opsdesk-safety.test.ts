@@ -55,13 +55,14 @@ describe("OpsDesk server safety", () => {
       const body = JSON.parse(init.body as string);
       expect(body.max_output_tokens).toBe(4096);
       expect(body.store).toBe(false);
-      expect(body.model).toBe("openai/gpt-6-astra");
+      expect(body.model).toBe("openai/gpt-6-sol");
+      expect(body.service_tier).toBeUndefined();
       const n = d.fetch.mock.calls.length;
       if (n < 3) expect(body.tools.every((t: { name: string }) => ["service_health", "release_diff"].includes(t.name))).toBe(true);
       else expect(body.tools ?? []).toEqual([]);
       const toolName = n === 1 ? "service_health" : "release_diff";
       const output = n < 3 ? [{ type: "function_call", id: `fc_${n}`, call_id: `call_${n}`, name: toolName, arguments: '{"service":"payments"}', status: "completed" }] : [{ type: "message", id: "msg_3", role: "assistant", status: "completed", content: [{ type: "output_text", text: "Synthetic observations only; cause unconfirmed.", annotations: [] }] }];
-      const response = { id: `resp_${n}`, created_at: 1793443374, object: "response", model: "openai/gpt-6-astra", status: "completed", output, usage: { input_tokens: 10, output_tokens: 5, total_tokens: 15, input_tokens_details: { cached_tokens: 0 }, output_tokens_details: { reasoning_tokens: 0 } } };
+      const response = { id: `resp_${n}`, created_at: 1793443374, object: "response", model: "fixture-returned-sol-model", status: "completed", output, usage: { input_tokens: 10, output_tokens: 5, total_tokens: 15, input_tokens_details: { cached_tokens: 0 }, output_tokens_details: { reasoning_tokens: 0 } } };
       const events = [{ type: "response.created", response: { ...response, output: [], status: "in_progress" } }, ...output.flatMap((item, index) => [{ type: "response.output_item.added", output_index: index, item }, ...(item.type === "message" ? [{ type: "response.output_text.delta", item_id: item.id, output_index: index, content_index: 0, delta: "Synthetic observations only; cause unconfirmed." }] : []), { type: "response.output_item.done", output_index: index, item }]), { type: "response.completed", response }];
       return new Response(events.map(e => `data: ${JSON.stringify(e)}\n\n`).join(""), { headers: { "content-type": "text/event-stream", "X-Lovable-AIG-Run-ID": "fixture-gateway-run" } });
     });
@@ -73,6 +74,8 @@ describe("OpsDesk server safety", () => {
     expect(exporter).not.toHaveBeenCalled();
     expect(run.error).toBeNull();
     expect(run.modelCalls).toBe(3);
+    expect(run.model).toBe("fixture-returned-sol-model");
+    expect(run.estimatedCost).toBeNull();
     expect(d.fetch).toHaveBeenCalledTimes(3);
     expect(run.events.filter(e => e.type === "tool")).toHaveLength(2);
     expect(run.tokenUsage.total).toBe(45);

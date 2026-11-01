@@ -10,11 +10,11 @@
     },
     {
       "path": "watchalong.html",
-      "sha256": "a2ad6560b8ba83e8d45b76c5c00eac910bfba630f15c9f527741fe00354d90a0"
+      "sha256": "d364ff7f30dc054676c522a60831076c2355705055c073e27ce6f928a8c4a385"
     },
     {
       "path": "watchalong.json",
-      "sha256": "3725e9a1d57fa112362698d52f31f027e2486d2b4e57f9680b6169dceecd242d"
+      "sha256": "08e803d73295ce5b52ef8202b05563a00a54bcc49aa8886aebcd1b269e6cf23f"
     },
     {
       "path": "watchalong.css",
@@ -58,11 +58,15 @@
     },
     {
       "path": "present.html",
-      "sha256": "1a287fa94003bf0abbb56421bdb74e4294b5ed693952cbe04b89fbf39a64497b"
+      "sha256": "8d0986253b458e1edd2e04de437c6540a507d9594933ac7b6060d57a7e2032b0"
     },
     {
       "path": "present.css",
-      "sha256": "163b1451628aedb65ba99134ea273b727d388c4716926f860f68b8842bd757c6"
+      "sha256": "dcab23b65c42c2d0b962fc2f043225a8fdf95f87b0295b8f9d2f53521d6912b3"
+    },
+    {
+      "path": "linkedin-qr.svg",
+      "sha256": "c682d42f785cf05a1b90c1a8cadcb89f0431e807a22d7590b808eec4d67c2ff2"
     },
     {
       "path": "screenshots/lovable-sol-trace.png",
@@ -77,8 +81,16 @@
       "sha256": "f982d39844ebe8e6db0e576c7622c5bf0001a1ade86f581bcfa33606184f7ffb"
     },
     {
+      "path": "screenshots/presenter-linkedin.jpg",
+      "sha256": "1141ea6bcfeb851ef3404a23a249047a782d77b6fbb31f3bd4bbbeadc3692ed9"
+    },
+    {
       "path": "CODEX-CLI-DEMO.md",
       "sha256": "28cff2ee224370dd76aa31298140e8e5c97f436f20519b29d5cdeb663d808e13"
+    },
+    {
+      "path": "BUILDER-TRACE-CHECKLIST.md",
+      "sha256": "fc0ccfe1bbd304133c7ac677adf0891a109e035337ee91d291abc89fd763da49"
     },
     {
       "path": "CODEX-PLANNING-WORKSHEET.md",
@@ -278,7 +290,7 @@
     },
     {
       "path": "EVIDENCE.json",
-      "sha256": "a6cb8f339451adb3cb2c45068005c916b6aa57d2e78be91b4c4edc0625ca63e3"
+      "sha256": "580a7b9da6e96a63e1d2fb054ea2e78ec692c3940ad1b5bca7bd46fa493a670d"
     },
     {
       "path": "evidence/lovable-inbox.jpg",
