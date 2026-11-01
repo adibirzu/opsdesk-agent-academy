@@ -6,6 +6,13 @@ Start with poll.html. Its live card opens the explicitly selected anonymous Goog
 
 Use your own accounts and synthetic data. Keep names, emails, account and tenant labels, private URLs, credentials and infrastructure identifiers out of captures. Existing screenshots and provider receipts have their own evidence boundaries.
 
+## Download before the event
+
+1. Download the eight numbered MP4 task videos using the chapter links below, plus their optional VTT captions.
+2. Keep filenames 01 through 08 in the same local folder. Open them in order in your normal browser or video player; this offline route does not depend on the embedded course player.
+3. Test the first and last clip, audio, and the projector before the room opens. Keep the written tasks and transcript available beside the video.
+4. The page's optional local-file picker expects a matching full-length recording; for these separate task clips, use the per-clip links or your normal local video player.
+
 ## 00:00–00:30 · See the outcome
 
 Evidence status: Illustrative introduction and edited narration; not provider-execution evidence
@@ -22,6 +29,10 @@ Evidence status: Illustrative introduction and edited narration; not provider-ex
 2. Use synthetic incidents only; keep accounts, keys and private endpoints out of screenshots.
 
 Matching lab: [course.html](course.html)
+
+Download this task video: [01-intro.mp4](media/01-intro.mp4)
+
+Captions: [01-intro.vtt](media/01-intro.vtt)
 
 ## 00:30–04:00 · Define OpsDesk
 
@@ -46,6 +57,10 @@ Evidence status: Written app definition available
 3. Create, search, filter and select a synthetic ticket. Do not accept a canned answer as AI evidence.
 
 Matching lab: [part-1-first-app.html](part-1-first-app.html)
+
+Download this task video: [02-poll-definition.mp4](media/02-poll-definition.mp4)
+
+Captions: [02-poll-definition.vtt](media/02-poll-definition.vtt)
 
 ### Prompt · prompts/01-build-app.md
 
@@ -111,6 +126,10 @@ Evidence status: Recorded Lovable walkthrough uses actual reviewed app and trace
 4. Leave missing cost or usage unknown. Keep source tests distinct from the hosted run.
 
 Matching lab: [lovable.html](lovable.html)
+
+Download this task video: [03-lovable.mp4](media/03-lovable.mp4)
+
+Captions: [03-lovable.vtt](media/03-lovable.vtt)
 
 ### Prompt · prompts/07-lovable-native.md
 
@@ -189,6 +208,10 @@ Evidence status: Historical exact normal and zero-model policy traces verified i
 4. Read parent/child spans, model usage and safe tool events. Keep OCI APM and Log Analytics acceptance separate.
 
 Matching lab: [part-4-follow-the-evidence.html](part-4-follow-the-evidence.html)
+
+Download this task video: [04-security-langfuse.mp4](media/04-security-langfuse.mp4)
+
+Captions: [04-security-langfuse.vtt](media/04-security-langfuse.vtt)
 
 ### Prompt · prompts/06-langfuse-simple.md
 
@@ -277,6 +300,10 @@ Evidence status: Frontend and porting rehearsal in progress; authentication/data
 
 Matching lab: [part-1-first-app.html](part-1-first-app.html)
 
+Download this task video: [05-v0.mp4](media/05-v0.mp4)
+
+Captions: [05-v0.vtt](media/05-v0.vtt)
+
 ### Prompt · prompts/01-build-app.md
 
 Build OpsDesk, a small incident board for an operations team. Start with the visible
@@ -333,6 +360,10 @@ Evidence status: Frontend rehearsal in progress; Builder plan/backend capability
 4. Repeat a normal investigation, the zero-model change stop and exact telemetry readback only when their required bindings and authority exist.
 
 Matching lab: [part-1-first-app.html](part-1-first-app.html)
+
+Download this task video: [06-base44.mp4](media/06-base44.mp4)
+
+Captions: [06-base44.vtt](media/06-base44.vtt)
 
 ### Prompt · prompts/01-build-app.md
 
@@ -395,6 +426,10 @@ Evidence status: Actual local build: 12 generated-app unit checks and 9 HTTP che
 
 Matching lab: [part-2-agent-engine.html](part-2-agent-engine.html)
 
+Download this task video: [07-codex-cli.mp4](media/07-codex-cli.mp4)
+
+Captions: [07-codex-cli.vtt](media/07-codex-cli.vtt)
+
 ```sh
 git clone https://github.com/adibirzu/opsdesk-agent-academy.git
 cd opsdesk-agent-academy
@@ -447,3 +482,7 @@ Evidence status: Cloud handoff is documented; deployment is not implied by video
 3. Re-run earlier checks after every change. Review hosting scope, cost and rollback before deploying.
 
 Matching lab: [part-6-ready-for-oci.html](part-6-ready-for-oci.html)
+
+Download this task video: [08-handoff.mp4](media/08-handoff.mp4)
+
+Captions: [08-handoff.vtt](media/08-handoff.vtt)

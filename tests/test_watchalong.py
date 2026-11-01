@@ -53,12 +53,15 @@ class WatchalongTests(unittest.TestCase):
         self.assertIn("Recording availability:", page)
         self.assertIn("not the final recording transcript", page)
         self.assertIn('id="watch-video"', page)
-        self.assertNotIn("poster=", page)
+        self.assertIn('poster="screenshots/lovable-sol-trace.png"', page)
         self.assertIn("never uploaded", page)
         self.assertIn("CODEX-CLI-DEMO.md", page)
         for chapter in json.loads((COURSE / "watchalong.json").read_text())["chapters"]:
             self.assertIn('id="chapter-' + chapter["id"] + '"', page)
             self.assertIn('data-seek="' + str(chapter["start"]) + '"', page)
+            if chapter.get("media", {}).get("src"):
+                self.assertIn('href="' + chapter["media"]["src"] + '" download', page)
+                self.assertIn('href="' + chapter["media"]["captions"] + '" download', page)
 
     def test_poll_has_only_bounded_anonymous_choices_and_honest_collection_status(self):
         page = (COURSE / "poll.html").read_text()
