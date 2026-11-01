@@ -12,13 +12,42 @@
 </head>
 <body>
   <header>
-    <b>OpsDesk / interactive product sketch</b>
+    <div class="opsdesk-brand-lockup">
+      <svg class="opsdesk-logo-mark" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true" focusable="false">
+        <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+        <polygon points="18,6.5 28,12.2 28,23.8 18,29.5 8,23.8 8,12.2" fill="none" stroke="#b91c1c" stroke-width="1.75"/>
+        <line x1="18" y1="18" x2="18" y2="10.5" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="18" y1="18" x2="24.5" y2="21.8" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="18" y1="18" x2="11.5" y2="21.8" stroke="#fafaf9" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="3.2" fill="#b91c1c" stroke="#fafaf9" stroke-width="1.4"/>
+        <circle cx="18" cy="10.5" r="2" fill="#fafaf9"/>
+        <circle cx="24.5" cy="21.8" r="2" fill="#fafaf9"/>
+        <circle cx="11.5" cy="21.8" r="2" fill="#22c55e"/>
+      </svg>
+      <b>OpsDesk / interactive product sketch</b>
+    </div>
     <a href="index.html#build">Back to workshop →</a>
   </header>
   <main class="page-content">
-    <span class="eyebrow">STEP 1 · MAKE SOMETHING VISIBLE</span>
-    <h1>Your incident inbox.</h1>
-    <p>This static preview uses invented tickets in memory. Nothing is sent to a model, saved to a server or exported as telemetry. Reload resets it.</p>
+    <div class="opsdesk-demo-banner">
+      <svg class="opsdesk-logo-hero" viewBox="0 0 64 64" width="56" height="56" role="img" aria-label="OpsDesk AI Incident Command Logo">
+        <polygon points="32,4 56,18 56,46 32,60 8,46 8,18" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+        <polygon points="32,11 50,21.5 50,42.5 32,53 14,42.5 14,21.5" fill="#1e293b" stroke="#b91c1c" stroke-width="2.2"/>
+        <circle cx="32" cy="32" r="12" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="32" y1="32" x2="32" y2="18" stroke="#f8fafc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="32" y1="32" x2="44" y2="39" stroke="#f8fafc" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="32" y1="32" x2="20" y2="39" stroke="#f8fafc" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="5" fill="#b91c1c" stroke="#f8fafc" stroke-width="2"/>
+        <circle cx="32" cy="18" r="3" fill="#f8fafc"/>
+        <circle cx="44" cy="39" r="3" fill="#f8fafc"/>
+        <circle cx="20" cy="39" r="3" fill="#22c55e"/>
+      </svg>
+      <div>
+        <span class="eyebrow">STEP 1 · MAKE SOMETHING VISIBLE</span>
+        <h1>Your incident inbox.</h1>
+      </div>
+    </div>
+    <p>This static preview uses synthetic tickets persisted in your browser session (<code>localStorage</code>). Nothing is sent to a model, saved to a server or exported as telemetry.</p>
     <div class="check">
       <b>AI is not connected yet</b>
       Your task: recreate this useful interface, then connect your own server-owned agent.
@@ -48,7 +77,10 @@
     </div>
     <div class="ticket-storage-bar">
       <span id="storage-status" class="ticket-storage-status" role="status" aria-live="polite">Persisted in localStorage (4 tickets)</span>
-      <button type="button" id="reset-tickets" class="ticket-reset-btn">Reset default tickets</button>
+      <div class="ticket-storage-actions">
+        <button type="button" id="export-tickets-json" class="ticket-export-btn">Export JSON ↓</button>
+        <button type="button" id="reset-tickets" class="ticket-reset-btn">Reset default tickets</button>
+      </div>
     </div>
     <div id="ticket-list-view">
       <section class="ticket-list-pane" aria-label="Ticket list">

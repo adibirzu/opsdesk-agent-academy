@@ -1,4 +1,4 @@
-/* Static product sketch with localStorage session persistence for synthetic tickets. No network or fake AI results. */
+/* Static product sketch with localStorage session persistence and JSON export for synthetic tickets. No network or fake AI results. */
 (()=>{
  const STATUSES=['Open','In Progress','Resolved'];
  const PRIORITIES=['P1','P2','P3'];
@@ -93,6 +93,30 @@
    }catch(_){
     return false;
    }
+  },
+  buildExportPayload(list,selectedTicket,mode){
+   const items=(list||[]).map(t=>({...t}));
+   return {
+    schema:'opsdesk.synthetic-tickets.v1',
+    exportedAt:new Date().toISOString(),
+    syntheticDataOnly:true,
+    summary:{
+     total:items.length,
+     byStatus:{
+      Open:items.filter(t=>t.status==='Open').length,
+      'In Progress':items.filter(t=>t.status==='In Progress').length,
+      Resolved:items.filter(t=>t.status==='Resolved').length
+     },
+     byPriority:{
+      P1:items.filter(t=>t.priority==='P1').length,
+      P2:items.filter(t=>t.priority==='P2').length,
+      P3:items.filter(t=>t.priority==='P3').length
+     }
+    },
+    selectedTicketId:selectedTicket?.id||null,
+    viewMode:mode==='kanban'?'kanban':'list',
+    tickets:items
+   };
   }
  };
 
@@ -103,7 +127,7 @@
  let counter=initial?initial.counter:0;
  let viewMode=initial?initial.viewMode:'list';
  let selected=tickets.find(t=>t.id===initial?.selectedId)||tickets[0];
- let draggedTicketId=null,lastMovedId=null,moveTimer=null;
+ let draggedTicketId=null,lastMovedId=null,moveTimer=null,exportTimer=null;
 
  const $=id=>document.getElementById(id);
  if(!$('tickets')&&!$('kanban-board'))return;
@@ -129,6 +153,37 @@
   badge.textContent=customCount>0
    ?'Persisted in localStorage ('+tickets.length+' tickets, '+customCount+' created)'
    :'Persisted in localStorage ('+tickets.length+' tickets)';
+ }
+
+ function exportTicketsJson(){
+  const payload=ticketStorage.buildExportPayload(tickets,selected,viewMode);
+  const jsonText=JSON.stringify(payload,null,2)+'\n';
+  const dateStamp=payload.exportedAt.slice(0,10);
+  const fileName='opsdesk-tickets-'+dateStamp+'.json';
+  const blob=new Blob([jsonText],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement('a');
+  link.href=url;
+  link.download=fileName;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+
+  const badge=$('storage-status');
+  if(badge){
+   badge.textContent='Exported '+tickets.length+' tickets to '+fileName+'.';
+  }
+  const btn=$('export-tickets-json');
+  if(btn){
+   btn.textContent='Exported JSON ✓';
+   btn.dataset.exported='true';
+   if(exportTimer)clearTimeout(exportTimer);
+   exportTimer=setTimeout(()=>{
+    btn.textContent='Export JSON ↓';
+    delete btn.dataset.exported;
+   },2200);
+  }
  }
 
  function getFilteredTickets(){
@@ -444,6 +499,7 @@
  if($('status-filter'))$('status-filter').onchange=render;
  if($('view-list'))$('view-list').onclick=()=>setViewMode('list');
  if($('view-kanban'))$('view-kanban').onclick=()=>setViewMode('kanban');
+ if($('export-tickets-json'))$('export-tickets-json').onclick=exportTicketsJson;
  if($('reset-tickets'))$('reset-tickets').onclick=resetTickets;
  if($('detail-status'))$('detail-status').onchange=e=>{if(selected)updateTicketStatus(selected,e.target.value);};
  if($('analyze'))$('analyze').onclick=()=>{if($('answer'))$('answer').textContent='Backend connection required: continue to Connect the investigator. This static preview cannot call your model or export a trace.';};

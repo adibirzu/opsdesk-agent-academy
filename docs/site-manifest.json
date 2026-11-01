@@ -2,15 +2,15 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "0c99510eb1463cd18d362dcd73f55628903a94b168f51ee67ad51499a6fa60c0"
+      "sha256": "50856c192a6cdb10a4903555c0aa1d1a0ab34812532a19f9665c11a042b4c30b"
     },
     {
       "path": "course.html",
-      "sha256": "6b523e176ae0caad7cdd19bbd2c0e45c88a120d914c323437f95021da318b821"
+      "sha256": "dc9764df316e7db7275e13488ebd7be8070f9ec0bd383457527f2481d59478f0"
     },
     {
       "path": "help.html",
-      "sha256": "4631ea06bc52859d85fda28c287852921857b526cc8223249ef7ddfbb9235542"
+      "sha256": "6f4d5a254cf91cd94f49565836de03f1d5fc7dd90967ba0e6ddaa54e3566a347"
     },
     {
       "path": "course.json",
@@ -22,7 +22,7 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "20c531dc69ae2f65280a8582b16b74b00aca29577506753fcc47129f58a56b31"
+      "sha256": "748fa1e9eb1e211a10b15af17964b6bd85450bdd753a2001a307013fda027dd2"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
@@ -46,7 +46,7 @@
     },
     {
       "path": "relationships.html",
-      "sha256": "4c1d7cd67fd22f563c758a5a964adb683414195a25011d9708e39123e75b0f8a"
+      "sha256": "2266bb4abcad7e27e47989072e63c0fc70e06c7bef966a98184186586e2cea94"
     },
     {
       "path": "agent-map.css",
@@ -66,11 +66,11 @@
     },
     {
       "path": "showcase.html",
-      "sha256": "fa391615b7cab3e5a7faa82f8ffa136d8cf23661d6d5c701b6a6bfb493689eac"
+      "sha256": "a549b75a3b850a8435c3fd529d3e83b8552ef28bce6c183d32b341189cdf1163"
     },
     {
       "path": "workflows.html",
-      "sha256": "d396149ee19b6648a16588072133dd27e8c234b583101e87536ccdc0885c0e0e"
+      "sha256": "479e9ac2ddc3e55cc340a13a4a37739cf4bd97c3173c58f8f3647672e588a559"
     },
     {
       "path": "WORKFLOWS.md",
@@ -142,15 +142,15 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "37f54e44740514a85629b9c75ff87d8c4b2aae895cdfa80adf33efea9b7b5fdc"
+      "sha256": "070fab3453b1f59e601aeccfd30a91fc39f7cd097af45d7907608e8465026a38"
     },
     {
       "path": "langfuse.html",
-      "sha256": "cc47f9865f2a3dd6266faa60a0cdaed662e28a92441847d1d4fe90c2649aeb0f"
+      "sha256": "d698114d932db3ec3bf08444473923a3f4f5d6bdce93412b5326455713803bfc"
     },
     {
       "path": "langfuse-basics.html",
-      "sha256": "850508bac99ba4c0496ce630d78b7df303b82ea7468c581e53d84f5dec8b4c66"
+      "sha256": "dccfd53b010e69990b919fe31b71c3267f9c20496bec894ea93cfe5c07404fcd"
     },
     {
       "path": "langfuse-basics.js",
@@ -182,7 +182,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "c9da54d58618dc534b5699db7510545d2a16d36185636a1fa6b6457d151fba8f"
+      "sha256": "3cd398c654f273a5512004edc93e1d766279255cb01398fb959a38c71236a694"
     },
     {
       "path": "personas.json",
@@ -194,7 +194,7 @@
     },
     {
       "path": "evidence.html",
-      "sha256": "d51f1622e8b5dcabae1975e56937449a456812f023e44bb47e43aa11ca7e11b2"
+      "sha256": "4a86df3b2d4199057aad8e53cdb70cba89a70836179c6651b8e14060449282d6"
     },
     {
       "path": "EVIDENCE.json",
@@ -226,27 +226,27 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "3f14dc03c90b4f42787e0ce88e857ee53af8fb4fd6841b49a38f89b40d4bb17a"
+      "sha256": "88232c5bd760077309815fa683a4f91fef6ae7104b0f8950c6902e453920990c"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "a19ac26e53fd195c39fe2667c61a478fe3aeb0e2c918f356612a2b6e957751af"
+      "sha256": "eb27e543371633369110e1327becb4379252915c6b90099f18c04c21b352bb2d"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "7ad36b6d10f38fa670d1c1665b98c821b7838eb0ba8f037ba0be718a7e0a5a53"
+      "sha256": "9d41be774eabd3d32b9b073ef1933e5cbc876bae9802c1b5cda147ba8e89dabb"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "24b19b28b07985fe9bb6fdad53634da23ca2d1935e7993d4cc6d8b96d021571c"
+      "sha256": "ea25debe61e2bf624bccf190b966aeadcccac8d547bea48f67cea04355015d83"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "82f81381c3eeaac8a234c2ffc21ffb0ea0590f23553062cac2df51515ca64745"
+      "sha256": "b59a402f5eafa1444c199b29d803f58bca8380f2c9cdb08503b159d46a30f90a"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "1eb89f08624d5c16b30f6a222b5ad6a93c0fed6a441e16e018d2f90fb128c747"
+      "sha256": "ecb8b97d756f99921942b90cad435ba89a07a0ab4eaedf8f4f18cce45f3dbe67"
     },
     {
       "path": "meet-your-agent.html",
@@ -258,7 +258,7 @@
     },
     {
       "path": "guide.css",
-      "sha256": "27cb44ace61826b9456c100e49705bdcb923f3fc609f632ef0809b67e16257f6"
+      "sha256": "66e8f3c76f14ca2f63003d24afc2ae6a64cd78fc2f55fb22f9d9a6397ebb9982"
     },
     {
       "path": "guide.js",
@@ -270,11 +270,11 @@
     },
     {
       "path": "preview.html",
-      "sha256": "7a947d7c9bf55054b25b93880a4960d8242510646bacd587d9d2b4ee34a61a87"
+      "sha256": "dd62188a245b4c341468f88c767efa0e024a32856455f4eeba3beb15205716d9"
     },
     {
       "path": "preview.js",
-      "sha256": "9c276360a3a14859d17e735dbf181fc96c11718bd85a451be3381a3245f1a71b"
+      "sha256": "8ca66adf86f123062974267df0c2a90a6183876330c9bd92c583008baee27877"
     },
     {
       "path": "public-theme.css",
