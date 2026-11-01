@@ -21,6 +21,9 @@ def main():
     exporter = load("build_student_site")
     allowed = set(exporter.FILES) | {".nojekyll", "site-manifest.json"}
     docs = ROOT / "docs"
+    pycache = docs / "__pycache__"
+    if pycache.is_dir():
+        shutil.rmtree(pycache)
     for path in docs.rglob("*"):
         if path.is_symlink() or (path.is_file() and str(path.relative_to(docs)) not in allowed):
             raise ValueError("Review unexpected content in docs before refreshing")

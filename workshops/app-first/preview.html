@@ -23,8 +23,8 @@
       <b>AI is not connected yet</b>
       Your task: recreate this useful interface, then connect your own server-owned agent.
     </div>
-    <div class="explorer-controls">
-      <label>Search <input id="search" placeholder="Title or service"></label>
+    <div class="explorer-controls ticket-toolbar">
+      <label>Search <input id="search" placeholder="Title, ID or service"></label>
       <label>Priority
         <select id="priority">
           <option value="">All priorities</option>
@@ -33,26 +33,61 @@
           <option>P3</option>
         </select>
       </label>
+      <label>Status
+        <select id="status-filter">
+          <option value="">All statuses</option>
+          <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </label>
+      <div class="ticket-view-toggle" role="group" aria-label="Ticket view mode">
+        <button type="button" id="view-list" class="view-toggle-btn" data-ticket-view="list" aria-pressed="true">List View</button>
+        <button type="button" id="view-kanban" class="view-toggle-btn" data-ticket-view="kanban" aria-pressed="false">Kanban Board</button>
+      </div>
     </div>
-    <div class="delivery-map">
-      <section>
+    <div class="ticket-storage-bar">
+      <span id="storage-status" class="ticket-storage-status" role="status" aria-live="polite">Persisted in localStorage (4 tickets)</span>
+      <button type="button" id="reset-tickets" class="ticket-reset-btn">Reset default tickets</button>
+    </div>
+    <div id="ticket-list-view">
+      <section class="ticket-list-pane" aria-label="Ticket list">
         <h2>Tickets</h2>
         <div id="tickets"></div>
       </section>
-      <section style="grid-column:span 2">
-        <h2 id="title"></h2>
-        <p id="detail"></p>
-        <p id="meta"></p>
-        <button id="analyze" class="action primary">Analyze safely</button>
-        <p id="answer" role="status">Choose a ticket. No AI answer has been generated.</p>
-      </section>
     </div>
+    <div id="ticket-kanban-view" hidden>
+      <div class="kanban-board-bar">
+        <p id="kanban-drag-status" class="kanban-drag-status" role="status" aria-live="polite">Drag incident cards between <strong>Open</strong>, <strong>In Progress</strong>, and <strong>Resolved</strong> columns to update their status.</p>
+      </div>
+      <div id="kanban-board" class="kanban-board" role="region" aria-label="Kanban ticket board"></div>
+    </div>
+    <section class="ticket-detail-pane" aria-label="Selected ticket detail">
+      <div class="ticket-detail-header">
+        <div>
+          <h2 id="title"></h2>
+          <p id="meta"></p>
+        </div>
+        <label class="ticket-status-control">Status
+          <select id="detail-status" aria-label="Selected ticket status">
+            <option value="Open">Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </label>
+      </div>
+      <p id="detail"></p>
+      <div class="ticket-detail-actions">
+        <button id="analyze" class="action primary" type="button">Analyze safely</button>
+        <p id="answer" role="status">Choose a ticket. No AI answer has been generated.</p>
+      </div>
+    </section>
     <details>
       <summary>Create a synthetic ticket</summary>
       <form id="create">
         <p><label>Title <input name="title" required maxlength="120"></label></p>
-        <p><label>Description <textarea name="description" required maxlength="600"></textarea></label></p>
-        <p>
+        <p><label>Description <textarea name="description" required maxlength="600"></textarea></p>
+        <p class="create-ticket-fields">
           <label>Service
             <select name="service">
               <option>payments</option>
@@ -65,6 +100,13 @@
               <option>P1</option>
               <option>P2</option>
               <option>P3</option>
+            </select>
+          </label>
+          <label>Status
+            <select name="status">
+              <option value="Open">Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
             </select>
           </label>
         </p>

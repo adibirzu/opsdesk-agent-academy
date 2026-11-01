@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "cd196a54a1d3bf56981c2e6808731d185e3af020942cfc279352f2000b7de522"
+      "sha256": "0c99510eb1463cd18d362dcd73f55628903a94b168f51ee67ad51499a6fa60c0"
     },
     {
       "path": "course.html",
@@ -126,7 +126,7 @@
     },
     {
       "path": "training.js",
-      "sha256": "b816f370f5f4cc27f105e170ebcbca6114e9535198a11efa1db9110726fd019e"
+      "sha256": "df2c325dc03b35fe201da296e2d78941f1ec8519212bac9bd778e3ed5fda5cec"
     },
     {
       "path": "course-visuals.js",
@@ -258,7 +258,7 @@
     },
     {
       "path": "guide.css",
-      "sha256": "4eb0f0c255060e8696570b46af4c3701c17dea0a027e83a7f63aff75d26ed758"
+      "sha256": "27cb44ace61826b9456c100e49705bdcb923f3fc609f632ef0809b67e16257f6"
     },
     {
       "path": "guide.js",
@@ -270,15 +270,15 @@
     },
     {
       "path": "preview.html",
-      "sha256": "386aaf5240398e63439a546f81d3b730645b10f89e5c416544b7b432faf68749"
+      "sha256": "7a947d7c9bf55054b25b93880a4960d8242510646bacd587d9d2b4ee34a61a87"
     },
     {
       "path": "preview.js",
-      "sha256": "d2e7070f2afa93c73d02852d78f089b880a431915d2bfc4cd67c0ab1a6b28562"
+      "sha256": "9c276360a3a14859d17e735dbf181fc96c11718bd85a451be3381a3245f1a71b"
     },
     {
       "path": "public-theme.css",
-      "sha256": "e6b14e0340d2040da02329d3982847acff5fcc972ed0009d0629957810c6cb02"
+      "sha256": "6b1de2e2d78c1b868e451b5c3c1fbc8bf29e38475c3389d9e70dfaf2bac4b74a"
     },
     {
       "path": "tools.json",

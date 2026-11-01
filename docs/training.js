@@ -56,6 +56,30 @@
    bar.dataset.complete=String(pct===100);
    bar.dataset.active=String(checked>0);
   }
+  function getMilestoneName(box,idx){
+   const lesson=box.closest('.lesson');
+   if(lesson){
+    const h2=lesson.querySelector('h2');
+    if(h2&&h2.textContent.trim())return h2.textContent.trim();
+   }
+   const task=box.closest('.training-task');
+   if(task){
+    const h2=task.querySelector('h2');
+    if(h2&&h2.textContent.trim())return h2.textContent.replace(/^\d+\.\s*/,'').trim();
+   }
+   const container=box.closest('section, article');
+   if(container){
+    const heading=container.querySelector('h2, h3');
+    if(heading&&heading.textContent.trim()&&!box.hasAttribute('data-route-task')){
+     return heading.textContent.replace(/^\d+\.\s*/,'').trim();
+    }
+   }
+   const label=box.closest('label');
+   if(label&&label.textContent.trim()){
+    return label.textContent.trim().replace(/\s+/g,' ');
+   }
+   return 'Milestone '+(idx+1);
+  }
   if(stepsEl){
    while(stepsEl.firstChild)stepsEl.removeChild(stepsEl.firstChild);
    boxes.forEach((box,idx)=>{
@@ -63,10 +87,52 @@
     btn.type='button';
     btn.className='milestone-step-dot';
     const num=String(idx+1).padStart(2,'0');
-    btn.textContent=(box.checked?'✓ ':'')+num;
+    const milestoneName=getMilestoneName(box,idx);
+    const statusLabel=box.checked?'Completed':'Pending';
+    const tooltipId='milestone-tooltip-'+(idx+1);
+
+    const numSpan=document.createElement('span');
+    numSpan.className='milestone-step-num';
+    numSpan.textContent=(box.checked?'✓ ':'')+num;
+
+    const tip=document.createElement('span');
+    tip.className='milestone-step-tooltip';
+    tip.id=tooltipId;
+    tip.setAttribute('role','tooltip');
+    tip.setAttribute('aria-hidden','true');
+
+    const tipTitle=document.createElement('strong');
+    tipTitle.className='milestone-tooltip-title';
+    tipTitle.textContent=num+' · '+milestoneName;
+
+    const tipStatus=document.createElement('em');
+    tipStatus.className='milestone-tooltip-status';
+    tipStatus.textContent=statusLabel;
+
+    tip.appendChild(tipTitle);
+    tip.appendChild(tipStatus);
+    btn.appendChild(numSpan);
+    btn.appendChild(tip);
+
     btn.setAttribute('aria-pressed',String(box.checked));
-    btn.setAttribute('aria-label','Milestone '+(idx+1)+(box.checked?' checked':' unchecked'));
-    btn.title='Toggle milestone '+(idx+1);
+    btn.setAttribute('aria-label',num+' · '+milestoneName+' ('+statusLabel+')');
+    btn.setAttribute('aria-describedby',tooltipId);
+    btn.setAttribute('title',milestoneName);
+    btn.dataset.milestoneName=milestoneName;
+    btn.dataset.tooltipOpen='false';
+
+    const showTip=()=>{
+     btn.dataset.tooltipOpen='true';
+     tip.setAttribute('aria-hidden','false');
+    };
+    const hideTip=()=>{
+     btn.dataset.tooltipOpen='false';
+     tip.setAttribute('aria-hidden','true');
+    };
+    btn.addEventListener('mouseenter',showTip);
+    btn.addEventListener('mouseleave',hideTip);
+    btn.addEventListener('focus',showTip);
+    btn.addEventListener('blur',hideTip);
     btn.onclick=()=>{
      box.checked=!box.checked;
      box.dispatchEvent(new Event('change',{bubbles:true}));

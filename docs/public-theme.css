@@ -117,9 +117,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .ticket-choice {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6px;
   width: 100%;
   text-align: left;
   padding: 14px 16px;
@@ -129,18 +130,36 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   background: var(--surface-card);
   color: var(--text-strong);
   font-weight: 500;
-  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  box-shadow: var(--shadow-subtle);
+  will-change: transform, box-shadow;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
-.ticket-choice:hover {
-  border-color: var(--text-muted);
-  background: var(--surface-sunken);
+.ticket-choice:hover,
+.ticket-choice:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--red-redwood);
+  background: var(--surface-card);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.ticket-choice:active {
+  transform: translateY(0);
 }
 
 .ticket-choice[aria-pressed="true"] {
   border-color: var(--red-redwood);
-  box-shadow: 0 0 0 1px var(--red-redwood);
+  box-shadow: 0 0 0 1px var(--red-redwood), 0 4px 12px rgba(185, 56, 41, 0.08);
   background: var(--red-tint);
+}
+
+.ticket-choice[aria-pressed="true"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--red-redwood), 0 8px 20px rgba(185, 56, 41, 0.14);
 }
 
 .hero-art {
