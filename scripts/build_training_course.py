@@ -29,6 +29,7 @@ def brief_ref(value):
 
 def course_navigation():
     return (
+        '<div class="academy-header-top">'
         '<div class="academy-brand"><a href="course.html"><strong>OpsDesk Academy</strong></a>' + GITHUB_LINK + '</div>'
         '<nav class="academy-nav" aria-label="Course navigation">'
         '<a href="course.html">Course overview</a><a href="personas.html">Choose your path</a>'
@@ -38,14 +39,34 @@ def course_navigation():
         '<div><b>Observe &amp; verify</b><a href="langfuse.html">Connect Langfuse</a><a href="langfuse-basics.html">Read a trace</a><a href="evidence.html">Real screenshots</a></div>'
         '<div><b>Keep learning</b><a href="workflows.html">All workflows</a><a href="help.html">Help &amp; troubleshooting</a><a href="WORKBOOK.md" download>Download workbook ↓</a></div>'
         '</div></details></nav>'
+        '</div>'
+        '<div class="milestone-progress-bar" id="milestone-progress-bar" role="region" aria-label="Milestone completion progress">'
+        '<div class="milestone-progress-inner">'
+        '<div class="milestone-progress-info">'
+        '<span class="milestone-progress-label"><span class="milestone-status-dot" aria-hidden="true"></span>Milestone Progress</span>'
+        '<div class="milestone-progress-steps" id="milestone-progress-steps" role="group" aria-label="Milestone status indicators"></div>'
+        '</div>'
+        '<div class="milestone-progress-track" id="milestone-progress-track" role="progressbar" aria-label="Milestone completion percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">'
+        '<div class="milestone-progress-fill" id="milestone-progress-fill" style="width: 0%"></div>'
+        '</div>'
+        '<div class="milestone-progress-stats" role="status" aria-live="polite">'
+        '<strong class="milestone-progress-pct" id="milestone-progress-pct">0%</strong>'
+        '<span class="milestone-progress-count" id="milestone-progress-count">0 of 6 milestones checked</span>'
+        '</div>'
+        '</div>'
+        '</div>'
     )
 
 
 def shell(title, content):
+    desc = "Six-part practical training course and interactive workshop for building, governing, and observing an AI operations agent."
     return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         f"<title>{esc(title)} · OpsDesk Academy</title>"
+        f'<meta name="description" content="{esc(desc)}">'
+        f'<meta property="og:title" content="{esc(title)} · OpsDesk Academy">'
+        f'<meta property="og:description" content="{esc(desc)}">'
         '<link rel="icon" href="data:,"><link rel="stylesheet" href="public-theme.css">'
         '<link rel="stylesheet" href="guide.css"><link rel="stylesheet" href="training.css">'
         '<link rel="stylesheet" href="agent-map.css">'

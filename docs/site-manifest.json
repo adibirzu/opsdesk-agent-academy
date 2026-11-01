@@ -2,15 +2,15 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "1b46e70ddc1ec31d54668bc033534e7e0fbe509acda9a9876f40f751fe53af65"
+      "sha256": "cd196a54a1d3bf56981c2e6808731d185e3af020942cfc279352f2000b7de522"
     },
     {
       "path": "course.html",
-      "sha256": "7a3b5b47f4e0c60d9ef6778b412c3ce2f5332f6d8ecda5e4bb0b1f6a267bac19"
+      "sha256": "6b523e176ae0caad7cdd19bbd2c0e45c88a120d914c323437f95021da318b821"
     },
     {
       "path": "help.html",
-      "sha256": "d32a8e206b96883bb849fecdac2208bb327d97d95fec589db179eab0fca10be0"
+      "sha256": "4631ea06bc52859d85fda28c287852921857b526cc8223249ef7ddfbb9235542"
     },
     {
       "path": "course.json",
@@ -22,7 +22,7 @@
     },
     {
       "path": "lovable.html",
-      "sha256": "d827dc6501bba27b1a18dfa42867543da5bf41a8b2738780a77429c072dc84bc"
+      "sha256": "20c531dc69ae2f65280a8582b16b74b00aca29577506753fcc47129f58a56b31"
     },
     {
       "path": "LOVABLE-WORKFLOW.md",
@@ -46,11 +46,11 @@
     },
     {
       "path": "relationships.html",
-      "sha256": "5d4c6703e91139a26ebbda55219fce551f9baad8175d2ee6b17b11e435e3cd65"
+      "sha256": "4c1d7cd67fd22f563c758a5a964adb683414195a25011d9708e39123e75b0f8a"
     },
     {
       "path": "agent-map.css",
-      "sha256": "4c4eafd8014a4ae443b8fef7b6f9bef2fcccb2b814cea9b6e69268b4d076081a"
+      "sha256": "858225044fb45a86988478af7efc1db0d34a79f4d56a5b2ec8ce9a2663cceaa4"
     },
     {
       "path": "agent-map.js",
@@ -66,11 +66,11 @@
     },
     {
       "path": "showcase.html",
-      "sha256": "5cc9521187f2b7ddee6e8500fb4d87e38ffab023633832055579d8a0d08caa79"
+      "sha256": "fa391615b7cab3e5a7faa82f8ffa136d8cf23661d6d5c701b6a6bfb493689eac"
     },
     {
       "path": "workflows.html",
-      "sha256": "1150aee9637cd3611763d9cd9672bbb35663027982d9c24bb036197401a5d22a"
+      "sha256": "d396149ee19b6648a16588072133dd27e8c234b583101e87536ccdc0885c0e0e"
     },
     {
       "path": "WORKFLOWS.md",
@@ -122,15 +122,15 @@
     },
     {
       "path": "training.css",
-      "sha256": "e0bef981c07c57b31c749f6227f22b0a9caec432cb851797b6f8607752d803ce"
+      "sha256": "542c242b607ffca4da45ef04e4e13c8cb5693cc2ef2539332a33321fc264a239"
     },
     {
       "path": "training.js",
-      "sha256": "753e9241527c77584e68b05f9476b89b95ecd8a6c5fd0f903e8fd1ef9431b8a5"
+      "sha256": "b816f370f5f4cc27f105e170ebcbca6114e9535198a11efa1db9110726fd019e"
     },
     {
       "path": "course-visuals.js",
-      "sha256": "2428723f056357576ca7188938e0b33f507d1cd5f99a63439a32bf396942befc"
+      "sha256": "417137d66dd00142708029ce256a4a6213995d8831841e41fed29c317923635b"
     },
     {
       "path": "guardrails.js",
@@ -142,15 +142,15 @@
     },
     {
       "path": "replicate.html",
-      "sha256": "4f0a9fd475b3ab7f0bd4ccc109460d7ace6d6ea158db8bd62c20d99f254370e7"
+      "sha256": "37f54e44740514a85629b9c75ff87d8c4b2aae895cdfa80adf33efea9b7b5fdc"
     },
     {
       "path": "langfuse.html",
-      "sha256": "fe848b6f4ff6fae9a49588b8341c3c4c6e8cd73c669361f6bea80492386ee51b"
+      "sha256": "cc47f9865f2a3dd6266faa60a0cdaed662e28a92441847d1d4fe90c2649aeb0f"
     },
     {
       "path": "langfuse-basics.html",
-      "sha256": "bf95e6ef9f1430db81377568c2e7751197bafb892d792527e764084e13bff522"
+      "sha256": "850508bac99ba4c0496ce630d78b7df303b82ea7468c581e53d84f5dec8b4c66"
     },
     {
       "path": "langfuse-basics.js",
@@ -182,7 +182,7 @@
     },
     {
       "path": "personas.html",
-      "sha256": "2517a646033e3f266ad16b921c21f7ecb87b870c5b63412ec03ca8f50219844d"
+      "sha256": "c9da54d58618dc534b5699db7510545d2a16d36185636a1fa6b6457d151fba8f"
     },
     {
       "path": "personas.json",
@@ -190,11 +190,11 @@
     },
     {
       "path": "personas.js",
-      "sha256": "b4d17afd80e33a19d83f69ce155b67c30f6d7da12214c479c21ce217c3e7c74b"
+      "sha256": "522690ee97e51a5b1c19c8c7b24d419a3259e1f5ba90a8c922034dde31ba5924"
     },
     {
       "path": "evidence.html",
-      "sha256": "9243e450b4823cd965306b5357c925bcc7b459c2db13e6e297aa3611c81a779c"
+      "sha256": "d51f1622e8b5dcabae1975e56937449a456812f023e44bb47e43aa11ca7e11b2"
     },
     {
       "path": "EVIDENCE.json",
@@ -226,27 +226,27 @@
     },
     {
       "path": "part-1-first-app.html",
-      "sha256": "b8d734ed2885642ec22d39b07fb4649ebf16c7d701dafd63b733b09354e7c428"
+      "sha256": "3f14dc03c90b4f42787e0ce88e857ee53af8fb4fd6841b49a38f89b40d4bb17a"
     },
     {
       "path": "part-2-agent-engine.html",
-      "sha256": "4dff32b0776cf556e9c4219d2bf7630805259d01addc2f1a137cc1bf32bce87a"
+      "sha256": "a19ac26e53fd195c39fe2667c61a478fe3aeb0e2c918f356612a2b6e957751af"
     },
     {
       "path": "part-3-models-and-cost.html",
-      "sha256": "6f69f8988380c33482552b23d2389b872c34e3854104ecedabcdf158533bfeda"
+      "sha256": "7ad36b6d10f38fa670d1c1665b98c821b7838eb0ba8f037ba0be718a7e0a5a53"
     },
     {
       "path": "part-4-follow-the-evidence.html",
-      "sha256": "ae1b79f1b1cbca1bc438d398cf8ddf66ca9ce058589f01e2e24d3c280fd48c1f"
+      "sha256": "24b19b28b07985fe9bb6fdad53634da23ca2d1935e7993d4cc6d8b96d021571c"
     },
     {
       "path": "part-5-secure-by-construction.html",
-      "sha256": "a4c7999392212462dc8efbbf53a1ee301ec91bfc3aef8db5312835f24dd970ad"
+      "sha256": "82f81381c3eeaac8a234c2ffc21ffb0ea0590f23553062cac2df51515ca64745"
     },
     {
       "path": "part-6-ready-for-oci.html",
-      "sha256": "77a1445028315deac3b9c7faf325535b19096c35c31db95175b579625cd2ff41"
+      "sha256": "1eb89f08624d5c16b30f6a222b5ad6a93c0fed6a441e16e018d2f90fb128c747"
     },
     {
       "path": "meet-your-agent.html",
@@ -258,11 +258,11 @@
     },
     {
       "path": "guide.css",
-      "sha256": "c6eb11d09cfd1e8965186e78bb5fc59f885e4384c817492459ca0de97a699471"
+      "sha256": "4eb0f0c255060e8696570b46af4c3701c17dea0a027e83a7f63aff75d26ed758"
     },
     {
       "path": "guide.js",
-      "sha256": "f17f2145a878f796e9c3a16bd4931ff7ed9487afafc993678fcc0213311998cf"
+      "sha256": "23d4f2b6e1b7773d2c1e817d713f69c9a24bda28085849615d153b294844405f"
     },
     {
       "path": "explorers.js",
@@ -270,7 +270,7 @@
     },
     {
       "path": "preview.html",
-      "sha256": "b6b667d1449e2270b732d8e5fa935d9a841b694f59ac768098f7001677311ea1"
+      "sha256": "386aaf5240398e63439a546f81d3b730645b10f89e5c416544b7b432faf68749"
     },
     {
       "path": "preview.js",
@@ -278,7 +278,7 @@
     },
     {
       "path": "public-theme.css",
-      "sha256": "c94cea1810e4163fb09f32acd63612e79117cb7815ca9d70207e4ce75b588653"
+      "sha256": "e6b14e0340d2040da02329d3982847acff5fcc972ed0009d0629957810c6cb02"
     },
     {
       "path": "tools.json",

@@ -30,11 +30,13 @@
   }
   function cost(){
    const known=get('.cost-known').checked,input=Number(get('.cost-input').value),output=Number(get('.cost-output').value);
+   if(get('.cost-input-val'))get('.cost-input-val').textContent=`${input.toLocaleString()} tokens`;
+   if(get('.cost-output-val'))get('.cost-output-val').textContent=`${output.toLocaleString()} tokens`;
    const rows=[{label:'Input',tokens:input,cost:input*1/1e6},{label:'Output',tokens:output,cost:output*3/1e6}];
    const svg=d3.select(get('.cost-chart')).attr('viewBox','0 0 480 140').attr('role','img');svg.selectAll('*').remove();
    if(!known){get('.cost-answer').textContent='Estimated cost: unknown. Missing usage or matching rates is not zero.';svg.attr('aria-label','Cost unavailable because measurement or matching rates are missing.');return;}
    const scale=d3.scaleLinear().domain([0,.015]).range([0,300]);
-   svg.selectAll('rect').data(rows).join('rect').attr('x',110).attr('y',(d,i)=>20+i*55).attr('width',d=>scale(d.cost)).attr('height',24).attr('fill',(d,i)=>i?'var(--pine)':'var(--red-redwood)');
+   svg.selectAll('rect').data(rows).join('rect').attr('x',110).attr('y',(d,i)=>20+i*55).attr('width',d=>scale(d.cost)).attr('height',24).attr('rx',4).attr('fill',(d,i)=>i?'var(--pine)':'var(--red-redwood)');
    svg.selectAll('text').data(rows).join('text').attr('x',4).attr('y',(d,i)=>38+i*55).attr('fill','var(--text-body)').text(d=>`${d.label}: ${d.tokens}`);
    const result=`Illustrated estimate: $${(rows[0].cost+rows[1].cost).toFixed(6)} using invented rates of $1/M input and $3/M output tokens.`;
    get('.cost-answer').textContent=result;svg.attr('aria-label',result);

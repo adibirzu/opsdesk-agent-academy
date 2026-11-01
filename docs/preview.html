@@ -1,1 +1,85 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpsDesk · Student preview</title><link rel="stylesheet" href="public-theme.css"><link rel="stylesheet" href="guide.css"></head><body><header><b>OpsDesk / interactive product sketch</b><a href="index.html#build">Back to workshop →</a></header><main class="page-content"><span class="eyebrow">STEP 1 · MAKE SOMETHING VISIBLE</span><h1>Your incident inbox.</h1><p>This static preview uses invented tickets in memory. Nothing is sent to a model, saved to a server or exported as telemetry. Reload resets it.</p><div class="check"><b>AI is not connected yet</b>Your task: recreate this useful interface, then connect your own server-owned agent.</div><div class="explorer-controls"><label>Search <input id="search" placeholder="Title or service"></label><label>Priority <select id="priority"><option value="">All priorities</option><option>P1</option><option>P2</option><option>P3</option></select></label></div><div class="delivery-map"><section><h2>Tickets</h2><div id="tickets"></div></section><section style="grid-column:span 2"><h2 id="title"></h2><p id="detail"></p><p id="meta"></p><button id="analyze" class="action primary">Analyze safely</button><p id="answer" role="status">Choose a ticket. No AI answer has been generated.</p></section></div><details><summary>Create a synthetic ticket</summary><form id="create"><p><label>Title <input name="title" required maxlength="120"></label></p><p><label>Description <textarea name="description" required maxlength="600"></textarea></label></p><p><label>Service <select name="service"><option>payments</option><option>checkout</option><option>catalog</option></select></label> <label>Priority <select name="priority"><option>P1</option><option>P2</option><option>P3</option></select></label></p><button class="action" type="submit">Create ticket</button><p id="created" role="status"></p></form></details><h2>What changes when the agent is connected?</h2><div class="delivery-map"><div><b>Browser</b><span>Sends a ticket ID and an intent to your own server. Never a model key.</span></div><div><b>Harness</b><span>Validates the request, checks permission, chooses tools and enforces limits.</span></div><div><b>Evidence</b><span>Records actual model/tool spans and usage. Confirms the exact trace in your backend.</span></div></div><a class="action primary" href="index.html#agent">Connect the investigator →</a></main><script src="preview.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpsDesk · Student preview</title>
+  <meta name="description" content="Six-part practical training course and interactive workshop for building, governing, and observing an AI operations agent.">
+  <meta property="og:title" content="OpsDesk Agent Academy">
+  <meta property="og:description" content="Six-part practical training course and interactive workshop for building, governing, and observing an AI operations agent.">
+  <link rel="stylesheet" href="public-theme.css">
+  <link rel="stylesheet" href="guide.css">
+</head>
+<body>
+  <header>
+    <b>OpsDesk / interactive product sketch</b>
+    <a href="index.html#build">Back to workshop →</a>
+  </header>
+  <main class="page-content">
+    <span class="eyebrow">STEP 1 · MAKE SOMETHING VISIBLE</span>
+    <h1>Your incident inbox.</h1>
+    <p>This static preview uses invented tickets in memory. Nothing is sent to a model, saved to a server or exported as telemetry. Reload resets it.</p>
+    <div class="check">
+      <b>AI is not connected yet</b>
+      Your task: recreate this useful interface, then connect your own server-owned agent.
+    </div>
+    <div class="explorer-controls">
+      <label>Search <input id="search" placeholder="Title or service"></label>
+      <label>Priority
+        <select id="priority">
+          <option value="">All priorities</option>
+          <option>P1</option>
+          <option>P2</option>
+          <option>P3</option>
+        </select>
+      </label>
+    </div>
+    <div class="delivery-map">
+      <section>
+        <h2>Tickets</h2>
+        <div id="tickets"></div>
+      </section>
+      <section style="grid-column:span 2">
+        <h2 id="title"></h2>
+        <p id="detail"></p>
+        <p id="meta"></p>
+        <button id="analyze" class="action primary">Analyze safely</button>
+        <p id="answer" role="status">Choose a ticket. No AI answer has been generated.</p>
+      </section>
+    </div>
+    <details>
+      <summary>Create a synthetic ticket</summary>
+      <form id="create">
+        <p><label>Title <input name="title" required maxlength="120"></label></p>
+        <p><label>Description <textarea name="description" required maxlength="600"></textarea></label></p>
+        <p>
+          <label>Service
+            <select name="service">
+              <option>payments</option>
+              <option>checkout</option>
+              <option>catalog</option>
+            </select>
+          </label>
+          <label>Priority
+            <select name="priority">
+              <option>P1</option>
+              <option>P2</option>
+              <option>P3</option>
+            </select>
+          </label>
+        </p>
+        <button class="action" type="submit">Create ticket</button>
+        <p id="created" role="status"></p>
+      </form>
+    </details>
+    <h2>What changes when the agent is connected?</h2>
+    <div class="delivery-map">
+      <div><b>Browser</b><span>Sends a ticket ID and an intent to your own server. Never a model key.</span></div>
+      <div><b>Harness</b><span>Validates the request, checks permission, chooses tools and enforces limits.</span></div>
+      <div><b>Evidence</b><span>Records actual model/tool spans and usage. Confirms the exact trace in your backend.</span></div>
+    </div>
+    <a class="action primary" href="index.html#agent">Connect the investigator →</a>
+  </main>
+  <script src="preview.js"></script>
+</body>
+</html>

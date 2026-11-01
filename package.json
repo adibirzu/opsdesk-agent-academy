@@ -1,0 +1,11 @@
+{
+  "name": "opsdesk-agent-academy",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "python3 -B app.py",
+    "build": "python3 -B scripts/refresh_student_docs.py && python3 -B -m py_compile app.py",
+    "start": "python3 -B app.py",
+    "lint": "python3 -B -m py_compile app.py"
+  }
+}
