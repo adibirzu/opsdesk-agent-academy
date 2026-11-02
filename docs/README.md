@@ -119,7 +119,7 @@ telemetry readback remain separate, explicit acceptance gates.
 
 Use [the opening poll](poll.html) for a two-minute conversation about AI
 experience, frequency, desired outcome and preferred demonstration style. Its live
-card and QR open the selected anonymous Google Forms workshop poll. The configured
+card opens the selected anonymous Google Forms workshop poll. The configured
 form does not collect email or require sign-in. Answers submitted there are handled
 by Google Forms; the presenter opens its actual response summary. The course does
 not invent or compute shared response counts. Optional private practice remains in

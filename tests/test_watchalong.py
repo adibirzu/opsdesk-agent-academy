@@ -82,8 +82,7 @@ class WatchalongTests(unittest.TestCase):
         spec.loader.exec_module(module)
         with tempfile.TemporaryDirectory() as temp:
             module.COURSE = Path(temp)
-            (module.COURSE / "poll-qr.svg").write_text("<svg></svg>")
-            config = {"service_name": "Google Forms", "respond_url": "https://docs.google.com/forms/d/e/example/viewform", "public_results_url": None, "qr_target_url": "https://docs.google.com/forms/d/e/example/viewform", "qr_file": "poll-qr.svg", "reviewed": True}
+            config = {"service_name": "Google Forms", "respond_url": "https://docs.google.com/forms/d/e/example/viewform", "public_results_url": None, "reviewed": True}
             path = module.COURSE / "poll-config.json"
             path.write_text(json.dumps(config))
             self.assertEqual(module.reviewed_form_config("poll-config.json")["respond_url"], config["respond_url"])
@@ -128,7 +127,6 @@ class WatchalongTests(unittest.TestCase):
             (module.COURSE / "watchalong.json").write_text(json.dumps(data))
             shutil.copyfile(COURSE / "poll-content.html", module.COURSE / "poll-content.html")
             shutil.copyfile(COURSE / "poll-config.json", module.COURSE / "poll-config.json")
-            shutil.copyfile(COURSE / "poll-qr.svg", module.COURSE / "poll-qr.svg")
             for chapter in data["chapters"]:
                 if chapter.get("prompt_file"):
                     target = module.COURSE / chapter["prompt_file"]

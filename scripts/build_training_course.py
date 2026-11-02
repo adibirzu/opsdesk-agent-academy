@@ -47,7 +47,7 @@ def course_navigation():
         '<div class="academy-header-top">'
         '<div class="academy-brand"><a class="opsdesk-brand-link" href="course.html">' + OPSDESK_LOGO_MARK + '<strong>OpsDesk Academy</strong></a>' + GITHUB_LINK + '</div>'
         '<nav class="academy-nav" aria-label="Course navigation">'
-        '<a href="course.html">Course overview</a><a href="personas.html">Choose your path</a>'
+        '<a href="build-on-oci.html">Build on OCI</a><a href="course.html">Course overview</a><a href="personas.html">Choose your path</a>'
         '<a href="lovable.html">Build OpsDesk</a><a href="relationships.html">Agent map</a>'
         '<details class="resource-menu"><summary>Labs &amp; help</summary><div class="resource-panel">'
         '<div><b>Build &amp; explore</b><a href="index.html">Part 1 live guide</a><a href="showcase.html">App walkthrough</a><a href="replicate.html">Run it at home</a></div>'
@@ -468,27 +468,23 @@ def reviewed_form_config(filename):
         public_form_url(respond)
         if results:
             public_form_url(results, results=True)
-        if config.get("qr_target_url") != respond:
-            raise ValueError("The QR must point to the selected responder link")
-    qr = config.get("qr_file")
-    expected = filename.replace('-config.json', '-qr.svg')
-    if qr != expected or not (COURSE / qr).is_file():
-        raise ValueError("Expected the selected local form QR asset")
+    if any(key.startswith("qr_") for key in config):
+        raise ValueError("QR configuration is no longer supported on this site")
     return config
 
 
 def render_opening_poll():
     config = reviewed_form_config("poll-config.json")
-    respond, results, qr = config.get("respond_url"), config.get("public_results_url"), config["qr_file"]
+    respond, results = config.get("respond_url"), config.get("public_results_url")
     if respond:
         collection = 'The live poll opens ' + esc(config['service_name']) + ', which receives the answers you submit there. Do not enter names, emails or customer data.'
-        live = f'<section class="live-poll-card" aria-label="Live audience poll"><img src="{qr}" alt="Scan to open the live anonymous audience poll" width="240" height="240"><div><span class="eyebrow">ANSWER TOGETHER · LIVE RESPONSES</span><h2>Scan. Answer. Shape today’s demo.</h2><p>Open the anonymous poll in {esc(config["service_name"])}. The presenter will show the real response summary and choose the pace with you.</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">Answer the live poll ↗</a>'
+        live = f'<section class="live-poll-card" aria-label="Live audience poll"><div><span class="eyebrow">ANSWER TOGETHER · LIVE RESPONSES</span><h2>Answer. Shape today’s demo.</h2><p>Open the anonymous poll in {esc(config["service_name"])}. The presenter will show the real response summary and choose the pace with you.</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">Answer the live poll ↗</a>'
         if results:
             live += f' <a class="action" href="{esc(results)}" target="_blank" rel="noopener noreferrer">View the public aggregate results ↗</a>'
         live += '<p class="watch-status">The course page does not invent counts or copy responses into its private practice form.</p></div></section>'
     else:
         collection = 'Shared online collection is not configured.'
-        live = f'<section class="live-poll-card" aria-label="Opening poll QR"><img src="{qr}" alt="Scan to open this course’s opening poll page" width="220" height="220"><div><span class="eyebrow">OPEN THE QUESTIONS</span><h2>Bring the opening questions to your phone.</h2><p>This QR opens the course poll page. It is not a shared-response collector. Use the questions for a show of hands, or complete the private practice form below.</p></div></section>'
+        live = f'<section class="live-poll-card" aria-label="Opening poll"><div><span class="eyebrow">OPEN THE QUESTIONS</span><h2>Bring the opening questions to your phone.</h2><p>This page opens the course poll. It is not a shared-response collector. Use the questions for a show of hands, or complete the private practice form below.</p></div></section>'
     body = (COURSE / "poll-content.html").read_text().replace("{{poll_collection_status}}", collection).replace("{{live_poll}}", live)
     if respond:
         body = body.replace('<form id="opening-poll"', '<details class="private-practice"><summary>Optional: practice privately instead · not submitted to the live poll</summary><form id="opening-poll"', 1).replace('</form>', '</form></details>', 1)
@@ -497,16 +493,16 @@ def render_opening_poll():
 
 def render_qa():
     config = reviewed_form_config("qa-config.json")
-    respond, qr = config.get("respond_url"), config["qr_file"]
+    respond = config.get("respond_url")
     if respond:
         collection = 'Questions are submitted to ' + esc(config['service_name']) + ' only when you open and submit its form.'
         shared = config.get("shared_workshop_form") is True
         description = 'Use the optional final Q&amp;A field in the workshop form. The same form also contains the opening poll; earlier answers are not automatically reused.' if shared else 'Open the anonymous Q&amp;A form. The presenter can review actual submissions in the form dashboard.'
         button = 'Open workshop form · final Q&amp;A field ↗' if shared else 'Ask a question ↗'
-        card = f'<section class="live-poll-card" aria-label="Audience questions QR"><img src="{qr}" alt="Scan to open the workshop question form" width="240" height="240"><div><span class="eyebrow">SCAN TO ASK</span><h2>Your question. The next conversation.</h2><p>{description}</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">{button}</a><p class="watch-status">No synthetic response count is displayed here.</p></div></section>'
+        card = f'<section class="live-poll-card" aria-label="Audience questions"><div><span class="eyebrow">ASK A QUESTION</span><h2>Your question. The next conversation.</h2><p>{description}</p><a class="action primary" href="{esc(respond)}" target="_blank" rel="noopener noreferrer">{button}</a><p class="watch-status">No synthetic response count is displayed here.</p></div></section>'
     else:
         collection = 'Online question collection is not connected yet. Ask the presenter directly; this page does not send or store questions.'
-        card = f'<section class="live-poll-card" aria-label="Q and A page QR"><img src="{qr}" alt="Scan to open the workshop question and next-steps page" width="240" height="240"><div><span class="eyebrow">KEEP THE LINKS</span><h2>Scan for Q&amp;A and next steps.</h2><p>This QR opens this course page. It is not a connected question collector yet. Ask your question aloud or use the course links below.</p></div></section>'
+        card = f'<section class="live-poll-card" aria-label="Q and A page"><div><span class="eyebrow">KEEP THE LINKS</span><h2>Questions and next steps.</h2><p>Use the course links below. It is not a connected question collector yet. Ask your question aloud or use the course links below.</p></div></section>'
     body = (COURSE / "qa-content.html").read_text().replace("{{qa_collection_status}}", collection).replace("{{live_qa}}", card)
     return shell("Questions and next steps", body)
 
@@ -603,6 +599,7 @@ def build_watchalong():
 
 def build():
     build_watchalong()
+    (COURSE / "build-on-oci.html").write_text(shell("Build on OCI", (COURSE / "build-on-oci-content.html").read_text()))
     (COURSE / "qa.html").write_text(render_qa())
     if (COURSE / "present-content.html").is_file():
         (COURSE / "present.html").write_text(shell("Present the live workshop", '<link rel="stylesheet" href="present.css">' + (COURSE / "present-content.html").read_text()))

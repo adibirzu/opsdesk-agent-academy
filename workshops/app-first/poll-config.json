@@ -2,7 +2,5 @@
   "service_name": "Google Forms",
   "respond_url": "https://docs.google.com/forms/d/e/1FAIpQLSfiJOw-3mWN44xGlvyC75tFq9JcLac9xKuCUTtkBhTctLbirQ/viewform",
   "public_results_url": null,
-  "qr_target_url": "https://docs.google.com/forms/d/e/1FAIpQLSfiJOw-3mWN44xGlvyC75tFq9JcLac9xKuCUTtkBhTctLbirQ/viewform",
-  "qr_file": "poll-qr.svg",
   "reviewed": true
 }

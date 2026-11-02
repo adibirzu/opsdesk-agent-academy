@@ -1,6 +1,12 @@
 [
   {
     "category": "Build",
+    "name": "Build on OCI",
+    "url": "build-on-oci.html",
+    "purpose": "Build with OCI Enterprise AI and prepare managed agent hosting."
+  },
+  {
+    "category": "Build",
     "name": "Base44",
     "url": "https://base44.com/",
     "purpose": "Describe the app and inspect its preview."
